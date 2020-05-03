@@ -52,19 +52,69 @@ public class Jmain extends JFrame implements ActionListener {
 
         //##Coins##
         cnp1 = new JLabel("0");
-        cnp1.setFont(new Font("Serif",Font.BOLD,24));
+        cnp1.setFont(new Font("Serif",Font.BOLD,40));
         cnp1.setForeground(Color.WHITE);
-        cnp1.setBounds(132,690,150,40);
+        cnp1.setBounds(1007,99,40,40);
         panel4.add(cnp1);
 
+        cnp2 = new JLabel("0");
+        cnp2.setFont(new Font("Serif",Font.BOLD,40));
+        cnp2.setForeground(Color.WHITE);
+        cnp2.setBounds(1007,176,40,40);
+        panel4.add(cnp2);
 
+        cnp3 = new JLabel("0");
+        cnp3.setFont(new Font("Serif",Font.BOLD,40));
+        cnp3.setForeground(Color.WHITE);
+        cnp3.setBounds(1007,252,40,40);
+        panel4.add(cnp3);
 
+        cnp4 = new JLabel("0");
+        cnp4.setFont(new Font("Serif",Font.BOLD,40));
+        cnp4.setForeground(Color.WHITE);
+        cnp4.setBounds(1007,319,40,40);
+        panel4.add(cnp4);
 
         //##Stars##
 
+        str1 = new JLabel("0");
+        str1.setFont(new Font("Serif",Font.BOLD,40));
+        str1.setForeground(Color.WHITE);
+        str1.setBounds(1187,99,40,40);
+        panel4.add(str1);
+
+        str2 = new JLabel("0");
+        str2.setFont(new Font("Serif",Font.BOLD,40));
+        str2.setForeground(Color.WHITE);
+        str2.setBounds(1187,176,40,40);
+        panel4.add(str2);
+
+        str3 = new JLabel("0");
+        str3.setFont(new Font("Serif",Font.BOLD,40));
+        str3.setForeground(Color.WHITE);
+        str3.setBounds(1187,252,40,40);
+        panel4.add(str3);
+
+        str4 = new JLabel("0");
+        str4.setFont(new Font("Serif",Font.BOLD,40));
+        str4.setForeground(Color.WHITE);
+        str4.setBounds(1187,319,40,40);
+        panel4.add(str4);
 
 
+        pgame = new JLabel("Turn of Player");
+        pgame.setFont(new Font("Serif",Font.BOLD,30));
+        pgame.setForeground(Color.WHITE);
+        pgame.setBounds(867,830,400,40);
+        panel4.add(pgame);
 
+        round = new JLabel("Round: 1");
+        round.setFont(new Font("Serif",Font.BOLD,30));
+        round.setForeground(Color.WHITE);
+        round.setBounds(867,795,400,40);
+        panel4.add(round);
+
+        //##Backgrounds##
         bg2 = new JLabel();
         bg2.setBounds(0, 0, 1280, 900);
         ImageIcon bgurl1 = new ImageIcon(getClass().getResource("/Juego/Jfondo.png"));

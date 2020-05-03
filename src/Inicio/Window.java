@@ -60,6 +60,7 @@ public class Window extends JFrame implements ActionListener {
 
 
         frm1.setVisible(true);
+        JOptionPane.showMessageDialog(null, "Welcome to Datos Party 1!! \n Select number of players!  \n Enjoy!");
 
     }
 
@@ -76,7 +77,7 @@ public class Window extends JFrame implements ActionListener {
         if (e.getSource()==btn2p) {
             System.out.println("Jugaran 2 jugadores");
             players = 2;
-            System.out.println(players+ " Jugadores Jugando ahora");
+            System.out.println(players +" Jugadores Jugando ahora");
             Jmain prueba = new Jmain();
             frm1.setVisible(false);
 
