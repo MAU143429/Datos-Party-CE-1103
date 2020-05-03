@@ -96,7 +96,7 @@ public class Runner extends JFrame {
             frm3.setVisible(true);
 
 
-            
+
             JOptionPane.showMessageDialog(null, "Lets play Runners!! \n When you press OK you will see the key bindings for each player! \n 3, 2, 1 RUN!! \n Enjoy!");
         }
 
