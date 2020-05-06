@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="664ec476-e48a-449e-bde4-06251ce96db1" name="Default Changelist" comment="" />
+    <list default="true" id="664ec476-e48a-449e-bde4-06251ce96db1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Dados/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/Dados.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/dado1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/dado2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/dado3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/dado4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/dado5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/dado6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/out/production/Dados/com/dados/Dados$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/out/production/Dados/com/dados/Dados.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/out/production/Dados/com/dados/GUI_Temporal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/src/com/dados/Dados.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dados/src/com/dados/GUI_Temporal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dados/Dados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dados/Dados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Minijuegos/P1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Minijuegos/P2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Minijuegos/P3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Minijuegos/P4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Minijuegos/Runner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Minijuegos/pista.png" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +37,52 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Juego/Jmain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Inicio/Window.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-51">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dados/Dados.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="104" column="31" lean-forward="true" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Minijuegos/Runner/Runner.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -17,10 +90,69 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/Juego/Jmain.java" />
+        <option value="$PROJECT_DIR$/src/Dados/Dados.java" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="width" value="1279" />
+    <option name="height" value="919" />
+  </component>
   <component name="ProjectId" id="1aoI9t7EtOrcenu4eSUgrv7wW48" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Proyecto-1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Proyecto-1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Proyecto-1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Dados" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Proyecto-1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Inicio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Proyecto-1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Runner" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -28,6 +160,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -41,13 +174,25 @@
       <recent name="C:\Users\mau14\Escritorio\Proyecto 1\src\Inicio" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Runner">
-    <configuration name="Jmain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Juego.Jmain" />
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Jmain">
+    <configuration name="Dados (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Dados.Dados" />
       <module name="Proyecto 1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Juego.*" />
+          <option name="PATTERN" value="Dados.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -55,8 +200,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Reproductor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Juego.Reproductor" />
+    <configuration name="Dados" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dados.Dados" />
+      <module name="Proyecto 1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dados.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Jmain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Juego.Jmain" />
       <module name="Proyecto 1" />
       <extension name="coverage">
         <pattern>
@@ -94,33 +252,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="market" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Market.market" />
-      <module name="Proyecto 1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Market.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Window" />
       <item itemvalue="Application.Jmain" />
       <item itemvalue="Application.Runner" />
-      <item itemvalue="Application.market" />
-      <item itemvalue="Application.Reproductor" />
+      <item itemvalue="Application.Dados" />
+      <item itemvalue="Application.Dados (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Runner" />
-        <item itemvalue="Application.Reproductor" />
-        <item itemvalue="Application.Window" />
         <item itemvalue="Application.Jmain" />
-        <item itemvalue="Application.market" />
+        <item itemvalue="Application.Dados (1)" />
+        <item itemvalue="Application.Window" />
+        <item itemvalue="Application.Dados" />
+        <item itemvalue="Application.Runner" />
       </list>
     </recent_temporary>
   </component>
@@ -136,6 +281,66 @@
       <updated>1587395372732</updated>
     </task>
     <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22080536" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.3286119" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.13031161" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Image Layers" order="0" />
+      <window_info id="Designer" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.22080536" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.3286119" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.13172804" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="143" key="#com.intellij.ide.util.MemberChooser" timestamp="1588525643198">
@@ -231,5 +436,42 @@
     </state>
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1588452809971" />
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1587763510079" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Minijuegos/Runner/Runner.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Dados/src/com/dados/Dados.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2415" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Inicio/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dados/Dados.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="104" column="31" lean-forward="true" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Juego/Jmain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
