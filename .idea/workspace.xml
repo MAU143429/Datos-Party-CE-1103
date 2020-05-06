@@ -104,11 +104,6 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="width" value="1279" />
-    <option name="height" value="919" />
-  </component>
   <component name="ProjectId" id="1aoI9t7EtOrcenu4eSUgrv7wW48" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -418,10 +413,10 @@
     </state>
     <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1588465337640" />
     <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1588474609468" />
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1588526922444">
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1588799036684">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1588526922444" />
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1588799036684" />
     <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1588517390692" />
     <state x="499" y="189" key="extract.method.dialog" timestamp="1587400093443">
       <screen x="0" y="0" width="1536" height="864" />
@@ -441,7 +436,7 @@
     <entry file="file://$PROJECT_DIR$/src/Minijuegos/Runner/Runner.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Dados/src/com/dados/Dados.java">
+    <entry file="file://$USER_HOME$/Dados/src/com/dados/Dados.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2415" />
       </provider>
