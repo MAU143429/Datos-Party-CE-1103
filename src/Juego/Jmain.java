@@ -10,8 +10,8 @@ import java.awt.event.ActionListener;
 public class Jmain extends JFrame implements ActionListener {
 
     public JFrame frm2;
-    public JLabel bg2,cnp1,cnp2,cnp3,cnp4,str1,str2,str3,str4,round,pgame;
-    public JButton btnmkt, btndados;
+    public JLabel bg2,cnp1,cnp2,cnp3,cnp4,str1,str2,str3,str4,round,pgame,roll1,roll2;
+    public JButton btnmkt, btndados, endturn;
 
     public Jmain() {
         //############################Frame###############################
@@ -39,14 +39,20 @@ public class Jmain extends JFrame implements ActionListener {
 
         panel4.add(btnmkt);
 
-
         btndados = new JButton("TIRAR DADOS");
         btndados.setBounds(870, 700, 385, 82);
         ImageIcon btnurl12 = new ImageIcon(getClass().getResource("/Juego/roll.png"));
         btndados.setIcon(btnurl12);
         btndados.addActionListener(this);
 
+        endturn = new JButton("END TURN");
+        endturn.setBounds(870,600,385,82);
+        ImageIcon btnfinal = new ImageIcon(getClass().getResource("/Juego/btnend.png"));
+        endturn.setIcon(btnfinal);
+        endturn.addActionListener(this);
+
         panel4.add(btndados);
+        panel4.add(endturn);
 
         //############################Labels###############################
 
@@ -114,6 +120,17 @@ public class Jmain extends JFrame implements ActionListener {
         round.setBounds(867,795,400,40);
         panel4.add(round);
 
+        roll1 = new JLabel();
+        ImageIcon imgroll = new ImageIcon(getClass().getResource("/Dados/dadoroll1.png"));
+        roll1.setBounds(888,430,160,160);
+        roll1.setIcon(imgroll);
+        panel4.add(roll1);
+
+        roll2 = new JLabel();
+        roll2.setBounds(1068,430,160,160);
+        roll2.setIcon(imgroll);
+        panel4.add(roll2);
+
         //##Backgrounds##
         bg2 = new JLabel();
         bg2.setBounds(0, 0, 1280, 900);
@@ -149,8 +166,15 @@ public class Jmain extends JFrame implements ActionListener {
         if (e.getSource() == btndados) {
             System.out.println("Se estan tirando los dados");
             System.out.println("Dados tirados");
+            btndados.setEnabled(false);
             Dados prueba2 = new Dados();
 
+
+        }
+        if (e.getSource() == endturn){
+            System.out.println("Ha terminado su turno");
+            System.out.println("Volviendo a habilitar boton dados");
+            btndados.setEnabled(true);
 
         }
     }
