@@ -49,9 +49,9 @@
       <recent name="C:\Users\mau14\Escritorio\Proyecto 1\src\Inicio" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Treasure3">
-    <configuration name="MGS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Juego.MGS" />
+  <component name="RunManager" selected="Application.Window">
+    <configuration name="DS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Juego.DS" />
       <module name="Proyecto 1" />
       <extension name="coverage">
         <pattern>
@@ -63,12 +63,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Runner4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Minijuegos.Runner.Runner4" />
+    <configuration name="Jmain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Juego.Jmain" />
       <module name="Proyecto 1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Minijuegos.Runner.*" />
+          <option name="PATTERN" value="Juego.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MGS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Juego.MGS" />
+      <module name="Proyecto 1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Juego.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -89,25 +102,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Treasure3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Minijuegos.LFTT.Treasure3" />
+    <configuration name="Window" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Inicio.Window" />
       <module name="Proyecto 1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Minijuegos.LFTT.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Treasure4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Minijuegos.LFTT.Treasure4" />
-      <module name="Proyecto 1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Minijuegos.LFTT.*" />
+          <option name="PATTERN" value="Inicio.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,19 +116,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Runner4" />
-      <item itemvalue="Application.MGS" />
-      <item itemvalue="Application.Treasure4" />
+      <item itemvalue="Application.Jmain" />
       <item itemvalue="Application.Treasure2" />
-      <item itemvalue="Application.Treasure3" />
+      <item itemvalue="Application.DS" />
+      <item itemvalue="Application.MGS" />
+      <item itemvalue="Application.Window" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Treasure3" />
-        <item itemvalue="Application.Treasure2" />
-        <item itemvalue="Application.Treasure4" />
-        <item itemvalue="Application.Runner4" />
+        <item itemvalue="Application.Window" />
         <item itemvalue="Application.MGS" />
+        <item itemvalue="Application.DS" />
+        <item itemvalue="Application.Jmain" />
+        <item itemvalue="Application.Treasure2" />
       </list>
     </recent_temporary>
   </component>
@@ -177,34 +177,34 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1587763454174" />
-    <state width="1493" height="183" key="GridCell.Tab.0.bottom" timestamp="1589083595698">
+    <state width="1493" height="183" key="GridCell.Tab.0.bottom" timestamp="1589129239615">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1317" height="222" key="GridCell.Tab.0.bottom/0.0.1360.768/1360.0.1920.1080@0.0.1360.768" timestamp="1588471720848" />
-    <state width="1493" height="183" key="GridCell.Tab.0.bottom/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589083595698" />
+    <state width="1493" height="183" key="GridCell.Tab.0.bottom/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589129239615" />
     <state width="1718" height="222" key="GridCell.Tab.0.bottom/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588800228103" />
-    <state width="1493" height="183" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1588891460353" />
-    <state width="1493" height="183" key="GridCell.Tab.0.center" timestamp="1589083595698">
+    <state width="1493" height="183" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1589118037389" />
+    <state width="1493" height="183" key="GridCell.Tab.0.center" timestamp="1589129239615">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1317" height="222" key="GridCell.Tab.0.center/0.0.1360.768/1360.0.1920.1080@0.0.1360.768" timestamp="1588471720848" />
-    <state width="1493" height="183" key="GridCell.Tab.0.center/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589083595698" />
+    <state width="1493" height="183" key="GridCell.Tab.0.center/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589129239615" />
     <state width="1718" height="222" key="GridCell.Tab.0.center/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588800228103" />
-    <state width="1493" height="183" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1588891460353" />
-    <state width="1493" height="183" key="GridCell.Tab.0.left" timestamp="1589083595698">
+    <state width="1493" height="183" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1589118037385" />
+    <state width="1493" height="183" key="GridCell.Tab.0.left" timestamp="1589129239615">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1317" height="222" key="GridCell.Tab.0.left/0.0.1360.768/1360.0.1920.1080@0.0.1360.768" timestamp="1588471720848" />
-    <state width="1493" height="183" key="GridCell.Tab.0.left/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589083595698" />
+    <state width="1493" height="183" key="GridCell.Tab.0.left/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589129239615" />
     <state width="1718" height="222" key="GridCell.Tab.0.left/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588800228103" />
-    <state width="1493" height="183" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1588891460353" />
-    <state width="1493" height="183" key="GridCell.Tab.0.right" timestamp="1589083595698">
+    <state width="1493" height="183" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1589118037385" />
+    <state width="1493" height="183" key="GridCell.Tab.0.right" timestamp="1589129239615">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1317" height="222" key="GridCell.Tab.0.right/0.0.1360.768/1360.0.1920.1080@0.0.1360.768" timestamp="1588471720848" />
-    <state width="1493" height="183" key="GridCell.Tab.0.right/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589083595698" />
+    <state width="1493" height="183" key="GridCell.Tab.0.right/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589129239615" />
     <state width="1718" height="222" key="GridCell.Tab.0.right/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588800228103" />
-    <state width="1493" height="183" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1588891460353" />
+    <state width="1493" height="183" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1589118037385" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1588865895295">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -225,12 +225,12 @@
     </state>
     <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1588465337640" />
     <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1588865895295" />
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1589042628961">
+    <state x="465" y="331" width="606" height="274" key="com.intellij.ide.util.TipDialog" timestamp="1589129105462">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589042628961" />
+    <state x="465" y="331" width="606" height="274" key="com.intellij.ide.util.TipDialog/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589129105462" />
     <state x="2501" y="323" key="com.intellij.ide.util.TipDialog/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588804431049" />
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1588874316907" />
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1589117020637" />
     <state x="499" y="189" key="extract.method.dialog" timestamp="1587400093443">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

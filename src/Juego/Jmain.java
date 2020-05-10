@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 public class Jmain extends JFrame implements ActionListener {
 
     public JFrame frm2;
-    public JLabel bg2,cnp1,cnp2,cnp3,cnp4,str1,str2,str3,str4,round,pgame;
+    public JLabel bg2,cnp1,cnp2,cnp3,cnp4,str1,str2,str3,str4,round,pgame,mario,luigi,toad,yoshi;
     public JButton btnmkt, btndados;
 
 
@@ -120,8 +120,53 @@ public class Jmain extends JFrame implements ActionListener {
         round.setForeground(Color.WHITE);
         round.setBounds(867,795,400,40);
         panel4.add(round);
+        //###########################Jugadores##########################################
 
-        //##Backgrounds##
+        mario = new JLabel();
+        mario.setBounds(645, 800, 50, 50);
+        ImageIcon bgurl35 = new ImageIcon(getClass().getResource("/Juego/P1.png"));
+        mario.setIcon(bgurl35);
+        validate();
+
+        panel4.add(mario);
+
+        luigi = new JLabel();
+        luigi.setBounds(745, 800, 50, 50);
+        ImageIcon bgurl36 = new ImageIcon(getClass().getResource("/Juego/P2.png"));
+        luigi.setIcon(bgurl36);
+        validate();
+
+        panel4.add(luigi);
+
+        toad = new JLabel();
+        toad.setBounds(665, 847, 50, 50);
+        ImageIcon bgurl37 = new ImageIcon(getClass().getResource("/Juego/P3.png"));
+        toad.setIcon(bgurl37);
+        validate();
+
+        panel4.add(toad);
+
+        yoshi = new JLabel();
+        yoshi.setBounds(720, 847, 50, 50);
+        ImageIcon bgurl38 = new ImageIcon(getClass().getResource("/Juego/P4.png"));
+        yoshi.setIcon(bgurl38);
+        validate();
+
+        panel4.add(yoshi);
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //##Background####################################################################
         bg2 = new JLabel();
         bg2.setBounds(0, 0, 1280, 900);
         ImageIcon bgurl1 = new ImageIcon(getClass().getResource("/Juego/Jfondo.png"));
