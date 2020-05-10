@@ -98,13 +98,11 @@ public class Dados extends JFrame{
                     xm = new Timer(3000, new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            xm.stop();
-                            setVisible(false);
                             dispose();
+                            xm.stop();
                         }
                     });
                     xm.start();
-
                     }
                 }
 

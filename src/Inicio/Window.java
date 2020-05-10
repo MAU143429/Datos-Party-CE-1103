@@ -12,6 +12,7 @@ public class Window extends JFrame implements ActionListener {
 
     private JButton btn2p, btn3p, btn4p;
     private JFrame frm1;
+    int players = 0;
 
 
     public Window () {
@@ -73,13 +74,14 @@ public class Window extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        int players;
+
         if (e.getSource()==btn2p) {
             System.out.println("Jugaran 2 jugadores");
             players = 2;
             System.out.println(players +" Jugadores Jugando ahora");
             Jmain prueba = new Jmain();
             frm1.setVisible(false);
+
 
         }
         if (e.getSource()==btn3p) {
