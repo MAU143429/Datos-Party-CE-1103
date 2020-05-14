@@ -2,6 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="664ec476-e48a-449e-bde4-06251ce96db1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/P1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/P2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/P3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/P4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/cuatrojugadores.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/dadosjuego.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/dice1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/dice2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/dosjugadores.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/fondo_juego_dados.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/fondo_juego_dadosG.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/good.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/luck.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/luigi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/mario.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/player1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/player2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/player3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/player4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/throw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/toad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/tresjugadores.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Minijuegos/Dice/yoshi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proyecto 1/Dados/Dados$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto 1/Dados/Dados$1$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proyecto 1/Dados/Dados$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto 1/Dados/Dados$1.class" afterDir="false" />
@@ -10,6 +40,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/Proyecto 1/Juego/DS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto 1/Juego/DS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proyecto 1/Juego/Jmain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto 1/Juego/Jmain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proyecto 1/Juego/MGS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto 1/Juego/MGS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto 1/META-INF/Proyecto 1.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto 1/META-INF/Proyecto 1.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proyecto 1/Market/market.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto 1/Market/market.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proyecto 1/Minijuegos/Clicker/Clicker2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto 1/Minijuegos/Clicker/Clicker2$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proyecto 1/Minijuegos/Clicker/Clicker2$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto 1/Minijuegos/Clicker/Clicker2$2.class" afterDir="false" />
@@ -37,12 +68,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/Proyecto 1/Minijuegos/Runner/Runner4$Movimiento.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto 1/Minijuegos/Runner/Runner4$Movimiento.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proyecto 1/Minijuegos/Runner/Runner4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto 1/Minijuegos/Runner/Runner4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proyecto 1/Minijuegos/Runner/SG5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto 1/Minijuegos/Runner/SG5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dados/dadoroll1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Juego/Jmain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Juego/Jmain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Juego/btnend.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Juego/btnend.png" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,28 +80,40 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Juego/Jmain.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Minijuegos/RPS/SG4.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="160" column="19" lean-forward="true" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Minijuegos/RPS/rockpaperscissors.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="177" column="47" selection-start-line="177" selection-start-column="47" selection-end-line="177" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dados/Dados.java">
+        <entry file="file://$PROJECT_DIR$/src/Minijuegos/Runner/Runner4.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="507">
+              <caret line="150" column="59" selection-start-line="150" selection-start-column="59" selection-end-line="150" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+=======
+>>>>>>> b5336ccb8cd3c6df24b4f7902c4ee3e216ed8c47
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -86,17 +124,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Juego/Jmain.java" />
+        <option value="$PROJECT_DIR$/src/Minijuegos/Juego_Dados/dosjugadores.java" />
+        <option value="$PROJECT_DIR$/src/Minijuegos/Juego_Dados/cuatrojugadores.java" />
+        <option value="$PROJECT_DIR$/src/Minijuegos/Juego_Dados/dadosjuego.java" />
+        <option value="$PROJECT_DIR$/src/Minijuegos/Juego_Dados/tresjugadores.java" />
+        <option value="$PROJECT_DIR$/src/Minijuegos/Dice/dadosjuego.java" />
+        <option value="$PROJECT_DIR$/src/Minijuegos/Dice/tresjugadores.java" />
+        <option value="$PROJECT_DIR$/src/Minijuegos/Dice/dosjugadores.java" />
+        <option value="$PROJECT_DIR$/src/Minijuegos/Dice/cuatrojugadores.java" />
+        <option value="$PROJECT_DIR$/src/Minijuegos/RPS/Main.java" />
+        <option value="$PROJECT_DIR$/src/Minijuegos/RPS/rockpaperscissors.java" />
       </list>
     </option>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="width" value="1024" />
     <option name="height" value="736" />
@@ -107,8 +156,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -139,12 +186,54 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Juego" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Proyecto-1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Minijuegos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Proyecto-1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Minijuegos" type="462c0819:PsiDirectoryNode" />
+              <item name="Clicker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Proyecto-1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Minijuegos" type="462c0819:PsiDirectoryNode" />
+              <item name="Dice" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Proyecto-1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Minijuegos" type="462c0819:PsiDirectoryNode" />
+              <item name="RPS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Proyecto-1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Minijuegos" type="462c0819:PsiDirectoryNode" />
+              <item name="Runner" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
+=======
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1aoI9t7EtOrcenu4eSUgrv7wW48" />
+>>>>>>> b5336ccb8cd3c6df24b4f7902c4ee3e216ed8c47
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -155,19 +244,30 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Minijuegos/Dice" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+<<<<<<< HEAD
+    <property name="project.structure.proportion" value="0.15" />
+=======
+    <property name="project.structure.proportion" value="0.0" />
+>>>>>>> b5336ccb8cd3c6df24b4f7902c4ee3e216ed8c47
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Minijuegos.Runner" />
       <recent name="Juego" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hespi\Desktop\Github\Proyecto-1\src\Minijuegos\Dice" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mau14\Escritorio\Proyecto 1\src\Minijuegos" />
@@ -175,6 +275,7 @@
       <recent name="C:\Users\mau14\Escritorio\Proyecto 1\src\Inicio" />
     </key>
   </component>
+<<<<<<< HEAD
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -187,13 +288,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Jmain">
+  <component name="RunManager" selected="Application.rockpaperscissors">
+    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Minijuegos.Runner.Runner" />
+=======
+  <component name="RunManager" selected="Application.Window">
     <configuration name="Clicker2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Minijuegos.Clicker.Clicker2" />
+>>>>>>> b5336ccb8cd3c6df24b4f7902c4ee3e216ed8c47
       <module name="Proyecto 1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Minijuegos.Clicker.*" />
+          <option name="PATTERN" value="Minijuegos.Runner.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -201,38 +307,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Clicker3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Minijuegos.Clicker.Clicker3" />
+<<<<<<< HEAD
+    <configuration name="Runner4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Minijuegos.Runner.Runner4" />
       <module name="Proyecto 1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Minijuegos.Clicker.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Clicker4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Minijuegos.Clicker.Clicker4" />
-      <module name="Proyecto 1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Minijuegos.Clicker.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Jmain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Juego.Jmain" />
+          <option name="PATTERN" value="Minijuegos.Runner.*" />
+=======
+    <configuration name="DS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Juego.DS" />
       <module name="Proyecto 1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Juego.*" />
+>>>>>>> b5336ccb8cd3c6df24b4f7902c4ee3e216ed8c47
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -240,12 +329,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Window" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Inicio.Window" />
+<<<<<<< HEAD
+    <configuration name="cuatrojugadores" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Minijuegos.Dice.cuatrojugadores" />
       <module name="Proyecto 1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Inicio.*" />
+          <option name="PATTERN" value="Minijuegos.Dice.*" />
+=======
+    <configuration name="Tof4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Minijuegos.TOF.Tof4" />
+      <module name="Proyecto 1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Minijuegos.TOF.*" />
+>>>>>>> b5336ccb8cd3c6df24b4f7902c4ee3e216ed8c47
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+<<<<<<< HEAD
+    <configuration name="dosjugadores" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Minijuegos.Dice.dosjugadores" />
+      <module name="Proyecto 1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Minijuegos.Dice.*" />
+=======
+    <configuration name="Treasure4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Minijuegos.LFTT.Treasure4" />
+      <module name="Proyecto 1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Minijuegos.LFTT.*" />
+>>>>>>> b5336ccb8cd3c6df24b4f7902c4ee3e216ed8c47
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="rockpaperscissors" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Minijuegos.RPS.rockpaperscissors" />
+      <module name="Proyecto 1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Minijuegos.RPS.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -254,19 +387,35 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Window" />
-      <item itemvalue="Application.Clicker2" />
-      <item itemvalue="Application.Clicker3" />
-      <item itemvalue="Application.Clicker4" />
-      <item itemvalue="Application.Jmain" />
+<<<<<<< HEAD
+      <item itemvalue="Application.cuatrojugadores" />
+      <item itemvalue="Application.dosjugadores" />
+      <item itemvalue="Application.Runner" />
+      <item itemvalue="Application.rockpaperscissors" />
+      <item itemvalue="Application.Runner4" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Jmain" />
+        <item itemvalue="Application.rockpaperscissors" />
+        <item itemvalue="Application.Runner4" />
+        <item itemvalue="Application.Runner" />
+        <item itemvalue="Application.cuatrojugadores" />
+        <item itemvalue="Application.dosjugadores" />
+=======
+      <item itemvalue="Application.Clicker2" />
+      <item itemvalue="Application.DS" />
+      <item itemvalue="Application.Tof4" />
+      <item itemvalue="Application.Treasure4" />
+      <item itemvalue="Application.Window" />
+    </list>
+    <recent_temporary>
+      <list>
         <item itemvalue="Application.Window" />
-        <item itemvalue="Application.Clicker4" />
-        <item itemvalue="Application.Clicker3" />
+        <item itemvalue="Application.Tof4" />
+        <item itemvalue="Application.Treasure4" />
         <item itemvalue="Application.Clicker2" />
+        <item itemvalue="Application.DS" />
+>>>>>>> b5336ccb8cd3c6df24b4f7902c4ee3e216ed8c47
       </list>
     </recent_temporary>
   </component>
@@ -284,11 +433,12 @@
     </task>
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20095949" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21375267" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -298,14 +448,14 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25135428" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.12026002" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -316,14 +466,16 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
+=======
+>>>>>>> b5336ccb8cd3c6df24b4f7902c4ee3e216ed8c47
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="143" key="#com.intellij.ide.util.MemberChooser" timestamp="1589061801805">
+    <state x="574" y="143" key="#com.intellij.ide.util.MemberChooser" timestamp="1589172277383">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="574" y="143" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589061801805" />
+    <state x="574" y="143" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589172277383" />
     <state x="574" y="143" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1587518084436" />
     <state x="883" y="217" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1587413679232">
       <screen x="0" y="0" width="1536" height="864" />
@@ -333,14 +485,15 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="498" y="223" key="#com.intellij.ide.util.TreeFileChooserDialog/0.0.1536.864@0.0.1536.864" timestamp="1587760658361" />
-    <state x="531" y="273" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1589133470091">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="531" y="273" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.768@0.0.1366.768" timestamp="1589133470091" />
-    <state x="951" y="321" width="403" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588521934010">
+    <state x="597" y="307" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1589161066057">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="951" y="321" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1588521934010" />
+    <state x="531" y="273" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.768@0.0.1366.768" timestamp="1589133470091" />
+    <state x="597" y="307" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589161066057" />
+    <state x="951" y="321" width="403" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589311898723">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="951" y="321" width="403" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589311898723" />
     <state x="951" y="321" width="403" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.864@0.0.1536.864" timestamp="1587761803455" />
     <state x="611" y="330" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1587764315098">
       <screen x="0" y="0" width="1536" height="864" />
@@ -355,38 +508,38 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1587763454174" />
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1589135454638">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1493" height="183" key="GridCell.Tab.0.bottom" timestamp="1589342851762">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1317" height="222" key="GridCell.Tab.0.bottom/0.0.1360.768/1360.0.1920.1080@0.0.1360.768" timestamp="1588471720848" />
     <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1589135454638" />
-    <state width="1493" height="183" key="GridCell.Tab.0.bottom/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589129239615" />
+    <state width="1493" height="183" key="GridCell.Tab.0.bottom/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589342851762" />
     <state width="1718" height="222" key="GridCell.Tab.0.bottom/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588800228103" />
-    <state width="1493" height="183" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1589118037389" />
-    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1589135454638">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1493" height="183" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1589248818823" />
+    <state width="1493" height="183" key="GridCell.Tab.0.center" timestamp="1589342851762">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1317" height="222" key="GridCell.Tab.0.center/0.0.1360.768/1360.0.1920.1080@0.0.1360.768" timestamp="1588471720848" />
     <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1589135454638" />
-    <state width="1493" height="183" key="GridCell.Tab.0.center/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589129239615" />
+    <state width="1493" height="183" key="GridCell.Tab.0.center/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589342851762" />
     <state width="1718" height="222" key="GridCell.Tab.0.center/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588800228103" />
-    <state width="1493" height="183" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1589118037385" />
-    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1589135454638">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1493" height="183" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1589248818823" />
+    <state width="1493" height="183" key="GridCell.Tab.0.left" timestamp="1589342851762">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1317" height="222" key="GridCell.Tab.0.left/0.0.1360.768/1360.0.1920.1080@0.0.1360.768" timestamp="1588471720848" />
     <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1589135454638" />
-    <state width="1493" height="183" key="GridCell.Tab.0.left/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589129239615" />
+    <state width="1493" height="183" key="GridCell.Tab.0.left/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589342851762" />
     <state width="1718" height="222" key="GridCell.Tab.0.left/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588800228103" />
-    <state width="1493" height="183" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1589118037385" />
-    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1589135454638">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1493" height="183" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1589248818823" />
+    <state width="1493" height="183" key="GridCell.Tab.0.right" timestamp="1589342851762">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1317" height="222" key="GridCell.Tab.0.right/0.0.1360.768/1360.0.1920.1080@0.0.1360.768" timestamp="1588471720848" />
     <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1589135454638" />
-    <state width="1493" height="183" key="GridCell.Tab.0.right/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589129239615" />
+    <state width="1493" height="183" key="GridCell.Tab.0.right/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589342851762" />
     <state width="1718" height="222" key="GridCell.Tab.0.right/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588800228103" />
-    <state width="1493" height="183" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1589118037385" />
+    <state width="1493" height="183" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1589248818823" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1588865895295">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -407,10 +560,14 @@
     </state>
     <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1588465337640" />
     <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1588865895295" />
-    <state x="465" y="331" width="606" height="274" key="com.intellij.ide.util.TipDialog" timestamp="1589129105462">
+    <state x="249" y="8" key="SettingsEditor" timestamp="1589174481857">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="465" y="331" width="606" height="274" key="com.intellij.ide.util.TipDialog/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589129105462" />
+    <state x="249" y="8" key="SettingsEditor/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589174481857" />
+    <state x="465" y="331" width="606" height="274" key="com.intellij.ide.util.TipDialog" timestamp="1589419970759">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="465" y="331" width="606" height="274" key="com.intellij.ide.util.TipDialog/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1589419970759" />
     <state x="2501" y="323" key="com.intellij.ide.util.TipDialog/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588804431049" />
     <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1589117020637" />
     <state x="499" y="189" key="extract.method.dialog" timestamp="1587400093443">
@@ -437,12 +594,12 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Dados/Dados.java</url>
           <line>53</line>
-          <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
+<<<<<<< HEAD
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Dados/Dados.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -451,12 +608,181 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-13.0.2/lib/src.zip!/java.desktop/javax/swing/ImageIcon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="216" selection-start-line="216" selection-end-line="216" />
+          <folding>
+            <element signature="e#6743#6744#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Minijuegos/Juego_Dados/cuatrojugadores.java" />
+    <entry file="file://$PROJECT_DIR$/src/Minijuegos/Juego_Dados/dosjugadores.java" />
+    <entry file="file://$PROJECT_DIR$/src/Minijuegos/Juego_Dados/dadosjuego.java" />
+    <entry file="file://$PROJECT_DIR$/src/Minijuegos/Juego_Dados/tresjugadores.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/javax/swing/ImageIcon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="216" selection-start-line="216" selection-end-line="216" />
+          <folding>
+            <element signature="e#6758#6759#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Minijuegos/Clicker/Clicker2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Juego/Jmain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="160" column="19" lean-forward="true" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
+        <state relative-caret-position="309">
+          <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Minijuegos/Dice/cuatrojugadores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="411" column="51" lean-forward="true" selection-start-line="411" selection-start-column="51" selection-end-line="411" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#15542#15543#0" expanded="true" />
+            <element signature="e#15579#15580#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Minijuegos/Dice/dadosjuego.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Minijuegos/Dice/dosjugadores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="203" column="21" lean-forward="true" selection-start-line="203" selection-start-column="21" selection-end-line="203" selection-end-column="21" />
+          <folding>
+            <element signature="e#8525#8526#0" expanded="true" />
+            <element signature="e#8560#8561#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Minijuegos/Dice/tresjugadores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="310" column="33" lean-forward="true" selection-start-line="310" selection-start-column="33" selection-end-line="310" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Minijuegos/RPS/SG4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Minijuegos/Runner/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="109" column="18" lean-forward="true" selection-start-line="109" selection-start-column="18" selection-end-line="109" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Minijuegos/Runner/Runner4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="150" column="59" selection-start-line="150" selection-start-column="59" selection-end-line="150" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Minijuegos/RPS/rockpaperscissors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="177" column="47" selection-start-line="177" selection-start-column="47" selection-end-line="177" selection-end-column="47" />
         </state>
       </provider>
     </entry>
   </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+=======
+>>>>>>> b5336ccb8cd3c6df24b4f7902c4ee3e216ed8c47
 </project>

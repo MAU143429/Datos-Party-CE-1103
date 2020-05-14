@@ -79,7 +79,7 @@ public class Window extends JFrame implements ActionListener {
             System.out.println("Jugaran 2 jugadores");
             players = 2;
             System.out.println(players +" Jugadores Jugando ahora");
-            Jmain prueba = new Jmain();
+            Jmain prueba = new Jmain(players);
             frm1.setVisible(false);
 
 
@@ -88,7 +88,7 @@ public class Window extends JFrame implements ActionListener {
             System.out.println("Jugaran 3 jugadores");
             players = 3;
             System.out.println(players + " Jugadores Jugando ahora");
-            Jmain prueba = new Jmain();
+            Jmain prueba = new Jmain(players);
             frm1.setVisible(false);
 
         }
@@ -96,7 +96,7 @@ public class Window extends JFrame implements ActionListener {
             System.out.println("Jugaran 4 jugadores");
             players = 4;
             System.out.println(players+ " Jugadores Jugando ahora");
-            Jmain prueba = new Jmain();
+            Jmain prueba = new Jmain(players);
             frm1.setVisible(false);
         }
 

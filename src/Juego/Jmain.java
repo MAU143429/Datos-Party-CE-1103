@@ -14,10 +14,14 @@ public class Jmain extends JFrame implements ActionListener {
     public JFrame frm2;
     public JLabel bg2,cnp1,cnp2,cnp3,cnp4,str1,str2,str3,str4,round,pgame,mario,luigi,toad,yoshi,dado1,dado2;
     public JButton btnmkt, btndados,btnend;
+    int jugadores;
 
 
 
-    public Jmain() {
+    public Jmain(int players) {
+
+        System.out.println(players);
+        jugadores = players;
 
 
         //############################Frame###############################
@@ -184,14 +188,6 @@ public class Jmain extends JFrame implements ActionListener {
         panel4.add(bg2);
 
         frm2.setVisible(true);
-
-
-    }
-
-
-
-    public static void main(String args[]) {
-        Jmain start = new Jmain();
 
 
     }
