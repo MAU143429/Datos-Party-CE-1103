@@ -50,11 +50,6 @@ public class market extends JFrame {
 
         this.setVisible(true);
     }
-    public static void main(String args[]) {
-        market prueba1  = new market();
-
-
-    }
 
 
 }
