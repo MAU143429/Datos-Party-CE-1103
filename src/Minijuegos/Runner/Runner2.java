@@ -140,13 +140,6 @@ public class Runner2 extends JFrame {
     }
 
 
-    public static void main(String args[]) {
-
-        Runner2 game2 = new Runner2();
-
-
-    }
-
 }
 
 

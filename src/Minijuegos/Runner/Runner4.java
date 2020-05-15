@@ -193,12 +193,4 @@ public class Runner4 extends JFrame {
             }
         }
 
-        public static void main (String args[]){
-
-            Runner4 game1 = new Runner4();
-
-
-        }
-
-
 }

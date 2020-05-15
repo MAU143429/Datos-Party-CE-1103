@@ -166,12 +166,7 @@ public class Runner3 extends JFrame {
         }
     }
 
-        public static void main(String args[]) {
 
-            Runner3 game1 = new Runner3();
-
-
-        }
     }
 
 

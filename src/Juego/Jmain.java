@@ -1,7 +1,6 @@
 package Juego;
 import Dados.Dados;
 import Market.market;
-import Inicio.Window;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,8 +19,10 @@ public class Jmain extends JFrame implements ActionListener {
 
     public Jmain(int players) {
 
-        System.out.println(players);
+
         jugadores = players;
+        System.out.println(jugadores);
+
 
 
         //############################Frame###############################
@@ -62,6 +63,7 @@ public class Jmain extends JFrame implements ActionListener {
         btnend.setBounds(870,600,385,82);
         ImageIcon fotofin = new ImageIcon(getClass().getResource("/Juego/btnend.png"));
         btnend.setIcon(fotofin);
+        btnend.setEnabled(false);
         btnend.addActionListener(this);
 
         panel4.add(btnend);
@@ -205,6 +207,7 @@ public class Jmain extends JFrame implements ActionListener {
 
         if (e.getSource() == btndados) {
             btndados.setEnabled(false);
+            btnend.setEnabled(true);
             System.out.println("Se estan tirando los dados");
             System.out.println("Dados tirados");
             Dados prueba2 = new Dados();
@@ -213,7 +216,9 @@ public class Jmain extends JFrame implements ActionListener {
         }
         if(e.getSource() == btnend){
             btndados.setEnabled(true);
+            btnend.setEnabled(false);
             System.out.println("El jugador ha terminado su turno");
+
 
         }
     }
