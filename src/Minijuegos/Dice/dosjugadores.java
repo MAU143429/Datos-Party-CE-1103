@@ -209,11 +209,10 @@ public class dosjugadores extends JFrame {
                     suma2 = tiro3 + tiro4;
                     System.out.println(suma2);
 
-                    if(suma1 > suma2){
+                    if (suma1 > suma2) {
                         winner = "Player 1";
                         second = "Player 2";
-                    }
-                    else{
+                    } else {
                         winner = "Player 2";
                         second = "Player 1";
                     }
@@ -226,13 +225,9 @@ public class dosjugadores extends JFrame {
         });
 
 
-
         this.pack();
         this.validate();
         this.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        new dosjugadores();
-    }
 }

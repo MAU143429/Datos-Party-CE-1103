@@ -18,6 +18,7 @@ public class rockpaperscissors extends JFrame {
 
     public rockpaperscissors(){
         this.setBounds(100,100,1000,533);
+        this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setPreferredSize(new Dimension(1000,533));
         this.setTitle("ROCK - PAPER - SCISSORS!");
@@ -172,12 +173,14 @@ public class rockpaperscissors extends JFrame {
 
             }
         });
-        JOptionPane.showMessageDialog(null,"Lets play Rock, Paper, Scissors! \n When you press OK you will see the key bindings for each player! \n Choose wisely!! \n NO peeking allowed! \n WARNING: DO NOT PRESS RESULT BEFORE BOTH PLAYERS HAVE MADE THEIR PICKS!");
+
         JugadorEscoje oyente1 = new JugadorEscoje();
         campotexto1.addKeyListener(oyente1);
         campotexto1.setForeground(Color.WHITE);
         this.pack();
         this.setVisible(true);
+
+        JOptionPane.showMessageDialog(null,"Lets play Rock, Paper, Scissors! \n When you press OK you will see the key bindings for each player! \n Choose wisely!! \n NO peeking allowed! \n WARNING: DO NOT PRESS RESULT BEFORE BOTH PLAYERS HAVE MADE THEIR PICKS!");
 
 
 
@@ -224,11 +227,5 @@ public class rockpaperscissors extends JFrame {
             }
         }
 
-
-
-    public static void main(String[] args) {
-        new rockpaperscissors();
-
-    }
 
 }

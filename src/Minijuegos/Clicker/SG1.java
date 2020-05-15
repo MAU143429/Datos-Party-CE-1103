@@ -1,24 +1,22 @@
 package Minijuegos.Clicker;
 
 
-import Inicio.Window;
-
 public class SG1 {
 
-    int players = 0;
+    int tltplayers;
 
-    public SG1(int pl) {
-        players = pl;
+    public SG1(int players) {
+        tltplayers = players;
 
-        if (pl == 2) {
+        if (tltplayers == 2) {
             Clicker2 player2 = new Clicker2();
 
         }
-        if (pl == 3) {
+        if (tltplayers == 3) {
             Clicker3 player3 = new Clicker3();
 
         }
-        if (pl == 4) {
+        if (tltplayers == 4) {
             Clicker4 player4 = new Clicker4();
 
         }

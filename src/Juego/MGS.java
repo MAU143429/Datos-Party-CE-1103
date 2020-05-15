@@ -1,7 +1,11 @@
 package Juego;
 
 
+import Minijuegos.Clicker.SG1;
+import Minijuegos.Dice.SG2;
+import Minijuegos.LFTT.SG3;
 import Minijuegos.Runner.Runner2;
+import Minijuegos.Runner.SG5;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,9 +19,13 @@ public class MGS extends JFrame implements ActionListener {
     private JButton btnckr, btndice, btnlftt, btnrun,btn;
     private JFrame frm5;
     private JLabel bg5;
+    int players;
 
 
-    public MGS() {
+    public MGS(int jugadores) {
+
+        players = jugadores;
+
         frm5 = new JFrame();
         frm5.setBounds(0, 0, 470, 720);
         frm5.setTitle("MiniGames");
@@ -84,33 +92,28 @@ public class MGS extends JFrame implements ActionListener {
 
     }
 
-
-    public static void main(String args[]) {
-
-        MGS window4 = new MGS();
-
-
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == btnckr) {
             System.out.println("Abriendo Minijuego Clicker");
             frm5.setVisible(false);
+            SG1 correr4 = new SG1(players);
         }
         if (e.getSource() == btndice) {
-                System.out.println("Abriendo Minijuego Dice");
+            System.out.println("Abriendo Minijuego Dice");
             frm5.setVisible(false);
+            SG2 correr5 = new SG2(players);
         }
         if (e.getSource() == btnlftt) {
             System.out.println("Abriendo Minijuego Looking for the Treasure");
             frm5.setVisible(false);
+            SG3 correr6 = new SG3(players);
         }
         if (e.getSource() == btnrun) {
             System.out.println("Abriendo Minijuego Runner");
-            Runner2 corer1 = new Runner2();
             frm5.setVisible(false);
+            SG5 correr7 = new SG5(players);
         }
         if (e.getSource() == btn) {
             System.out.println("Abriendo Minijuego Rock Paper Scissors");

@@ -125,12 +125,6 @@ public class Treasure4 extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(null, "Turno del Jugador"+ " " + player);
     }
 
-    public static void main (String args[]){
-
-        Treasure4 game2 = new Treasure4();
-
-
-    }
 
 
     @Override

@@ -1,5 +1,9 @@
 package Juego;
 
+import Minijuegos.Clicker.Clicker2;
+import Minijuegos.Dice.dosjugadores;
+import Minijuegos.LFTT.Treasure2;
+import Minijuegos.RPS.rockpaperscissors;
 import Minijuegos.Runner.Runner2;
 
 import javax.swing.*;
@@ -70,12 +74,6 @@ public class DS extends JFrame implements ActionListener {
         btnttt.setIcon(btnurl28);
         panel5.add(btnttt);
 
-        //btn.setBounds(80, 100, 300, 70);
-        //ImageIcon btnurl29 = new ImageIcon(getClass().getResource("/Juego/btn.png"));
-        //btn.addActionListener(this);
-        // btn.setIcon(btnurl29);
-        // panel4.add(btn);
-
         //#######################Labels##################################################
         bg6 = new JLabel();
         bg6.setBounds(0, 0, 520, 720);
@@ -92,40 +90,35 @@ public class DS extends JFrame implements ActionListener {
     }
 
 
-    public static void main(String args[]) {
-
-        DS window5 = new DS();
-
-
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == btnckr) {
-            System.out.println("Abriendo Minijuego Clicker");
+            System.out.println("Abriendo MiniDuelo Clicker");
             frm6.setVisible(false);
+            Clicker2 correr6 = new Clicker2();
         }
         if (e.getSource() == btndice) {
-            System.out.println("Abriendo Minijuego Dice");
+            System.out.println("Abriendo MiniDuelo Dice");
             frm6.setVisible(false);
+            dosjugadores correr5 = new dosjugadores();
         }
         if (e.getSource() == btnlftt) {
-            System.out.println("Abriendo Minijuego Looking for the Treasure");
+            System.out.println("Abriendo MiniDuelo Looking for the Treasure");
             frm6.setVisible(false);
+            Treasure2 correr4 = new Treasure2();
         }
         if (e.getSource() == btnrun) {
-            System.out.println("Abriendo Minijuego Runner");
-            Runner2 corer1 = new Runner2();
+            System.out.println("Abriendo MiniDuelo Runner");
             frm6.setVisible(false);
+            Runner2 corer1 = new Runner2();
+
         }
-        //if (e.getSource() == btn) {
-        // System.out.println("Abriendo Minijuego Rock Paper Scissors");
-        // frm5.setVisible(false);
-        //}
         if (e.getSource() == btnrps) {
             System.out.println("Abriendo MiniDuelo Rock Paper Scissors");
             frm6.setVisible(false);
+            rockpaperscissors correr2 = new rockpaperscissors();
+
         }
         if (e.getSource() == btnttt) {
             System.out.println("Abriendo MiniDuelo Tic Tac Toe");

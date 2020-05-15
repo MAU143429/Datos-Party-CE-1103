@@ -29,8 +29,8 @@ public class Dados extends JFrame{
         super("Tiro de Dados");
         pic1 = new JLabel();
         pic2 = new JLabel();
-        pic1.setBounds(10, 10, 160, 160);
-        pic2.setBounds(190,10,160,160);
+        pic1.setBounds(10, 40, 160, 160);
+        pic2.setBounds(190,40,160,160);
         SetImageSize(5);
         dadoimg1 = new ImageIcon(getClass().getResource("/Dados/dado1.png"));
         dadoimg2 = new ImageIcon(getClass().getResource("/Dados/dado2.png"));
