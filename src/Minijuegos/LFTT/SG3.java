@@ -1,10 +1,22 @@
 package Minijuegos.LFTT;
 
+/**
+ * SG3
+ *Esta clase es la elije el modo de juego dependiendo de la cantidad de jugadores
+ *@author Mauricio C.
 
+ */
 public class SG3 {
 
     int tltplayers = 0;
+    /**
+     * SG3
+     *Este constructor permite la ejecucion de un jugo dependiendo de la cantidad de jugadores
+     * @param players int
+     *                variable que indica la cantidad de jugadores
+     *@author Mauricio C.
 
+     */
     public SG3(int players) {
         tltplayers = players;
 

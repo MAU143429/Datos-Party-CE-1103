@@ -7,7 +7,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Jmain
+ *Esta clase es la que ejecuta la ventana donde se aloja el juego
+ *@authors Mauricio C. , Naheem Johnson , Jose Espinoza
 
+ */
 public class Jmain extends JFrame implements ActionListener {
 
     public JFrame frm2;
@@ -16,7 +21,12 @@ public class Jmain extends JFrame implements ActionListener {
     int jugadores;
 
 
+    /**
+     * Jmain
+     *Este constructor crea un frame, un panel y aloja objetos en ellos
+     *@authors Mauricio C. , Naheem Johnson , Jose Espinoza
 
+     */
     public Jmain(int players) {
 
 
@@ -193,7 +203,12 @@ public class Jmain extends JFrame implements ActionListener {
 
 
     }
+    /**
+     * actionPerformed
+     *Este metodo abstracto del actionlistener permite darle las funcionalidades a los botones
+     *@authors Mauricio C. , Naheem Johnson , Jose Espinoza
 
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 

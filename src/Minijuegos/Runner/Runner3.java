@@ -6,6 +6,13 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Arrays;
 
+/**
+ * Runner3
+ *Esta clase ejecuta el minijuego runner para tres jugadores
+ *@author Mauricio C.
+
+ */
+
 public class Runner3 extends JFrame {
 
     private JFrame frm3;
@@ -13,7 +20,12 @@ public class Runner3 extends JFrame {
     private JTextField text5;
     private int x, y, p1, p2, p3;
 
+    /**
+     * Runner3
+     *Este constructor crea un frame, un panel y aloja objetos en ellos
+     *@author Mauricio C.
 
+     */
     public Runner3() {
 
 
@@ -96,6 +108,12 @@ public class Runner3 extends JFrame {
 
 
     }
+    /**
+     * Movimiento
+     *Esta permite que se detecte la pulsacion de ciertas teclas
+     *@author Mauricio C.
+
+     */
 
     class Movimiento implements KeyListener {
         @Override

@@ -5,7 +5,12 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Treasure4
+ *Esta clase es la que ejecuta el minijuego Looking for the Treasure para cuatro jugadores
+ *@author Mauricio C.
 
+ */
 public class Treasure4 extends JFrame implements ActionListener {
 
     private JFrame frm4;
@@ -15,7 +20,12 @@ public class Treasure4 extends JFrame implements ActionListener {
     private int player , num;
     private String path1,path2,path3,path4;
 
+    /**
+     * Treasure4
+     *Este constructor crea un frame, un panel y aloja objetos en ellos
+     *@author Mauricio C.
 
+     */
     public Treasure4() {
 
         num = (int)(Math.random()*6)+1;
@@ -125,7 +135,12 @@ public class Treasure4 extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(null, "Turno del Jugador"+ " " + player);
     }
 
+    /**
+     * actionPerformed
+     *Este metodo abstracto del actionlistener permite darle las funcionalidades a los botones
+     *@author Mauricio C.
 
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {

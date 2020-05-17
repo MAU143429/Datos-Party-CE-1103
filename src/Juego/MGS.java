@@ -12,7 +12,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
+/**
+ * MGS
+ *Esta clase es la que ejecuta la ventana para la eleccion del minijuego
+ *@author Mauricio C.
 
+ */
 public class MGS extends JFrame implements ActionListener {
 
 
@@ -21,7 +26,12 @@ public class MGS extends JFrame implements ActionListener {
     private JLabel bg5;
     int players;
 
+    /**
+     * MGS
+     *Este constructor crea un frame, un panel y aloja objetos en ellos
+     *@author Mauricio C.
 
+     */
     public MGS(int jugadores) {
 
         players = jugadores;
@@ -92,6 +102,12 @@ public class MGS extends JFrame implements ActionListener {
 
     }
 
+    /**
+     * actionPerformed
+     *Este metodo abstracto del actionlistener permite darle las funcionalidades a los botones
+     *@author Mauricio C.
+
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 

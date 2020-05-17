@@ -10,11 +10,22 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * DS
+ *Esta clase es la que ejecuta la ventana para la eleccion del miniduelos
+ *@author Mauricio C.
+
+ */
 public class DS extends JFrame implements ActionListener {
     private JButton btnckr, btndice, btnlftt, btnrps, btnrun, btnttt;
     private JFrame frm6;
     private JLabel bg6;
+    /**
+     * DS
+     *Este constructor crea un frame, un panel y aloja objetos en ellos
+     *@author Mauricio C.
 
+     */
     public DS() {
         frm6 = new JFrame();
         frm6.setBounds(0, 0, 470, 720);
@@ -89,7 +100,12 @@ public class DS extends JFrame implements ActionListener {
 
     }
 
+    /**
+     * actionPerformed
+     *Este metodo abstracto del actionlistener permite darle las funcionalidades a los botones
+     *@author Mauricio C.
 
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 

@@ -6,6 +6,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
+/**
+ * Main
+ *Esta clase es la que ejecuta la ventana principal
+ *@author Mauricio C.
+
+ */
 
 public class Main extends JFrame implements ActionListener {
 
@@ -14,7 +20,12 @@ public class Main extends JFrame implements ActionListener {
     private JFrame frm1;
     int players = 0;
 
+    /**
+     * Main
+     *Este constructor crea un frame, un panel y aloja objetos en ellos
+     *@author Mauricio C.
 
+     */
     public Main() {
         frm1 = new JFrame("Datos Party 1");
         frm1.setBounds(0, 0, 1280, 900);
@@ -71,6 +82,13 @@ public class Main extends JFrame implements ActionListener {
 
 
     }
+
+    /**
+     * actionPerformed
+     *Este metodo abstracto del actionlistener permite darle las funcionalidades a los botones
+     *@author Mauricio C.
+
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 
