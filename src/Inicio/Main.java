@@ -19,7 +19,7 @@ public class Main extends JFrame implements ActionListener {
     private JButton btn2p, btn3p, btn4p;
     private JFrame frm1;
     int players = 0;
-
+    private static Main instance = null;
 
     /**
      * Main
@@ -98,7 +98,8 @@ public class Main extends JFrame implements ActionListener {
             System.out.println("Jugaran 2 jugadores");
             players = 2;
             System.out.println(players +" Jugadores Jugando ahora");
-            Jmain prueba = new Jmain(players);
+            Jmain para2 = Jmain.getInstance();
+            para2.createPlayers(2);
             frm1.setVisible(false);
 
 
@@ -107,7 +108,8 @@ public class Main extends JFrame implements ActionListener {
             System.out.println("Jugaran 3 jugadores");
             players = 3;
             System.out.println(players + " Jugadores Jugando ahora");
-            Jmain prueba = new Jmain(players);
+            Jmain para3 = Jmain.getInstance();
+            para3.createPlayers(3);
             frm1.setVisible(false);
 
         }
@@ -115,10 +117,16 @@ public class Main extends JFrame implements ActionListener {
             System.out.println("Jugaran 4 jugadores");
             players = 4;
             System.out.println(players+ " Jugadores Jugando ahora");
-            Jmain prueba = new Jmain(players);
+            Jmain para4 = Jmain.getInstance();
+            para4.createPlayers(4);
             frm1.setVisible(false);
         }
 
     }
-
+    public static Main getInstance(){
+        if (instance == null){
+            instance = new Main();
+        }
+        return instance;
+    }
 }

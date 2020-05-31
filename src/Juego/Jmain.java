@@ -1,11 +1,13 @@
 package Juego;
 import Dados.Dados;
+import EstructurasDatos.SimpleList;
 import Market.market;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 /**
  * Jmain
@@ -18,8 +20,13 @@ public class Jmain extends JFrame implements ActionListener {
     public JFrame frm2;
     public JLabel bg2,cnp1,cnp2,cnp3,cnp4,str1,str2,str3,str4,round,pgame,mario,luigi,toad,yoshi,dado1,dado2,estrella;
     public JButton btnmkt, btndados,btnend;
-    int jugadores;
-
+    protected SimpleList PlayerList, StarList, CoinList;
+    protected Player pmario,pluigi,ptoad,pyoshi,playing;
+    int jugadores, rounds;
+    public boolean nowplaying;
+    protected Star star;
+    private static Jmain instance = null;
+    public JPanel panel4;
 
     /**
      * Jmain
@@ -27,11 +34,15 @@ public class Jmain extends JFrame implements ActionListener {
      *@authors Mauricio C. , Naheem Johnson , Jose Espinoza
 
      */
-    public Jmain(int players) {
-
-
-        jugadores = players;
+    public Jmain() {
+        Map mapa = Map.getInstance();
+        //EventStack pilaEv = EventStack.getInstance();
+        this.PlayerList = new SimpleList(){};
+        this.rounds = 0;
+        this.nowplaying = false;
+        jugadores = 0;
         System.out.println(jugadores);
+
 
 
 
@@ -43,7 +54,7 @@ public class Jmain extends JFrame implements ActionListener {
         frm2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //############################Panel###############################
-        JPanel panel4 = new JPanel();
+        panel4 = new JPanel();
         panel4.setLayout(null);
         panel4.setSize(1330, 947);
         frm2.add(panel4);
@@ -139,17 +150,19 @@ public class Jmain extends JFrame implements ActionListener {
         pgame.setBounds(867,830,400,40);
         panel4.add(pgame);
 
-        round = new JLabel("Round: 1");
+        round = new JLabel("Round: 0");
         round.setFont(new Font("Serif",Font.BOLD,30));
         round.setForeground(Color.WHITE);
         round.setBounds(867,795,400,40);
         panel4.add(round);
 
+        /**
         estrella = new JLabel("star");
         estrella.setBounds(5000,5000,50,50);
-        ImageIcon fotostar = new ImageIcon(getClass().getResource("/Inicio/estrella.png"));
+        ImageIcon fotostar = new ImageIcon(getClass().getResource("//estrella.png"));
         estrella.setIcon(fotostar);
         panel4.add(estrella);
+         */
         //###########################Jugadores##########################################
 
         mario = new JLabel();
@@ -158,15 +171,11 @@ public class Jmain extends JFrame implements ActionListener {
         mario.setIcon(bgurl35);
         validate();
 
-        panel4.add(mario);
-
         luigi = new JLabel();
         luigi.setBounds(745, 800, 50, 50);
         ImageIcon bgurl36 = new ImageIcon(getClass().getResource("/Juego/P2.png"));
         luigi.setIcon(bgurl36);
         validate();
-
-        panel4.add(luigi);
 
         toad = new JLabel();
         toad.setBounds(665, 847, 50, 50);
@@ -174,15 +183,11 @@ public class Jmain extends JFrame implements ActionListener {
         toad.setIcon(bgurl37);
         validate();
 
-        panel4.add(toad);
-
         yoshi = new JLabel();
         yoshi.setBounds(720, 847, 50, 50);
         ImageIcon bgurl38 = new ImageIcon(getClass().getResource("/Juego/P4.png"));
         yoshi.setIcon(bgurl38);
         validate();
-
-        panel4.add(yoshi);
 
         //#####################DADOS#####################################################
         dado1 = new JLabel();
@@ -209,6 +214,89 @@ public class Jmain extends JFrame implements ActionListener {
 
 
     }
+    public void createPlayers(int jugadores){
+        switch (jugadores) {
+            case 2:
+                pmario = new Player(1);
+                pluigi = new Player(2);
+                PlayerList.add(pmario);
+                PlayerList.add(pluigi);
+                panel4.add(mario);
+                panel4.add(luigi);
+                break;
+            case 3:
+                pmario = new Player(1);
+                pluigi = new Player(2);
+                ptoad = new Player(3);
+                PlayerList.add(pmario);
+                PlayerList.add(pluigi);
+                PlayerList.add(ptoad);
+                panel4.add(mario);
+                panel4.add(luigi);
+                panel4.add(toad);
+                break;
+            case 4:
+                pmario = new Player(1);
+                pluigi = new Player(2);
+                ptoad = new Player(3);
+                pyoshi = new Player(4);
+                PlayerList.add(pmario);
+                PlayerList.add(pluigi);
+                PlayerList.add(ptoad);
+                PlayerList.add(pyoshi);
+                panel4.add(mario);
+                panel4.add(luigi);
+                panel4.add(toad);
+                panel4.add(yoshi);
+                break;
+        }
+        CoinList = new SimpleList();
+        StarList = new SimpleList();
+        for(int i = 0; i < PlayerList.getLength(); i++){
+            CoinList.add(Integer.toString(castToPlayer(PlayerList.getPos(i)).monedas));
+            StarList.add(Integer.toString(castToPlayer(PlayerList.getPos(i)).estrellas));
+        }
+    }
+    protected void turns(){
+        if(!nowplaying){
+            for(int i = 0; i < PlayerList.getLength(); i++){
+                if(!castToPlayer(PlayerList.getPos(i)).jugado){
+                    this.playing = castToPlayer(PlayerList.getPos(i));
+                    castToPlayer(PlayerList.getPos(i)).jugado = true;
+                    return;
+                }
+            }
+            for(int i = 0; i < PlayerList.getLength(); i++){
+                castToPlayer(PlayerList.getPos(i)).jugado = false;
+            }
+            rounds++;
+            round.setText(Integer.toString(rounds));
+        }
+    }
+    public void actualizarLabels(){
+
+    }
+    /**
+    public void crearEstrella(){
+        if(Jmain.getInstance().estrella == null && rounds != 0){
+            Jmain.getInstance().estrella = Star.getInstance();
+        }
+    }
+     */
+    public SimpleList getPlayerList(){
+        return PlayerList;
+    }
+    public Player getRandomPlayer(){
+        int pos = new Random().nextInt(PlayerList.getLength());
+        return (Player)PlayerList.getPos(pos);
+    }
+
+    public static Jmain getInstance(){
+        if(instance == null){
+            instance = new Jmain();
+        }
+        return instance;
+    }
     /**
      * actionPerformed
      *Este metodo abstracto del actionlistener permite darle las funcionalidades a los botones
@@ -216,7 +304,9 @@ public class Jmain extends JFrame implements ActionListener {
 
      */
 
-
+    private Player castToPlayer (Object object) {
+        return (Player) object;
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
 
