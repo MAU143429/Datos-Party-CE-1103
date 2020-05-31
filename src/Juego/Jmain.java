@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 public class Jmain extends JFrame implements ActionListener {
 
     public JFrame frm2;
-    public JLabel bg2,cnp1,cnp2,cnp3,cnp4,str1,str2,str3,str4,round,pgame,mario,luigi,toad,yoshi,dado1,dado2;
+    public JLabel bg2,cnp1,cnp2,cnp3,cnp4,str1,str2,str3,str4,round,pgame,mario,luigi,toad,yoshi,dado1,dado2,estrella;
     public JButton btnmkt, btndados,btnend;
     int jugadores;
 
@@ -144,6 +144,12 @@ public class Jmain extends JFrame implements ActionListener {
         round.setForeground(Color.WHITE);
         round.setBounds(867,795,400,40);
         panel4.add(round);
+
+        estrella = new JLabel("star");
+        estrella.setBounds(5000,5000,50,50);
+        ImageIcon fotostar = new ImageIcon(getClass().getResource("/Inicio/estrella.png"));
+        estrella.setIcon(fotostar);
+        panel4.add(estrella);
         //###########################Jugadores##########################################
 
         mario = new JLabel();
@@ -209,6 +215,8 @@ public class Jmain extends JFrame implements ActionListener {
      *@authors Mauricio C. , Naheem Johnson , Jose Espinoza
 
      */
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
 

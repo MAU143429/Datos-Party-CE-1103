@@ -20,6 +20,7 @@ public class Main extends JFrame implements ActionListener {
     private JFrame frm1;
     int players = 0;
 
+
     /**
      * Main
      *Este constructor crea un frame, un panel y aloja objetos en ellos

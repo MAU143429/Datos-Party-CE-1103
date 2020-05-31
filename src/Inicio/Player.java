@@ -1,0 +1,17 @@
+package Inicio;
+
+import Casillas.Casilla;
+
+public class Player {
+    private Player self;
+    public Casilla casillaActual;
+    public int posX, posY, absPos, movimientosTotales, monedas, estrellas;
+    public boolean a, b, c, cR, d, salirD, moviendose, jugado;
+    //protected AnimationTimer timerMovimiento, timerEstrellas, timerEvento;
+
+    /**
+     * @param jugadorNum el numero de jugador que será.
+     */
+    public Player(int jugadorNum) {
+    }
+}
