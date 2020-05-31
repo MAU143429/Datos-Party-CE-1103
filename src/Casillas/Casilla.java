@@ -1,6 +1,6 @@
 package Casillas;
 
-import Inicio.Player;
+import Juego.Player;
 
 public abstract class Casilla {
     protected int posX, posY, posList;

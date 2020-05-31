@@ -1,9 +1,6 @@
 package Casillas;
 
-import Inicio.Player;
-import Inicio.EventStack;
-
-import java.util.concurrent.TimeUnit;
+import Juego.Player;
 
 public class CasillaAmarilla extends Casilla {
     public CasillaAmarilla(int posX, int posY, int posList) {

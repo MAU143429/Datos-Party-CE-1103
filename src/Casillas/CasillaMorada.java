@@ -1,6 +1,6 @@
 package Casillas;
 
-import Inicio.Player;
+import Juego.Player;
 
 public class CasillaMorada extends Casilla {
     public CasillaMorada (int posX, int posY, int posList){

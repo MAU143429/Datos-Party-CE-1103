@@ -1,9 +1,6 @@
 package Casillas;
 
-import Inicio.Player;
-import Inicio.Board;
-
-import java.util.Random;
+import Juego.Player;
 
 public class CasillaVerde extends Casilla {
     public CasillaVerde(int posX, int posY, int posList){
