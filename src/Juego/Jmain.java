@@ -1,6 +1,7 @@
 package Juego;
 import Dados.Dados;
 import EstructurasDatos.SimpleList;
+import Inicio.Main;
 import Market.market;
 
 import javax.swing.*;
@@ -40,7 +41,7 @@ public class Jmain extends JFrame implements ActionListener {
         this.PlayerList = new SimpleList(){};
         this.rounds = 0;
         this.nowplaying = false;
-        jugadores = 0;
+        jugadores = Main.getInstance().getPlayers();
         System.out.println(jugadores);
 
 
@@ -171,22 +172,26 @@ public class Jmain extends JFrame implements ActionListener {
         mario.setIcon(bgurl35);
         validate();
 
+
         luigi = new JLabel();
         luigi.setBounds(745, 800, 50, 50);
         ImageIcon bgurl36 = new ImageIcon(getClass().getResource("/Juego/P2.png"));
         luigi.setIcon(bgurl36);
         validate();
 
+
         toad = new JLabel();
         toad.setBounds(665, 847, 50, 50);
         ImageIcon bgurl37 = new ImageIcon(getClass().getResource("/Juego/P3.png"));
         toad.setIcon(bgurl37);
+        toad.setVisible(true);
         validate();
 
         yoshi = new JLabel();
         yoshi.setBounds(720, 847, 50, 50);
         ImageIcon bgurl38 = new ImageIcon(getClass().getResource("/Juego/P4.png"));
         yoshi.setIcon(bgurl38);
+        yoshi.setVisible(true);
         validate();
 
         //#####################DADOS#####################################################
@@ -223,6 +228,10 @@ public class Jmain extends JFrame implements ActionListener {
                 PlayerList.add(pluigi);
                 panel4.add(mario);
                 panel4.add(luigi);
+                mario.setVisible(true);
+                luigi.setVisible(true);
+
+
                 break;
             case 3:
                 pmario = new Player(1);
