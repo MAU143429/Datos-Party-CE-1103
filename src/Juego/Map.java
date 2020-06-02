@@ -21,7 +21,7 @@ public class Map {
         faseA = new SimpleList();
 
         faseA.add(new CasillaVerde(434,490,0));//0//YY
-        faseA.add(new CasillaMorada(502,510,1));//1//TELEPORT//ZZ
+        faseA.add(new CasillaAzul(502,510,1));//1//ZZ
         faseA.add(new CasillaAmarilla(501,298,2));//2//AAA
 
         faseB = new SimpleList();
@@ -33,21 +33,21 @@ public class Map {
         faseC = new DoubleLinkedList();
 
         faseC.add(new CasillaRoja(92,114,0));//0//SS
-        faseC.add(new CasillaAmarilla(143,118,1));//1//TT
+        faseC.add(new CasillaMorada(143,118,1));//1//TT//TELEPORT
         faseC.add(new CasillaRoja(140,181,2));//2//UU
 
         faseD = new DoubleLinkedCircularList();
 
-        faseD.add(new CasillaMorada(298,791,0));//0//TELEPORT//1
-        faseD.add(new CasillaAmarilla(415,791,1));//1//2
-        faseD.add(new CasillaAmarilla(537,791,2));//2//3
-        faseD.add(new CasillaAmarilla(537,873,3));//3//4
-        faseD.add(new CasillaAmarilla(415,873,4));//4//5
-        faseD.add(new CasillaAmarilla(298,873,5));//5//6
-        faseD.add(new CasillaAmarilla(174,873,6));//6//7
-        faseD.add(new CasillaAmarilla(80,873,7));//7//8
-        faseD.add(new CasillaAmarilla(80,791,8));//8//9
-        faseD.add(new CasillaAmarilla(174,791,9));//9//10
+        faseD.add(new CasillaMorada(298,791,0));//0//TELEPORT//2
+        faseD.add(new CasillaAmarilla(415,791,1));//1//3
+        faseD.add(new CasillaAmarilla(537,791,2));//2//4
+        faseD.add(new CasillaAmarilla(537,873,3));//3//5
+        faseD.add(new CasillaAmarilla(415,873,4));//4//6
+        faseD.add(new CasillaAmarilla(298,873,5));//5//7
+        faseD.add(new CasillaAmarilla(174,873,6));//6//8
+        faseD.add(new CasillaAmarilla(80,873,7));//7//9
+        faseD.add(new CasillaAmarilla(80,791,8));//8//0
+        faseD.add(new CasillaAmarilla(174,791,9));//9//1
 
         caminoprincipal = new CircularList();
 
@@ -97,7 +97,6 @@ public class Map {
         caminoprincipal.add(new CasillaAzul(648,567,43));//43//PP
         caminoprincipal.add(new CasillaVerde(648,664,44));//44//QQ
         caminoprincipal.add(new CasillaRoja(648,766,45));//45//RR
-
     }
 
     public static Map getInstance(){
