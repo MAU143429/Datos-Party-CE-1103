@@ -1,4 +1,6 @@
 package Dados;
+import Juego.Player;
+
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -13,7 +15,7 @@ public class Dados extends JFrame{
     Timer tm,xm;
     int x = 0;
     ImageIcon dadoimg1,dadoimg2,dadoimg3,dadoimg4,dadoimg5,dadoimg6;
-    int dado1,dado2;
+    public int dado1,dado2,SumaDados;
     //Images Path In Array
     String[] list = {
             "/Dados/dado1.png",//0
@@ -90,7 +92,8 @@ public class Dados extends JFrame{
                         pic2.setIcon(dadoimg6);
                     }
 
-                    int SumaDados = dado1 + dado2;
+                    SumaDados = dado1 + dado2;
+                    retornarsuma();
                     System.out.println("Suma de los Dados " + SumaDados);
                     /*/
                     FALTA PONER QUE ESTE VALOR PUEDA USARSE DESDE OTRO PACKAGE
@@ -128,9 +131,14 @@ public class Dados extends JFrame{
         pic2.setIcon(icon2);
 
     }
+    public int retornarsuma(){
+        return SumaDados;
+    }
 
     public static void main(String[] args){
 
         new Dados();
+
+
     }
 }

@@ -43,6 +43,7 @@ public class CircularList extends List{
         return tmp.next.getValor();
     }
 
+
     @Override
     public int getLength (){
         return this.length;

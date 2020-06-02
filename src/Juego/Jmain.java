@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Jmain
@@ -21,7 +22,7 @@ public class Jmain extends JFrame implements ActionListener {
     public JFrame frm2;
     public JLabel bg2,cnp1,cnp2,cnp3,cnp4,str1,str2,str3,str4,round,pgame,mario,luigi,toad,yoshi,dado1,dado2,estrella;
     public JButton btnmkt, btndados,btnend;
-    protected SimpleList PlayerList, StarList, CoinList;
+    protected SimpleList PlayerList, StarList, CoinList, CLabelList, SLabelList;
     protected Player pmario,pluigi,ptoad,pyoshi,playing;
     int jugadores, rounds;
     public boolean nowplaying;
@@ -43,10 +44,16 @@ public class Jmain extends JFrame implements ActionListener {
         this.nowplaying = false;
         jugadores = Main.getInstance().getPlayers();
         System.out.println(jugadores);
-
-
-
-
+        this.CLabelList = new SimpleList(){};
+        CLabelList.add(cnp1);
+        CLabelList.add(cnp2);
+        CLabelList.add(cnp3);
+        CLabelList.add(cnp4);
+        this.SLabelList = new SimpleList(){};
+        SLabelList.add(str1);
+        SLabelList.add(str1);
+        SLabelList.add(str1);
+        SLabelList.add(str1);
         //############################Frame###############################
         frm2 = new JFrame("Datos Party 1");
         frm2.setBounds(0, 0, 1295, 947);
@@ -157,19 +164,19 @@ public class Jmain extends JFrame implements ActionListener {
         round.setBounds(867,795,400,40);
         panel4.add(round);
 
-        /**
         estrella = new JLabel("star");
         estrella.setBounds(5000,5000,50,50);
-        ImageIcon fotostar = new ImageIcon(getClass().getResource("//estrella.png"));
+        ImageIcon fotostar = new ImageIcon(getClass().getResource("/Juego/estrella.png"));
         estrella.setIcon(fotostar);
         panel4.add(estrella);
-         */
         //###########################Jugadores##########################################
 
         mario = new JLabel();
         mario.setBounds(645, 800, 50, 50);
         ImageIcon bgurl35 = new ImageIcon(getClass().getResource("/Juego/P1.png"));
         mario.setIcon(bgurl35);
+        mario.setVisible(true);
+        panel4.add(mario);
         validate();
 
 
@@ -177,6 +184,8 @@ public class Jmain extends JFrame implements ActionListener {
         luigi.setBounds(745, 800, 50, 50);
         ImageIcon bgurl36 = new ImageIcon(getClass().getResource("/Juego/P2.png"));
         luigi.setIcon(bgurl36);
+        luigi.setVisible(true);
+        panel4.add(luigi);
         validate();
 
 
@@ -185,6 +194,7 @@ public class Jmain extends JFrame implements ActionListener {
         ImageIcon bgurl37 = new ImageIcon(getClass().getResource("/Juego/P3.png"));
         toad.setIcon(bgurl37);
         toad.setVisible(true);
+        panel4.add(toad);
         validate();
 
         yoshi = new JLabel();
@@ -192,6 +202,7 @@ public class Jmain extends JFrame implements ActionListener {
         ImageIcon bgurl38 = new ImageIcon(getClass().getResource("/Juego/P4.png"));
         yoshi.setIcon(bgurl38);
         yoshi.setVisible(true);
+        panel4.add(yoshi);
         validate();
 
         //#####################DADOS#####################################################
@@ -226,12 +237,8 @@ public class Jmain extends JFrame implements ActionListener {
                 pluigi = new Player(2);
                 PlayerList.add(pmario);
                 PlayerList.add(pluigi);
-                panel4.add(mario);
-                panel4.add(luigi);
-                mario.setVisible(true);
-                luigi.setVisible(true);
-
-
+                toad.setVisible(false);
+                yoshi.setVisible(false);
                 break;
             case 3:
                 pmario = new Player(1);
@@ -240,9 +247,7 @@ public class Jmain extends JFrame implements ActionListener {
                 PlayerList.add(pmario);
                 PlayerList.add(pluigi);
                 PlayerList.add(ptoad);
-                panel4.add(mario);
-                panel4.add(luigi);
-                panel4.add(toad);
+                yoshi.setVisible(false);
                 break;
             case 4:
                 pmario = new Player(1);
@@ -253,10 +258,6 @@ public class Jmain extends JFrame implements ActionListener {
                 PlayerList.add(pluigi);
                 PlayerList.add(ptoad);
                 PlayerList.add(pyoshi);
-                panel4.add(mario);
-                panel4.add(luigi);
-                panel4.add(toad);
-                panel4.add(yoshi);
                 break;
         }
         CoinList = new SimpleList();
@@ -283,15 +284,24 @@ public class Jmain extends JFrame implements ActionListener {
         }
     }
     public void actualizarLabels(){
-
-    }
-    /**
-    public void crearEstrella(){
-        if(Jmain.getInstance().estrella == null && rounds != 0){
-            Jmain.getInstance().estrella = Star.getInstance();
+        for(int i = 0; i < PlayerList.getLength(); i++){
+            castToLabel(CLabelList.getPos(i)).setText(Integer.toString(castToPlayer(PlayerList.getPos(i)).monedas));
+            castToLabel(SLabelList.getPos(i)).setText(Integer.toString(castToPlayer(PlayerList.getPos(i)).estrellas));
+            round.setText(String.valueOf(rounds));
+        }
+        try{
+            TimeUnit.MILLISECONDS.sleep(300);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        if(Jmain.getInstance().star == null && rounds != 0){
+            Jmain.getInstance().star = Star.getInstance();
         }
     }
-     */
+    public Label castToLabel(Object object){
+        return (Label)object;
+
+    }
     public SimpleList getPlayerList(){
         return PlayerList;
     }
@@ -333,8 +343,7 @@ public class Jmain extends JFrame implements ActionListener {
             System.out.println("Se estan tirando los dados");
             System.out.println("Dados tirados");
             Dados prueba2 = new Dados();
-
-
+            int suma = prueba2.retornarsuma();
         }
         if(e.getSource() == btnend){
             btndados.setEnabled(true);
