@@ -100,7 +100,6 @@ public class Main extends JFrame implements ActionListener {
             System.out.println(players +" Jugadores Jugando ahora");
             Jmain para2 = Jmain.getInstance();
             para2.createPlayers(players);
-            Jmain.getInstance().turns();
             frm1.setVisible(false);
 
 
@@ -111,7 +110,6 @@ public class Main extends JFrame implements ActionListener {
             System.out.println(players + " Jugadores Jugando ahora");
             Jmain para3 = Jmain.getInstance();
             para3.createPlayers(players);
-            Jmain.getInstance().turns();
             frm1.setVisible(false);
 
         }
@@ -121,7 +119,6 @@ public class Main extends JFrame implements ActionListener {
             System.out.println(players+ " Jugadores Jugando ahora");
             Jmain para4 = Jmain.getInstance();
             para4.createPlayers(players);
-            Jmain.getInstance().turns();
             frm1.setVisible(false);
         }
 

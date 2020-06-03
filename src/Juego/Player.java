@@ -351,9 +351,9 @@ public class Player {
         }
         else if(posX == 143 && posY == 118 && salirD){
             if(estaenReversa){
-                movimientosTotales -= 1;
+                movimientosTotales -= 2;
             }else{
-                movimientosTotales -= 4;
+                movimientosTotales -= 2;
             }
             estaenc = true;
             estaend = false;

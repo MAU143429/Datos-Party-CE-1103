@@ -23,7 +23,7 @@ public class Jmain extends JFrame implements ActionListener {
     public JButton btnmkt, btndados,btnend;
     protected SimpleList PlayerList, StarList, CoinList, CLabelList, SLabelList;
     protected Player pmario,pluigi,ptoad,pyoshi,playing;
-    int jugadores, rounds;
+    int jugadores, rounds, suma1, suma2;
     public boolean nowplaying;
     protected Star star;
     private static Jmain instance = null;
@@ -288,7 +288,10 @@ public class Jmain extends JFrame implements ActionListener {
     }
     public void lanzarDado(){
         nowplaying = true;
+        suma1 = new Random().nextInt(6);
+        suma2 = new Random().nextInt(6);
         Dados.getInstance().tirarDado();
+
     }
     public void actualizarlistasMS(){
         for(int i = 0; i < PlayerList.getLength(); i++){
@@ -368,7 +371,7 @@ public class Jmain extends JFrame implements ActionListener {
             btnend.setEnabled(true);
             System.out.println("Se estan tirando los dados");
             System.out.println("Dados tirados");
-            Dados.getInstance().tirarDado();
+            turns();
 
         }
         if(e.getSource() == btnend){
