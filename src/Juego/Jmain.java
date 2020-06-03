@@ -1,5 +1,4 @@
 package Juego;
-import Dados.Dados;
 import EstructurasDatos.SimpleList;
 import Inicio.Main;
 import Market.market;
@@ -51,9 +50,9 @@ public class Jmain extends JFrame implements ActionListener {
         CLabelList.add(cnp4);
         this.SLabelList = new SimpleList(){};
         SLabelList.add(str1);
-        SLabelList.add(str1);
-        SLabelList.add(str1);
-        SLabelList.add(str1);
+        SLabelList.add(str2);
+        SLabelList.add(str3);
+        SLabelList.add(str4);
         //############################Frame###############################
         frm2 = new JFrame("Datos Party 1");
         frm2.setBounds(0, 0, 1295, 947);
@@ -172,7 +171,7 @@ public class Jmain extends JFrame implements ActionListener {
         //###########################Jugadores##########################################
 
         mario = new JLabel();
-        mario.setBounds(645, 800, 50, 50);
+        mario.setBounds(697, 781, 50, 50);
         ImageIcon bgurl35 = new ImageIcon(getClass().getResource("/Juego/P1.png"));
         mario.setIcon(bgurl35);
         mario.setVisible(true);
@@ -181,7 +180,7 @@ public class Jmain extends JFrame implements ActionListener {
 
 
         luigi = new JLabel();
-        luigi.setBounds(745, 800, 50, 50);
+        luigi.setBounds(697, 781, 50, 50);
         ImageIcon bgurl36 = new ImageIcon(getClass().getResource("/Juego/P2.png"));
         luigi.setIcon(bgurl36);
         luigi.setVisible(true);
@@ -190,7 +189,7 @@ public class Jmain extends JFrame implements ActionListener {
 
 
         toad = new JLabel();
-        toad.setBounds(665, 847, 50, 50);
+        toad.setBounds(697, 781, 50, 50);
         ImageIcon bgurl37 = new ImageIcon(getClass().getResource("/Juego/P3.png"));
         toad.setIcon(bgurl37);
         toad.setVisible(true);
@@ -198,7 +197,7 @@ public class Jmain extends JFrame implements ActionListener {
         validate();
 
         yoshi = new JLabel();
-        yoshi.setBounds(720, 847, 50, 50);
+        yoshi.setBounds(697, 781, 50, 50);
         ImageIcon bgurl38 = new ImageIcon(getClass().getResource("/Juego/P4.png"));
         yoshi.setIcon(bgurl38);
         yoshi.setVisible(true);
@@ -239,6 +238,7 @@ public class Jmain extends JFrame implements ActionListener {
                 PlayerList.add(pluigi);
                 toad.setVisible(false);
                 yoshi.setVisible(false);
+                actualizarLabels();
                 break;
             case 3:
                 pmario = new Player(1);
@@ -248,6 +248,7 @@ public class Jmain extends JFrame implements ActionListener {
                 PlayerList.add(pluigi);
                 PlayerList.add(ptoad);
                 yoshi.setVisible(false);
+                actualizarLabels();
                 break;
             case 4:
                 pmario = new Player(1);
@@ -258,6 +259,7 @@ public class Jmain extends JFrame implements ActionListener {
                 PlayerList.add(pluigi);
                 PlayerList.add(ptoad);
                 PlayerList.add(pyoshi);
+                actualizarLabels();
                 break;
         }
         CoinList = new SimpleList();
@@ -267,12 +269,13 @@ public class Jmain extends JFrame implements ActionListener {
             StarList.add(Integer.toString(castToPlayer(PlayerList.getPos(i)).estrellas));
         }
     }
-    protected void turns(){
+    public void turns(){
         if(!nowplaying){
             for(int i = 0; i < PlayerList.getLength(); i++){
                 if(!castToPlayer(PlayerList.getPos(i)).jugado){
                     this.playing = castToPlayer(PlayerList.getPos(i));
                     castToPlayer(PlayerList.getPos(i)).jugado = true;
+                    lanzarDado();
                     return;
                 }
             }
@@ -283,24 +286,47 @@ public class Jmain extends JFrame implements ActionListener {
             round.setText(Integer.toString(rounds));
         }
     }
-    public void actualizarLabels(){
+    public void lanzarDado(){
+        nowplaying = true;
+        Dados.getInstance().tirarDado();
+    }
+    public void actualizarlistasMS(){
         for(int i = 0; i < PlayerList.getLength(); i++){
-            castToLabel(CLabelList.getPos(i)).setText(Integer.toString(castToPlayer(PlayerList.getPos(i)).monedas));
-            castToLabel(SLabelList.getPos(i)).setText(Integer.toString(castToPlayer(PlayerList.getPos(i)).estrellas));
-            round.setText(String.valueOf(rounds));
+            CoinList.add(Integer.toString(castToPlayer(PlayerList.getPos(i)).monedas));
+            StarList.add(Integer.toString(castToPlayer(PlayerList.getPos(i)).estrellas));
         }
-        try{
-            TimeUnit.MILLISECONDS.sleep(300);
-        }catch (InterruptedException e){
-            e.printStackTrace();
+    }
+    public void actualizarLabels(){
+        if(PlayerList.getLength()==2){
+            cnp1.setText(Integer.toString(castToPlayer(PlayerList.getPos(0)).monedas));
+            cnp2.setText(Integer.toString(castToPlayer(PlayerList.getPos(1)).monedas));
+            str1.setText(Integer.toString(castToPlayer(PlayerList.getPos(0)).estrellas));
+            str2.setText(Integer.toString(castToPlayer(PlayerList.getPos(1)).estrellas));
+        }
+        if(PlayerList.getLength()==3){
+            cnp1.setText(Integer.toString(castToPlayer(PlayerList.getPos(0)).monedas));
+            cnp2.setText(Integer.toString(castToPlayer(PlayerList.getPos(1)).monedas));
+            cnp3.setText(Integer.toString(castToPlayer(PlayerList.getPos(2)).monedas));
+            str1.setText(Integer.toString(castToPlayer(PlayerList.getPos(0)).estrellas));
+            str2.setText(Integer.toString(castToPlayer(PlayerList.getPos(1)).estrellas));
+            str3.setText(Integer.toString(castToPlayer(PlayerList.getPos(2)).estrellas));
+        }
+        if(PlayerList.getLength()==4){
+            cnp1.setText(Integer.toString(castToPlayer(PlayerList.getPos(0)).monedas));
+            cnp2.setText(Integer.toString(castToPlayer(PlayerList.getPos(1)).monedas));
+            cnp3.setText(Integer.toString(castToPlayer(PlayerList.getPos(2)).monedas));
+            cnp4.setText(Integer.toString(castToPlayer(PlayerList.getPos(3)).monedas));
+            str1.setText(Integer.toString(castToPlayer(PlayerList.getPos(0)).estrellas));
+            str2.setText(Integer.toString(castToPlayer(PlayerList.getPos(1)).estrellas));
+            str3.setText(Integer.toString(castToPlayer(PlayerList.getPos(2)).estrellas));
+            str4.setText(Integer.toString(castToPlayer(PlayerList.getPos(3)).estrellas));
         }
         if(Jmain.getInstance().star == null && rounds != 0){
             Jmain.getInstance().star = Star.getInstance();
         }
     }
-    public Label castToLabel(Object object){
-        return (Label)object;
-
+    public void colocarEstrella(){
+        estrella.setLocation(star.posX,star.posY);
     }
     public SimpleList getPlayerList(){
         return PlayerList;
@@ -342,8 +368,8 @@ public class Jmain extends JFrame implements ActionListener {
             btnend.setEnabled(true);
             System.out.println("Se estan tirando los dados");
             System.out.println("Dados tirados");
-            Dados prueba2 = new Dados();
-            int suma = prueba2.retornarsuma();
+            Dados.getInstance().tirarDado();
+
         }
         if(e.getSource() == btnend){
             btndados.setEnabled(true);
