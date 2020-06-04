@@ -56,7 +56,6 @@ public class Dados {
     }
 
     public void tirarDado() {
-        Jmain.getInstance().nowplaying = true;
         dado1 = (int) (Math.random() * 6) + 1;
         System.out.println("DADO 1: " + Dados.getInstance().dado1);
         dado2 = (int) (Math.random() * 6) + 1;
@@ -111,7 +110,6 @@ public class Dados {
                         public void actionPerformed(ActionEvent e) {
                             Jmain.getInstance().dado1.setIcon(dadoroll);
                             Jmain.getInstance().dado2.setIcon(dadoroll);
-                            Jmain.getInstance().playing.movePlayer(SumaDados);
                             xm.stop();
                         }
                     });
@@ -122,12 +120,8 @@ public class Dados {
         });
         tm.start();
         SumaDados = dado1 + dado2;
-        Jmain.getInstance().playing.jugado = true;
+        Jmain.getInstance().MovePlayer(SumaDados);
+        retornarsuma();
         System.out.println("Suma de los Dados " + SumaDados);
-
-        }
     }
-
-
-
-
+}

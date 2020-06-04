@@ -4,10 +4,13 @@ import EstructurasDatos.SimpleNode;
 import Juego.Player;
 
 public abstract class Casilla {
-    protected int posX, posY, posList;
+    protected int posX, posY, posList,referencia;
     protected String msg;
     public Casilla self;
 
+    public int getReferencia(){
+        return referencia;
+    }
     public int getPosX(){
         return posX;
     }

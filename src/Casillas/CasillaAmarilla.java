@@ -3,10 +3,11 @@ package Casillas;
 import Juego.Player;
 
 public class CasillaAmarilla extends Casilla {
-    public CasillaAmarilla(int posX, int posY, int posList) {
+    public CasillaAmarilla(int posX, int posY, int posList,int referencia) {
         this.posX = posX;
         this.posY = posY;
         this.posList = posList;
+        this.referencia = referencia;
         this.msg = "Amarilla";
     }
 

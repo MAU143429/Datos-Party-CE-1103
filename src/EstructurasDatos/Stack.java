@@ -1,11 +1,11 @@
 package EstructurasDatos;
 
-public class Pila {
+public class Stack {
     private final int maxSize;
     private SimpleNode top;
     private SimpleNode bottom;
 
-    public Pila (int size){
+    public Stack (int size){
         this.maxSize = size;
         this.top = null;
         this.bottom = null;
@@ -48,12 +48,12 @@ public class Pila {
             return this.top.getValor();
         }
     }
-    public Pila mezclar (){
+    public Stack mezclar (){
         if (this.isEmpty()){
             throw new IllegalStateException ("Stack is empty");
         }
         SimpleList tmp = new SimpleList();
-        Pila aux = new Pila (this.getMaxSize());
+        Stack aux = new Stack (this.getMaxSize());
         while (this.isEmpty() == false){
             tmp.add(this.pop());
         }

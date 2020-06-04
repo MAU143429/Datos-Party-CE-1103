@@ -1,4 +1,5 @@
 package Juego;
+import Casillas.Casilla;
 import EstructurasDatos.SimpleList;
 import Inicio.Main;
 import Market.market;
@@ -20,15 +21,17 @@ public class Jmain extends JFrame implements ActionListener {
 
     public JFrame frm2;
     public JLabel bg2,cnp1,cnp2,cnp3,cnp4,str1,str2,str3,str4,round,pgame,mario,luigi,toad,yoshi,dado1,dado2,estrella;
+    public Casilla casillaActualMario, casillaActualLuigi, casillaActualToad, casillaActualYoshi;
     public JButton btnmkt, btndados,btnend;
     protected SimpleList PlayerList, StarList, CoinList, CLabelList, SLabelList;
     protected Player pmario,pluigi,ptoad,pyoshi,playing;
-    int jugadores, rounds, suma1, suma2;
-    public boolean nowplaying;
-    protected Star star;
+    public int jugadores, rounds;
+    private int jugactual = 0;
+    public int Xmario,Ymario,Xluigi,Yluigi,Xtoad,Ytoad,Xyoshi,Yyoshi,posMario,posLuigi,posToad,posYoshi,movimientosrestantes;
+    public boolean marioA,marioB,marioC,marioD,marioP,marioSaleD,marioReversa,luigiA,luigiB,luigiC,luigiD,luigiP,luigiSaleD,luigiReversa,toadA,toadB,toadC,toadD,toadP,toadSaleD,toadReversa,yoshiA,yoshiB,yoshiC,yoshiD,yoshiP,yoshiSaleD,yoshiReversa;
+    private Star star;
     private static Jmain instance = null;
-    public JPanel panel4;
-
+    private JPanel panel4;
     /**
      * Jmain
      *Este constructor crea un frame, un panel y aloja objetos en ellos
@@ -36,11 +39,54 @@ public class Jmain extends JFrame implements ActionListener {
 
      */
     public Jmain() {
+        this.casillaActualMario = null;
+        this.casillaActualLuigi = null;
+        this.casillaActualToad = null;
+        this.casillaActualYoshi = null;
+        this.posMario = 0;
+        this.posLuigi = 0;
+        this.posToad = 0;
+        this.posYoshi = 0;
+        this.Xmario = 719;
+        this.Ymario = 809;
+        this.Xluigi = 719;
+        this.Yluigi = 809;
+        this.Xtoad = 719;
+        this.Ytoad = 809;
+        this.Xyoshi = 719;
+        this.Yyoshi = 809;
+        this.marioA = false;
+        this.marioB = false;
+        this.marioC = false;
+        this.marioD = false;
+        this.marioP = true;
+        this.marioSaleD = false;
+        this.marioReversa = false;
+        this.luigiA = false;
+        this.luigiB = false;
+        this.luigiC = false;
+        this.luigiD = false;
+        this.luigiP = true;
+        this.luigiSaleD = false;
+        this.luigiReversa = false;
+        this.toadA = false;
+        this.toadB = false;
+        this.toadC = false;
+        this.toadD = false;
+        this.toadP = true;
+        this.toadSaleD = false;
+        this.toadReversa = false;
+        this.yoshiA = false;
+        this.yoshiB = false;
+        this.yoshiC = false;
+        this.yoshiD = false;
+        this.yoshiP = true;
+        this.yoshiSaleD = false;
+        this.yoshiReversa = false;
         Map mapa = Map.getInstance();
         //EventStack pilaEv = EventStack.getInstance();
         this.PlayerList = new SimpleList(){};
         this.rounds = 0;
-        this.nowplaying = false;
         jugadores = Main.getInstance().getPlayers();
         System.out.println(jugadores);
         this.CLabelList = new SimpleList(){};
@@ -223,12 +269,15 @@ public class Jmain extends JFrame implements ActionListener {
         bg2.setIcon(bgurl1);
         validate();
 
+
         panel4.add(bg2);
 
         frm2.setVisible(true);
 
 
     }
+    ///////////////////////////////////////////CREAR JUGADORES//////////////////////////////////////////////////////////
+
     public void createPlayers(int jugadores){
         switch (jugadores) {
             case 2:
@@ -269,30 +318,42 @@ public class Jmain extends JFrame implements ActionListener {
             StarList.add(Integer.toString(castToPlayer(PlayerList.getPos(i)).estrellas));
         }
     }
+    ////////////////////////////////////////////////////MANEJO DE TURNOS////////////////////////////////////////////////////////////////////
     public void turns(){
-        if(!nowplaying){
-            for(int i = 0; i < PlayerList.getLength(); i++){
-                if(!castToPlayer(PlayerList.getPos(i)).jugado){
-                    this.playing = castToPlayer(PlayerList.getPos(i));
-                    castToPlayer(PlayerList.getPos(i)).jugado = true;
-                    lanzarDado();
-                    return;
-                }
-            }
-            for(int i = 0; i < PlayerList.getLength(); i++){
-                castToPlayer(PlayerList.getPos(i)).jugado = false;
-            }
-            rounds++;
-            round.setText(Integer.toString(rounds));
+        if (jugactual == 0 && jugactual != Jmain.getInstance().PlayerList.getLength()){
+            playing = castToPlayer(Jmain.getInstance().getPlayerList().getPos(0));
+            System.out.println("ES TURNO DE MARIO");
         }
+        else if (jugactual == 1 && jugactual != Jmain.getInstance().PlayerList.getLength()){
+            playing = castToPlayer(Jmain.getInstance().getPlayerList().getPos(1));
+            System.out.println("ES TURNO DE LUIGI");
+        }
+        else if(jugactual == 2 && jugactual != Jmain.getInstance().PlayerList.getLength()){
+            playing = castToPlayer(Jmain.getInstance().getPlayerList().getPos(2));
+            System.out.println("ES TURNO DE TOAD");
+        }
+        else if(jugactual == 3 && jugactual != Jmain.getInstance().PlayerList.getLength()){
+            playing = castToPlayer(Jmain.getInstance().getPlayerList().getPos(3));
+            System.out.println("ES TURNO DE YOSHI");
+        }
+        if(rounds == 1){
+            Star.getInstance().placeStar();
+        }
+        if(rounds == 20){
+            //terminarJuego();
+        }
+        else{
+            jugactual = 0;
+            turns();
+        }
+
     }
+    ////////////////////////////////////////////////////////LANZA DADO////////////////////////////////////////////////////////////////
     public void lanzarDado(){
-        nowplaying = true;
-        suma1 = new Random().nextInt(6);
-        suma2 = new Random().nextInt(6);
         Dados.getInstance().tirarDado();
 
     }
+    ///////////////////////////////////////////////////////METODOS DE ACTUALIZACIÓN DE OBJETOS////////////////////////////////////
     public void actualizarlistasMS(){
         for(int i = 0; i < PlayerList.getLength(); i++){
             CoinList.add(Integer.toString(castToPlayer(PlayerList.getPos(i)).monedas));
@@ -327,18 +388,25 @@ public class Jmain extends JFrame implements ActionListener {
         if(Jmain.getInstance().star == null && rounds != 0){
             Jmain.getInstance().star = Star.getInstance();
         }
+        round.setText(Integer.toString(rounds));
     }
+
+    ////////////////////////////////////////////////////////////COLOCA EL LABEL EN LAS POSICIONES DE LA CLASE ESTRELLA///////////////////////
     public void colocarEstrella(){
         estrella.setLocation(star.posX,star.posY);
     }
+
+    ///////////////////////////////////////////////////////////RETORNA LA LISTA DE LOS JUGADORES////////////////////////////////////////////
     public SimpleList getPlayerList(){
         return PlayerList;
     }
+
+    //////////////////////////////////////////////////////////RETORNA UN JUGADOR ALEATORIO DE LA LISTA/////////////////////////////////////
     public Player getRandomPlayer(){
         int pos = new Random().nextInt(PlayerList.getLength());
         return (Player)PlayerList.getPos(pos);
     }
-
+    //////////////////////////////////////SINGLETON DE JMAIN//////////////////////////////////////////////////////////////////////////////
     public static Jmain getInstance(){
         if(instance == null){
             instance = new Jmain();
@@ -351,10 +419,12 @@ public class Jmain extends JFrame implements ActionListener {
      *@authors Mauricio C. , Naheem Johnson , Jose Espinoza
 
      */
-
+    /////////////////////////////////////////////////////////////////////////CONVIERTE A PLAYER UN OBJETO//////////////////////////////////////
     private Player castToPlayer (Object object) {
         return (Player) object;
     }
+
+    ////////////////////////////////////////////////////////////////////////MANEJA BOTONES////////////////////////////////////////////////////
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -371,15 +441,264 @@ public class Jmain extends JFrame implements ActionListener {
             btnend.setEnabled(true);
             System.out.println("Se estan tirando los dados");
             System.out.println("Dados tirados");
-            turns();
+            lanzarDado();
 
         }
         if(e.getSource() == btnend){
             btndados.setEnabled(true);
             btnend.setEnabled(false);
             System.out.println("El jugador ha terminado su turno");
+            if(jugactual >= Jmain.getInstance().getPlayerList().getLength()){
+                rounds++;
+                actualizarLabels();
+            }
+            Jmain.getInstance().jugactual++;
+            turns();
+            actualizarlistasMS();
 
 
+        }
+    }
+    /////////////////////////////////////////////////////////MOVIMIENTO DE JUGADORES///////////////////////////////////////////////////
+    public void MovePlayer(int moves){
+        movimientosrestantes += moves;
+        if (jugactual == 0){
+            if(movimientosrestantes == 0){
+                if(casillaActualMario.getReferencia()== 17){
+                    marioC = true;
+                    verificarFase();
+                }
+            }
+
+
+        }
+        else if (jugactual == 1){
+
+        }
+        else if(jugactual == 2) {
+
+        }
+        else if(jugactual == 3){
+
+        }
+
+    }
+    public void verificarFase(){
+        if (jugactual == 0){
+            if(casillaActualMario.getReferencia()>0 && casillaActualMario.getReferencia()<=46){
+                this.marioA = false;
+                this.marioB = false;
+                this.marioC = false;
+                this.marioD = false;
+                this.marioP = true;
+                this.marioSaleD = false;
+                this.marioReversa = false;
+            }
+            if(casillaActualMario.getReferencia()>46 && casillaActualMario.getReferencia() <= 49){
+                this.marioA = true;
+                this.marioB = false;
+                this.marioC = false;
+                this.marioD = false;
+                this.marioP = false;
+                this.marioSaleD = false;
+                this.marioReversa = false;
+            }
+            if(casillaActualMario.getReferencia()>49 && casillaActualMario.getReferencia() <= 52){
+                this.marioA = false;
+                this.marioB = true;
+                this.marioC = false;
+                this.marioD = false;
+                this.marioP = false;
+                this.marioSaleD = false;
+            }
+            if(casillaActualMario.getReferencia()>52 && casillaActualMario.getReferencia() <= 55){
+                this.marioA = false;
+                this.marioB = false;
+                this.marioC = true;
+                this.marioD = false;
+                this.marioP = false;
+                this.marioSaleD = false;
+                this.marioReversa = false;
+            }
+            if(casillaActualMario.getReferencia()>55 && casillaActualMario.getReferencia() <= 65){
+                this.marioA = false;
+                this.marioB = false;
+                this.marioC = false;
+                this.marioD = true;
+                this.marioP = false;
+                this.marioSaleD = false;
+            }
+        }
+        else if (jugactual == 1){
+            if(casillaActualMario.getReferencia()>0 && casillaActualMario.getReferencia()<=46){
+                this.luigiA = false;
+                this.luigiB = false;
+                this.luigiC = false;
+                this.luigiD = false;
+                this.luigiP = true;
+                this.luigiSaleD = false;
+                this.luigiReversa = false;
+            }
+            if(casillaActualMario.getReferencia()>46 && casillaActualMario.getReferencia() <= 49){
+                this.luigiA = true;
+                this.luigiB = false;
+                this.luigiC = false;
+                this.luigiD = false;
+                this.luigiP = false;
+                this.luigiSaleD = false;
+                this.luigiReversa = false;
+            }
+            if(casillaActualMario.getReferencia()>49 && casillaActualMario.getReferencia() <= 52){
+                this.luigiA = false;
+                this.luigiB = true;
+                this.luigiC = false;
+                this.luigiD = false;
+                this.luigiP = false;
+                this.luigiSaleD = false;
+            }
+            if(casillaActualMario.getReferencia()>52 && casillaActualMario.getReferencia() <= 55){
+                this.luigiA = false;
+                this.luigiB = false;
+                this.luigiC = true;
+                this.luigiD = false;
+                this.luigiP = false;
+                this.luigiSaleD = false;
+                this.luigiReversa = false;
+            }
+            if(casillaActualMario.getReferencia()>55 && casillaActualMario.getReferencia() <= 65){
+                this.luigiA = false;
+                this.luigiB = false;
+                this.luigiC = false;
+                this.luigiD = true;
+                this.luigiP = false;
+                this.luigiSaleD = false;
+            }
+
+        }
+        else if(jugactual == 2) {
+            if(casillaActualMario.getReferencia()>0 && casillaActualMario.getReferencia()<=46){
+                this.toadA = false;
+                this.toadB = false;
+                this.toadC = false;
+                this.toadD = false;
+                this.toadP = true;
+                this.toadSaleD = false;
+                this.toadReversa = false;
+            }
+            if(casillaActualMario.getReferencia()>46 && casillaActualMario.getReferencia() <= 49){
+                this.toadA = true;
+                this.toadB = false;
+                this.toadC = false;
+                this.toadD = false;
+                this.toadP = false;
+                this.toadSaleD = false;
+                this.toadReversa = false;
+            }
+            if(casillaActualMario.getReferencia()>49 && casillaActualMario.getReferencia() <= 52){
+                this.toadA = false;
+                this.toadB = true;
+                this.toadC = false;
+                this.toadD = false;
+                this.toadP = false;
+                this.toadSaleD = false;
+            }
+            if(casillaActualMario.getReferencia()>52 && casillaActualMario.getReferencia() <= 55){
+                this.toadA = false;
+                this.toadB = false;
+                this.toadC = true;
+                this.toadD = false;
+                this.toadP = false;
+                this.toadSaleD = false;
+                this.toadReversa = false;
+            }
+            if(casillaActualMario.getReferencia()>55 && casillaActualMario.getReferencia() <= 65){
+                this.toadA = false;
+                this.toadB = false;
+                this.toadC = false;
+                this.toadD = true;
+                this.toadP = false;
+                this.toadSaleD = false;
+            }
+        }
+        else if(jugactual == 3){
+            if(casillaActualMario.getReferencia()>0 && casillaActualMario.getReferencia()<=46){
+                this.yoshiA = false;
+                this.yoshiB = false;
+                this.yoshiC = false;
+                this.yoshiD = false;
+                this.yoshiP = true;
+                this.yoshiSaleD = false;
+                this.yoshiReversa = false;
+            }
+            if(casillaActualMario.getReferencia()>46 && casillaActualMario.getReferencia() <= 49){
+                this.yoshiA = true;
+                this.yoshiB = false;
+                this.yoshiC = false;
+                this.yoshiD = false;
+                this.yoshiP = false;
+                this.yoshiSaleD = false;
+                this.yoshiReversa = false;
+            }
+            if(casillaActualMario.getReferencia()>49 && casillaActualMario.getReferencia() <= 52){
+                this.yoshiA = false;
+                this.yoshiB = true;
+                this.yoshiC = false;
+                this.yoshiD = false;
+                this.yoshiP = false;
+                this.yoshiSaleD = false;
+            }
+            if(casillaActualMario.getReferencia()>52 && casillaActualMario.getReferencia() <= 55){
+                this.yoshiA = false;
+                this.yoshiB = false;
+                this.yoshiC = true;
+                this.yoshiD = false;
+                this.yoshiP = false;
+                this.yoshiSaleD = false;
+                this.yoshiReversa = false;
+            }
+            if(casillaActualMario.getReferencia()>55 && casillaActualMario.getReferencia() <= 65){
+                this.yoshiA = false;
+                this.yoshiB = false;
+                this.yoshiC = false;
+                this.yoshiD = true;
+                this.yoshiP = false;
+                this.yoshiSaleD = false;
+            }
+        }
+
+    }
+    public void actualizarCasillaActual(){
+        if (jugactual == 0){
+            if (marioA){ casillaActualMario = Map.getInstance().getCasilla(posMario,"a");}
+            else if(marioB){casillaActualMario = Map.getInstance().getCasilla(posMario,"b");}
+            else if(marioC){casillaActualMario = Map.getInstance().getCasilla(posMario,"c");}
+            else if(marioD){casillaActualMario = Map.getInstance().getCasilla(posMario,"d");}
+            else{casillaActualMario = Map.getInstance().getCasilla(posMario,"p");}
+            Jmain.getInstance().actualizarLabels();
+        }
+        else if (jugactual == 1){
+            if (luigiA){ casillaActualLuigi = Map.getInstance().getCasilla(posLuigi,"a");}
+            else if(luigiB){casillaActualLuigi = Map.getInstance().getCasilla(posLuigi,"b");}
+            else if(luigiC){casillaActualLuigi = Map.getInstance().getCasilla(posLuigi,"c");}
+            else if(luigiD){casillaActualLuigi = Map.getInstance().getCasilla(posLuigi,"d");}
+            else{casillaActualLuigi = Map.getInstance().getCasilla(posLuigi,"p");}
+            Jmain.getInstance().actualizarLabels();
+        }
+        else if(jugactual == 2) {
+            if (toadA){ casillaActualToad = Map.getInstance().getCasilla(posToad,"a");}
+            else if(toadB){casillaActualToad = Map.getInstance().getCasilla(posToad,"b");}
+            else if(toadC){casillaActualToad = Map.getInstance().getCasilla(posToad,"c");}
+            else if(toadD){casillaActualToad = Map.getInstance().getCasilla(posToad,"d");}
+            else{casillaActualToad = Map.getInstance().getCasilla(posToad,"p");}
+            Jmain.getInstance().actualizarLabels();
+        }
+        else if(jugactual == 3){
+            if (yoshiA){ casillaActualYoshi = Map.getInstance().getCasilla(posYoshi,"a");}
+            else if(yoshiB){casillaActualYoshi = Map.getInstance().getCasilla(posYoshi,"b");}
+            else if(yoshiC){casillaActualYoshi = Map.getInstance().getCasilla(posYoshi,"c");}
+            else if(yoshiD){casillaActualYoshi = Map.getInstance().getCasilla(posYoshi,"d");}
+            else{casillaActualYoshi = Map.getInstance().getCasilla(posYoshi,"p");}
+            Jmain.getInstance().actualizarLabels();
         }
     }
 }
