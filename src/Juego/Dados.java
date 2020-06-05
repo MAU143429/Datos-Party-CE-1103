@@ -13,7 +13,7 @@ public class Dados {
     int x = 0;
     ImageIcon dadoimg1, dadoimg2, dadoimg3, dadoimg4, dadoimg5, dadoimg6, dadoroll;
     public int dado1, dado2, SumaDados;
-    private static Dados instance = null;
+    public static Dados instance = null;
     //Images Path In Array
     String[] list = {
             "/Juego/dado1.png",//0
@@ -24,6 +24,7 @@ public class Dados {
             "/Juego/dado6.png"//5
 
     };
+    int num = 0;
 
     public Dados() {
         dadoimg1 = new ImageIcon(getClass().getResource("/Juego/dado1.png"));
@@ -34,32 +35,7 @@ public class Dados {
         dadoimg6 = new ImageIcon(getClass().getResource("/Juego/dado6.png"));
         dadoroll = new ImageIcon(getClass().getResource("/Juego/dadoroll1.png"));
 
-    }
 
-    public void SetImageSize(int i) {
-        ImageIcon icon1 = new ImageIcon(getClass().getResource(list[i]));
-        ImageIcon icon2 = new ImageIcon(getClass().getResource(list[i]));
-        Jmain.getInstance().dado1.setIcon(icon1);
-        Jmain.getInstance().dado2.setIcon(icon2);
-
-    }
-
-    public int retornarsuma() {
-        return SumaDados;
-    }
-
-    public static Dados getInstance() {
-        if (instance == null) {
-            instance = new Dados();
-        }
-        return instance;
-    }
-
-    public void tirarDado() {
-        dado1 = (int) (Math.random() * 6) + 1;
-        System.out.println("DADO 1: " + Dados.getInstance().dado1);
-        dado2 = (int) (Math.random() * 6) + 1;
-        System.out.println("DADO 2: " + Dados.getInstance().dado2);
         tm = new Timer(150, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -110,8 +86,8 @@ public class Dados {
                         public void actionPerformed(ActionEvent e) {
                             Jmain.getInstance().dado1.setIcon(dadoroll);
                             Jmain.getInstance().dado2.setIcon(dadoroll);
-                            SumaDados = dado1 + dado2;
-                            Jmain.getInstance().playing.movePlayer(SumaDados);
+                            System.out.println(num);
+                            Jmain.getInstance().playing.movePlayer(num);
                             xm.stop();
                         }
                     });
@@ -120,7 +96,34 @@ public class Dados {
 
             }
         });
-        retornarsuma();
+    }
+
+    public void SetImageSize(int i) {
+        ImageIcon icon1 = new ImageIcon(getClass().getResource(list[i]));
+        ImageIcon icon2 = new ImageIcon(getClass().getResource(list[i]));
+        Jmain.getInstance().dado1.setIcon(icon1);
+        Jmain.getInstance().dado2.setIcon(icon2);
+
+    }
+
+    public int retornarsuma() {
+        return SumaDados;
+    }
+
+    public static Dados getInstance() {
+        if (instance == null) {
+            instance = new Dados();
+        }
+        return instance;
+    }
+
+    public int tirarDado() {
+        dado1 = (int) (Math.random() * 6) + 1;
+        System.out.println("DADO 1: " + Dados.getInstance().dado1);
+        dado2 = (int) (Math.random() * 6) + 1;
+        System.out.println("DADO 2: " + Dados.getInstance().dado2);
+        SumaDados = dado1 + dado2;
         System.out.println("Suma de los Dados " + SumaDados);
+        return SumaDados;
     }
 }

@@ -13,13 +13,11 @@ import java.sql.Time;
 import java.util.concurrent.TimeUnit;
 
 public class Player {
-    private Player self;
+    public Player self;
     public Casilla casillaActual;
-    public int posX, posY, absPos, movimientosTotales, monedas, estrellas,referencia,sumadado;
+    public int posX, posY, absPos, movimientosTotales, monedas, estrellas, referencia, sumadado;
     public boolean estaena, estaenb, estaenc, estaenReversa, estaend, salirD, moviendose, jugado;
-    public AnimationTimer timerEStrellas;
-    protected AnimationTimer timerMovimiento, timerEstrellas, timerEvento;
-    public Timer tm;
+    public Timer timerMovimiento, timerEStrellas, timerEvento;
 
 
     /**
@@ -28,10 +26,11 @@ public class Player {
     public Player(int jugadorNum) {
         referencia = jugadorNum;
         this.self = this;
-        this.timerEStrellas = new AnimationTimer() {
+        this.timerEStrellas = new Timer(500, new ActionListener() {
             @Override
-            public void handle(long now) {
-                if (Jmain.getInstance().rounds > 0 && Jmain.getInstance().playing == self && posX == Star.getInstance().posX && posY == Star.getInstance().posY) {
+            public void actionPerformed(ActionEvent i) {
+                System.out.println("entre al timer");
+                if (Jmain.getInstance().rounds > 0 && Jmain.getInstance().playing == self && posX == Star.getInstance().posX-22 && posY == Star.getInstance().posY-28) {
                     timerMovimiento.stop();
                     try {
                         TimeUnit.MILLISECONDS.sleep(200);
@@ -43,48 +42,50 @@ public class Player {
                         monedas -= Star.getInstance().precio;
                         Jmain.getInstance().estrella.setVisible(false);
                         Star.getInstance().placeStar();
+
                     }
                     Jmain.getInstance().actualizarLabels();
                     timerMovimiento.start();
-                    this.stop();
+                    timerEStrellas.stop();
                 }
 
+
             }
-        };
-        this.timerMovimiento = new AnimationTimer() {
+
+        });
+
+        this.timerMovimiento = new Timer(500, new ActionListener() {
             @Override
-            public void handle(long now) {
-                if(estaenc && estaenReversa){
+            public void actionPerformed(ActionEvent o) {
+                System.out.println("entre a movimiento");
+                if (estaenc && estaenReversa) {
                     moveBackwardsC();
-                }
-                else if(estaend && estaenReversa){
+                } else if (estaend && estaenReversa) {
                     moveBackwardsD();
-                }
-                else if(estaenb){
+                } else if (estaenb) {
                     moveB();
-                }
-                else if(estaena){
+                } else if (estaena) {
                     moveA();
-                }
-                else if(estaenc){
+                } else if (estaenc) {
                     moveC();
-                }
-                else if(estaend){
+                } else if (estaend) {
                     moveD();
-                }
-                else{
+                } else {
                     moveMainPath();
                 }
 
             }
-        };
-        this.timerEvento = new AnimationTimer() {
+        });
+
+        this.timerEvento = new Timer(500, new ActionListener() {
             @Override
-            public void handle(long now) {
+            public void actionPerformed(ActionEvent u) {
                 casillaActual.evento(self);
-                this.stop();
+                timerEvento.stop();
             }
-        };
+        });
+
+
 
 
         this.posX = 697;
@@ -163,13 +164,18 @@ public class Player {
         casillaActual = casilla;
         absPos--;
     }
-    public void movePlayer(int moves){
-        if(!moviendose){
+    public void movePlayer(int moves) {
+        System.out.println(moves);
+        if (!moviendose) {
             moviendose = true;
             verifyPath();
             movimientosTotales += moves;
-            timerEstrellas.start();
+            System.out.println("movimientostotales:" + movimientosTotales);
+            timerEStrellas.start();
+            System.out.println("soy un  dios");
             timerMovimiento.start();
+            System.out.println("llegue y soy un dios");
+
         }
     }
     public  void moveMainPath(){
@@ -415,10 +421,6 @@ public class Player {
         else if(estaend){casillaActual = Map.getInstance().getCasilla(absPos,"d");}
         else{casillaActual = Map.getInstance().getCasilla(absPos,"p");}
         Jmain.getInstance().actualizarLabels();
-    }
-    public int recibirsuma(){
-        sumadado = Dados.getInstance().SumaDados;
-        return sumadado;
     }
 
 }

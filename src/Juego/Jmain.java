@@ -20,13 +20,13 @@ import java.util.concurrent.TimeUnit;
 public class Jmain extends JFrame implements ActionListener {
 
     public JFrame frm2;
-    public JLabel bg2,cnp1,cnp2,cnp3,cnp4,str1,str2,str3,str4,round,pgame,mario,luigi,toad,yoshi,dado1,dado2,estrella;
+    public JLabel bg2, cnp1, cnp2, cnp3, cnp4, str1, str2, str3, str4, round, pgame, mario, luigi, toad, yoshi, dado1, dado2, estrella;
     public Casilla casillaActual;
-    public JButton btnmkt, btndados,btnend;
+    public JButton btnmkt, btndados, btnend;
     public boolean corriendoJuego;
     protected Dados dado;
     protected SimpleList PlayerList, StarList, CoinList, CLabelList, SLabelList;
-    protected Player pmario,pluigi,ptoad,pyoshi,playing;
+    public  Player pmario, pluigi, ptoad, pyoshi, playing;
     public int jugadores, rounds;
     private int jugactual = 0;
     private Star star;
@@ -38,26 +38,29 @@ public class Jmain extends JFrame implements ActionListener {
 
     /**
      * Jmain
-     *Este constructor crea un frame, un panel y aloja objetos en ellos
-     *@authors Mauricio C. , Naheem Johnson , Jose Espinoza
-
+     * Este constructor crea un frame, un panel y aloja objetos en ellos
+     *
+     * @authors Mauricio C. , Naheem Johnson , Jose Espinoza
      */
     public Jmain() {
         this.casillaActual = null;
         Map mapa = Map.getInstance();
         //EventStack pilaEv = EventStack.getInstance();
-        this.PlayerList = new SimpleList(){};
+        this.PlayerList = new SimpleList() {
+        };
         this.rounds = 0;
         this.corriendoJuego = false;
         this.dado = new Dados();
         jugadores = Main.getInstance().getPlayers();
         System.out.println(jugadores);
-        this.CLabelList = new SimpleList(){};
+        this.CLabelList = new SimpleList() {
+        };
         CLabelList.add(cnp1);
         CLabelList.add(cnp2);
         CLabelList.add(cnp3);
         CLabelList.add(cnp4);
-        this.SLabelList = new SimpleList(){};
+        this.SLabelList = new SimpleList() {
+        };
         SLabelList.add(str1);
         SLabelList.add(str2);
         SLabelList.add(str3);
@@ -97,7 +100,7 @@ public class Jmain extends JFrame implements ActionListener {
         panel4.add(btndados);
 
         btnend = new JButton("END TURN");
-        btnend.setBounds(870,600,385,82);
+        btnend.setBounds(870, 600, 385, 82);
         ImageIcon fotofin = new ImageIcon(getClass().getResource("/Juego/btnend.png"));
         btnend.setIcon(fotofin);
         btnend.setEnabled(false);
@@ -110,70 +113,70 @@ public class Jmain extends JFrame implements ActionListener {
         //##Stars##
 
         str1 = new JLabel("0");
-        str1.setFont(new Font("Serif",Font.BOLD,40));
+        str1.setFont(new Font("Serif", Font.BOLD, 40));
         str1.setForeground(Color.WHITE);
-        str1.setBounds(1007,75,40,40);
+        str1.setBounds(1007, 75, 40, 40);
         panel4.add(str1);
 
         str2 = new JLabel("0");
-        str2.setFont(new Font("Serif",Font.BOLD,40));
+        str2.setFont(new Font("Serif", Font.BOLD, 40));
         str2.setForeground(Color.WHITE);
-        str2.setBounds(1007,160,40,40);
+        str2.setBounds(1007, 160, 40, 40);
         panel4.add(str2);
 
         str3 = new JLabel("0");
-        str3.setFont(new Font("Serif",Font.BOLD,40));
+        str3.setFont(new Font("Serif", Font.BOLD, 40));
         str3.setForeground(Color.WHITE);
-        str3.setBounds(1007,235,40,40);
+        str3.setBounds(1007, 235, 40, 40);
         panel4.add(str3);
 
         str4 = new JLabel("0");
-        str4.setFont(new Font("Serif",Font.BOLD,40));
+        str4.setFont(new Font("Serif", Font.BOLD, 40));
         str4.setForeground(Color.WHITE);
-        str4.setBounds(1007,305,40,40);
+        str4.setBounds(1007, 305, 40, 40);
         panel4.add(str4);
 
         //##Coins##
 
         cnp1 = new JLabel("0");
-        cnp1.setFont(new Font("Serif",Font.BOLD,40));
+        cnp1.setFont(new Font("Serif", Font.BOLD, 40));
         cnp1.setForeground(Color.WHITE);
-        cnp1.setBounds(1187,75,40,40);
+        cnp1.setBounds(1187, 75, 40, 40);
         panel4.add(cnp1);
 
         cnp2 = new JLabel("0");
-        cnp2.setFont(new Font("Serif",Font.BOLD,40));
+        cnp2.setFont(new Font("Serif", Font.BOLD, 40));
         cnp2.setForeground(Color.WHITE);
-        cnp2.setBounds(1187,160,40,40);
+        cnp2.setBounds(1187, 160, 40, 40);
         panel4.add(cnp2);
 
         cnp3 = new JLabel("0");
-        cnp3.setFont(new Font("Serif",Font.BOLD,40));
+        cnp3.setFont(new Font("Serif", Font.BOLD, 40));
         cnp3.setForeground(Color.WHITE);
-        cnp3.setBounds(1187,235,40,40);
+        cnp3.setBounds(1187, 235, 40, 40);
         panel4.add(cnp3);
 
         cnp4 = new JLabel("0");
-        cnp4.setFont(new Font("Serif",Font.BOLD,40));
+        cnp4.setFont(new Font("Serif", Font.BOLD, 40));
         cnp4.setForeground(Color.WHITE);
-        cnp4.setBounds(1187,305,40,40);
+        cnp4.setBounds(1187, 305, 40, 40);
         panel4.add(cnp4);
 
 
         pgame = new JLabel("Turn of Player");
-        pgame.setFont(new Font("Serif",Font.BOLD,30));
+        pgame.setFont(new Font("Serif", Font.BOLD, 30));
         pgame.setForeground(Color.WHITE);
-        pgame.setBounds(867,830,400,40);
+        pgame.setBounds(867, 830, 400, 40);
         panel4.add(pgame);
 
         round = new JLabel("Round: 0");
-        round.setFont(new Font("Serif",Font.BOLD,30));
+        round.setFont(new Font("Serif", Font.BOLD, 30));
         round.setForeground(Color.WHITE);
-        round.setBounds(867,795,400,40);
+        round.setBounds(867, 795, 400, 40);
         panel4.add(round);
 
         estrella = new JLabel("star");
-        estrella.setBounds(5000,5000,50,50);
+        estrella.setBounds(5000, 5000, 50, 50);
         ImageIcon fotostar = new ImageIcon(getClass().getResource("/Juego/estrella.png"));
         estrella.setIcon(fotostar);
         panel4.add(estrella);
@@ -215,12 +218,12 @@ public class Jmain extends JFrame implements ActionListener {
 
         //#####################DADOS#####################################################
         dado1 = new JLabel();
-        dado1.setBounds(889,432,160,160);
+        dado1.setBounds(889, 432, 160, 160);
         ImageIcon imagendado = new ImageIcon(getClass().getResource("/Juego/dadoroll1.png"));
         dado1.setIcon(imagendado);
 
         dado2 = new JLabel();
-        dado2.setBounds(1069,432,160,160);
+        dado2.setBounds(1069, 432, 160, 160);
         dado2.setIcon(imagendado);
 
         panel4.add(dado1);
@@ -239,6 +242,8 @@ public class Jmain extends JFrame implements ActionListener {
 
 
     }
+
+
     ///////////////////////////////////////////CREAR JUGADORES//////////////////////////////////////////////////////////
 
     public void createPlayers(int jugadores){
@@ -287,6 +292,7 @@ public class Jmain extends JFrame implements ActionListener {
             for (int i = 0; i < PlayerList.getLength(); i++) {
                 if (!castToPlayer(PlayerList.getPos(i)).jugado) {
                     this.playing = castToPlayer(PlayerList.getPos(i));
+                    System.out.println(Jmain.getInstance().playing.referencia);
                     castToPlayer(PlayerList.getPos(i)).jugado = true;
                     lanzarDado();
                     return;
@@ -302,7 +308,11 @@ public class Jmain extends JFrame implements ActionListener {
     ////////////////////////////////////////////////////////LANZA DADO////////////////////////////////////////////////////////////////
     public void lanzarDado(){
         corriendoJuego = true;
+        int x = Dados.getInstance().tirarDado();
+        dado.num = x;
+
         dado.tm.start();
+        System.out.println("AQUI NO LLEGO");
 
     }
     ///////////////////////////////////////////////////////METODOS DE ACTUALIZACIÓN DE OBJETOS////////////////////////////////////
@@ -394,7 +404,7 @@ public class Jmain extends JFrame implements ActionListener {
             System.out.println("Se estan tirando los dados");
             System.out.println("Dados tirados");
             turns();
-            actualizarlistasMS();
+
         }
         /**
         if(e.getSource() == btnend){
