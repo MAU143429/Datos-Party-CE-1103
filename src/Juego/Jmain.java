@@ -103,7 +103,7 @@ public class Jmain extends JFrame implements ActionListener {
         btnend.setEnabled(false);
         btnend.addActionListener(this);
 
-        panel4.add(btnend);
+        //panel4.add(btnend);
 
         //############################Labels###############################
 
@@ -389,28 +389,23 @@ public class Jmain extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == btndados) {
-            btndados.setEnabled(false);
-            btnend.setEnabled(true);
+            //btndados.setEnabled(false);
+            //btnend.setEnabled(true);
             System.out.println("Se estan tirando los dados");
             System.out.println("Dados tirados");
-            lanzarDado();
-
+            turns();
+            actualizarlistasMS();
         }
+        /**
         if(e.getSource() == btnend){
             btndados.setEnabled(true);
             btnend.setEnabled(false);
             System.out.println("El jugador ha terminado su turno");
-            if(jugactual >= Jmain.getInstance().getPlayerList().getLength()){
-                rounds++;
-                actualizarLabels();
-            }
-            Jmain.getInstance().jugactual++;
-            turns();
-            actualizarlistasMS();
+           */
+
 
 
         }
     }
 
-}
 
