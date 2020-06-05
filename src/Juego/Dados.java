@@ -110,6 +110,8 @@ public class Dados {
                         public void actionPerformed(ActionEvent e) {
                             Jmain.getInstance().dado1.setIcon(dadoroll);
                             Jmain.getInstance().dado2.setIcon(dadoroll);
+                            SumaDados = dado1 + dado2;
+                            Jmain.getInstance().playing.movePlayer(SumaDados);
                             xm.stop();
                         }
                     });
@@ -118,9 +120,6 @@ public class Dados {
 
             }
         });
-        tm.start();
-        SumaDados = dado1 + dado2;
-        Jmain.getInstance().MovePlayer(SumaDados);
         retornarsuma();
         System.out.println("Suma de los Dados " + SumaDados);
     }
