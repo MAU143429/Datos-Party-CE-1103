@@ -1,5 +1,7 @@
 package Casillas;
 
+import javax.swing.*;
+
 public class AvisoMonedas {
     private String msj;
 
@@ -10,12 +12,12 @@ public class AvisoMonedas {
      * @param monedas cantidad de monedas que ganará o perderá.
      */
     protected AvisoMonedas(char accion, int monedas) {
+
         if (accion == 'g') {
-            msj = "GANASTE " + monedas + " MONEDA(S)";
-            System.out.println(msj);
+            JOptionPane.showMessageDialog(null, "FELICIDADES! \n GANASTE 30 MONEDAS");
+
         } else if (accion == 'p') {
-            msj = "PERDISTE " + monedas + " MONEDA(S)";
-            System.out.println(msj);
+            JOptionPane.showMessageDialog(null, "FELICIDADES! \n PERDISTE 15 MONEDAS");
         }
 
     }

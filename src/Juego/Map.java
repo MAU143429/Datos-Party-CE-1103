@@ -161,6 +161,6 @@ public class Map {
         pos = new Random().nextInt(lista.getLength());
 
         return (Casilla) lista.getPos(pos);
-        //hola
+
     }
 }

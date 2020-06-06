@@ -25,7 +25,7 @@ public class Star {
         Casilla tile = Map.getInstance().getRandomTile();
         posX = tile.getPosX();
         posY = tile.getPosY();
-        Jmain.getInstance().estrella.setBounds(40,321,50,50);
+        Jmain.getInstance().estrella.setBounds((posX -22),(posY -28),50,50);
 
     }
 }

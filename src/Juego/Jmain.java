@@ -22,7 +22,7 @@ public class Jmain extends JFrame implements ActionListener {
     public JFrame frm2;
     public JLabel bg2, cnp1, cnp2, cnp3, cnp4, str1, str2, str3, str4, round, pgame, mario, luigi, toad, yoshi, dado1, dado2, estrella;
     public Casilla casillaActual;
-    public JButton btnmkt, btndados, btnend;
+    public JButton btnmkt, btndados, btnend,avanzar;
     public boolean corriendoJuego;
     protected Dados dado;
     protected SimpleList PlayerList, StarList, CoinList, CLabelList, SLabelList;
@@ -31,6 +31,7 @@ public class Jmain extends JFrame implements ActionListener {
     private int jugactual = 0;
     private Star star;
     public JPanel panel4;
+    public JTextField textmovimientos;
     /**
      * Sinleton para Jmain
      */
@@ -79,6 +80,15 @@ public class Jmain extends JFrame implements ActionListener {
         frm2.add(panel4);
 
         //############################Botones###############################
+
+
+        avanzar = new JButton("avanzar");
+        avanzar.setBounds(1030, 609 , 50 , 20);
+        avanzar.setVisible(false);
+        avanzar.addActionListener(this);
+        panel4.add(avanzar);
+
+
         btnmkt = new JButton();
         btnmkt.setBounds(1184, 811, 80, 80);
         ImageIcon btnurl7 = new ImageIcon(getClass().getResource("/Juego/carrito.png"));
@@ -109,6 +119,14 @@ public class Jmain extends JFrame implements ActionListener {
         //panel4.add(btnend);
 
         //############################Labels###############################
+        textmovimientos = new JTextField();
+        textmovimientos.setBounds(950, 609 , 50 , 20);
+        textmovimientos.setVisible(false);
+        panel4.add(textmovimientos);
+
+
+
+
 
         //##Stars##
 
@@ -248,6 +266,18 @@ public class Jmain extends JFrame implements ActionListener {
 
     public void createPlayers(int jugadores){
         switch (jugadores) {
+            case 1:
+                pmario = new Player(1);
+                PlayerList.add(pmario);
+                luigi.setVisible(false);
+                toad.setVisible(false);
+                yoshi.setVisible(false);
+                textmovimientos.setVisible(true);
+                avanzar.setVisible(true);
+
+                actualizarLabels();
+                break;
+
             case 2:
                 pmario = new Player(1);
                 pluigi = new Player(2);
@@ -389,6 +419,11 @@ public class Jmain extends JFrame implements ActionListener {
     ////////////////////////////////////////////////////////////////////////MANEJA BOTONES////////////////////////////////////////////////////
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        if (e.getSource() == avanzar) {
+            Jmain.getInstance().playing.movePlayer(Integer.parseInt(textmovimientos.getText()));
+
+        }
 
         if (e.getSource() == btnmkt) {
             System.out.println("Abriendo Market");

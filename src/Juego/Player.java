@@ -26,11 +26,11 @@ public class Player {
     public Player(int jugadorNum) {
         referencia = jugadorNum;
         this.self = this;
-        this.timerEStrellas = new Timer(500, new ActionListener() {
+        this.timerEStrellas = new Timer(20, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent i) {
-                System.out.println("entre al timer");
-                if (Jmain.getInstance().rounds > 0 && Jmain.getInstance().playing == self && posX == Star.getInstance().posX-22 && posY == Star.getInstance().posY-28) {
+                System.out.println("Timer Estrellas");
+                if (Jmain.getInstance().rounds > 0 && Jmain.getInstance().playing == self && posX == Star.getInstance().posX && posY == Star.getInstance().posY) {
                     timerMovimiento.stop();
                     try {
                         TimeUnit.MILLISECONDS.sleep(200);
@@ -54,10 +54,10 @@ public class Player {
 
         });
 
-        this.timerMovimiento = new Timer(500, new ActionListener() {
+        this.timerMovimiento = new Timer(20, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent o) {
-                System.out.println("entre a movimiento");
+                System.out.println("Timer Movimiento");
                 if (estaenc && estaenReversa) {
                     moveBackwardsC();
                 } else if (estaend && estaenReversa) {
@@ -73,13 +73,26 @@ public class Player {
                 } else {
                     moveMainPath();
                 }
+                if(Jmain.getInstance().playing.referencia == 1){
+                    Jmain.getInstance().mario.setLocation((posX-22),(posY-28));
+                }
+                if(Jmain.getInstance().playing.referencia == 2){
+                    Jmain.getInstance().luigi.setLocation((posX-22),(posY-28));
+                }
+                if(Jmain.getInstance().playing.referencia == 3){
+                    Jmain.getInstance().toad.setLocation((posX-22),(posY-28));
+                }
+                if(Jmain.getInstance().playing.referencia == 4){
+                    Jmain.getInstance().yoshi.setLocation((posX-22),(posY-28));
+                }
 
             }
         });
 
-        this.timerEvento = new Timer(500, new ActionListener() {
+        this.timerEvento = new Timer(20, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent u) {
+                System.out.println("Timer Evento");
                 casillaActual.evento(self);
                 timerEvento.stop();
             }
@@ -120,22 +133,22 @@ public class Player {
     }
     public void moverSigCasilla(String fase){
         Casilla casilla = (Casilla) Map.getInstance().getFase(fase).getPos(absPos+1);
-        posX = (casilla.getPosX()-22);
-        posY = (casilla.getPosY()-28);
+        posX = (casilla.getPosX());
+        posY = (casilla.getPosY());
         if(Jmain.getInstance().playing.referencia == 1){
-            Jmain.getInstance().mario.setLocation(posX,posY);
+            Jmain.getInstance().mario.setLocation((posX-22),(posY-28));
         }
         if(Jmain.getInstance().playing.referencia == 2){
-            Jmain.getInstance().luigi.setLocation(posX,posY);
+            Jmain.getInstance().luigi.setLocation((posX-22),(posY-28));
         }
         if(Jmain.getInstance().playing.referencia == 3){
-            Jmain.getInstance().toad.setLocation(posX,posY);
+            Jmain.getInstance().toad.setLocation((posX-22),(posY-28));
         }
         if(Jmain.getInstance().playing.referencia == 4){
-            Jmain.getInstance().yoshi.setLocation(posX,posY);
+            Jmain.getInstance().yoshi.setLocation((posX-22),(posY-28));
         }
+
         Jmain.getInstance().panel4.repaint();
-        System.out.println("ME ESTOY ENCICLANDO");
         System.out.println(posX);
         System.out.println(posY);
         casillaActual = casilla;
@@ -158,7 +171,6 @@ public class Player {
             Jmain.getInstance().yoshi.setLocation(posX,posY);
         }
         Jmain.getInstance().panel4.repaint();
-        System.out.println("ME ESTOY ENCICLANDO");
         System.out.println(posX);
         System.out.println(posY);
         casillaActual = casilla;
@@ -170,29 +182,32 @@ public class Player {
             moviendose = true;
             verifyPath();
             movimientosTotales += moves;
-            System.out.println("movimientostotales:" + movimientosTotales);
             timerEStrellas.start();
-            System.out.println("soy un  dios");
             timerMovimiento.start();
-            System.out.println("llegue y soy un dios");
+
+
+
 
         }
     }
     public  void moveMainPath(){
-        if (absPos == movimientosTotales){
+        if (absPos == movimientosTotales) {
             Jmain.getInstance().corriendoJuego = false;
+            System.out.println("nunca llegue");
             moviendose = false;
             timerMovimiento.stop();
 
-            if(absPos >= 46){
-                absPos -= 46;
-                movimientosTotales -= 46;
+            if (absPos >= 45) {
+                absPos -= 45;
+                movimientosTotales -= 45;
             }
             verifyList();
             return;
         }
+
         else{
             moverSigCasilla("p");
+            System.out.println("llame a la siguiente casilla");
         }
         try {
             TimeUnit.MILLISECONDS.sleep(250);
@@ -420,7 +435,9 @@ public class Player {
         else if(estaenc){casillaActual = Map.getInstance().getCasilla(absPos,"c");}
         else if(estaend){casillaActual = Map.getInstance().getCasilla(absPos,"d");}
         else{casillaActual = Map.getInstance().getCasilla(absPos,"p");}
+        timerEvento.start();
         Jmain.getInstance().actualizarLabels();
     }
+
 
 }

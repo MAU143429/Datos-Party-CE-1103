@@ -16,16 +16,16 @@ import java.awt.event.ActionListener;
 public class Main extends JFrame implements ActionListener {
 
 
-    private JButton btn2p, btn3p, btn4p;
+    private JButton btn2p, btn3p, btn4p, ModoPrueba;
     private JFrame frm1;
     int players;
     private static Main instance = null;
 
     /**
      * Main
-     *Este constructor crea un frame, un panel y aloja objetos en ellos
-     *@author Mauricio C.
-
+     * Este constructor crea un frame, un panel y aloja objetos en ellos
+     *
+     * @author Mauricio C.
      */
     public Main() {
         frm1 = new JFrame("Datos Party 1");
@@ -36,27 +36,33 @@ public class Main extends JFrame implements ActionListener {
 
         JPanel panel = new JPanel();
         panel.setLayout(null);
-        panel.setSize(1330,947);
+        panel.setSize(1330, 947);
         frm1.add(panel);
 
         btn2p = new JButton();
         btn3p = new JButton();
         btn4p = new JButton();
+        ModoPrueba = new JButton();
 
 
-        btn2p.setBounds(874,494,80,80);
+        ModoPrueba.setBounds(27, 830, 40, 40);
+        ModoPrueba.addActionListener(this);
+        panel.add(ModoPrueba);
+
+
+        btn2p.setBounds(874, 494, 80, 80);
         ImageIcon btnurl1 = new ImageIcon(getClass().getResource("/Inicio/2P.png"));
         btn2p.setIcon(btnurl1);
         btn2p.addActionListener(this);
         panel.add(btn2p);
 
-        btn3p.setBounds(874,632,80,80);
+        btn3p.setBounds(874, 632, 80, 80);
         ImageIcon btnurl2 = new ImageIcon(getClass().getResource("/Inicio/3P.png"));
         btn3p.setIcon(btnurl2);
         btn3p.addActionListener(this);
         panel.add(btn3p);
 
-        btn4p.setBounds(874,763,80,80);
+        btn4p.setBounds(874, 763, 80, 80);
         ImageIcon btnurl3 = new ImageIcon(getClass().getResource("/Inicio/4P.png"));
         btn4p.setIcon(btnurl3);
         btn4p.addActionListener(this);
@@ -64,7 +70,7 @@ public class Main extends JFrame implements ActionListener {
 
 
         JLabel bg = new JLabel();
-        bg.setBounds(0,0,1280,900);
+        bg.setBounds(0, 0, 1280, 900);
         ImageIcon bgurl = new ImageIcon(getClass().getResource("/Inicio/Fondo1.png"));
         bg.setIcon(bgurl);
         validate();
@@ -86,25 +92,34 @@ public class Main extends JFrame implements ActionListener {
 
     /**
      * actionPerformed
-     *Este metodo abstracto del actionlistener permite darle las funcionalidades a los botones
-     *@author Mauricio C.
-
+     * Este metodo abstracto del actionlistener permite darle las funcionalidades a los botones
+     *
+     * @author Mauricio C.
      */
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        if (e.getSource() == ModoPrueba) {
+            System.out.println("Jugaran 1 jugadores");
+            players = 1;
+            System.out.println(players + " Jugadores Jugando ahora");
+            Jmain para1 = Jmain.getInstance();
+            para1.createPlayers(players);
+            frm1.setVisible(false);
+        }
 
-        if (e.getSource()==btn2p) {
+
+        if (e.getSource() == btn2p) {
             System.out.println("Jugaran 2 jugadores");
             players = 2;
-            System.out.println(players +" Jugadores Jugando ahora");
+            System.out.println(players + " Jugadores Jugando ahora");
             Jmain para2 = Jmain.getInstance();
             para2.createPlayers(players);
             frm1.setVisible(false);
 
 
         }
-        if (e.getSource()==btn3p) {
+        if (e.getSource() == btn3p) {
             System.out.println("Jugaran 3 jugadores");
             players = 3;
             System.out.println(players + " Jugadores Jugando ahora");
@@ -113,18 +128,19 @@ public class Main extends JFrame implements ActionListener {
             frm1.setVisible(false);
 
         }
-        if (e.getSource()==btn4p) {
+        if (e.getSource() == btn4p) {
             System.out.println("Jugaran 4 jugadores");
             players = 4;
-            System.out.println(players+ " Jugadores Jugando ahora");
+            System.out.println(players + " Jugadores Jugando ahora");
             Jmain para4 = Jmain.getInstance();
             para4.createPlayers(players);
             frm1.setVisible(false);
         }
 
     }
-    public static Main getInstance(){
-        if (instance == null){
+
+    public static Main getInstance() {
+        if (instance == null) {
             instance = new Main();
         }
         return instance;

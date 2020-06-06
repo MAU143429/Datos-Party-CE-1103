@@ -3,6 +3,7 @@ package Juego;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 
 
@@ -36,7 +37,7 @@ public class Dados {
         dadoroll = new ImageIcon(getClass().getResource("/Juego/dadoroll1.png"));
 
 
-        tm = new Timer(150, new ActionListener() {
+        tm = new Timer(200, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 SetImageSize(x);
@@ -45,47 +46,48 @@ public class Dados {
                 if (x >= list.length) {
                     x = 0;
                     tm.stop();
-                    if (dado1 == 1) {
-                        Jmain.getInstance().dado1.setIcon(dadoimg1);
-                    }
-                    if (dado1 == 2) {
-                        Jmain.getInstance().dado1.setIcon(dadoimg2);
-                    }
-                    if (dado1 == 3) {
-                        Jmain.getInstance().dado1.setIcon(dadoimg3);
-                    }
-                    if (dado1 == 4) {
-                        Jmain.getInstance().dado1.setIcon(dadoimg4);
-                    }
-                    if (dado1 == 5) {
-                        Jmain.getInstance().dado1.setIcon(dadoimg5);
-                    }
-                    if (dado1 == 6) {
-                        Jmain.getInstance().dado1.setIcon(dadoimg6);
-                    }
-                    if (dado2 == 1) {
-                        Jmain.getInstance().dado2.setIcon(dadoimg1);
-                    }
-                    if (dado2 == 2) {
-                        Jmain.getInstance().dado2.setIcon(dadoimg2);
-                    }
-                    if (dado2 == 3) {
-                        Jmain.getInstance().dado2.setIcon(dadoimg3);
-                    }
-                    if (dado2 == 4) {
-                        Jmain.getInstance().dado2.setIcon(dadoimg4);
-                    }
-                    if (dado2 == 5) {
-                        Jmain.getInstance().dado2.setIcon(dadoimg5);
-                    }
-                    if (dado2 == 6) {
-                        Jmain.getInstance().dado2.setIcon(dadoimg6);
-                    }
-                    xm = new Timer(2000, new ActionListener() {
+
+                    xm = new Timer(1000, new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            Jmain.getInstance().dado1.setIcon(dadoroll);
-                            Jmain.getInstance().dado2.setIcon(dadoroll);
+                            //Jmain.getInstance().dado1.setIcon(dadoroll);
+                            //Jmain.getInstance().dado2.setIcon(dadoroll);
+                            if (dado1 == 1) {
+                                Jmain.getInstance().dado1.setIcon(dadoimg1);
+                            }
+                            if (dado1 == 2) {
+                                Jmain.getInstance().dado1.setIcon(dadoimg2);
+                            }
+                            if (dado1 == 3) {
+                                Jmain.getInstance().dado1.setIcon(dadoimg3);
+                            }
+                            if (dado1 == 4) {
+                                Jmain.getInstance().dado1.setIcon(dadoimg4);
+                            }
+                            if (dado1 == 5) {
+                                Jmain.getInstance().dado1.setIcon(dadoimg5);
+                            }
+                            if (dado1 == 6) {
+                                Jmain.getInstance().dado1.setIcon(dadoimg6);
+                            }
+                            if (dado2 == 1) {
+                                Jmain.getInstance().dado2.setIcon(dadoimg1);
+                            }
+                            if (dado2 == 2) {
+                                Jmain.getInstance().dado2.setIcon(dadoimg2);
+                            }
+                            if (dado2 == 3) {
+                                Jmain.getInstance().dado2.setIcon(dadoimg3);
+                            }
+                            if (dado2 == 4) {
+                                Jmain.getInstance().dado2.setIcon(dadoimg4);
+                            }
+                            if (dado2 == 5) {
+                                Jmain.getInstance().dado2.setIcon(dadoimg5);
+                            }
+                            if (dado2 == 6) {
+                                Jmain.getInstance().dado2.setIcon(dadoimg6);
+                            }
                             System.out.println(num);
                             Jmain.getInstance().playing.movePlayer(num);
                             xm.stop();
@@ -96,6 +98,8 @@ public class Dados {
 
             }
         });
+
+
     }
 
     public void SetImageSize(int i) {
@@ -106,9 +110,6 @@ public class Dados {
 
     }
 
-    public int retornarsuma() {
-        return SumaDados;
-    }
 
     public static Dados getInstance() {
         if (instance == null) {
