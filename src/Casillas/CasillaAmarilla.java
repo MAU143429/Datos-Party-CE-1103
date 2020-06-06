@@ -1,5 +1,6 @@
 package Casillas;
 
+import Juego.EventStack;
 import Juego.Player;
 
 public class CasillaAmarilla extends Casilla {
@@ -16,7 +17,7 @@ public class CasillaAmarilla extends Casilla {
      */
     @Override
     public void evento(Player player) {
-        System.out.println("SE LLAMÓ UN EVENTO");
+
     }
 
 }

@@ -316,6 +316,9 @@ public class Jmain extends JFrame implements ActionListener {
             StarList.add(Integer.toString(castToPlayer(PlayerList.getPos(i)).estrellas));
         }
     }
+    public void ganadores(){
+        System.out.println("ganador!");
+    }
     ////////////////////////////////////////////////////MANEJO DE TURNOS////////////////////////////////////////////////////////////////////
     public void turns(){
         if (!corriendoJuego) {
@@ -334,16 +337,18 @@ public class Jmain extends JFrame implements ActionListener {
             rounds++;
             actualizarLabels();
         }
+        if(rounds == 20){
+            frm2.setVisible(false);
+            frm2.dispose();
+            ganadores();
+        }
     }
     ////////////////////////////////////////////////////////LANZA DADO////////////////////////////////////////////////////////////////
     public void lanzarDado(){
         corriendoJuego = true;
         int x = Dados.getInstance().tirarDado();
         dado.num = x;
-
         dado.tm.start();
-        System.out.println("AQUI NO LLEGO");
-
     }
     ///////////////////////////////////////////////////////METODOS DE ACTUALIZACIÓN DE OBJETOS////////////////////////////////////
     public void actualizarlistasMS(){

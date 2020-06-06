@@ -1,9 +1,14 @@
 package Market;
 
+import Juego.Jmain;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.*;
 
-public class market extends JFrame {
+public class market extends JFrame implements ActionListener {
 
     public JLabel bgMarket;
     public JButton buyX1, buyX2, buyX3;
@@ -26,6 +31,10 @@ public class market extends JFrame {
         buyX1 = new JButton();
         buyX2 = new JButton();
         buyX3 = new JButton();
+
+        buyX1.addActionListener(this);
+        buyX2.addActionListener(this);
+        buyX3.addActionListener(this);
 
         ImageIcon btnurl8 = new ImageIcon(getClass().getResource("/Market/X1.png"));
         buyX1.setIcon(btnurl8);
@@ -51,31 +60,46 @@ public class market extends JFrame {
         this.setVisible(true);
     }
 
-
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == buyX1) {
+            if(Jmain.getInstance().playing.monedas >= 50){
+                System.out.println("Compraste una estrella");
+                Jmain.getInstance().playing.monedas -= 50;
+                Jmain.getInstance().playing.estrellas += 1;
+                Jmain.getInstance().actualizarLabels();
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "ERROR NO TIENES SUFICIENTES MONEDAS", "ALERT", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        if (e.getSource() == buyX2) {
+            if(Jmain.getInstance().playing.monedas >= 90){
+                System.out.println("Compraste una estrella");
+                Jmain.getInstance().playing.monedas -= 90;
+                Jmain.getInstance().playing.estrellas += 2;
+                Jmain.getInstance().actualizarLabels();
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "ERROR NO TIENES SUFICIENTES MONEDAS", "ALERT", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        if (e.getSource() == buyX3) {
+            if(Jmain.getInstance().playing.monedas >= 135){
+                System.out.println("Compraste una estrella");
+                Jmain.getInstance().playing.monedas -= 135;
+                Jmain.getInstance().playing.estrellas += 3;
+                Jmain.getInstance().actualizarLabels();
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "ERROR NO TIENES SUFICIENTES MONEDAS", "ALERT", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
 }
-        /*
-        if (e.getSource()==miBoton1){
-            System.out.println("Compraste una estrella");
-            Coins-=50;
-            Stars+=1;
-            System.out.println(Coins);
-            System.out.println(Stars);
-        }
-        if (e.getSource()==miBoton2){
-            System.out.println("Compraste dos estrella");
-            Coins-=100;
-            Stars+=2;
-            System.out.println(Coins);
-            System.out.println(Stars);
-        }
-        if (e.getSource()==miBoton3){
-            System.out.println("Compraste tres estrella");
-            Coins-=150;
-            Stars+=3;
-            System.out.println(Coins);
-            System.out.println(Stars);
-        }
-        */
+
+
+
 
 
 

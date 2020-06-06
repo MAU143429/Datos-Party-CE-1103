@@ -437,6 +437,9 @@ public class Player {
         else{casillaActual = Map.getInstance().getCasilla(absPos,"p");}
         timerEvento.start();
         Jmain.getInstance().actualizarLabels();
+
+        this.timerEvento.start();
+        Jmain.getInstance().actualizarLabels();
     }
 
 

@@ -26,6 +26,7 @@ public class Star {
         posX = tile.getPosX();
         posY = tile.getPosY();
         Jmain.getInstance().estrella.setBounds((posX -22),(posY -28),50,50);
+        Jmain.getInstance().estrella.setVisible(true);
 
     }
 }
