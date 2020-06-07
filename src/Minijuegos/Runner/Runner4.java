@@ -1,5 +1,9 @@
 package Minijuegos.Runner;
 
+import Juego.Jmain;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
+import javax.management.remote.JMXAuthenticator;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -40,7 +44,6 @@ public class Runner4 extends JFrame {
         panel3.setLayout(null);
         panel3.setSize(1280, 900);
         frm3.add(panel3);
-
 
         jugador1 = new JLabel();
         jugador1.setBounds(146, 485, 50, 50);
@@ -143,7 +146,7 @@ public class Runner4 extends JFrame {
             @Override
             public void keyReleased(KeyEvent e) {
 
-                int[] numeros = {p1,p2,p3,p4};
+
 
                 if (e.getKeyChar() == 'a') {
                     System.out.println("Mario esta corriendo");
@@ -153,16 +156,7 @@ public class Runner4 extends JFrame {
                     p1 += 1;
                     System.out.println(p1);
 
-                    if (p1 > 20) {
-                        Arrays.sort(numeros);
-                        for (int numero:numeros)
-                            System.out.println(numero);
-                            System.out.print(numeros);
-                        JOptionPane.showMessageDialog(null, "MARIO WINS!!");
-                        frm3.setVisible(false);
 
-
-                    }
 
                 }
                 if (e.getKeyChar() == 'c') {
@@ -208,7 +202,113 @@ public class Runner4 extends JFrame {
                     }
                 }
 
+                if(p1 == 20 || p2 == 20 || p3 == 20 || p4 == 20){
+
+                    if (p1 > p2) {
+                        if (p1 > p3) {
+                            if (p1 > p4) {
+                                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 50;
+                                Jmain.getInstance().actualizarLabels();
+                                if (p2 > p3) {
+                                    if (p2 > p4) {
+                                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
+                                        Jmain.getInstance().actualizarLabels();
+                                        if (p3 > p4) {
+                                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 20;
+                                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
+                                            Jmain.getInstance().actualizarLabels();
+
+                                        } else {
+                                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
+                                            Jmain.getInstance().actualizarLabels();
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (p2 > p1) {
+                        if (p2 > p3) {
+                            if (p2 > p4) {
+                                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 50;
+                                Jmain.getInstance().actualizarLabels();
+                                if (p1 > p3) {
+                                    if (p1 > p4) {
+                                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
+                                        Jmain.getInstance().actualizarLabels();
+                                        if (p3 > p4) {
+                                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 20;
+                                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
+                                            Jmain.getInstance().actualizarLabels();
+
+                                        } else {
+                                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
+                                            Jmain.getInstance().actualizarLabels();
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (p3 > p1) {
+                        if (p3 > p2) {
+                            if (p3 > p4) {
+                                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 50;
+                                Jmain.getInstance().actualizarLabels();
+                                if (p1 > p2) {
+                                    if (p1 > p4) {
+                                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
+                                        Jmain.getInstance().actualizarLabels();
+                                        if (p2 > p4) {
+                                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 20;
+                                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
+                                            Jmain.getInstance().actualizarLabels();
+
+                                        } else {
+                                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
+                                            Jmain.getInstance().actualizarLabels();
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+                if (p4 > p1) {
+                    if (p4 > p2) {
+                        if (p4 > p3) {
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 50;
+                            Jmain.getInstance().actualizarLabels();
+                            if (p1 > p2) {
+                                if (p1 > p3) {
+                                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
+                                    Jmain.getInstance().actualizarLabels();
+                                    if (p2 > p3) {
+                                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 20;
+                                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                                        Jmain.getInstance().actualizarLabels();
+
+                                    } else {
+                                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 20;
+                                        Jmain.getInstance().actualizarLabels();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+
+
+
             }
         }
 
-}
+

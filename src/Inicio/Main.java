@@ -95,9 +95,9 @@ public class Main extends JFrame implements ActionListener {
     public static void main(String args[]) {
 
 
-        //String filepath = "intro.wav";
-        //musicstuff musicObject = new musicstuff();
-        //musicObject.playMusic(filepath);
+        String filepath = "intro.wav";
+        musicstuff musicObject = new musicstuff();
+        musicObject.playMusic(filepath);
 
         Main.getInstance();
 

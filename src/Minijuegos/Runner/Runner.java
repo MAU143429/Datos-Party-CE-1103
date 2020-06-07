@@ -1,5 +1,7 @@
 package Minijuegos.Runner;
 
+import Juego.Jmain;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -10,7 +12,8 @@ public class Runner extends JFrame {
     private JFrame frm3;
     private JLabel jugador1, jugador2, jugador3, jugador4, text1, text2, text3, text4;
     private JTextField text5;
-    private int x, y, p1, p2, p3, p4;
+    private int x, y, p1, p2, p3, p4,ejemplo;
+
 
 
     public Runner() {
@@ -100,6 +103,7 @@ public class Runner extends JFrame {
 
 
         frm3.setVisible(true);
+
 
 
         JOptionPane.showMessageDialog(null, "Lets play Runners!! \n When you press OK you will see the key bindings for each player! \n 3, 2, 1 RUN!! \n Enjoy!");

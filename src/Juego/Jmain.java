@@ -20,13 +20,14 @@ import java.util.concurrent.TimeUnit;
  */
 public class Jmain extends JFrame implements ActionListener {
 
+
     public JFrame frm2;
     public JLabel bg2, cnp1, cnp2, cnp3, cnp4, str1, str2, str3, str4, round, pgame, mario, luigi, toad, yoshi, dado1, dado2, estrella;
     public Casilla casillaActual;
     public JButton btnmkt, btndados, avanzar;
     public boolean corriendoJuego;
     protected Dados dado;
-    protected SimpleList PlayerList, StarList, CoinList, CLabelList, SLabelList;
+    public SimpleList PlayerList,StarList,CoinList,CLabelList,SLabelList;
     public Player pmario, pluigi, ptoad, pyoshi, playing;
     public int jugadores, rounds;
     private Star star;
@@ -412,7 +413,7 @@ public class Jmain extends JFrame implements ActionListener {
 
      */
     /////////////////////////////////////////////////////////////////////////CONVIERTE A PLAYER UN OBJETO//////////////////////////////////////
-    private Player castToPlayer (Object object) {
+    public Player castToPlayer (Object object) {
         return (Player) object;
     }
 

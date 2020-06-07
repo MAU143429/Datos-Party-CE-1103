@@ -1,5 +1,7 @@
 package Minijuegos.Runner;
 
+import Juego.Jmain;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -180,7 +182,54 @@ public class Runner3 extends JFrame {
                 }
             }
 
+            if(p1 == 20 || p2 == 20 || p3 == 20 ){
 
+                if (p1 > p2) {
+                    if (p1 > p3) {
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 50;
+                        Jmain.getInstance().actualizarLabels();
+                        if (p2 > p3) {
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                            Jmain.getInstance().actualizarLabels();
+                        } else {
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
+                            Jmain.getInstance().actualizarLabels();
+                        }
+                    }
+                }
+                if (p2 > p1) {
+                    if (p2 > p3) {
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 50;
+                        Jmain.getInstance().actualizarLabels();
+                        if (p1 > p3) {
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                            Jmain.getInstance().actualizarLabels();
+                        } else {
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
+                            Jmain.getInstance().actualizarLabels();
+                        }
+                    }
+                }
+                if (p3 > p1) {
+                    if (p3 > p1) {
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 50;
+                        Jmain.getInstance().actualizarLabels();
+                        if (p2 > p1) {
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+                            Jmain.getInstance().actualizarLabels();
+                        } else {
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
+                            Jmain.getInstance().actualizarLabels();
+                        }
+                    }
+                }
+            }
         }
     }
 
