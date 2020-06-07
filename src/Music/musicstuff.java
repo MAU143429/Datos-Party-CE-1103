@@ -3,8 +3,10 @@ package Music;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 
 import java.io.File;
+import java.util.Objects;
 
 
 public class musicstuff {
@@ -21,6 +23,7 @@ public class musicstuff {
                 AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicpath);
                 clip = AudioSystem.getClip();
                 clip.open(audioInput);
+
                 clip.start();
                 clip.loop(Clip.LOOP_CONTINUOUSLY);
 

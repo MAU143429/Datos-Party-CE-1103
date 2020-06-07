@@ -23,13 +23,12 @@ public class Jmain extends JFrame implements ActionListener {
     public JFrame frm2;
     public JLabel bg2, cnp1, cnp2, cnp3, cnp4, str1, str2, str3, str4, round, pgame, mario, luigi, toad, yoshi, dado1, dado2, estrella;
     public Casilla casillaActual;
-    public JButton btnmkt, btndados, btnend,avanzar;
+    public JButton btnmkt, btndados, avanzar;
     public boolean corriendoJuego;
     protected Dados dado;
     protected SimpleList PlayerList, StarList, CoinList, CLabelList, SLabelList;
-    public  Player pmario, pluigi, ptoad, pyoshi, playing;
+    public Player pmario, pluigi, ptoad, pyoshi, playing;
     public int jugadores, rounds;
-    private int jugactual = 0;
     private Star star;
     public JPanel panel4;
     public JTextField textmovimientos;
@@ -46,7 +45,7 @@ public class Jmain extends JFrame implements ActionListener {
      */
     public Jmain() {
 
-       //String filepath = "maintheme.wav";
+        //String filepath = "maintheme.wav";
 
         //musicstuff musicObject = new musicstuff();
         //musicObject.playMusic(filepath);
@@ -88,14 +87,11 @@ public class Jmain extends JFrame implements ActionListener {
         frm2.add(panel4);
 
         //############################Botones###############################
-
-
-        avanzar = new JButton("avanzar");
-        avanzar.setBounds(1030, 609 , 50 , 20);
+        avanzar = new JButton("Avanzar");
+        avanzar.setBounds(1030, 609, 100, 50);
         avanzar.setVisible(false);
         avanzar.addActionListener(this);
         panel4.add(avanzar);
-
 
         btnmkt = new JButton();
         btnmkt.setBounds(1184, 811, 80, 80);
@@ -105,35 +101,20 @@ public class Jmain extends JFrame implements ActionListener {
         btnmkt.setContentAreaFilled(false);
         btnmkt.setOpaque(false);
         btnmkt.addActionListener(this);
-
         panel4.add(btnmkt);
-
 
         btndados = new JButton("TIRAR DADOS");
         btndados.setBounds(870, 700, 385, 82);
         ImageIcon btnurl12 = new ImageIcon(getClass().getResource("/Juego/roll.png"));
         btndados.setIcon(btnurl12);
         btndados.addActionListener(this);
-
         panel4.add(btndados);
-
-        btnend = new JButton("END TURN");
-        btnend.setBounds(870, 600, 385, 82);
-        ImageIcon fotofin = new ImageIcon(getClass().getResource("/Juego/btnend.png"));
-        btnend.setIcon(fotofin);
-        btnend.setEnabled(false);
-        btnend.addActionListener(this);
-
-        //panel4.add(btnend);
 
         //############################Labels###############################
         textmovimientos = new JTextField();
-        textmovimientos.setBounds(950, 609 , 50 , 20);
+        textmovimientos.setBounds(950, 609, 50, 50);
         textmovimientos.setVisible(false);
         panel4.add(textmovimientos);
-
-
-
 
 
         //##Stars##
@@ -167,25 +148,25 @@ public class Jmain extends JFrame implements ActionListener {
         cnp1 = new JLabel("0");
         cnp1.setFont(new Font("Serif", Font.BOLD, 40));
         cnp1.setForeground(Color.WHITE);
-        cnp1.setBounds(1187, 75, 40, 40);
+        cnp1.setBounds(1187, 75, 80, 40);
         panel4.add(cnp1);
 
         cnp2 = new JLabel("0");
         cnp2.setFont(new Font("Serif", Font.BOLD, 40));
         cnp2.setForeground(Color.WHITE);
-        cnp2.setBounds(1187, 160, 40, 40);
+        cnp2.setBounds(1187, 160, 80, 40);
         panel4.add(cnp2);
 
         cnp3 = new JLabel("0");
         cnp3.setFont(new Font("Serif", Font.BOLD, 40));
         cnp3.setForeground(Color.WHITE);
-        cnp3.setBounds(1187, 235, 40, 40);
+        cnp3.setBounds(1187, 235, 80, 40);
         panel4.add(cnp3);
 
         cnp4 = new JLabel("0");
         cnp4.setFont(new Font("Serif", Font.BOLD, 40));
         cnp4.setForeground(Color.WHITE);
-        cnp4.setBounds(1187, 305, 40, 40);
+        cnp4.setBounds(1187, 305, 80, 40);
         panel4.add(cnp4);
 
 
@@ -272,7 +253,7 @@ public class Jmain extends JFrame implements ActionListener {
 
     ///////////////////////////////////////////CREAR JUGADORES//////////////////////////////////////////////////////////
 
-    public void createPlayers(int jugadores){
+    public void createPlayers(int jugadores) {
         switch (jugadores) {
             case 1:
                 pmario = new Player(1);
@@ -282,7 +263,6 @@ public class Jmain extends JFrame implements ActionListener {
                 yoshi.setVisible(false);
                 textmovimientos.setVisible(true);
                 avanzar.setVisible(true);
-
                 actualizarLabels();
                 break;
 
@@ -319,16 +299,18 @@ public class Jmain extends JFrame implements ActionListener {
         }
         CoinList = new SimpleList();
         StarList = new SimpleList();
-        for(int i = 0; i < PlayerList.getLength(); i++){
+        for (int i = 0; i < PlayerList.getLength(); i++) {
             CoinList.add(Integer.toString(castToPlayer(PlayerList.getPos(i)).monedas));
             StarList.add(Integer.toString(castToPlayer(PlayerList.getPos(i)).estrellas));
         }
     }
-    public void ganadores(){
+
+    public void ganadores() {
         System.out.println("ganador!");
     }
+
     ////////////////////////////////////////////////////MANEJO DE TURNOS////////////////////////////////////////////////////////////////////
-    public void turns(){
+    public void turns() {
         if (!corriendoJuego) {
             for (int i = 0; i < PlayerList.getLength(); i++) {
                 if (!castToPlayer(PlayerList.getPos(i)).jugado) {
@@ -343,14 +325,19 @@ public class Jmain extends JFrame implements ActionListener {
                 castToPlayer(PlayerList.getPos(i)).jugado = false;
             }
             rounds++;
+            MGS minijuego = new MGS(PlayerList.getLength());
             actualizarLabels();
         }
-        if(rounds == 20){
+        if (rounds == 20) {
             frm2.setVisible(false);
             frm2.dispose();
             ganadores();
         }
     }
+    public void crearMario(){
+        playing = castToPlayer(PlayerList.getPos(0));
+    }
+
     ////////////////////////////////////////////////////////LANZA DADO////////////////////////////////////////////////////////////////
     public void lanzarDado(){
         corriendoJuego = true;
@@ -436,6 +423,7 @@ public class Jmain extends JFrame implements ActionListener {
         if (e.getSource() == avanzar) {
             Jmain.getInstance().playing.movePlayer(Integer.parseInt(textmovimientos.getText()));
 
+
         }
 
         if (e.getSource() == btnmkt) {
@@ -454,15 +442,6 @@ public class Jmain extends JFrame implements ActionListener {
             turns();
 
         }
-        /**
-        if(e.getSource() == btnend){
-            btndados.setEnabled(true);
-            btnend.setEnabled(false);
-            System.out.println("El jugador ha terminado su turno");
-           */
-
-
-
         }
     }
 

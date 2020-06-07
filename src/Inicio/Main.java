@@ -49,10 +49,12 @@ public class Main extends JFrame implements ActionListener {
         btn2p = new JButton();
         btn3p = new JButton();
         btn4p = new JButton();
-        ModoPrueba = new JButton();
 
-
-        ModoPrueba.setBounds(27, 830, 40, 40);
+        ModoPrueba = new JButton("MODO PRUEBAS");
+        ModoPrueba.setBounds(20, 800, 150, 50);
+        ModoPrueba.setBorderPainted(false);
+        ModoPrueba.setContentAreaFilled(false);
+        ModoPrueba.setOpaque(false);
         ModoPrueba.addActionListener(this);
         panel.add(ModoPrueba);
 
@@ -93,10 +95,9 @@ public class Main extends JFrame implements ActionListener {
     public static void main(String args[]) {
 
 
-        String filepath = "intro.wav";
-
-        musicstuff musicObject = new musicstuff();
-        musicObject.playMusic(filepath);
+        //String filepath = "intro.wav";
+        //musicstuff musicObject = new musicstuff();
+        //musicObject.playMusic(filepath);
 
         Main.getInstance();
 
@@ -122,6 +123,7 @@ public class Main extends JFrame implements ActionListener {
             System.out.println(players + " Jugadores Jugando ahora");
             Jmain para1 = Jmain.getInstance();
             para1.createPlayers(players);
+            Jmain.getInstance().crearMario();
             frm1.setVisible(false);
 
         }
