@@ -3,6 +3,7 @@ import Casillas.Casilla;
 import EstructurasDatos.SimpleList;
 import Inicio.Main;
 import Market.market;
+import Music.musicstuff;
 
 import javax.swing.*;
 import java.awt.*;
@@ -44,6 +45,13 @@ public class Jmain extends JFrame implements ActionListener {
      * @authors Mauricio C. , Naheem Johnson , Jose Espinoza
      */
     public Jmain() {
+
+       //String filepath = "maintheme.wav";
+
+        //musicstuff musicObject = new musicstuff();
+        //musicObject.playMusic(filepath);
+
+
         this.casillaActual = null;
         Map mapa = Map.getInstance();
         //EventStack pilaEv = EventStack.getInstance();

@@ -1,6 +1,9 @@
 package Inicio;
 
 import Juego.Jmain;
+import Music.LoopMusic;
+import Music.musicstuff;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,6 +23,7 @@ public class Main extends JFrame implements ActionListener {
     private JFrame frm1;
     int players;
     private static Main instance = null;
+    public musicstuff parar;
 
     /**
      * Main
@@ -28,6 +32,9 @@ public class Main extends JFrame implements ActionListener {
      * @author Mauricio C.
      */
     public Main() {
+
+
+
         frm1 = new JFrame("Datos Party 1");
         frm1.setBounds(0, 0, 1280, 900);
         frm1.setTitle("Datos Party 1");
@@ -85,7 +92,17 @@ public class Main extends JFrame implements ActionListener {
 
     public static void main(String args[]) {
 
+
+        String filepath = "intro.wav";
+
+        musicstuff musicObject = new musicstuff();
+        musicObject.playMusic(filepath);
+
         Main.getInstance();
+
+
+
+
 
 
     }
@@ -106,6 +123,7 @@ public class Main extends JFrame implements ActionListener {
             Jmain para1 = Jmain.getInstance();
             para1.createPlayers(players);
             frm1.setVisible(false);
+
         }
 
 
@@ -115,7 +133,10 @@ public class Main extends JFrame implements ActionListener {
             System.out.println(players + " Jugadores Jugando ahora");
             Jmain para2 = Jmain.getInstance();
             para2.createPlayers(players);
+            parar = new musicstuff();
             frm1.setVisible(false);
+
+
 
 
         }
