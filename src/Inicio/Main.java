@@ -1,14 +1,10 @@
 package Inicio;
-
 import Juego.Jmain;
 import Music.LoopMusic;
 import Music.musicstuff;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
 /**
  * Main
  *Esta clase es la que ejecuta la ventana principal
@@ -17,8 +13,6 @@ import java.awt.event.ActionListener;
  */
 
 public class Main extends JFrame implements ActionListener {
-
-
     private JButton btn2p, btn3p, btn4p, ModoPrueba;
     private JFrame frm1;
     int players;
@@ -32,9 +26,6 @@ public class Main extends JFrame implements ActionListener {
      * @author Mauricio C.
      */
     public Main() {
-
-
-
         frm1 = new JFrame("Datos Party 1");
         frm1.setBounds(0, 0, 1280, 900);
         frm1.setTitle("Datos Party 1");
@@ -58,7 +49,6 @@ public class Main extends JFrame implements ActionListener {
         ModoPrueba.addActionListener(this);
         panel.add(ModoPrueba);
 
-
         btn2p.setBounds(874, 494, 80, 80);
         ImageIcon btnurl1 = new ImageIcon(getClass().getResource("/Inicio/2P.png"));
         btn2p.setIcon(btnurl1);
@@ -77,37 +67,22 @@ public class Main extends JFrame implements ActionListener {
         btn4p.addActionListener(this);
         panel.add(btn4p);
 
-
         JLabel bg = new JLabel();
         bg.setBounds(0, 0, 1280, 900);
         ImageIcon bgurl = new ImageIcon(getClass().getResource("/Inicio/Fondo1.png"));
         bg.setIcon(bgurl);
         validate();
-
         panel.add(bg);
-
 
         frm1.setVisible(true);
         JOptionPane.showMessageDialog(null, "Welcome to Datos Party 1!! \n Select number of players!  \n Enjoy!");
-
     }
-
     public static void main(String args[]) {
-
-
         String filepath = "intro.wav";
         musicstuff musicObject = new musicstuff();
         musicObject.playMusic(filepath);
-
         Main.getInstance();
-
-
-
-
-
-
     }
-
     /**
      * actionPerformed
      * Este metodo abstracto del actionlistener permite darle las funcionalidades a los botones
@@ -116,7 +91,6 @@ public class Main extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-
         if (e.getSource() == ModoPrueba) {
             System.out.println("Jugaran 1 jugadores");
             players = 1;
@@ -125,10 +99,7 @@ public class Main extends JFrame implements ActionListener {
             para1.createPlayers(players);
             Jmain.getInstance().crearMario();
             frm1.setVisible(false);
-
         }
-
-
         if (e.getSource() == btn2p) {
             System.out.println("Jugaran 2 jugadores");
             players = 2;
@@ -137,10 +108,6 @@ public class Main extends JFrame implements ActionListener {
             para2.createPlayers(players);
             parar = new musicstuff();
             frm1.setVisible(false);
-
-
-
-
         }
         if (e.getSource() == btn3p) {
             System.out.println("Jugaran 3 jugadores");
@@ -149,7 +116,6 @@ public class Main extends JFrame implements ActionListener {
             Jmain para3 = Jmain.getInstance();
             para3.createPlayers(players);
             frm1.setVisible(false);
-
         }
         if (e.getSource() == btn4p) {
             System.out.println("Jugaran 4 jugadores");
@@ -159,16 +125,13 @@ public class Main extends JFrame implements ActionListener {
             para4.createPlayers(players);
             frm1.setVisible(false);
         }
-
     }
-
     public static Main getInstance() {
         if (instance == null) {
             instance = new Main();
         }
         return instance;
     }
-
     public int getPlayers() {
         return players;
     }
