@@ -20,8 +20,8 @@ public class Map {
 
         faseA = new SimpleList();
 
-        faseA.add(new CasillaVerde(475,491,0,47));//0//YY
-        faseA.add(new CasillaAzul(503,409,1,48));//1//ZZ
+        faseA.add(new CasillaAzul(475,491,0,47));//0//YY
+        faseA.add(new CasillaVerde(503,409,1,48));//1//ZZ
         faseA.add(new CasillaAmarilla(501,298,2,49));//2//AAA
 
         faseB = new SimpleList();

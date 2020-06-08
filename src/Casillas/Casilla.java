@@ -8,6 +8,9 @@ public abstract class Casilla {
     protected String msg;
     public Casilla self;
 
+    public String getMSG(){
+        return msg;
+    }
     public int getReferencia(){
         return referencia;
     }
