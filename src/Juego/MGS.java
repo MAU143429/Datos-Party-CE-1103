@@ -81,11 +81,7 @@ public class MGS extends JFrame implements ActionListener {
         panel4.add(btnrun);
 
 
-        btn.setBounds(80, 450, 300, 70);
-        //ImageIcon btnurl29 = new ImageIcon(getClass().getResource("/Juego/btn.png"));
-        btn.addActionListener(this);
-        //btn.setIcon(btnurl29);
-        panel4.add(btn);
+
 
         //#######################Labels##################################################
         bg5 = new JLabel();
@@ -119,7 +115,7 @@ public class MGS extends JFrame implements ActionListener {
         if (e.getSource() == btndice) {
             System.out.println("Abriendo Minijuego Dice");
             frm5.setVisible(false);
-            SG2 correr5 = new SG2(players);
+            SG2 correr5 = new SG2();
         }
         if (e.getSource() == btnlftt) {
             System.out.println("Abriendo Minijuego Looking for the Treasure");
@@ -130,10 +126,6 @@ public class MGS extends JFrame implements ActionListener {
             System.out.println("Abriendo Minijuego Runner");
             frm5.setVisible(false);
             SG5 correr7 = new SG5();
-        }
-        if (e.getSource() == btn) {
-            System.out.println("Abriendo Minijuego Rock Paper Scissors");
-            frm5.setVisible(false);
         }
 
     }
