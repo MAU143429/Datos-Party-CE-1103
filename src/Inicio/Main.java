@@ -78,9 +78,9 @@ public class Main extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(null, "Welcome to Datos Party 1!! \n Select number of players!  \n Enjoy!");
     }
     public static void main(String args[]) {
-        String filepath = "intro.wav";
-        musicstuff musicObject = new musicstuff();
-        musicObject.playMusic(filepath);
+        //String filepath = "intro.wav";
+        //musicstuff musicObject = new musicstuff();
+        //musicObject.playMusic(filepath);
         Main.getInstance();
     }
     /**
