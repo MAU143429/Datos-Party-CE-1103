@@ -5,7 +5,6 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 
 public class Dados {
-    ;
     Timer tm, xm,sm;
     int x = 0;
     ImageIcon dadoimg1, dadoimg2, dadoimg3, dadoimg4, dadoimg5, dadoimg6, dadoroll;
@@ -32,19 +31,15 @@ public class Dados {
         dadoimg6 = new ImageIcon(getClass().getResource("/Juego/dado6.png"));
         dadoroll = new ImageIcon(getClass().getResource("/Juego/dadoroll1.png"));
 
-        xm = new Timer(1000, new ActionListener() {
+        xm = new Timer(2000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                PutFinal1(Jmain.getInstance().dado.dado1);
-                PutFinal2(Jmain.getInstance().dado.dado2);
-                //Jmain.getInstance().dado1.setIcon(dadoroll);
-                //Jmain.getInstance().dado2.setIcon(dadoroll);
-                System.out.println(num);
-                Jmain.getInstance().playing.movePlayer(num);
+                Jmain.getInstance().dado1.setIcon(dadoroll);
+                Jmain.getInstance().dado2.setIcon(dadoroll);
                 xm.stop();
             }
         });
-        tm = new Timer(200, new ActionListener() {
+        tm = new Timer(100, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 SetImageSize(x);
@@ -52,9 +47,31 @@ public class Dados {
                 System.out.println(x);
                 if (x >= list.length) {
                     x = 0;
+                    dado1 = (int) (Math.random() * 6) + 1;
+                    System.out.println("DADO 1: " + Dados.getInstance().dado1);
+                    dado2 = (int) (Math.random() * 6) + 1;
+                    System.out.println("DADO 2: " + Dados.getInstance().dado2);
+                    SumaDados = dado1 + dado2;
+                    System.out.println("Suma de los Dados " + SumaDados);
                     tm.stop();
-                    xm.start();
+                    sm.start();
                 }
+            }
+        });
+        sm = new Timer(100, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PutFinal1((Jmain.getInstance().dado.dado1)-1);
+                PutFinal2((Jmain.getInstance().dado.dado2)-1);
+                try {
+                    TimeUnit.MILLISECONDS.sleep(100);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+                System.out.println(num);
+                Jmain.getInstance().playing.movePlayer(SumaDados);
+                sm.stop();
+                xm.start();
             }
         });
 
@@ -85,14 +102,6 @@ public class Dados {
     }
 
     public int tirarDado() {
-        dado1 = (int) (Math.random() * 6) + 1;
-        dadoani1 = dado1;
-        System.out.println("DADO 1: " + Dados.getInstance().dado1);
-        dado2 = (int) (Math.random() * 6) + 1;
-        dadoani2 = dado2;
-        System.out.println("DADO 2: " + Dados.getInstance().dado2);
-        SumaDados = dado1 + dado2;
-        System.out.println("Suma de los Dados " + SumaDados);
         return SumaDados;
     }
 }
