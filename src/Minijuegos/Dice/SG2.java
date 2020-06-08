@@ -1,22 +1,24 @@
     package Minijuegos.Dice;
 
 
-public class SG2 {
+    import Juego.Jmain;
 
-    int tltplayers;
+    public class SG2 {
 
-    public SG2(int players) {
-        tltplayers = players;
 
-        if (tltplayers == 2) {
+
+    public SG2() {
+
+
+        if (Jmain.getInstance().getPlayerList().getLength() == 2) {
             dosjugadores player2 = new dosjugadores();
 
         }
-        if (tltplayers == 3) {
+        if (Jmain.getInstance().getPlayerList().getLength() == 3) {
             tresjugadores player3 = new tresjugadores();
 
         }
-        if (tltplayers == 4) {
+        if (Jmain.getInstance().getPlayerList().getLength() == 4) {
             cuatrojugadores player4 = new cuatrojugadores();
 
         }

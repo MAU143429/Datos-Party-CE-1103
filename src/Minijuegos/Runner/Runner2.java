@@ -152,13 +152,27 @@ public class Runner2 extends JFrame {
                 System.out.println(p2);
 
                 if (p2 == 20) {
-
                     JOptionPane.showMessageDialog(null, "LUIGI WINS!!");
                     frm3.setVisible(false);
 
                 }
             }
 
+            if (p1 == 20 || p2 == 20 ){
+
+                if (p1 > p2) {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 50;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
+                    Jmain.getInstance().actualizarLabels();
+
+                } else {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 50;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
+                    Jmain.getInstance().actualizarLabels();
+
+                }
+
+            }
         }
 
     }

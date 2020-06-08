@@ -1,4 +1,6 @@
 package Minijuegos.Dice;
+import Juego.Jmain;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -210,11 +212,13 @@ public class dosjugadores extends JFrame {
                     System.out.println(suma2);
 
                     if (suma1 > suma2) {
-                        winner = "Player 1";
-                        second = "Player 2";
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 50;
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
+                        Jmain.getInstance().actualizarLabels();
                     } else {
-                        winner = "Player 2";
-                        second = "Player 1";
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 50;
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
+                        Jmain.getInstance().actualizarLabels();
                     }
 
                     JOptionPane.showMessageDialog(null, "SCORES: " + "\nPLAYER 1: " + suma1 + "\nPLAYER 2: " + suma2 + "\n\nSTANDINGS: " + "\n 1° PLACE: " + winner + "\n 2° PLACE: " + second);
