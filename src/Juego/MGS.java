@@ -68,13 +68,13 @@ public class MGS extends JFrame implements ActionListener {
         btndice.setIcon(btnurl24);
         panel4.add(btndice);
 
-        btnlftt.setBounds(80, 350, 300, 70);
+        btnlftt.setBounds(80, 400, 300, 70);
         ImageIcon btnurl25 = new ImageIcon(getClass().getResource("/Juego/btnlftt.png"));
         btnlftt.addActionListener(this);
         btnlftt.setIcon(btnurl25);
         panel4.add(btnlftt);
 
-        btnrun.setBounds(80, 560, 300, 70);
+        btnrun.setBounds(80, 520, 300, 70);
         ImageIcon btnurl27 = new ImageIcon(getClass().getResource("/Juego/btnrun.png"));
         btnrun.addActionListener(this);
         btnrun.setIcon(btnurl27);
