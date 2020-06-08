@@ -110,7 +110,7 @@ public class MGS extends JFrame implements ActionListener {
         if (e.getSource() == btnckr) {
             System.out.println("Abriendo Minijuego Clicker");
             frm5.setVisible(false);
-            SG1 correr4 = new SG1(players);
+            SG1 correr4 = new SG1();
         }
         if (e.getSource() == btndice) {
             System.out.println("Abriendo Minijuego Dice");
