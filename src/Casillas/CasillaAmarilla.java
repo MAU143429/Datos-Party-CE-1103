@@ -1,6 +1,8 @@
 package Casillas;
 
+import Eventos.*;
 import Juego.EventStack;
+import Juego.Jmain;
 import Juego.Player;
 
 public class CasillaAmarilla extends Casilla {
@@ -17,6 +19,10 @@ public class CasillaAmarilla extends Casilla {
      */
     @Override
     public void evento(Player player) {
+        StealStars prueba = new StealStars();
+        prueba.evento(player);
+        Jmain.getInstance().actualizarLabels();
+        return;
 
     }
 
