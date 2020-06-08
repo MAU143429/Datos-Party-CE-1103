@@ -1,4 +1,4 @@
-package Minijuegos.TicTacToe;
+package Minijuegos.TTT;
 
 public class Juego {
     int Jugador = 1;
@@ -65,7 +65,7 @@ public class Juego {
             }
         }
     }
-    int BuscarFin() {//<editor-fold defaultstate="collapsed" desc="Implementación de código »">
+    int BuscarFin() {
         int col = BuscarFinColumnas();
         if (col != -1) {
             return col;

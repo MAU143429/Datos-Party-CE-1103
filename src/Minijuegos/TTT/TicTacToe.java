@@ -1,15 +1,16 @@
-package Minijuegos.TicTacToe;
+package Minijuegos.TTT;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-public class mainGUI extends JFrame {
+public class TicTacToe extends JFrame {
     public ImageIcon logoImage, bgImage;
     public JPanel buttonContainer;
+    public JLabel bgLabel;
     JButton[][] TableroGrafico = new JButton[3][3];
     Juego juego = new Juego();
-    mainGUI(){
+    public TicTacToe(){
         this.setTitle("Tic-Tac-Toe");
         this.setBounds(250,30,900,720);
         this.setPreferredSize(new Dimension(900,720));
@@ -18,24 +19,44 @@ public class mainGUI extends JFrame {
         Container container = this.getContentPane();
         container.setLayout(null);
 
-        JLabel bgLabel = new JLabel();
+        bgLabel = new JLabel();
+        bgImage = new ImageIcon(getClass().getResource("/Minijuegos/TTT/bg.png"));
+        bgLabel.setIcon(bgImage);
+        bgLabel.setBackground(Color.blue);
 
         JLabel gameLabel = new JLabel();
         gameLabel.setText("Game logo");
 
         buttonContainer = new JPanel();
-        //buttonContainer.setBackground(Color.blue);
         buttonContainer.setLayout(null);
+        buttonContainer.setOpaque(false);
 
         JButton btn1 = new JButton();
+        btn1.setBackground(new Color(83, 148, 252));
+
         JButton btn2 = new JButton();
+        btn2.setBackground(new Color(83, 148, 252));
+
         JButton btn3 = new JButton();
+        btn3.setBackground(new Color(83, 148, 252));
+
         JButton btn4 = new JButton();
+        btn4.setBackground(new Color(83, 148, 252));
+
         JButton btn5 = new JButton();
+        btn5.setBackground(new Color(83, 148, 252));
+
         JButton btn6 = new JButton();
+        btn6.setBackground(new Color(83, 148, 252));
+
         JButton btn7 = new JButton();
+        btn7.setBackground(new Color(83, 148, 252));
+
         JButton btn8 = new JButton();
+        btn8.setBackground(new Color(83, 148, 252));
+
         JButton btn9 = new JButton();
+        btn9.setBackground(new Color(83, 148, 252));
 
         bgLabel.setBounds(0, 0, 900,720);
         gameLabel.setBounds(0, 0, 300,100);
@@ -50,6 +71,7 @@ public class mainGUI extends JFrame {
         btn8.setBounds(195, 240, 100, 100);
         btn9.setBounds(310, 240, 100, 100);
 
+
         buttonContainer.add(btn9);
         buttonContainer.add(btn8);
         buttonContainer.add(btn7);
@@ -62,6 +84,7 @@ public class mainGUI extends JFrame {
         container.add(buttonContainer);
         container.add(gameLabel);
         container.add(bgLabel);
+
         GenerarTableroGrafico();
 
         this.setVisible(true);
@@ -93,12 +116,17 @@ public class mainGUI extends JFrame {
                         break;
                     case 1:
                         TableroGrafico[c][f].setText("X");
+                        TableroGrafico[c][f].setFont(new Font("Arial", Font.BOLD, 40));
                         break;
                     case 2:
                         TableroGrafico[c][f].setText("O");
+                        TableroGrafico[c][f].setFont(new Font("Arial", Font.BOLD, 40));
                         break;
                 }
             }
         }
+    }
+    public static void main(String[] Args){
+        new TicTacToe();
     }
 }
