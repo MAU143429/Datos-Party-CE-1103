@@ -341,7 +341,7 @@ public class Jmain extends JFrame implements ActionListener {
     ////////////////////////////////////////////////////////LANZA DADO////////////////////////////////////////////////////////////////
     public void lanzarDado(){
         corriendoJuego = true;
-        int x = Dados.getInstance().tirarDado();
+        int x = dado.getInstance().tirarDado();
         dado.num = x;
         dado.tm.start();
     }
