@@ -1,5 +1,7 @@
 package Minijuegos.Clicker;
 
+import Juego.Jmain;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,6 +9,12 @@ import java.awt.event.ActionListener;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * Clicker3
+ *Esta clase ejecuta el minijuego clicker para tres jugadores
+ *@author Naheem J.
+
+ */
 public class Clicker3 extends JFrame implements ActionListener {
     public JLabel bgLabel, clickerTitle, timerGame, clickerCounter1, clickerCounter2, clickerCounter3, clickerImage, clickerImage1, clickerImage2;
     public ImageIcon ButtonImage, coinLabel, bgClicker, minigameTitle;
@@ -49,20 +57,20 @@ public class Clicker3 extends JFrame implements ActionListener {
         clickerImage2.setIcon(coinLabel);
 
         timerGame = new JLabel();
-        timerGame.setText("Game is not started yet :)");
+        timerGame.setText("Game is not started yet");
         timerGame.setFont(new Font("Arial", Font.BOLD, 16));
 
 
         clickerCounter1 = new JLabel();
-        clickerCounter1.setText("Player 1: " + player1);
+        clickerCounter1.setText("Mario: " + player1);
         clickerCounter1.setFont(new Font("Arial", Font.BOLD, 16));
 
         clickerCounter2 = new JLabel();
-        clickerCounter2.setText("Player 2: " + player2);
+        clickerCounter2.setText("Luigi: " + player2);
         clickerCounter2.setFont(new Font("Arial", Font.BOLD, 16));
 
         clickerCounter3 = new JLabel();
-        clickerCounter3.setText("Player 3: " + player3);
+        clickerCounter3.setText("Toad: " + player3);
         clickerCounter3.setFont(new Font("Arial", Font.BOLD, 16));
 
         coinButton = new JButton();
@@ -77,32 +85,35 @@ public class Clicker3 extends JFrame implements ActionListener {
         startButton = new JButton("START");
         startButton.setFont(new Font("Arial", Font.BOLD, 22));
         startButton.setBackground(new Color(104, 133, 253));
-        startButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                temp = true;
-                coinButton.setEnabled(true);
-                startButton.setEnabled(false);
-                timer = new Timer();
-                timer.scheduleAtFixedRate(task, 1000, 1000);
+        startButton.addActionListener(e -> {
+            temp = true;
+            coinButton.setEnabled(true);
+            startButton.setEnabled(false);
+            timer = new Timer();
+            timer.scheduleAtFixedRate(task, 1000, 1000);
 
-            }
         });
         task = new TimerTask() {
             @Override
             public void run() {
-                timerGame.setText("Player " + playerTimes + "´s turn: " + secondsPassed + " seconds");
                 secondsPassed++;
-                if (secondsPassed > 15) {
+                if(playerTimes == 1){
+                    timerGame.setText("Mario´s turn: " + secondsPassed + " seconds");
+                }
+                if(playerTimes == 2){
+                    timerGame.setText("Luigi´s turn: " + secondsPassed + " seconds");
+                }
+                if(playerTimes == 3){
+                    timerGame.setText("Toad´s turn: " + secondsPassed + " seconds");
+                }
+                if (secondsPassed == 15) {
                     if (playerTimes == 3) {
                         secondsPassed = 0;
-                        timerGame.setText(secondsPassed + " seconds passed");
                         timer.cancel();
                         setWinner();
                     } else {
                         secondsPassed = 0;
                         playerTimes++;
-                        timerGame.setText("Player " + playerTimes + "´s turn: " + secondsPassed + " seconds");
                     }
                 }
             }
@@ -140,13 +151,47 @@ public class Clicker3 extends JFrame implements ActionListener {
 
     public void setWinner() {
         if (player1 > player2 && player1 > player3) {
-            JOptionPane.showMessageDialog(null, "The winner is player1");
+            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 50;
+            Jmain.getInstance().actualizarLabels();
+            if(player2 > player3){
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+            }else{
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
+            }
+            Jmain.getInstance().actualizarLabels();
+            JOptionPane.showMessageDialog(null, "MARIO WINS!!!");
+            this.setVisible(false);
         }
+
         if (player2 > player1 && player2 > player3) {
-            JOptionPane.showMessageDialog(null, "The winner is player2");
+            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 50;
+            Jmain.getInstance().actualizarLabels();
+            if(player1 > player3){
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+            }else{
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+            }
+            Jmain.getInstance().actualizarLabels();
+            JOptionPane.showMessageDialog(null, "LUIGI WINS!!!");
+            this.setVisible(false);
         }
         if (player3 > player1 && player3 > player2) {
-            JOptionPane.showMessageDialog(null, "The winner is player3");
+            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 50;
+            Jmain.getInstance().actualizarLabels();
+            if(player1 > player2){
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+            }else{
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+            }
+            Jmain.getInstance().actualizarLabels();
+            JOptionPane.showMessageDialog(null, "TOAD WINS!!!");
+            this.setVisible(false);
         }
     }
 
@@ -160,17 +205,22 @@ public class Clicker3 extends JFrame implements ActionListener {
             if (secondsPassed > 5) {
                 if (playerTimes == 1) {
                     player1++;
-                    clickerCounter1.setText("Player 1: " + player1);
+                    clickerCounter1.setText("Mario: " + player1);
                 }
                 if (playerTimes == 2) {
                     player2++;
-                    clickerCounter2.setText("Player 2: " + player2);
+                    clickerCounter2.setText("Luigi: " + player2);
                 }
                 if (playerTimes == 3) {
                     player3++;
-                    clickerCounter3.setText("Player 3: " + player3);
+                    clickerCounter3.setText("Toad: " + player3);
                 }
             }
         }
     }
+    /*
+    public static void main(String[] Args){
+        new Clicker3();
+    }
+     */
 }

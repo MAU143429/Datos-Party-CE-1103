@@ -24,7 +24,6 @@ public class MGS extends JFrame implements ActionListener {
     private JButton btnckr, btndice, btnlftt, btnrun,btn;
     private JFrame frm5;
     private JLabel bg5;
-    int players;
 
     /**
      * MGS
@@ -32,9 +31,8 @@ public class MGS extends JFrame implements ActionListener {
      *@author Mauricio C.
 
      */
-    public MGS(int jugadores) {
+    public MGS() {
 
-        players = jugadores;
 
         frm5 = new JFrame();
         frm5.setBounds(0, 0, 470, 720);
@@ -117,7 +115,7 @@ public class MGS extends JFrame implements ActionListener {
         if (e.getSource() == btnlftt) {
             System.out.println("Abriendo Minijuego Looking for the Treasure");
             frm5.setVisible(false);
-            SG3 correr6 = new SG3(players);
+            SG3 correr6 = new SG3();
         }
         if (e.getSource() == btnrun) {
             System.out.println("Abriendo Minijuego Runner");

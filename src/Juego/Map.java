@@ -38,16 +38,18 @@ public class Map {
 
         faseD = new DoubleLinkedCircularList();
 
-        faseD.add(new CasillaMorada(298,791,0,56));//0//TELEPORT//2
-        faseD.add(new CasillaAmarilla(415,791,1,57));//1//3
-        faseD.add(new CasillaAmarilla(537,791,2,58));//2//4
-        faseD.add(new CasillaAmarilla(537,873,3,59));//3//5
-        faseD.add(new CasillaAmarilla(415,873,4,60));//4//6
-        faseD.add(new CasillaAmarilla(298,873,5,61));//5//7
-        faseD.add(new CasillaAmarilla(174,873,6,62));//6//8
-        faseD.add(new CasillaAmarilla(80,873,7,63));//7//9
-        faseD.add(new CasillaAmarilla(80,791,8,64));//8//0
-        faseD.add(new CasillaAmarilla(174,791,9,65));//9//1
+        faseD.add(new CasillaAmarilla(80,791,0,64));//8//0
+        faseD.add(new CasillaAmarilla(174,791,1,65));//9//1
+        faseD.add(new CasillaMorada(298,791,2,56));//0//TELEPORT//2
+        faseD.add(new CasillaAmarilla(415,791,3,57));//1//3
+        faseD.add(new CasillaAmarilla(537,791,4,58));//2//4
+        faseD.add(new CasillaAmarilla(537,873,5,59));//3//5
+        faseD.add(new CasillaAmarilla(415,873,6,60));//4//6
+        faseD.add(new CasillaAmarilla(298,873,7,61));//5//7
+        faseD.add(new CasillaAmarilla(174,873,8,62));//6//8
+        faseD.add(new CasillaAmarilla(80,873,9,63));//7//9
+
+
 
         caminoprincipal = new CircularList();
 
