@@ -1,6 +1,9 @@
 package Minijuegos.LFTT;
 
 
+import Juego.Jmain;
+import Juego.Player;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,6 +23,7 @@ public class Treasure2 extends JFrame implements ActionListener {
     private JPanel panel4;
     private int player, num;
     private String path1, path2;
+    public Player jugandoahora;
 
     /**
      * Treasure2
@@ -102,11 +106,25 @@ public class Treasure2 extends JFrame implements ActionListener {
 
 
         frm4.setVisible(true);
+        turnos();
 
         JOptionPane.showMessageDialog(null, "Lets play Looking for the Treasure!! \n Find a Magic Treasure to Win!!\n Dig to find Treasures!!  \n 3, 2, 1 Dig!! \n Enjoy!");
         player += 1;
         JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
     }
+
+    public void turnos(){
+        for (int i = 0; i < Jmain.getInstance().getPlayerList().getLength(); i++) {
+
+            if (Jmain.getInstance().getPlayerList().getPos(i) == Jmain.getInstance().getPlayerList().getPos(0)){
+                jugandoahora = (Player) Jmain.getInstance().getPlayerList().getPos(0);
+            }
+            if (Jmain.getInstance().getPlayerList().getPos(i) == Jmain.getInstance().getPlayerList().getPos(1)){
+                jugandoahora = (Player) Jmain.getInstance().getPlayerList().getPos(1);
+            }
+        }
+    }
+
 
     /**
      * actionPerformed
@@ -135,7 +153,9 @@ public class Treasure2 extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Ganan");
                 } else {
 
-                    JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
+                    JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player );
+                    jugandoahora.monedas += 50;
+
                 }
             }
             if (e.getSource() == btn2dig) {
@@ -152,6 +172,7 @@ public class Treasure2 extends JFrame implements ActionListener {
                 } else {
 
                     JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
+                    jugandoahora.monedas += 30;
                 }
 
             }
@@ -173,6 +194,7 @@ public class Treasure2 extends JFrame implements ActionListener {
                 } else {
 
                     JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
+                    jugandoahora.monedas += 50;
                 }
 
             }
@@ -191,6 +213,7 @@ public class Treasure2 extends JFrame implements ActionListener {
                 } else {
 
                     JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
+                    jugandoahora.monedas += 30;
                 }
 
             }

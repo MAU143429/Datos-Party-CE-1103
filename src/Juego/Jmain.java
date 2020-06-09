@@ -329,7 +329,7 @@ public class Jmain extends JFrame implements ActionListener {
                 castToPlayer(PlayerList.getPos(i)).jugado = false;
             }
             rounds++;
-            MGS minijuego = new MGS(PlayerList.getLength());
+            MGS minijuego = new MGS();
             actualizarLabels();
         }
         if (rounds == 20) {
@@ -439,8 +439,7 @@ public class Jmain extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == btndados) {
-            //btndados.setEnabled(false);
-            //btnend.setEnabled(true);
+
             System.out.println("Se estan tirando los dados");
             System.out.println("Dados tirados");
             turns();

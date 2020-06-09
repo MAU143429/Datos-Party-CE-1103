@@ -100,7 +100,7 @@ public class Player {
         this.absPos = 0;
         this.movimientosTotales = 0;
         this.casillaActual = null;
-        this.monedas = 135;
+        this.monedas = 30;
         this.estrellas = 0;
         this.estaena = false;
         this.estaenb = false;
