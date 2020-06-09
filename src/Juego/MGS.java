@@ -55,7 +55,6 @@ public class MGS extends JFrame implements ActionListener {
         btn = new JButton();
 
 
-
         btnckr.setBounds(80, 130, 300, 70);
         ImageIcon btnurl23 = new ImageIcon(getClass().getResource("/Juego/btnckr.png"));
         btnckr.addActionListener(this);
@@ -79,8 +78,6 @@ public class MGS extends JFrame implements ActionListener {
         btnrun.addActionListener(this);
         btnrun.setIcon(btnurl27);
         panel4.add(btnrun);
-
-
 
 
         //#######################Labels##################################################

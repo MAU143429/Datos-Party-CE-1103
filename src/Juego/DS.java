@@ -5,6 +5,7 @@ import Minijuegos.Dice.dosjugadores;
 import Minijuegos.LFTT.Treasure2;
 import Minijuegos.RPS.rockpaperscissors;
 import Minijuegos.Runner.Runner2;
+import Minijuegos.TTT.TicTacToe;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -139,6 +140,7 @@ public class DS extends JFrame implements ActionListener {
         if (e.getSource() == btnttt) {
             System.out.println("Abriendo MiniDuelo Tic Tac Toe");
             frm6.setVisible(false);
+            TicTacToe ttt2 = new TicTacToe();
         }
     }
 }
