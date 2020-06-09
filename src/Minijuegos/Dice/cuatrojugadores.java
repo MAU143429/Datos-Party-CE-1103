@@ -594,6 +594,8 @@ public class cuatrojugadores extends JFrame{
                 }
 
             JOptionPane.showMessageDialog(null,"SCORES: "+"\nMario: "+suma1+"\nLuigi: "+suma2+"\nToad: "+suma3+"\nYoshi: "+suma4+"\n\nSTANDINGS: " + "\n 1° PLACE: " + winner + "\n 2° PLACE: " + second + "\n 3° PLACE: "+third +"\n 4° PLACE: " + fourth);
+            setVisible(false);
+            dispose();
         });
 
 
