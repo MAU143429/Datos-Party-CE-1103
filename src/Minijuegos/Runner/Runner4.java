@@ -153,6 +153,13 @@ public class Runner4 extends JFrame {
                     p1 += 1;
                     System.out.println(p1);
 
+                    if (p1 == 20) {
+
+                        JOptionPane.showMessageDialog(null, "MARIO WINS!!");
+                        frm3.setVisible(false);
+
+                    }
+
 
 
                 }
