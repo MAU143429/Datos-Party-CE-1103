@@ -1,5 +1,7 @@
 package Minijuegos.Clicker;
 
+import Juego.Jmain;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,6 +9,12 @@ import java.awt.event.ActionListener;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * Clicker4
+ *Esta clase ejecuta el minijuego clicker para tres jugadores
+ *@author Naheem J.
+
+ */
 public class Clicker4 extends JFrame implements ActionListener {
     public JLabel bgLabel, clickerTitle, timerGame, clickerCounter1, clickerCounter2, clickerCounter3, clickerCounter4, clickerImage, clickerImage1, clickerImage2, clickerImage3;
     public ImageIcon ButtonImage, coinLabel, bgClicker, minigameTitle;
@@ -39,6 +47,7 @@ public class Clicker4 extends JFrame implements ActionListener {
 
         clickerImage = new JLabel();
         coinLabel = new ImageIcon(getClass().getResource("/Minijuegos/Clicker/coin2.png"));
+
         clickerImage.setIcon(coinLabel);
 
         clickerImage1 = new JLabel();
@@ -51,25 +60,27 @@ public class Clicker4 extends JFrame implements ActionListener {
         clickerImage3.setIcon(coinLabel);
 
         timerGame = new JLabel();
-        timerGame.setText("Game is not started yet :)");
+        timerGame.setText("Game is not started yet");
         timerGame.setFont(new Font("Arial", Font.BOLD, 16));
 
 
         clickerCounter1 = new JLabel();
-        clickerCounter1.setText("Player 1: " + player1);
+        clickerCounter1.setText("Mario: " + player1);
         clickerCounter1.setFont(new Font("Arial", Font.BOLD, 16));
 
         clickerCounter2 = new JLabel();
-        clickerCounter2.setText("Player 2: " + player2);
+        clickerCounter2.setText("Luigi: " + player2);
         clickerCounter2.setFont(new Font("Arial", Font.BOLD, 16));
 
         clickerCounter3 = new JLabel();
-        clickerCounter3.setText("Player 3: " + player3);
+        clickerCounter3.setText("Toad: " + player3);
         clickerCounter3.setFont(new Font("Arial", Font.BOLD, 16));
 
         clickerCounter4 = new JLabel();
-        clickerCounter4.setText("Player 4: " + player4);
+        clickerCounter4.setText("Yoshi: " + player4);
         clickerCounter4.setFont(new Font("Arial", Font.BOLD, 16));
+
+
 
         coinButton = new JButton();
         ButtonImage = new ImageIcon(getClass().getResource("/Minijuegos/Clicker/coin.png"));
@@ -97,18 +108,27 @@ public class Clicker4 extends JFrame implements ActionListener {
         task = new TimerTask() {
             @Override
             public void run() {
-                timerGame.setText("Player " + playerTimes + "´s turn: " + secondsPassed + " seconds");
                 secondsPassed++;
-                if (secondsPassed > 15) {
+                if(playerTimes == 1){
+                    timerGame.setText("Mario´s turn: " + secondsPassed + " seconds");
+                }
+                if(playerTimes == 2){
+                    timerGame.setText("Luigi´s turn: " + secondsPassed + " seconds");
+                }
+                if(playerTimes == 3){
+                    timerGame.setText("Toad´s turn: " + secondsPassed + " seconds");
+                }
+                if(playerTimes == 4){
+                    timerGame.setText("Yoshi´s turn: " + secondsPassed + " seconds");
+                }
+                if (secondsPassed == 15) {
                     if (playerTimes == 4) {
                         secondsPassed = 0;
-                        timerGame.setText(secondsPassed + " seconds passed");
                         timer.cancel();
                         setWinner();
                     } else {
                         secondsPassed = 0;
                         playerTimes++;
-                        timerGame.setText("Player " + playerTimes + "´s turn: " + secondsPassed + " seconds");
                     }
                 }
             }
@@ -150,18 +170,165 @@ public class Clicker4 extends JFrame implements ActionListener {
 
     public void setWinner() {
         if (player1 > player2 && player1 > player3 && player1 > player4) {
-            JOptionPane.showMessageDialog(null, "The winner is player1");
+            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 50;
+            Jmain.getInstance().actualizarLabels();
+            if(player2 > player3 && player2 > player4) {
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
+                Jmain.getInstance().actualizarLabels();
+                if (player3 > player4) {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 5;
+                } else {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 5;
+                }
+                Jmain.getInstance().actualizarLabels();
+            }
+            if(player3 > player2 && player3 > player4){
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
+                Jmain.getInstance().actualizarLabels();
+                if(player2 > player4){
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 5;
+                }
+                Jmain.getInstance().actualizarLabels();
+            }
+            if(player4 > player2 && player4 > player3){
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 30;
+                Jmain.getInstance().actualizarLabels();
+                if(player3 > player2){
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 5;
+                }
+                Jmain.getInstance().actualizarLabels();
+            }
         }
         if (player2 > player1 && player2 > player3 && player2 > player4) {
-            JOptionPane.showMessageDialog(null, "The winner is player2");
+            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 50;
+            Jmain.getInstance().actualizarLabels();
+            if(player1 > player3 && player1 > player4) {
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
+                Jmain.getInstance().actualizarLabels();
+                if (player3 > player4) {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 5;
+                } else {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 5;
+                }
+                Jmain.getInstance().actualizarLabels();
+            }
+            if(player3 > player1 && player3 > player4){
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
+                Jmain.getInstance().actualizarLabels();
+                if(player1 > player4){
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 5;
+                }
+                Jmain.getInstance().actualizarLabels();
+            }
+            if(player4 > player1 && player4 > player3){
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 30;
+                Jmain.getInstance().actualizarLabels();
+                if(player1 > player3){
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 5;
+                }
+                Jmain.getInstance().actualizarLabels();
+            }
         }
         if (player3 > player1 && player3 > player2 && player3 > player4) {
-            JOptionPane.showMessageDialog(null, "The winner is player3");
+            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 50;
+            Jmain.getInstance().actualizarLabels();
+            if(player1 > player2 && player1 > player4) {
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
+                Jmain.getInstance().actualizarLabels();
+                if (player2 > player4) {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 5;
+                } else {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 5;
+                }
+                Jmain.getInstance().actualizarLabels();
+            }
+            if(player2 > player1 && player2 > player4){
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
+                Jmain.getInstance().actualizarLabels();
+                if(player1 > player4){
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 5;
+                }
+                Jmain.getInstance().actualizarLabels();
+            }
+            if(player4 > player1 && player4 > player2){
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 30;
+                Jmain.getInstance().actualizarLabels();
+                if(player1 > player2){
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 5;
+                }
+                Jmain.getInstance().actualizarLabels();
+            }
         }
         if (player4 > player1 && player4 > player2 && player4 > player3) {
-            JOptionPane.showMessageDialog(null, "The winner is player4");
+            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 50;
+            Jmain.getInstance().actualizarLabels();
+            if(player1 > player2 && player1 > player3) {
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
+                Jmain.getInstance().actualizarLabels();
+                if (player2 > player3) {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 5;
+                } else {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 5;
+                }
+                Jmain.getInstance().actualizarLabels();
+            }
+            if(player2 > player1 && player2 > player3){
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
+                Jmain.getInstance().actualizarLabels();
+                if(player1 > player3){
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 5;
+                }
+                Jmain.getInstance().actualizarLabels();
+            }
+            if(player3 > player2 && player3 > player1){
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
+                Jmain.getInstance().actualizarLabels();
+                if(player1 > player2){
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 5;
+                }
+                Jmain.getInstance().actualizarLabels();
+            }
         }
-
     }
 
     @Override
@@ -174,26 +341,24 @@ public class Clicker4 extends JFrame implements ActionListener {
             if (secondsPassed > 5) {
                 if (playerTimes == 1) {
                     player1++;
-                    clickerCounter1.setText("Player 1: " + player1);
+                    clickerCounter1.setText("Mario: " + player1);
                 }
                 if (playerTimes == 2) {
                     player2++;
-                    clickerCounter2.setText("Player 2: " + player2);
+                    clickerCounter2.setText("Luigi: " + player2);
                 }
                 if (playerTimes == 3) {
                     player3++;
-                    clickerCounter3.setText("Player 3: " + player3);
+                    clickerCounter3.setText("Toad: " + player3);
                 }
-                if (playerTimes == 4) {
+                if (playerTimes == 4){
                     player4++;
-                    clickerCounter4.setText("Player 4: " + player4);
+                    clickerCounter4.setText(("Yoshi: " + player4));
                 }
             }
         }
     }
-
 }
-
 
 
 
