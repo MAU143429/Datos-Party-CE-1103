@@ -94,16 +94,13 @@ public class Clicker4 extends JFrame implements ActionListener {
         startButton = new JButton("START");
         startButton.setFont(new Font("Arial", Font.BOLD, 22));
         startButton.setBackground(new Color(104, 133, 253));
-        startButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                temp = true;
-                coinButton.setEnabled(true);
-                startButton.setEnabled(false);
-                timer = new Timer();
-                timer.scheduleAtFixedRate(task, 1000, 1000);
+        startButton.addActionListener(e -> {
+            temp = true;
+            coinButton.setEnabled(true);
+            startButton.setEnabled(false);
+            timer = new Timer();
+            timer.scheduleAtFixedRate(task, 1000, 1000);
 
-            }
         });
         task = new TimerTask() {
             @Override
@@ -176,11 +173,11 @@ public class Clicker4 extends JFrame implements ActionListener {
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
                 Jmain.getInstance().actualizarLabels();
                 if (player3 > player4) {
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 5;
-                } else {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 20;
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 5;
+                } else {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
             }
@@ -188,11 +185,11 @@ public class Clicker4 extends JFrame implements ActionListener {
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
                 Jmain.getInstance().actualizarLabels();
                 if(player2 > player4){
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 5;
-                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 20;
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
             }
@@ -200,11 +197,11 @@ public class Clicker4 extends JFrame implements ActionListener {
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 30;
                 Jmain.getInstance().actualizarLabels();
                 if(player3 > player2){
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 5;
-                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 20;
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 20;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
             }
@@ -216,11 +213,11 @@ public class Clicker4 extends JFrame implements ActionListener {
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
                 Jmain.getInstance().actualizarLabels();
                 if (player3 > player4) {
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 5;
-                } else {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 20;
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 5;
+                } else {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
             }
@@ -228,11 +225,11 @@ public class Clicker4 extends JFrame implements ActionListener {
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
                 Jmain.getInstance().actualizarLabels();
                 if(player1 > player4){
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 5;
-                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 20;
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
             }
@@ -240,11 +237,11 @@ public class Clicker4 extends JFrame implements ActionListener {
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 30;
                 Jmain.getInstance().actualizarLabels();
                 if(player1 > player3){
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 5;
-                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 20;
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 20;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
             }
@@ -256,11 +253,11 @@ public class Clicker4 extends JFrame implements ActionListener {
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
                 Jmain.getInstance().actualizarLabels();
                 if (player2 > player4) {
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 5;
-                } else {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 20;
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 5;
+                } else {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
             }
@@ -268,11 +265,11 @@ public class Clicker4 extends JFrame implements ActionListener {
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
                 Jmain.getInstance().actualizarLabels();
                 if(player1 > player4){
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 5;
-                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 20;
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
             }
@@ -280,11 +277,11 @@ public class Clicker4 extends JFrame implements ActionListener {
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 30;
                 Jmain.getInstance().actualizarLabels();
                 if(player1 > player2){
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 5;
-                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 20;
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 20;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
             }
@@ -296,11 +293,11 @@ public class Clicker4 extends JFrame implements ActionListener {
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
                 Jmain.getInstance().actualizarLabels();
                 if (player2 > player3) {
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 5;
-                } else {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 20;
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 5;
+                } else {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 20;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
             }
@@ -308,11 +305,11 @@ public class Clicker4 extends JFrame implements ActionListener {
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
                 Jmain.getInstance().actualizarLabels();
                 if(player1 > player3){
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 5;
-                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 20;
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 20;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
             }
@@ -320,11 +317,11 @@ public class Clicker4 extends JFrame implements ActionListener {
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
                 Jmain.getInstance().actualizarLabels();
                 if(player1 > player2){
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 5;
-                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 20;
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
-                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 5;
+                }else{
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 20;
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
             }
