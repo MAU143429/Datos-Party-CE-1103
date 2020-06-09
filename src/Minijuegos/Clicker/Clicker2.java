@@ -1,5 +1,7 @@
 package Minijuegos.Clicker;
 
+import Juego.Jmain;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -46,16 +48,16 @@ public class Clicker2 extends JFrame implements ActionListener {
         clickerImage1.setIcon(coinLabel);
 
         timerGame = new JLabel();
-        timerGame.setText("Game is not started yet :)");
+        timerGame.setText("Game is not started yet");
         timerGame.setFont(new Font("Arial", Font.BOLD, 16));
 
 
         clickercounter1 = new JLabel();
-        clickercounter1.setText("Player 1: " + player1);
+        clickercounter1.setText("Mario: " + player1);
         clickercounter1.setFont(new Font("Arial", Font.BOLD, 16));
 
         clickerCounter2 = new JLabel();
-        clickerCounter2.setText("Player 2: " + player2);
+        clickerCounter2.setText("Luigi: " + player2);
         clickerCounter2.setFont(new Font("Arial", Font.BOLD, 16));
 
         coinButton = new JButton();
@@ -70,32 +72,32 @@ public class Clicker2 extends JFrame implements ActionListener {
         startButton = new JButton("START");
         startButton.setFont(new Font("Arial", Font.BOLD, 22));
         startButton.setBackground(new Color(104, 133, 253));
-        startButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                temp = true;
-                coinButton.setEnabled(true);
-                startButton.setEnabled(false);
-                timer = new Timer();
-                timer.scheduleAtFixedRate(task, 1000, 1000);
+        startButton.addActionListener(e -> {
+            temp = true;
+            coinButton.setEnabled(true);
+            startButton.setEnabled(false);
+            timer = new Timer();
+            timer.scheduleAtFixedRate(task, 1000, 1000);
 
-            }
         });
         task = new TimerTask() {
             @Override
             public void run() {
-                timerGame.setText("Player " + playerTimes + "´s turn: " + secondsPassed + " seconds");
                 secondsPassed++;
+                if(playerTimes == 1){
+                    timerGame.setText("Mario´s turn: " + secondsPassed + " seconds");
+                }
+                if(playerTimes == 2){
+                    timerGame.setText("Luigi´s turn: " + secondsPassed + " seconds");
+                }
                 if (secondsPassed > 15) {
                     if (playerTimes == 2) {
                         secondsPassed = 0;
-                        timerGame.setText(secondsPassed + " seconds passed");
                         timer.cancel();
                         setWinner();
                     } else {
                         secondsPassed = 0;
                         playerTimes++;
-                        timerGame.setText("Player " + playerTimes + "´s turn: " + secondsPassed + " seconds");
                     }
                 }
             }
@@ -131,11 +133,15 @@ public class Clicker2 extends JFrame implements ActionListener {
 
     public void setWinner() {
         if (player1 > player2) {
-            JOptionPane.showMessageDialog(null, "The winner is player1");
+            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 50;
+            JOptionPane.showMessageDialog(null, "MARIO WINS!!!");
+
+        }else{
+            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 50;
+            JOptionPane.showMessageDialog(null, "LUIGI WINS!!!");
         }
-        if (player2 > player1) {
-            JOptionPane.showMessageDialog(null, "The winner is player2");
-        }
+        Jmain.getInstance().actualizarLabels();
+        this.setVisible(false);
     }
 
     @Override
@@ -148,11 +154,11 @@ public class Clicker2 extends JFrame implements ActionListener {
             if (secondsPassed > 5) {
                 if (playerTimes == 1) {
                     player1++;
-                    clickercounter1.setText("Player 1: " + player1);
+                    clickercounter1.setText("Mario: " + player1);
                 }
                 if (playerTimes == 2) {
                     player2++;
-                    clickerCounter2.setText("Player 2: " + player2);
+                    clickerCounter2.setText("Luigi: " + player2);
                 }
             }
         }

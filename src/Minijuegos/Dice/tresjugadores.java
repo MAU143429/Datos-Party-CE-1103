@@ -290,27 +290,27 @@ public class tresjugadores extends JFrame{
 
                     if(suma1>suma2){
                         if(suma1>suma3){
-                            winner = "PLAYER 1";
+                            winner = "Mario";
                             if(suma2>suma3){
-                                second = "PLAYER 2";
-                                third = "PLAYER 3";
+                                second = "Luigi";
+                                third = "Toad";
                             }
                             else{
-                                second = "PLAYER 3";
-                                third = "PLAYER 2";
+                                second = "Luigi";
+                                third = "Toad";
                             }
                         }
                     }
                     if(suma2>suma1){
                         if(suma2>suma3){
-                            winner = "PLAYER 2";
+                            winner = "Luigi";
                             if(suma1>suma3) {
-                                second = "PLAYER 1";
-                                third = "PLAYER 3";
+                                second = "Mario";
+                                third = "Toad";
                             }
                             else{
-                                second = "PLAYER 3";
-                                third = "PLAYER 1";
+                                second = "Toad";
+                                third = "Mario";
                             }
                         }
                     }
