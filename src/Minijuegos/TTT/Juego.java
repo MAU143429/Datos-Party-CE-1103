@@ -42,7 +42,7 @@ public class Juego {
         }
         terminarJuego();
     }
-    void terminarJuego() {//<editor-fold defaultstate="collapsed" desc="Implementación de código »">
+    void terminarJuego() {
         Linea_terminar = BuscarFin();
         if (Linea_terminar != TERMINAR_NA) {
             switch (Linea_terminar) {

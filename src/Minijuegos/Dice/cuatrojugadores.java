@@ -1,10 +1,9 @@
 package Minijuegos.Dice;
+
+import Juego.Jmain;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Arrays;
-import java.util.Collections;
 
 public class cuatrojugadores extends JFrame{
     JLabel dado1,dado12,dado2,dado22,dado3,dado32,dado4,dado42,titulo1,titulo2,fondo,jug1,jug2,jug3,jug4,foto1,foto2,foto3,foto4;
@@ -175,253 +174,431 @@ public class cuatrojugadores extends JFrame{
         container.add(foto4);
         container.add(fondo);
 
-        tirar1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String command = e.getActionCommand();
-                if(command.equals("TIRAR1")){
-                    tiro1 = (int)(Math.random()*6)+1;
-                    tiro2 = (int)(Math.random()*6)+1;
-                    System.out.println(tiro1);
-                    System.out.println(tiro2);
-                    if(tiro1==1){
-                        dado1.setIcon(uno);
-                    }
-                    if(tiro1==2){
-                        dado1.setIcon(dos);
-                    }
-                    if(tiro1==3){
-                        dado1.setIcon(tres);
-                    }
-                    if(tiro1==4){
-                        dado1.setIcon(cuatro);
-                    }
-                    if(tiro1==5){
-                        dado1.setIcon(cinco);
-                    }
-                    if(tiro1==6){
-                        dado1.setIcon(seis);
-                    }
-                    if(tiro2==1){
-                        dado12.setIcon(uno);
-                    }
-                    if(tiro2==2){
-                        dado12.setIcon(dos);
-                    }
-                    if(tiro2==3){
-                        dado12.setIcon(tres);
-                    }
-                    if(tiro2==4){
-                        dado12.setIcon(cuatro);
-                    }
-                    if(tiro2==5){
-                        dado12.setIcon(cinco);
-                    }
-                    if(tiro2==6){
-                        dado12.setIcon(seis);
-                    }
-                    tirar1.setEnabled(false);
-                    suma1 = tiro1 + tiro2;
-                    System.out.println(suma1);
+        tirar1.addActionListener(e -> {
+            String command = e.getActionCommand();
+            if(command.equals("TIRAR1")){
+                tiro1 = (int)(Math.random()*6)+1;
+                tiro2 = (int)(Math.random()*6)+1;
+                System.out.println(tiro1);
+                System.out.println(tiro2);
+                if(tiro1==1){
+                    dado1.setIcon(uno);
                 }
+                if(tiro1==2){
+                    dado1.setIcon(dos);
+                }
+                if(tiro1==3){
+                    dado1.setIcon(tres);
+                }
+                if(tiro1==4){
+                    dado1.setIcon(cuatro);
+                }
+                if(tiro1==5){
+                    dado1.setIcon(cinco);
+                }
+                if(tiro1==6){
+                    dado1.setIcon(seis);
+                }
+                if(tiro2==1){
+                    dado12.setIcon(uno);
+                }
+                if(tiro2==2){
+                    dado12.setIcon(dos);
+                }
+                if(tiro2==3){
+                    dado12.setIcon(tres);
+                }
+                if(tiro2==4){
+                    dado12.setIcon(cuatro);
+                }
+                if(tiro2==5){
+                    dado12.setIcon(cinco);
+                }
+                if(tiro2==6){
+                    dado12.setIcon(seis);
+                }
+                tirar1.setEnabled(false);
+                suma1 = tiro1 + tiro2;
+                System.out.println(suma1);
             }
         });
-        tirar2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String command = e.getActionCommand();
-                if(command.equals("TIRAR2")){
-                    tiro3 = (int)(Math.random()*6)+1;
-                    tiro4 = (int)(Math.random()*6)+1;
-                    System.out.println(tiro3);
-                    System.out.println(tiro4);
-                    if(tiro3==1){
-                        dado2.setIcon(uno);
-                    }
-                    if(tiro3==2){
-                        dado2.setIcon(dos);
-                    }
-                    if(tiro3==3){
-                        dado2.setIcon(tres);
-                    }
-                    if(tiro3==4){
-                        dado2.setIcon(cuatro);
-                    }
-                    if(tiro3==5){
-                        dado2.setIcon(cinco);
-                    }
-                    if(tiro3==6){
-                        dado2.setIcon(seis);
-                    }
-                    if(tiro4==1){
-                        dado22.setIcon(uno);
-                    }
-                    if(tiro4==2){
-                        dado22.setIcon(dos);
-                    }
-                    if(tiro4==3){
-                        dado22.setIcon(tres);
-                    }
-                    if(tiro4==4){
-                        dado22.setIcon(cuatro);
-                    }
-                    if(tiro4==5){
-                        dado22.setIcon(cinco);
-                    }
-                    if(tiro4==6){
-                        dado22.setIcon(seis);
-                    }
-                    tirar2.setEnabled(false);
-                    suma2 = tiro3 + tiro4;
-                    System.out.println(suma2);
+        tirar2.addActionListener(e -> {
+            String command = e.getActionCommand();
+            if(command.equals("TIRAR2")){
+                tiro3 = (int)(Math.random()*6)+1;
+                tiro4 = (int)(Math.random()*6)+1;
+                System.out.println(tiro3);
+                System.out.println(tiro4);
+                if(tiro3==1){
+                    dado2.setIcon(uno);
                 }
+                if(tiro3==2){
+                    dado2.setIcon(dos);
+                }
+                if(tiro3==3){
+                    dado2.setIcon(tres);
+                }
+                if(tiro3==4){
+                    dado2.setIcon(cuatro);
+                }
+                if(tiro3==5){
+                    dado2.setIcon(cinco);
+                }
+                if(tiro3==6){
+                    dado2.setIcon(seis);
+                }
+                if(tiro4==1){
+                    dado22.setIcon(uno);
+                }
+                if(tiro4==2){
+                    dado22.setIcon(dos);
+                }
+                if(tiro4==3){
+                    dado22.setIcon(tres);
+                }
+                if(tiro4==4){
+                    dado22.setIcon(cuatro);
+                }
+                if(tiro4==5){
+                    dado22.setIcon(cinco);
+                }
+                if(tiro4==6){
+                    dado22.setIcon(seis);
+                }
+                tirar2.setEnabled(false);
+                suma2 = tiro3 + tiro4;
+                System.out.println(suma2);
             }
         });
-        tirar3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String command = e.getActionCommand();
-                if(command.equals("TIRAR3")){
-                    tiro5 = (int)(Math.random()*6)+1;
-                    tiro6 = (int)(Math.random()*6)+1;
-                    System.out.println(tiro5);
-                    System.out.println(tiro6);
-                    if(tiro5==1){
-                        dado3.setIcon(uno);
-                    }
-                    if(tiro5==2){
-                        dado3.setIcon(dos);
-                    }
-                    if(tiro5==3){
-                        dado3.setIcon(tres);
-                    }
-                    if(tiro5==4){
-                        dado3.setIcon(cuatro);
-                    }
-                    if(tiro5==5){
-                        dado3.setIcon(cinco);
-                    }
-                    if(tiro5==6){
-                        dado3.setIcon(seis);
-                    }
-                    if(tiro6==1){
-                        dado32.setIcon(uno);
-                    }
-                    if(tiro6==2){
-                        dado32.setIcon(dos);
-                    }
-                    if(tiro6==3){
-                        dado32.setIcon(tres);
-                    }
-                    if(tiro6==4){
-                        dado32.setIcon(cuatro);
-                    }
-                    if(tiro6==5){
-                        dado32.setIcon(cinco);
-                    }
-                    if(tiro6==6){
-                        dado32.setIcon(seis);
-                    }
-                    tirar3.setEnabled(false);
-                    suma3 = tiro5 + tiro6;
-                    System.out.println(suma3);
-
+        tirar3.addActionListener(e -> {
+            String command = e.getActionCommand();
+            if(command.equals("TIRAR3")){
+                tiro5 = (int)(Math.random()*6)+1;
+                tiro6 = (int)(Math.random()*6)+1;
+                System.out.println(tiro5);
+                System.out.println(tiro6);
+                if(tiro5==1){
+                    dado3.setIcon(uno);
                 }
+                if(tiro5==2){
+                    dado3.setIcon(dos);
+                }
+                if(tiro5==3){
+                    dado3.setIcon(tres);
+                }
+                if(tiro5==4){
+                    dado3.setIcon(cuatro);
+                }
+                if(tiro5==5){
+                    dado3.setIcon(cinco);
+                }
+                if(tiro5==6){
+                    dado3.setIcon(seis);
+                }
+                if(tiro6==1){
+                    dado32.setIcon(uno);
+                }
+                if(tiro6==2){
+                    dado32.setIcon(dos);
+                }
+                if(tiro6==3){
+                    dado32.setIcon(tres);
+                }
+                if(tiro6==4){
+                    dado32.setIcon(cuatro);
+                }
+                if(tiro6==5){
+                    dado32.setIcon(cinco);
+                }
+                if(tiro6==6){
+                    dado32.setIcon(seis);
+                }
+                tirar3.setEnabled(false);
+                suma3 = tiro5 + tiro6;
+                System.out.println(suma3);
+
             }
         });
-        tirar4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String command = e.getActionCommand();
-                if(command.equals("TIRAR4")){
-                    tiro7 = (int)(Math.random()*6)+1;
-                    tiro8 = (int)(Math.random()*6)+1;
-                    System.out.println(tiro7);
-                    System.out.println(tiro8);
-                    if(tiro7==1){
-                        dado4.setIcon(uno);
-                    }
-                    if(tiro7==2){
-                        dado4.setIcon(dos);
-                    }
-                    if(tiro7==3){
-                        dado4.setIcon(tres);
-                    }
-                    if(tiro7==4){
-                        dado4.setIcon(cuatro);
-                    }
-                    if(tiro7==5){
-                        dado4.setIcon(cinco);
-                    }
-                    if(tiro7==6){
-                        dado4.setIcon(seis);
-                    }
-                    if(tiro8==1){
-                        dado42.setIcon(uno);
-                    }
-                    if(tiro8==2){
-                        dado42.setIcon(dos);
-                    }
-                    if(tiro8==3){
-                        dado42.setIcon(tres);
-                    }
-                    if(tiro8==4){
-                        dado42.setIcon(cuatro);
-                    }
-                    if(tiro8==5){
-                        dado42.setIcon(cinco);
-                    }
-                    if(tiro8==6){
-                        dado42.setIcon(seis);
-                    }
-                    tirar4.setEnabled(false);
-                    suma4 = tiro7 + tiro8;
-                    System.out.println(suma1);
+        tirar4.addActionListener(e -> {
+            String command = e.getActionCommand();
+            if(command.equals("TIRAR4")){
+                tiro7 = (int)(Math.random()*6)+1;
+                tiro8 = (int)(Math.random()*6)+1;
+                System.out.println(tiro7);
+                System.out.println(tiro8);
+                if(tiro7==1){
+                    dado4.setIcon(uno);
+                }
+                if(tiro7==2){
+                    dado4.setIcon(dos);
+                }
+                if(tiro7==3){
+                    dado4.setIcon(tres);
+                }
+                if(tiro7==4){
+                    dado4.setIcon(cuatro);
+                }
+                if(tiro7==5){
+                    dado4.setIcon(cinco);
+                }
+                if(tiro7==6){
+                    dado4.setIcon(seis);
+                }
+                if(tiro8==1){
+                    dado42.setIcon(uno);
+                }
+                if(tiro8==2){
+                    dado42.setIcon(dos);
+                }
+                if(tiro8==3){
+                    dado42.setIcon(tres);
+                }
+                if(tiro8==4){
+                    dado42.setIcon(cuatro);
+                }
+                if(tiro8==5){
+                    dado42.setIcon(cinco);
+                }
+                if(tiro8==6){
+                    dado42.setIcon(seis);
+                }
+                tirar4.setEnabled(false);
+                suma4 = tiro7 + tiro8;
+                System.out.println(suma1);
 
-                    if(suma1>suma2){
-                        if(suma1>suma3){
-                            if(suma1>suma4){
-                                winner = "Player 1";
-                            }
+                if (suma1 > suma2 && suma1 > suma3 && suma1 > suma4){
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 50;
+                    Jmain.getInstance().actualizarLabels();
+                    winner = "Mario";
+                    if(suma2 > suma3 && suma2 > suma4) {
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
+                        Jmain.getInstance().actualizarLabels();
+                        second = "Luigi";
+                        if (suma3 > suma4) {
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
+                            third="Toad";
+                            fourth="Yoshi";
+                        } else {
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                            fourth="Toad";
+                            third="Yoshi";
                         }
+                        Jmain.getInstance().actualizarLabels();
                     }
-                    if(suma2>suma1){
-                        if(suma2>suma3){
-                            if(suma2>suma4){
-                                winner = "Player 2";
-                            }
+                    if(suma3 > suma2 && suma3 > suma4){
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
+                        Jmain.getInstance().actualizarLabels();
+                        second = "Toad";
+                        if(suma2 > suma4){
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
+                            third = "Luigi";
+                            fourth = "Yoshi";
+                        }else{
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                            fourth = "Luigi";
+                            third = "Yoshi";
                         }
+                        Jmain.getInstance().actualizarLabels();
                     }
-                    if(suma3>suma1){
-                        if(suma3>suma2){
-                            if(suma3>suma4){
-                                winner = "Player 3";
-                            }
+                    if(suma4 > suma2 && suma4 > suma3){
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 30;
+                        Jmain.getInstance().actualizarLabels();
+                        second = "Yoshi";
+                        if(suma3 > suma2){
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                            third = "Toad";
+                            fourth = "Luigi";
+                        }else{
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                            fourth = "Toad";
+                            third = "Luigi";
                         }
+                        Jmain.getInstance().actualizarLabels();
                     }
-                    if(suma4>suma1){
-                        if(suma4>suma2){
-                            if(suma4>suma3){
-                                winner = "Player 4";
-                            }
+                }
+                if (suma2 > suma1 && suma2 > suma3 && suma2 > suma4) {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 50;
+                    Jmain.getInstance().actualizarLabels();
+                    winner = "Luigi";
+                    if(suma1 > suma3 && suma1 > suma4) {
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
+                        Jmain.getInstance().actualizarLabels();
+                        second = "Mario";
+                        if (suma3 > suma4) {
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
+                            third = "Toad";
+                            fourth = "Yoshi";
+                        } else {
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                            third = "Yoshi";
+                            fourth = "Toad";
                         }
+                        Jmain.getInstance().actualizarLabels();
                     }
-
+                    if(suma3 > suma1 && suma3 > suma4){
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
+                        Jmain.getInstance().actualizarLabels();
+                        second = "Toad";
+                        if(suma1 > suma4){
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
+                            third = "Mario";
+                            fourth = "Toad";
+                        }else{
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+                            third = "Toad";
+                            fourth = "Mario";
+                        }
+                        Jmain.getInstance().actualizarLabels();
                     }
+                    if(suma4 > suma1 && suma4 > suma3){
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 30;
+                        Jmain.getInstance().actualizarLabels();
+                        second = "Yoshi";
+                        if(suma1 > suma3){
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                            third = "Mario";
+                            fourth = "Toad";
+                        }else{
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+                            third = "Toad";
+                            fourth = "Mario";
+                        }
+                        Jmain.getInstance().actualizarLabels();
+                    }
+                }
+                if (suma3 > suma1 && suma3 > suma2 && suma3 > suma4) {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 50;
+                    Jmain.getInstance().actualizarLabels();
+                    winner = "Toad";
+                    if(suma1 > suma2 && suma1 > suma4) {
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
+                        Jmain.getInstance().actualizarLabels();
+                        second = "Mario";
+                        if (suma2 > suma4) {
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
+                            third = "Luigi";
+                            fourth = "Yoshi";
+                        } else {
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                            third = "Yoshi";
+                            fourth = "Luigi";
+                        }
+                        Jmain.getInstance().actualizarLabels();
+                    }
+                    if(suma2 > suma1 && suma2 > suma4){
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
+                        Jmain.getInstance().actualizarLabels();
+                        second = "Luigi";
+                        if(suma1 > suma4){
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
+                            third = "Mario";
+                            fourth = "Toad";
+                        }else{
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+                            third = "Toad";
+                            fourth = "Mario";
+                        }
+                        Jmain.getInstance().actualizarLabels();
+                    }
+                    if(suma4 > suma1 && suma4 > suma2){
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 30;
+                        Jmain.getInstance().actualizarLabels();
+                        second = "Yoshi";
+                        if(suma1 > suma2){
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                            third = "Mario";
+                            fourth = "Luigi";
+                        }else{
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+                            third = "Luigi";
+                            fourth = "Mario";
+                        }
+                        Jmain.getInstance().actualizarLabels();
+                    }
+                }
+                if (suma4 > suma1 && suma4 > suma2 && suma4 > suma3) {
+                    Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 50;
+                    Jmain.getInstance().actualizarLabels();
+                    winner = "Yoshi";
+                    if(suma1 > suma2 && suma1 > suma3) {
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 30;
+                        Jmain.getInstance().actualizarLabels();
+                        second = "Mario";
+                        if (suma2 > suma3) {
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                            third = "Luigi";
+                            fourth = "Toad";
+                        } else {
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                            third = "Toad";
+                            fourth = "Luigi";
+                        }
+                        Jmain.getInstance().actualizarLabels();
+                    }
+                    if(suma2 > suma1 && suma2 > suma3){
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
+                        Jmain.getInstance().actualizarLabels();
+                        second = "Luigi";
+                        if(suma1 > suma3){
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
+                            third = "Mario";
+                            fourth = "Toad";
+                        }else{
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+                            third = "Toad";
+                            fourth = "Mario";
+                        }
+                        Jmain.getInstance().actualizarLabels();
+                    }
+                    if(suma3 > suma2 && suma3 > suma1){
+                        Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
+                        Jmain.getInstance().actualizarLabels();
+                        second = "Toad";
+                        if(suma1 > suma2){
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
+                            third = "Mario";
+                            fourth = "Luigi";
+                        }else{
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 20;
+                            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
+                            third = "Luigi";
+                            fourth = "Mario";
+                        }
+                        Jmain.getInstance().actualizarLabels();
+                    }
+                }
 
-                JOptionPane.showMessageDialog(null,"SCORES: "+"\nPlayer 1: "+suma1+"\nPlayer 2: "+suma2+"\nPlayer 3: "+suma3+"\nPlayer 4: "+suma4+"\n\n\n\nWINNER: "+ winner);
-            }
+                }
 
-
+            JOptionPane.showMessageDialog(null,"SCORES: "+"\nMario: "+suma1+"\nLuigi: "+suma2+"\nToad: "+suma3+"\nYoshi: "+suma4+"\n\nSTANDINGS: " + "\n 1° PLACE: " + winner + "\n 2° PLACE: " + second + "\n 3° PLACE: "+third +"\n 4° PLACE: " + fourth);
         });
 
 
         this.pack();
         this.validate();
         this.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new cuatrojugadores();
     }
 }

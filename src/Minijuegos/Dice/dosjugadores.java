@@ -221,7 +221,7 @@ public class dosjugadores extends JFrame {
                         Jmain.getInstance().actualizarLabels();
                     }
 
-                    JOptionPane.showMessageDialog(null, "SCORES: " + "\nPLAYER 1: " + suma1 + "\nPLAYER 2: " + suma2 + "\n\nSTANDINGS: " + "\n 1° PLACE: " + winner + "\n 2° PLACE: " + second);
+                    JOptionPane.showMessageDialog(null, "SCORES: " + "\nMario: " + suma1 + "\nLuigi: " + suma2 + "\n\nSTANDINGS: " + "\n 1° PLACE: " + winner + "\n 2° PLACE: " + second);
                     setVisible(false);
                     dispose();
                 }
