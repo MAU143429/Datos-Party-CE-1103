@@ -72,7 +72,6 @@ public class Player {
                 } else {
                     moveMainPath();
                 }
-                /**
                 if(Jmain.getInstance().playing.referencia == 1){
                     Jmain.getInstance().mario.setLocation((posX-22),(posY-28));
                 }
@@ -85,7 +84,6 @@ public class Player {
                 if(Jmain.getInstance().playing.referencia == 4){
                     Jmain.getInstance().yoshi.setLocation((posX-22),(posY-28));
                 }
-                 */
 
             }
         });
@@ -112,6 +110,7 @@ public class Player {
         this.salirD = false;
         this.jugado = false;
         this.moviendose = false;
+        /*
         if(jugadorNum==1){
             Jmain.getInstance().mario.setLocation(posX,posY);
         }
@@ -124,7 +123,7 @@ public class Player {
         if(jugadorNum==4){
             Jmain.getInstance().yoshi.setLocation(posX,posY);
         }
-
+        */
 
     }
     public void moverSigCasilla(String fase){
@@ -132,7 +131,6 @@ public class Player {
         System.out.println("MOVIMIENTOS TOTALES: " + movimientosTotales);
         if(casillaActual == Map.getInstance().getCasilla(2,"a")){
             absPos++;
-            System.out.println("ABSPOS APENAS ESTOY EN LA ULTIMA POSICIÓN "+absPos);
             return;
         }
         if(casillaActual == Map.getInstance().getCasilla(2,"b")){
@@ -370,7 +368,7 @@ public class Player {
         System.out.println("MOVIMIENTOS: "+movimientosTotales);
         if (absPos == -1){
             absPos = 16;
-            movimientosTotales += 10;
+            movimientosTotales += 9;
             posX = 40;
             posY = 114;
             estaenc = false;
@@ -451,6 +449,7 @@ public class Player {
             }else{
                 movimientosTotales -= 4;
             }
+            /*
             estaenc = true;
             estaend = false;
             posX = 298;
@@ -469,6 +468,8 @@ public class Player {
             }
             absPos = 1;
             salirD = false;
+
+             */
             return;
         }else if(posX == 298 && posY == 791){
             if(estaenReversa){
@@ -478,21 +479,22 @@ public class Player {
             }
             estaenc = false;
             estaend = true;
-            posX = 502;
-            posY = 510;
-            if(referencia==1){
-                Jmain.getInstance().mario.setLocation(posX,posY);
+            posX = 298;
+            posY = 791;
+            if(Jmain.getInstance().playing.referencia == 1){
+                Jmain.getInstance().mario.setLocation((posX-22),(posY-28));
             }
-            if(referencia==2){
-                Jmain.getInstance().luigi.setLocation(posX,posY);
+            if(Jmain.getInstance().playing.referencia == 2){
+                Jmain.getInstance().luigi.setLocation((posX-22),(posY-28));
             }
-            if(referencia==3){
-                Jmain.getInstance().toad.setLocation(posX,posY);
+            if(Jmain.getInstance().playing.referencia == 3){
+                Jmain.getInstance().toad.setLocation((posX-22),(posY-28));
             }
-            if(referencia==4){
-                Jmain.getInstance().yoshi.setLocation(posX,posY);
+            if(Jmain.getInstance().playing.referencia == 4){
+                Jmain.getInstance().yoshi.setLocation((posX-22),(posY-28));
             }
-            absPos = 2;
+            casillaActual = Map.getInstance().getCasilla(0,"d");
+            absPos = 0;
             return;
         }else{
             return;
