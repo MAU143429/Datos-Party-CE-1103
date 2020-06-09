@@ -19,8 +19,8 @@ public class CasillaAmarilla extends Casilla {
      */
     @Override
     public void evento(Player player) {
-        StealStars prueba = new StealStars();
-        prueba.evento(player);
+        StealCoins prueba = new StealCoins();
+        prueba.ventanaEvento(player);
         Jmain.getInstance().actualizarLabels();
         return;
 
