@@ -1,8 +1,11 @@
 package Minijuegos.TTT;
 
+import javax.swing.*;
+
 public class Juego {
     int Jugador = 1;
     int[][] Tablero = new int[3][3];
+
 
     public static final int TERMINAR_NA = -1;
 
@@ -41,6 +44,7 @@ public class Juego {
             Jugador = 1;
         }
         terminarJuego();
+
     }
     void terminarJuego() {
         Linea_terminar = BuscarFin();
@@ -50,20 +54,42 @@ public class Juego {
                 case TERMINAR_COL2:
                 case TERMINAR_COL3:
                     Ganador = Tablero[Linea_terminar][0];
+                    if (Ganador == 1) {
+                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 1");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 2");
+                    }
                     break;
                 case TERMINAR_FIL1:
                 case TERMINAR_FIL2:
                 case TERMINAR_FIL3:
                     Ganador = Tablero[0][Linea_terminar - 3];
+                    if (Ganador == 1) {
+                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 1");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 2");
+                    }
+
                     break;
                 case TERMINAR_DIAG1:
                     Ganador = Tablero[0][0];
+                    if (Ganador == 1) {
+                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 1");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 2");
+                    }
                     break;
                 case TERMINAR_DIAG2:
                     Ganador = Tablero[0][2];
+                    if (Ganador == 1) {
+                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 1");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 2");
+                    }
                     break;
             }
         }
+        System.out.println("hola");
     }
     int BuscarFin() {
         int col = BuscarFinColumnas();
