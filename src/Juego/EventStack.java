@@ -11,8 +11,9 @@ public class EventStack {
 
     private EventStack(){
 
-        stack = new Stack(57);
+        stack = new Stack(32);
 
+        /**stack.push(new Teleport());
         stack.push(new Teleport());
         stack.push(new Teleport());
         stack.push(new Teleport());
@@ -21,8 +22,7 @@ public class EventStack {
         stack.push(new Teleport());
         stack.push(new Teleport());
         stack.push(new Teleport());
-        stack.push(new Teleport());
-        stack.push(new Teleport());
+        stack.push(new Teleport());*/
 
         stack.push(new StealCoins());
         stack.push(new StealCoins());
@@ -63,7 +63,7 @@ public class EventStack {
         stack.push(new LoseStars());
         stack.push(new LoseStars());
 
-        stack.push(new PlaceSwap());
+        /**stack.push(new PlaceSwap());
         stack.push(new PlaceSwap());
         stack.push(new PlaceSwap());
         stack.push(new PlaceSwap());
@@ -78,7 +78,7 @@ public class EventStack {
         stack.push(new Duel());
         stack.push(new Duel());
         stack.push(new Duel());
-        stack.push(new Duel());
+        stack.push(new Duel());*/
 
 
         stack = stack.mezclar();
