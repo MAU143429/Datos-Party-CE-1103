@@ -85,6 +85,7 @@ public class Player {
                     Jmain.getInstance().yoshi.setLocation((posX-22),(posY-28));
                 }
 
+
             }
         });
 
@@ -180,6 +181,8 @@ public class Player {
         Jmain.getInstance().panel4.repaint();
         casillaActual = casilla;
         absPos--;
+        System.out.println("ABSPOS: " + absPos);
+        System.out.println("MOVIMIENTOS TOTALES: " + movimientosTotales);
     }
     public void movePlayer(int moves) {
         System.out.println(moves);
@@ -366,9 +369,10 @@ public class Player {
     protected void moveBackwardsC(){
         System.out.println("ABSPOS ACTUAL: "+absPos);
         System.out.println("MOVIMIENTOS: "+movimientosTotales);
+        System.out.println(casillaActual.getMSG());
         if (absPos == -1){
             absPos = 16;
-            movimientosTotales += 9;
+            movimientosTotales += 12;
             posX = 40;
             posY = 114;
             estaenc = false;
@@ -388,7 +392,7 @@ public class Player {
             casillaActual = Map.getInstance().getCasilla(16,"p");
             return;
         }
-        if (absPos == movimientosTotales - 2*(movimientosTotales-6)){
+        if (absPos == movimientosTotales - 2*(movimientosTotales-2)){
             moviendose = false;
             Jmain.getInstance().corriendoJuego = false;
             timerMovimiento.stop();
@@ -403,11 +407,26 @@ public class Player {
         }
     }
     protected void moveBackwardsD(){
+        System.out.println("CASILLA ACTUAL: "+ absPos + " COLOR DE LA CASILLA: "+casillaActual.getMSG() + " MOVIMIENTOS: " + movimientosTotales);
         salirD = true;
-        if(absPos == 0){
-            absPos = 11;
-            casillaActual = (Casilla)Map.getInstance().getFase("p").getPos(11);
-            movimientosTotales -= 12;
+        if(absPos < 0){
+            absPos = 9;
+            movimientosTotales += 9;
+            casillaActual = Map.getInstance().getCasilla(9,"d");
+            posX = 80;
+            posY = 873;
+            if(Jmain.getInstance().playing.referencia == 1){
+                Jmain.getInstance().mario.setLocation((posX-22),(posY-28));
+            }
+            if(Jmain.getInstance().playing.referencia == 2){
+                Jmain.getInstance().luigi.setLocation((posX-22),(posY-28));
+            }
+            if(Jmain.getInstance().playing.referencia == 3){
+                Jmain.getInstance().toad.setLocation((posX-22),(posY-28));
+            }
+            if(Jmain.getInstance().playing.referencia == 4) {
+                Jmain.getInstance().yoshi.setLocation((posX - 22), (posY - 28));
+            }
         }
         if(absPos == movimientosTotales - 2*(movimientosTotales - 10)){
             moviendose = false;
@@ -436,16 +455,18 @@ public class Player {
         else if(posX == 40 && posY == 114 && !estaenReversa){
             estaenc = true;
         }
-        else if(posX == 149 && posY == 252 && !estaenc){
+        else if(posX == 149 && posY == 252 && casillaActual == Map.getInstance().getCasilla(35,"p") && !estaenc){
+            System.out.println("ANTES DE CAMBIAR EL POS ERA: "+    absPos);
             estaenc = true;
-            absPos = 3;
-            movimientosTotales = 3;
+            absPos = 2;
+            movimientosTotales = 0;
+            casillaActual = Map.getInstance().getCasilla(2,"c");
             estaenReversa = true;
             return;
         }
         else if(posX == 298 && posY == 791 && salirD){
             if(estaenReversa){
-                movimientosTotales += 1;
+                movimientosTotales -= 1;
             }else{
                 movimientosTotales -= 2;
             }
