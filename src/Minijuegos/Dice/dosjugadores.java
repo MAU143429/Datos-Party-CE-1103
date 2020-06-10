@@ -22,6 +22,7 @@ public class dosjugadores extends JFrame {
         this.setPreferredSize(new Dimension(1050, 550));
         this.setTitle("DICE GAME!");
         this.setResizable(false);
+        this.setLocationRelativeTo(null);
         Container container = this.getContentPane();
         container.setLayout(null);
 

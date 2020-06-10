@@ -39,7 +39,7 @@ public class CasillaAmarilla extends Casilla {
     public Evento castToEvent (Object object){
         return (Evento) object;*/
 
-        StealCoins prueba = new StealCoins();
+        Win2Stars prueba = new Win2Stars();
         prueba.ventanaEvento(player);
     }
 }
