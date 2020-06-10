@@ -62,13 +62,13 @@ public class RunnerDL extends JFrame {
         text1 = new JLabel(" PLAYER 1 [A]");
         text1.setFont(new Font("Serif", Font.BOLD, 24));
         text1.setForeground(Color.WHITE);
-        text1.setBounds(400, 690, 150, 40);
+        text1.setBounds(400, 690, 250, 40);
         panel3.add(text1);
 
         text2 = new JLabel(" PLAYER 2 [C]");
         text2.setFont(new Font("Serif", Font.BOLD, 24));
         text2.setForeground(Color.WHITE);
-        text2.setBounds(700, 690, 150, 40);
+        text2.setBounds(700, 690, 250, 40);
         panel3.add(text2);
 
 
@@ -99,43 +99,94 @@ public class RunnerDL extends JFrame {
             retador2 = Jmain.getInstance().getRandomPlayer();
         }
 
-        if (retador1 == Jmain.getInstance().getPlayerList().getPos(0)){
-            ImageIcon bgurlp1 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P1.png"));
-            jugador1.setIcon(bgurlp1);
-        }
-        if (retador1 == Jmain.getInstance().getPlayerList().getPos(1)){
-            ImageIcon bgurlp1 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P2.png"));
-            jugador1.setIcon(bgurlp1);
-        }
-        if (retador1 == Jmain.getInstance().getPlayerList().getPos(2)){
-            ImageIcon bgurlp1 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P3.png"));
-            jugador1.setIcon(bgurlp1);
-        }
-        if (retador1 == Jmain.getInstance().getPlayerList().getPos(3)){
-            ImageIcon bgurlp1 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P4.png"));
-            jugador1.setIcon(bgurlp1);
+        if(Jmain.getInstance().getPlayerList().getLength() == 2){
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(0)){
+                ImageIcon bgurlp1 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P1.png"));
+                jugador1.setIcon(bgurlp1);
+            }
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(1)){
+                ImageIcon bgurlp1 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P2.png"));
+                jugador1.setIcon(bgurlp1);
+            }
         }
 
-        if (retador2 == Jmain.getInstance().getPlayerList().getPos(0)){
-            ImageIcon bgurlp2 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P1.png"));
-            jugador2.setIcon(bgurlp2);
+        if(Jmain.getInstance().getPlayerList().getLength() == 3) {
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(0)) {
+                ImageIcon bgurlp1 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P1.png"));
+                jugador1.setIcon(bgurlp1);
+            }
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(1)) {
+                ImageIcon bgurlp1 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P2.png"));
+                jugador1.setIcon(bgurlp1);
+            }
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(2)) {
+                ImageIcon bgurlp1 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P3.png"));
+                jugador1.setIcon(bgurlp1);
+            }
         }
-        if (retador2 == Jmain.getInstance().getPlayerList().getPos(1)){
-            ImageIcon bgurlp2 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P2.png"));
-            jugador2.setIcon(bgurlp2);
+        if(Jmain.getInstance().getPlayerList().getLength() == 4){
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(0)){
+                ImageIcon bgurlp1 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P1.png"));
+                jugador1.setIcon(bgurlp1);
+            }
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(1)){
+                ImageIcon bgurlp1 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P2.png"));
+                jugador1.setIcon(bgurlp1);
+            }
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(2)){
+                ImageIcon bgurlp1 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P3.png"));
+                jugador1.setIcon(bgurlp1);
+            }
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(3)){
+                ImageIcon bgurlp1 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P4.png"));
+                jugador1.setIcon(bgurlp1);
+            }
+
         }
-        if (retador2 == Jmain.getInstance().getPlayerList().getPos(2)){
-            ImageIcon bgurlp2 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P3.png"));
-            jugador2.setIcon(bgurlp2);
+        if(Jmain.getInstance().getPlayerList().getLength() == 2){
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(0)){
+                ImageIcon bgurlp2 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P1.png"));
+                jugador2.setIcon(bgurlp2);
+            }
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(1)){
+                ImageIcon bgurlp2 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P2.png"));
+                jugador2.setIcon(bgurlp2);
+            }
+
         }
-        if (retador2 == Jmain.getInstance().getPlayerList().getPos(3)){
-            ImageIcon bgurlp2 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P4.png"));
-            jugador2.setIcon(bgurlp2);
+        if(Jmain.getInstance().getPlayerList().getLength() == 3){
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(0)){
+                ImageIcon bgurlp2 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P1.png"));
+                jugador2.setIcon(bgurlp2);
+            }
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(1)){
+                ImageIcon bgurlp2 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P2.png"));
+                jugador2.setIcon(bgurlp2);
+            }
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(2)){
+                ImageIcon bgurlp2 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P3.png"));
+                jugador2.setIcon(bgurlp2);
+            }
         }
 
-
-
-
+        if(Jmain.getInstance().getPlayerList().getLength() == 4){
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(0)){
+                ImageIcon bgurlp2 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P1.png"));
+                jugador2.setIcon(bgurlp2);
+            }
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(1)){
+                ImageIcon bgurlp2 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P2.png"));
+                jugador2.setIcon(bgurlp2);
+            }
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(2)){
+                ImageIcon bgurlp2 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P3.png"));
+                jugador2.setIcon(bgurlp2);
+            }
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(3)){
+                ImageIcon bgurlp2 = new ImageIcon(getClass().getResource("/Minijuegos/Runner/P4.png"));
+                jugador2.setIcon(bgurlp2);
+            }
+        }
         JOptionPane.showMessageDialog(null, "Lets play Runners!! \n When you press OK you will see the key bindings for each player! \n 3, 2, 1 RUN!! \n Enjoy!");
 
 
