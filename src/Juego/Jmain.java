@@ -323,23 +323,55 @@ public class Jmain extends JFrame implements ActionListener {
                     System.out.println(Jmain.getInstance().playing.referencia);
                     castToPlayer(PlayerList.getPos(i)).jugado = true;
                     lanzarDado();
-                    if(playing == PlayerList.getPos(0)){
-                        ImageIcon bgurl57 = new ImageIcon(getClass().getResource("/Juego/P1.png"));
-                        preturno.setIcon(bgurl57);
-                    }
-                    if(playing == PlayerList.getPos(1)){
-                        ImageIcon bgurl58 = new ImageIcon(getClass().getResource("/Juego/P2.png"));
-                        preturno.setIcon(bgurl58);
-                    }
-                    if(playing == PlayerList.getPos(2)){
-                        ImageIcon bgurl59 = new ImageIcon(getClass().getResource("/Juego/P3.png"));
-                        preturno.setIcon(bgurl59);
-                    }
-                    if(playing == PlayerList.getPos(3)){
-                        ImageIcon bgurl60 = new ImageIcon(getClass().getResource("/Juego/P4.png"));
-                        preturno.setIcon(bgurl60);
 
+                    if(PlayerList.getLength() == 2) {
+
+                        if (playing == PlayerList.getPos(0)) {
+                            ImageIcon bgurl57 = new ImageIcon(getClass().getResource("/Juego/P1.png"));
+                            preturno.setIcon(bgurl57);
+                        }
+                        if (playing == PlayerList.getPos(1)) {
+                            ImageIcon bgurl58 = new ImageIcon(getClass().getResource("/Juego/P2.png"));
+                            preturno.setIcon(bgurl58);
+
+                        }
                     }
+                    if(PlayerList.getLength() == 3) {
+                        if(playing == PlayerList.getPos(0)){
+                            ImageIcon bgurl57 = new ImageIcon(getClass().getResource("/Juego/P1.png"));
+                            preturno.setIcon(bgurl57);
+                        }
+                        if(playing == PlayerList.getPos(1)){
+                            ImageIcon bgurl58 = new ImageIcon(getClass().getResource("/Juego/P2.png"));
+                            preturno.setIcon(bgurl58);
+                        }
+                        if(playing == PlayerList.getPos(2)){
+                            ImageIcon bgurl59 = new ImageIcon(getClass().getResource("/Juego/P3.png"));
+                            preturno.setIcon(bgurl59);
+                        }
+                    }
+
+                    if(PlayerList.getLength() == 4) {
+                        if (playing == PlayerList.getPos(0)) {
+                            ImageIcon bgurl57 = new ImageIcon(getClass().getResource("/Juego/P1.png"));
+                            preturno.setIcon(bgurl57);
+                        }
+                        if (playing == PlayerList.getPos(1)) {
+                            ImageIcon bgurl58 = new ImageIcon(getClass().getResource("/Juego/P2.png"));
+                            preturno.setIcon(bgurl58);
+                        }
+                        if (playing == PlayerList.getPos(2)) {
+                            ImageIcon bgurl59 = new ImageIcon(getClass().getResource("/Juego/P3.png"));
+                            preturno.setIcon(bgurl59);
+                        }
+                        if (playing == PlayerList.getPos(3)) {
+                            ImageIcon bgurl60 = new ImageIcon(getClass().getResource("/Juego/P4.png"));
+                            preturno.setIcon(bgurl60);
+
+
+                        }
+                    }
+
                     return;
                 }
             }
