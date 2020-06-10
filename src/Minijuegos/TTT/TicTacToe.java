@@ -3,11 +3,13 @@ package Minijuegos.TTT;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class TicTacToe extends JFrame {
     public ImageIcon logoImage, bgImage;
     public JPanel buttonContainer;
     public JLabel bgLabel;
+    boolean temp = false;
     JButton[][] TableroGrafico = new JButton[3][3];
     Juego juego = new Juego();
     public TicTacToe(){
@@ -58,6 +60,17 @@ public class TicTacToe extends JFrame {
         JButton btn9 = new JButton();
         btn9.setBackground(new Color(83, 148, 252));
 
+        JButton btn10 = new JButton();
+        btn10.setText("Cerrar");
+        btn10.setBackground(new Color(83, 148, 252));
+        btn10.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cerrar();
+            }
+        });
+
+
         bgLabel.setBounds(0, 0, 900,720);
         gameLabel.setBounds(0, 0, 300,100);
         buttonContainer.setBounds(180,180, 512, 420);
@@ -70,6 +83,7 @@ public class TicTacToe extends JFrame {
         btn7.setBounds(80, 240, 100, 100);
         btn8.setBounds(195, 240, 100, 100);
         btn9.setBounds(310, 240, 100, 100);
+        btn10.setBounds(750, 600, 100, 30);
 
 
         buttonContainer.add(btn9);
@@ -82,12 +96,14 @@ public class TicTacToe extends JFrame {
         buttonContainer.add(btn2);
         buttonContainer.add(btn1);
         container.add(buttonContainer);
+        container.add(btn10);
         container.add(gameLabel);
         container.add(bgLabel);
 
         GenerarTableroGrafico();
-
         this.setVisible(true);
+
+
     }
     void GenerarTableroGrafico(){
         int c = 0;
@@ -101,11 +117,8 @@ public class TicTacToe extends JFrame {
                 SincronizarTablero();
             });
             c++;
-            if (c >= 3) {
-                c = 0;
-                f++;
-            }
         }
+
     }
     void SincronizarTablero() {
         for (int c = 0; c < 3; c++) {
@@ -125,5 +138,15 @@ public class TicTacToe extends JFrame {
                 }
             }
         }
+
+    }
+    void cerrar(){
+        this.setVisible(false);
+        this.dispose();
+    }
+
+    public static void main(String[] Args){
+        new TicTacToe();
+
     }
 }

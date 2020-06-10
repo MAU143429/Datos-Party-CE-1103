@@ -218,9 +218,4 @@ public class Clicker3 extends JFrame implements ActionListener {
             }
         }
     }
-    /*
-    public static void main(String[] Args){
-        new Clicker3();
-    }
-     */
 }
