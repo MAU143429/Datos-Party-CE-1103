@@ -180,6 +180,8 @@ public class Player {
         Jmain.getInstance().panel4.repaint();
         casillaActual = casilla;
         absPos--;
+        System.out.println("ABSPOS: " + absPos);
+        System.out.println("MOVIMIENTOS TOTALES: " + movimientosTotales);
     }
     public void movePlayer(int moves) {
         System.out.println(moves);
