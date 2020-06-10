@@ -1,7 +1,6 @@
 package Minijuegos.Clicker;
 
-import Juego.Jmain;
-
+import Juego.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Clicker2 extends JFrame implements ActionListener {
+public class ClickerDL extends JFrame implements ActionListener {
     public JLabel bgLabel, clickerTitle, timerGame, clickercounter1, clickerCounter2, clickerImage, clickerImage1;
     public ImageIcon ButtonImage, coinLabel, bgClicker, minigameTitle;
     public JButton coinButton, startButton;
@@ -17,9 +16,10 @@ public class Clicker2 extends JFrame implements ActionListener {
     public Timer timer;
     public TimerTask task;
     public boolean temp = false;
+    public Player retador1, retador2;
 
 
-    public Clicker2() {
+    public ClickerDL() {
         playerTimes = 1;
         this.setTitle("Clicker Minigame");
         this.setBounds(30, 30, 1280, 720);
@@ -85,10 +85,10 @@ public class Clicker2 extends JFrame implements ActionListener {
             public void run() {
                 secondsPassed++;
                 if(playerTimes == 1){
-                    timerGame.setText("Mario´s turn: " + secondsPassed + " seconds");
+                    timerGame.setText("Player 1: " + secondsPassed + " seconds");
                 }
                 if(playerTimes == 2){
-                    timerGame.setText("Luigi´s turn: " + secondsPassed + " seconds");
+                    timerGame.setText("Player 2: " + secondsPassed + " seconds");
                 }
                 if (secondsPassed > 15) {
                     if (playerTimes == 2) {
@@ -127,22 +127,37 @@ public class Clicker2 extends JFrame implements ActionListener {
         this.pack();
         this.setVisible(true);
 
+        retador1 = Jmain.getInstance().getRandomPlayer();
+        retador2 = Jmain.getInstance().getRandomPlayer();
+
+        while(retador1 == retador2){
+            retador2 = Jmain.getInstance().getRandomPlayer();
+        }
+
+
         JOptionPane.showMessageDialog(null, "Lets play Clicker! \n When you press the OK button you will see a big coin, that you have to click in order to win, the player who gets the most amount of clicks wins! \n Each player will have 5 seconds between each turn to get ready, once its passed 5 seconds, start clicking!  \n GOOD LUCK! ");
 
     }
 
     public void setWinner() {
         if (player1 > player2) {
-            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 50;
-            JOptionPane.showMessageDialog(null, "MARIO WINS!!!");
-
-        }else{
-            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 50;
-            JOptionPane.showMessageDialog(null, "LUIGI WINS!!!");
+            retador1.monedas += 50;
+            Jmain.getInstance().actualizarLabels();
+            if (retador2.monedas <= 50){
+                retador2.monedas = 0;
+            }else{
+                Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas -= 25;
+            }
+            Jmain.getInstance().actualizarLabels();
+        }if (player2 > player1) {
+            retador2.monedas += 50;
+            if (retador1.monedas <= 50){
+                retador1.monedas = 0;
+            }else{
+                retador1.monedas -= 50;
+            }
+            Jmain.getInstance().actualizarLabels();
         }
-        Jmain.getInstance().actualizarLabels();
-        this.setVisible(false);
-        this.dispose();
     }
 
     @Override
