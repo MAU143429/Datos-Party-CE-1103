@@ -433,7 +433,7 @@ public class Player {
                 Jmain.getInstance().yoshi.setLocation((posX - 22), (posY - 28));
             }
         }
-        if(absPos == movimientosTotales - 2*(movimientosTotales - 10)){
+        if(absPos == movimientosTotales - 2*(movimientosTotales - (11/2))){
             moviendose = false;
             Jmain.getInstance().corriendoJuego = false;
             timerMovimiento.stop();
@@ -516,7 +516,7 @@ public class Player {
         }
         else if(posX == 143 && posY == 118){
             if(estaenReversa){
-                movimientosTotales += 0;
+                movimientosTotales -= 2;
             }else{
                 movimientosTotales += 0;
             }
