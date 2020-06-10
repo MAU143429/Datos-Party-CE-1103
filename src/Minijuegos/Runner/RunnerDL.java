@@ -62,13 +62,13 @@ public class RunnerDL extends JFrame {
         text1 = new JLabel(" PLAYER 1 [A]");
         text1.setFont(new Font("Serif", Font.BOLD, 24));
         text1.setForeground(Color.WHITE);
-        text1.setBounds(400, 690, 150, 40);
+        text1.setBounds(400, 690, 250, 40);
         panel3.add(text1);
 
         text2 = new JLabel(" PLAYER 2 [C]");
         text2.setFont(new Font("Serif", Font.BOLD, 24));
         text2.setForeground(Color.WHITE);
-        text2.setBounds(700, 690, 150, 40);
+        text2.setBounds(700, 690, 250, 40);
         panel3.add(text2);
 
 
