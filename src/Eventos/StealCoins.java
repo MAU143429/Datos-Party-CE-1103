@@ -40,7 +40,7 @@ public class StealCoins extends Evento implements ActionListener {
         frmrobar.setBounds(0, 0, 450, 305);
         frmrobar.setLocationRelativeTo(null);
         frmrobar.setUndecorated(true);
-        frmrobar.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frmrobar.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 
         JPanel panel99 = new JPanel();
@@ -203,21 +203,25 @@ public class StealCoins extends Evento implements ActionListener {
             System.out.println("VOY A ROBAR");
             evento(ladron,pos1,botin);
             frmrobar.setVisible(false);
+            frmrobar.dispose();
         }
         if (e.getSource() == robado2) {
             pos2 = (Player) Jmain.getInstance().getPlayerList().getPos(1);
             evento(ladron,pos2,botin);
-            frmrobar.setVisible(false);
+           frmrobar.setVisible(false);
+            frmrobar.dispose();
         }
         if (e.getSource() == robado3) {
             pos3 = (Player) Jmain.getInstance().getPlayerList().getPos(2);
             evento(ladron,pos3,botin);
             frmrobar.setVisible(false);
+            frmrobar.dispose();
         }
         if (e.getSource() == robado4) {
             pos4 = (Player) Jmain.getInstance().getPlayerList().getPos(3);
             evento(ladron,pos4,botin);
             frmrobar.setVisible(false);
+            frmrobar.dispose();
         }
 
 
@@ -234,6 +238,10 @@ public class StealCoins extends Evento implements ActionListener {
             robado.monedas -= monedasrobadas;
         }
         Jmain.getInstance().actualizarLabels();
+        Jmain.getInstance().corriendoJuego = false;
+
+
+
     }
 
 }

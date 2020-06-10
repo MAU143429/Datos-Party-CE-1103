@@ -1,4 +1,15 @@
 package Eventos;
 
-public class Duel {
+import Juego.Player;
+
+public class Duel extends Evento {
+    @Override
+    public void evento(Player player) {
+
+    }
+
+    @Override
+    public void ventanaEvento(Player player) {
+
+    }
 }

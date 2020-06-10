@@ -152,13 +152,16 @@ public class Runner4 extends JFrame {
                     jugador1.setLocation(x + 50, y);
                     p1 += 1;
                     System.out.println(p1);
+
                     if (p1 == 20) {
 
                         JOptionPane.showMessageDialog(null, "MARIO WINS!!");
                         frm3.setVisible(false);
 
-
                     }
+
+
+
                 }
                 if (e.getKeyChar() == 'c') {
                     System.out.println("Luigi esta corriendo");

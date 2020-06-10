@@ -5,6 +5,8 @@ import Juego.EventStack;
 import Juego.Jmain;
 import Juego.Player;
 
+import java.util.concurrent.TimeUnit;
+
 public class CasillaAmarilla extends Casilla {
     public CasillaAmarilla(int posX, int posY, int posList,int referencia) {
         this.posX = posX;
@@ -19,12 +21,27 @@ public class CasillaAmarilla extends Casilla {
      */
     @Override
     public void evento(Player player) {
-        StealCoins prueba = new StealCoins();
-        prueba.ventanaEvento(player);
-        System.out.println("SI ESTOY HACIENDO EL EVENTO");
+        /**
+        if (EventStack.getInstance().getStack().isEmpty()) {
+            EventStack.instance = null;
+        }
+        try {
+            TimeUnit.MILLISECONDS.sleep(300);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        castToEvent(EventStack.getInstance().getStack().pop()).ventanaEvento(player);
         Jmain.getInstance().actualizarLabels();
         return;
 
     }
 
+    public Evento castToEvent (Object object){
+        return (Evento) object;*/
+
+        StealCoins prueba = new StealCoins();
+        prueba.ventanaEvento(player);
+    }
 }
+
+
