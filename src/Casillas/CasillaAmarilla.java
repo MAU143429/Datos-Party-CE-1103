@@ -42,9 +42,6 @@ public class CasillaAmarilla extends Casilla {
     public Evento castToEvent (Object object){
         return (Evento) object;*/
 
-        RunnerDL prueba = new RunnerDL();
-
-
     }
 }
 
