@@ -22,7 +22,7 @@ public class SG5 {
 
 
         if(Jmain.getInstance().PlayerList.getLength() == 2){
-            Runner2 player2 = new Runner2();
+            RunnerDL player2 = new RunnerDL();
 
         }
         if(Jmain.getInstance().PlayerList.getLength()== 3){

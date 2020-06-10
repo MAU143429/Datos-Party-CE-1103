@@ -4,7 +4,7 @@ import Minijuegos.Clicker.Clicker2;
 import Minijuegos.Dice.dosjugadores;
 import Minijuegos.LFTT.Treasure2;
 import Minijuegos.RPS.rockpaperscissors;
-import Minijuegos.Runner.Runner2;
+import Minijuegos.Runner.RunnerDL;
 import Minijuegos.TTT.TicTacToe;
 
 import javax.swing.*;
@@ -128,7 +128,7 @@ public class DS extends JFrame implements ActionListener {
         if (e.getSource() == btnrun) {
             System.out.println("Abriendo MiniDuelo Runner");
             frm6.setVisible(false);
-            Runner2 corer1 = new Runner2();
+            RunnerDL corer1 = new RunnerDL();
 
         }
         if (e.getSource() == btnrps) {

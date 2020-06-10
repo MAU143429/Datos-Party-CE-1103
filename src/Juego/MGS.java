@@ -4,7 +4,6 @@ package Juego;
 import Minijuegos.Clicker.SG1;
 import Minijuegos.Dice.SG2;
 import Minijuegos.LFTT.SG3;
-import Minijuegos.Runner.Runner2;
 import Minijuegos.Runner.SG5;
 
 import javax.swing.*;
