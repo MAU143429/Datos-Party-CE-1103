@@ -516,7 +516,7 @@ public class Player {
         }
         else if(posX == 143 && posY == 118){
             if(estaenReversa){
-                movimientosTotales += 1;
+                movimientosTotales += 0;
             }else{
                 movimientosTotales += 0;
             }
