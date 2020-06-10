@@ -4,6 +4,7 @@ import Eventos.*;
 import Juego.EventStack;
 import Juego.Jmain;
 import Juego.Player;
+import Minijuegos.RPS.rpsdl;
 import Minijuegos.Runner.RunnerDL;
 
 import java.util.concurrent.TimeUnit;
@@ -40,7 +41,7 @@ public class CasillaAmarilla extends Casilla {
     public Evento castToEvent (Object object){
         return (Evento) object;*/
 
-        RunnerDL prueba = new RunnerDL();
+        rpsdl prueba = new rpsdl();
 
 
     }
