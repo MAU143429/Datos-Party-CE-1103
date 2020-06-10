@@ -142,6 +142,7 @@ public class Clicker2 extends JFrame implements ActionListener {
         }
         Jmain.getInstance().actualizarLabels();
         this.setVisible(false);
+        this.dispose();
     }
 
     @Override
