@@ -414,9 +414,9 @@ public class Player {
     protected void moveBackwardsD(){
         System.out.println("CASILLA ACTUAL: "+ absPos + " COLOR DE LA CASILLA: "+casillaActual.getMSG() + " MOVIMIENTOS: " + movimientosTotales);
         salirD = true;
-        if(absPos < 0){
+        if(absPos == -1){
             absPos = 9;
-            movimientosTotales += 9;
+            movimientosTotales += 10;
             casillaActual = Map.getInstance().getCasilla(9,"d");
             posX = 80;
             posY = 873;
@@ -432,6 +432,7 @@ public class Player {
             if(Jmain.getInstance().playing.referencia == 4) {
                 Jmain.getInstance().yoshi.setLocation((posX - 22), (posY - 28));
             }
+            Jmain.getInstance().panel4.repaint();
         }
         if(absPos == movimientosTotales - 2*(movimientosTotales - (11/2))){
             moviendose = false;
@@ -443,7 +444,6 @@ public class Player {
         else{
             moverAntCasilla("d");
         }
-        absPos--;
         try {
             TimeUnit.MILLISECONDS.sleep(250);
         } catch (InterruptedException e) {
