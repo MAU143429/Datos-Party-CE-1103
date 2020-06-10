@@ -180,6 +180,8 @@ public class Clicker4 extends JFrame implements ActionListener {
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
+                this.setVisible(false);
+                this.dispose();
             }
             if(player3 > player2 && player3 > player4){
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
@@ -192,6 +194,8 @@ public class Clicker4 extends JFrame implements ActionListener {
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
+                this.setVisible(false);
+                this.dispose();
             }
             if(player4 > player2 && player4 > player3){
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 30;
@@ -204,6 +208,8 @@ public class Clicker4 extends JFrame implements ActionListener {
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
+                this.setVisible(false);
+                this.dispose();
             }
         }
         if (player2 > player1 && player2 > player3 && player2 > player4) {
@@ -220,6 +226,8 @@ public class Clicker4 extends JFrame implements ActionListener {
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
+                this.setVisible(false);
+                this.dispose();
             }
             if(player3 > player1 && player3 > player4){
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
@@ -232,6 +240,8 @@ public class Clicker4 extends JFrame implements ActionListener {
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
+                this.setVisible(false);
+                this.dispose();
             }
             if(player4 > player1 && player4 > player3){
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 30;
@@ -244,6 +254,8 @@ public class Clicker4 extends JFrame implements ActionListener {
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
+                this.setVisible(false);
+                this.dispose();
             }
         }
         if (player3 > player1 && player3 > player2 && player3 > player4) {
@@ -260,6 +272,8 @@ public class Clicker4 extends JFrame implements ActionListener {
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
+                this.setVisible(false);
+                this.dispose();
             }
             if(player2 > player1 && player2 > player4){
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
@@ -272,6 +286,8 @@ public class Clicker4 extends JFrame implements ActionListener {
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
+                this.setVisible(false);
+                this.dispose();
             }
             if(player4 > player1 && player4 > player2){
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 30;
@@ -284,6 +300,8 @@ public class Clicker4 extends JFrame implements ActionListener {
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
+                this.setVisible(false);
+                this.dispose();
             }
         }
         if (player4 > player1 && player4 > player2 && player4 > player3) {
@@ -300,6 +318,8 @@ public class Clicker4 extends JFrame implements ActionListener {
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
+                this.setVisible(false);
+                this.dispose();
             }
             if(player2 > player1 && player2 > player3){
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
@@ -312,6 +332,8 @@ public class Clicker4 extends JFrame implements ActionListener {
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
+                this.setVisible(false);
+                this.dispose();
             }
             if(player3 > player2 && player3 > player1){
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
@@ -324,6 +346,8 @@ public class Clicker4 extends JFrame implements ActionListener {
                     Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
                 }
                 Jmain.getInstance().actualizarLabels();
+                this.setVisible(false);
+                this.dispose();
             }
         }
     }

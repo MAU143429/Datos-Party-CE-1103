@@ -163,6 +163,7 @@ public class Clicker3 extends JFrame implements ActionListener {
             Jmain.getInstance().actualizarLabels();
             JOptionPane.showMessageDialog(null, "MARIO WINS!!!");
             this.setVisible(false);
+            this.dispose();
         }
 
         if (player2 > player1 && player2 > player3) {
