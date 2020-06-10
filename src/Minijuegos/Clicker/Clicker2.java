@@ -134,10 +134,12 @@ public class Clicker2 extends JFrame implements ActionListener {
     public void setWinner() {
         if (player1 > player2) {
             Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 50;
+            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
             JOptionPane.showMessageDialog(null, "MARIO WINS!!!");
 
         }else{
-            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 50;
+            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 30;
+            Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 50;
             JOptionPane.showMessageDialog(null, "LUIGI WINS!!!");
         }
         Jmain.getInstance().actualizarLabels();
