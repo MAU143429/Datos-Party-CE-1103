@@ -90,6 +90,7 @@ public class ClickerDL extends JFrame implements ActionListener {
                     timerGame.setText(r1 + secondsPassed + " seconds");
                 }
                 if(playerTimes == 2){
+                    IdentificarJugador();
                     timerGame.setText(r2 + secondsPassed + " seconds");
                 }
                 if (secondsPassed > 15) {
@@ -207,6 +208,7 @@ public class ClickerDL extends JFrame implements ActionListener {
                     clickercounter1.setText(r1 + player1);
                 }
                 if (playerTimes == 2) {
+                    IdentificarJugador();
                     player2++;
                     clickerCounter2.setText(r2 + player2);
                 }
