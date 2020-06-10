@@ -416,7 +416,7 @@ public class Player {
         salirD = true;
         if(absPos == -1){
             absPos = 9;
-            movimientosTotales += 10;
+            movimientosTotales += 0;
             casillaActual = Map.getInstance().getCasilla(9,"d");
             posX = 80;
             posY = 873;
