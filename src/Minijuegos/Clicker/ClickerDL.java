@@ -17,6 +17,7 @@ public class ClickerDL extends JFrame implements ActionListener {
     public TimerTask task;
     public boolean temp = false;
     public Player retador1, retador2;
+    public String r1, r2 = "";
 
 
     public ClickerDL() {
@@ -85,10 +86,11 @@ public class ClickerDL extends JFrame implements ActionListener {
             public void run() {
                 secondsPassed++;
                 if(playerTimes == 1){
-                    timerGame.setText("Player 1: " + secondsPassed + " seconds");
+                    IdentificarJugador();
+                    timerGame.setText(r1 + secondsPassed + " seconds");
                 }
                 if(playerTimes == 2){
-                    timerGame.setText("Player 2: " + secondsPassed + " seconds");
+                    timerGame.setText(r2 + secondsPassed + " seconds");
                 }
                 if (secondsPassed > 15) {
                     if (playerTimes == 2) {
@@ -163,6 +165,33 @@ public class ClickerDL extends JFrame implements ActionListener {
             this.dispose();
         }
     }
+    public void IdentificarJugador(){
+        if (retador1 == Jmain.getInstance().getPlayerList().getPos(0)){
+           r1 = "Mario";
+        }
+        if (retador1 == Jmain.getInstance().getPlayerList().getPos(1)){
+         r1 = "Luigi";
+        }
+        if (retador1 == Jmain.getInstance().getPlayerList().getPos(2)){
+            r1 = "Toad";
+        }
+        if (retador1 == Jmain.getInstance().getPlayerList().getPos(3)){
+            r1 = "yoshi";
+        }
+
+        if (retador2 == Jmain.getInstance().getPlayerList().getPos(0)){
+            r2 = "Mario";
+        }
+        if (retador2 == Jmain.getInstance().getPlayerList().getPos(1)){
+            r2 = "Luigi";
+        }
+        if (retador2 == Jmain.getInstance().getPlayerList().getPos(2)){
+            r2 = "Toad";
+        }
+        if (retador2 == Jmain.getInstance().getPlayerList().getPos(3)){
+            r2 = "Yoshi";
+        }
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -173,12 +202,13 @@ public class ClickerDL extends JFrame implements ActionListener {
         if (temp) {
             if (secondsPassed > 5) {
                 if (playerTimes == 1) {
+                    IdentificarJugador();
                     player1++;
-                    clickercounter1.setText("Mario: " + player1);
+                    clickercounter1.setText(r1 + player1);
                 }
                 if (playerTimes == 2) {
                     player2++;
-                    clickerCounter2.setText("Luigi: " + player2);
+                    clickerCounter2.setText(r2 + player2);
                 }
             }
         }
