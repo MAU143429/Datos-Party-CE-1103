@@ -89,7 +89,6 @@ public class Juego {
                     break;
             }
         }
-        System.out.println("hola");
     }
     int BuscarFin() {
         int col = BuscarFinColumnas();

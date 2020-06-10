@@ -6,9 +6,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TicTacToe extends JFrame {
-    public ImageIcon logoImage, bgImage;
+    public ImageIcon logoImage, bgImage, tttBase;
     public JPanel buttonContainer;
-    public JLabel bgLabel;
+    public JLabel bgLabel, backgroundGame, gameLogo;
     boolean temp = false;
     JButton[][] TableroGrafico = new JButton[3][3];
     Juego juego = new Juego();
@@ -17,6 +17,8 @@ public class TicTacToe extends JFrame {
         this.setBounds(250,30,900,720);
         this.setPreferredSize(new Dimension(900,720));
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setUndecorated(true);
+        //this.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
 
         Container container = this.getContentPane();
         container.setLayout(null);
@@ -26,39 +28,74 @@ public class TicTacToe extends JFrame {
         bgLabel.setIcon(bgImage);
         bgLabel.setBackground(Color.blue);
 
+        tttBase = new ImageIcon(getClass().getResource("/Minijuegos/TTT/tttBase.png"));
+
+        logoImage = new ImageIcon(getClass().getResource("/Minijuegos/TTT/gameLogo.png"));
+
         JLabel gameLabel = new JLabel();
-        gameLabel.setText("Game logo");
+        gameLabel.setIcon(logoImage);
 
         buttonContainer = new JPanel();
         buttonContainer.setLayout(null);
         buttonContainer.setOpaque(false);
 
+        backgroundGame = new JLabel();
+        backgroundGame.setIcon(tttBase);
+
+
         JButton btn1 = new JButton();
         btn1.setBackground(new Color(83, 148, 252));
+        btn1.setBorderPainted(false);
+        btn1.setContentAreaFilled(false);
+        btn1.setOpaque(false);
 
         JButton btn2 = new JButton();
         btn2.setBackground(new Color(83, 148, 252));
+        btn2.setBorderPainted(false);
+        btn2.setContentAreaFilled(false);
+        btn2.setOpaque(false);
 
         JButton btn3 = new JButton();
         btn3.setBackground(new Color(83, 148, 252));
+        btn3.setBorderPainted(false);
+        btn3.setContentAreaFilled(false);
+        btn3.setOpaque(false);
 
         JButton btn4 = new JButton();
         btn4.setBackground(new Color(83, 148, 252));
+        btn4.setBorderPainted(false);
+        btn4.setContentAreaFilled(false);
+        btn4.setOpaque(false);
 
         JButton btn5 = new JButton();
         btn5.setBackground(new Color(83, 148, 252));
+        btn5.setBorderPainted(false);
+        btn5.setContentAreaFilled(false);
+        btn5.setOpaque(false);
 
         JButton btn6 = new JButton();
         btn6.setBackground(new Color(83, 148, 252));
+        btn6.setBorderPainted(false);
+        btn6.setContentAreaFilled(false);
+        btn6.setOpaque(false);
 
         JButton btn7 = new JButton();
         btn7.setBackground(new Color(83, 148, 252));
+        btn7.setBorderPainted(false);
+        btn7.setContentAreaFilled(false);
+        btn7.setOpaque(false);
 
         JButton btn8 = new JButton();
         btn8.setBackground(new Color(83, 148, 252));
+        btn8.setBorderPainted(false);
+        btn8.setContentAreaFilled(false);
+        btn8.setOpaque(false);
 
         JButton btn9 = new JButton();
         btn9.setBackground(new Color(83, 148, 252));
+        btn9.setBorderPainted(false);
+        btn9.setContentAreaFilled(false);
+        btn9.setOpaque(false);
 
         JButton btn10 = new JButton();
         btn10.setText("Cerrar");
@@ -72,17 +109,18 @@ public class TicTacToe extends JFrame {
 
 
         bgLabel.setBounds(0, 0, 900,720);
-        gameLabel.setBounds(0, 0, 300,100);
+        gameLabel.setBounds(0, 0, 500,100);
         buttonContainer.setBounds(180,180, 512, 420);
-        btn1.setBounds(80, 0, 100, 100);
-        btn2.setBounds(195, 0, 100, 100);
-        btn3.setBounds(310, 0, 100, 100);
-        btn4.setBounds(80, 120, 100, 100);
-        btn5.setBounds(195, 120, 100, 100);
-        btn6.setBounds(310, 120, 100, 100);
-        btn7.setBounds(80, 240, 100, 100);
-        btn8.setBounds(195, 240, 100, 100);
-        btn9.setBounds(310, 240, 100, 100);
+        backgroundGame.setBounds(210, 150,512, 420);
+        btn1.setBounds(10, 8, 100, 100);
+        btn2.setBounds(165, 8, 100, 100);
+        btn3.setBounds(320, 8, 100, 100);
+        btn4.setBounds(10, 138, 100, 100);
+        btn5.setBounds(165, 138, 100, 100);
+        btn6.setBounds(320, 138, 100, 100);
+        btn7.setBounds(10, 260, 100, 100);
+        btn8.setBounds(165, 260, 100, 100);
+        btn9.setBounds(320, 260, 100, 100);
         btn10.setBounds(750, 600, 100, 30);
 
 
@@ -95,12 +133,13 @@ public class TicTacToe extends JFrame {
         buttonContainer.add(btn3);
         buttonContainer.add(btn2);
         buttonContainer.add(btn1);
+        container.add(backgroundGame);
         container.add(buttonContainer);
         container.add(btn10);
         container.add(gameLabel);
         container.add(bgLabel);
-
         GenerarTableroGrafico();
+        JOptionPane.showMessageDialog(null, "Tic tac toe, el primer jugador va a tener asociado una ´X´ y el segundo jugador va a tener asociado un ´O´ \n Una vez finalizado el juego, darle al botón de cerrar!  ");
         this.setVisible(true);
 
 
@@ -117,6 +156,10 @@ public class TicTacToe extends JFrame {
                 SincronizarTablero();
             });
             c++;
+            if (c >= 3){
+                c = 0;
+                f++;
+            }
         }
 
     }
