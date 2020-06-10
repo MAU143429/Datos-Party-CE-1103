@@ -21,7 +21,7 @@ public class CasillaAmarilla extends Casilla {
      */
     @Override
     public void evento(Player player) {
-        /**
+
         if (EventStack.getInstance().getStack().isEmpty()) {
             EventStack.instance = null;
         }
@@ -37,10 +37,9 @@ public class CasillaAmarilla extends Casilla {
     }
 
     public Evento castToEvent (Object object){
-        return (Evento) object;*/
+        return (Evento) object;
 
-        Win2Stars prueba = new Win2Stars();
-        prueba.ventanaEvento(player);
+
     }
 }
 
