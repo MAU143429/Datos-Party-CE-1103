@@ -4,6 +4,7 @@ import Eventos.*;
 import Juego.EventStack;
 import Juego.Jmain;
 import Juego.Player;
+import Minijuegos.Clicker.ClickerDL;
 import Minijuegos.RPS.rpsdl;
 import Minijuegos.Runner.RunnerDL;
 
@@ -41,7 +42,7 @@ public class CasillaAmarilla extends Casilla {
     public Evento castToEvent (Object object){
         return (Evento) object;*/
 
-        rpsdl prueba = new rpsdl();
+        ClickerDL prueba = new ClickerDL();
 
 
     }

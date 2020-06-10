@@ -149,6 +149,8 @@ public class ClickerDL extends JFrame implements ActionListener {
                 Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas -= 25;
             }
             Jmain.getInstance().actualizarLabels();
+            this.setVisible(false);
+            this.dispose();
         }if (player2 > player1) {
             retador2.monedas += 50;
             if (retador1.monedas <= 50){
@@ -157,6 +159,8 @@ public class ClickerDL extends JFrame implements ActionListener {
                 retador1.monedas -= 50;
             }
             Jmain.getInstance().actualizarLabels();
+            this.setVisible(false);
+            this.dispose();
         }
     }
 
