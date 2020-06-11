@@ -67,7 +67,7 @@ public class EventStack {
         stack.push(new PlaceSwap());
         stack.push(new PlaceSwap());
         stack.push(new PlaceSwap());
-        stack.push(new PlaceSwap());
+        stack.push(new PlaceSwap());*/
 
         stack.push(new Duel());
         stack.push(new Duel());
@@ -78,7 +78,7 @@ public class EventStack {
         stack.push(new Duel());
         stack.push(new Duel());
         stack.push(new Duel());
-        stack.push(new Duel());*/
+        stack.push(new Duel());
 
 
         stack = stack.mezclar();

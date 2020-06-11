@@ -26,7 +26,7 @@ public class Jmain extends JFrame implements ActionListener {
     protected Dados dado;
     public SimpleList PlayerList,StarList,CoinList,CLabelList,SLabelList;
     public Player pmario, pluigi, ptoad, pyoshi, playing;
-    public int jugadores, rounds;
+    public int jugadores, rounds,ganador,ganador2;
     private Star star;
     public JPanel panel4;
     public JTextField textmovimientos;
@@ -311,6 +311,7 @@ public class Jmain extends JFrame implements ActionListener {
 
     public void ganadores() {
         System.out.println("ganador!");
+
     }
 
     ////////////////////////////////////////////////////MANEJO DE TURNOS////////////////////////////////////////////////////////////////////
@@ -383,9 +384,10 @@ public class Jmain extends JFrame implements ActionListener {
             actualizarLabels();
         }
         if (rounds == 20) {
+            ganadores();
             frm2.setVisible(false);
             frm2.dispose();
-            ganadores();
+
         }
     }
     public void crearMario(){
