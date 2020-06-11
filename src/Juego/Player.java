@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class Player {
     public Player self;
     public Casilla casillaActual;
-    public int posX, posY, absPos, movimientosTotales, monedas, estrellas, referencia, sumadado;
+    public int posX, posY, absPos, movimientosTotales, monedas, estrellas, referencia, sumadado,n;
     public boolean estaena, estaenb, estaenc, estaenReversa, estaend, salirD, moviendose, jugado;
     public Timer timerMovimiento, timerEStrellas, timerEvento;
 
@@ -160,10 +160,6 @@ public class Player {
     }
     public void moverAntCasilla(String fase){
         if(casillaActual == Map.getInstance().getCasilla(0,"c")){
-            absPos--;
-            return;
-        }
-        if(casillaActual == Map.getInstance().getCasilla(0,"d")){
             absPos--;
             return;
         }
@@ -414,9 +410,10 @@ public class Player {
     protected void moveBackwardsD(){
         System.out.println("CASILLA ACTUAL: "+ absPos + " COLOR DE LA CASILLA: "+casillaActual.getMSG() + " MOVIMIENTOS: " + movimientosTotales);
         salirD = true;
-        if(absPos == -1){
-            absPos = 9;
-            movimientosTotales += 0;
+        if(absPos == 0){
+            n++;
+            absPos = 10;
+            //movimientosTotales += 0;
             casillaActual = Map.getInstance().getCasilla(9,"d");
             posX = 80;
             posY = 873;
@@ -434,7 +431,7 @@ public class Player {
             }
             Jmain.getInstance().panel4.repaint();
         }
-        if(absPos == movimientosTotales - 2*(movimientosTotales - (11/2))){
+        if(absPos == movimientosTotales - 2*(movimientosTotales - 6) || absPos == (movimientosTotales - 2*(movimientosTotales - 6))+10*n){
             moviendose = false;
             Jmain.getInstance().corriendoJuego = false;
             timerMovimiento.stop();
@@ -489,7 +486,7 @@ public class Player {
         }
         else if(posX == 298 && posY == 791 && salirD){
             if(estaenReversa){
-                movimientosTotales -= 1;
+                movimientosTotales -= 2;
             }else{
                 movimientosTotales -= 2;
             }
@@ -524,6 +521,7 @@ public class Player {
             estaend = true;
             posX = 298;
             posY = 791;
+            n = 0;
             if(Jmain.getInstance().playing.referencia == 1){
                 Jmain.getInstance().mario.setLocation((posX-22),(posY-28));
             }
