@@ -558,14 +558,32 @@ public class Player {
 
     }
     public void verifyList(){
-        SimpleList playerList = Jmain.getInstance().getPlayerList();
+        SimpleList duelist = Jmain.getInstance().getPlayerList();
         if (estaena){ casillaActual = Map.getInstance().getCasilla(absPos,"a");}
         else if(estaenb){casillaActual = Map.getInstance().getCasilla(absPos,"b");}
         else if(estaenc){casillaActual = Map.getInstance().getCasilla(absPos,"c");}
         else if(estaend){casillaActual = Map.getInstance().getCasilla(absPos,"d");}
         else{casillaActual = Map.getInstance().getCasilla(absPos,"p");}
-        timerEvento.start();
         Jmain.getInstance().actualizarLabels();
+
+
+        for (int i = 0; i < duelist.getLength(); i++){
+            Player player = (Player) duelist.getPos(i);
+            if (player != this && player.casillaActual == this.casillaActual){
+                duelist.add(player);
+                break;
+            }
+        }
+
+        if (duelist.getLength() > 1){
+            try {
+                TimeUnit.MILLISECONDS.sleep(300);
+            } catch (InterruptedException interruptedException) {
+                interruptedException.printStackTrace();
+            }
+            new DuelCasilla().ventanaEvento(duelist);
+            return;
+        }
 
         this.timerEvento.start();
         Jmain.getInstance().actualizarLabels();

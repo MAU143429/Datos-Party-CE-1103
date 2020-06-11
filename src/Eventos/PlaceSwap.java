@@ -1,6 +1,7 @@
 package Eventos;
 
 import Casillas.Casilla;
+import EstructurasDatos.SimpleList;
 import Juego.Jmain;
 import Juego.Player;
 
@@ -284,4 +285,6 @@ public class PlaceSwap extends Evento{
         Jmain.getInstance().corriendoJuego = false;
 
     }
+
+
 }
