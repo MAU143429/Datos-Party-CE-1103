@@ -26,7 +26,7 @@ public class Jmain extends JFrame implements ActionListener {
     protected Dados dado;
     public SimpleList PlayerList,StarList,CoinList,CLabelList,SLabelList;
     public Player pmario, pluigi, ptoad, pyoshi, playing;
-    public int jugadores, rounds,ganador,ganador2;
+    public int jugadores, rounds,ganador,ganador1;
     private Star star;
     public JPanel panel4;
     public JTextField textmovimientos;
@@ -310,15 +310,89 @@ public class Jmain extends JFrame implements ActionListener {
     }
 
     public void ganadoresEstrellas() {
-        int player1 = castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).estrellas;
-        int player2 = castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).estrellas;
-        int player3 = castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).estrellas;
-        int player4 = castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).estrellas;
+        int player1 = castToPlayer(PlayerList.getPos(0)).estrellas;
+        int player2 = castToPlayer(PlayerList.getPos(1)).estrellas;
+        int player3 = castToPlayer(PlayerList.getPos(2)).estrellas;
+        int player4 = castToPlayer(PlayerList.getPos(3)).estrellas;
+        if(PlayerList.getLength() == 2){
+            if (player1 > player2) {
+                JOptionPane.showMessageDialog(null, "By the number of stars, Mario wins!!!");
+            }if (player2 > player1) {
+                JOptionPane.showMessageDialog(null, "By the number of stars, Luigi wins!!!");
+            }else{
+                ganadoresMonedas();
+            }
 
+        }
+        if(PlayerList.getLength() == 3){
+            if (player1 > player2 && player1 > player3) {
+                JOptionPane.showMessageDialog(null, "By the number of stars, Mario wins!!!");
+            }
+            if (player2 > player1 && player2 > player3) {
+                JOptionPane.showMessageDialog(null, "By the number of stars, Luigi wins!!!");
+            }
+            if (player3 > player1 && player3 > player2) {
+                JOptionPane.showMessageDialog(null, "By the number of stars, Toad wins!!!");
+            }else{
+                ganadoresMonedas();
+            }
 
+        }
+        if(PlayerList.getLength() == 4){
+            if (player1 > player2 && player1 > player3 && player1 > player4) {
+                JOptionPane.showMessageDialog(null, "By the number of stars, Mario wins!!!");
+            }
+            if (player2 > player1 && player2 > player3 && player2 > player4) {
+                JOptionPane.showMessageDialog(null, "By the number of stars, Luigi wins!!!");
+            }
+            if (player3 > player1 && player3 > player2 && player3 > player4) {
+                JOptionPane.showMessageDialog(null, "By the number of stars, Toad wins!!!");
+            }
+            if (player4 > player1 && player4 > player2 && player4 > player3){
+                JOptionPane.showMessageDialog(null, "By the number of stars, Yoshi wins!!!");
+            }else{
+                ganadoresMonedas();
+            }
+        }
     }
     public void ganadoresMonedas(){
+        int player1 = castToPlayer(PlayerList.getPos(0)).monedas;
+        int player2 = castToPlayer(PlayerList.getPos(1)).monedas;
+        int player3 = castToPlayer(PlayerList.getPos(2)).monedas;
+        int player4 = castToPlayer(PlayerList.getPos(3)).monedas;
+        if(PlayerList.getLength() == 2){
+            if (player1 > player2) {
+                JOptionPane.showMessageDialog(null, "By the number of coins, Mario wins!!!");
+            } else{
+                JOptionPane.showMessageDialog(null, "By the number of coins, Luigi wins!!!");
+            }
+        }
+        if(PlayerList.getLength() == 3){
+            if (player1 > player2 && player1 > player3) {
+                JOptionPane.showMessageDialog(null, "By the number of stars, Mario wins!!!");
+            }
 
+            if (player2 > player1 && player2 > player3) {
+                JOptionPane.showMessageDialog(null, "By the number of stars, Luigi wins!!!");
+            }
+            if (player3 > player1 && player3 > player2) {
+                JOptionPane.showMessageDialog(null, "By the number of stars, Toad wins!!!");
+            }
+        }
+        if(PlayerList.getLength() == 4){
+            if (player1 > player2 && player1 > player3 && player1 > player4) {
+                JOptionPane.showMessageDialog(null, "By the number of stars, Mario wins!!!");
+            }
+            if (player2 > player1 && player2 > player3 && player2 > player4) {
+                JOptionPane.showMessageDialog(null, "By the number of stars, Luigi wins!!!");
+            }
+            if (player3 > player1 && player3 > player2 && player3 > player4) {
+                JOptionPane.showMessageDialog(null, "By the number of stars, Toad wins!!!");
+            }
+            if (player4 > player1 && player4 > player2 && player4 > player3){
+                JOptionPane.showMessageDialog(null, "By the number of stars, Yoshi wins!!!");
+            }
+        }
     }
 
     ////////////////////////////////////////////////////MANEJO DE TURNOS////////////////////////////////////////////////////////////////////
@@ -390,7 +464,7 @@ public class Jmain extends JFrame implements ActionListener {
             MGS minijuego = new MGS();
             actualizarLabels();
         }
-        if (rounds == 20) {
+        if (rounds == 5) {
             ganadoresEstrellas();
             frm2.setVisible(false);
             frm2.dispose();
