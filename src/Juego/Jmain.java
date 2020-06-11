@@ -18,11 +18,11 @@ import java.util.concurrent.TimeUnit;
 
  */
 public class Jmain extends JFrame implements ActionListener {
-    public JFrame frm2;
-    public JLabel bg2, cnp1, cnp2, cnp3, cnp4, str1, str2, str3, str4, round, pgame, mario, luigi, toad, yoshi, dado1, dado2, estrella, preronda, preturno;
+    public JFrame frm2,frmgcongra;
+    public JLabel bg2, cnp1, cnp2, cnp3, cnp4, str1, str2, str3, str4, round, pgame, mario, luigi, toad, yoshi, dado1, dado2, estrella, preronda, preturno,bg31;
     public Casilla casillaActual;
     public JButton btnmkt, btndados, avanzar;
-    public boolean corriendoJuego;
+    public boolean corriendoJuego,ganadorf;
     protected Dados dado;
     public SimpleList PlayerList,StarList,CoinList,CLabelList,SLabelList;
     public Player pmario, pluigi, ptoad, pyoshi, playing;
@@ -30,6 +30,7 @@ public class Jmain extends JFrame implements ActionListener {
     private Star star;
     public JPanel panel4;
     public JTextField textmovimientos;
+    public Player winner;
     /**
      * Sinleton para Jmain
      */
@@ -41,6 +42,7 @@ public class Jmain extends JFrame implements ActionListener {
      * @authors Mauricio C. , Naheem Johnson , Jose Espinoza
      */
     public Jmain() {
+        ganadorf = false;
         //String filepath = "maintheme.wav";
         //musicstuff musicObject = new musicstuff();
         //musicObject.playMusic(filepath);
@@ -317,23 +319,41 @@ public class Jmain extends JFrame implements ActionListener {
         if(PlayerList.getLength() == 2){
             if (player1 > player2) {
                 JOptionPane.showMessageDialog(null, "By the number of stars, Mario wins!!!");
+                winner = castToPlayer(PlayerList.getPos(0));
+                ganadorf = true;
+                return;
             }if (player2 > player1) {
                 JOptionPane.showMessageDialog(null, "By the number of stars, Luigi wins!!!");
-            }else{
+                winner = castToPlayer(PlayerList.getPos(1));
+                ganadorf = true;
+                return;
+            }
+            if(player1 == player2  && ganadorf == false){
                 ganadoresMonedas();
             }
+
 
         }
         if(PlayerList.getLength() == 3){
             if (player1 > player2 && player1 > player3) {
                 JOptionPane.showMessageDialog(null, "By the number of stars, Mario wins!!!");
+                winner = castToPlayer(PlayerList.getPos(0));
+                ganadorf = true;
+                return;
             }
             if (player2 > player1 && player2 > player3) {
                 JOptionPane.showMessageDialog(null, "By the number of stars, Luigi wins!!!");
+                winner = castToPlayer(PlayerList.getPos(1));
+                ganadorf = true;
+                return;
             }
             if (player3 > player1 && player3 > player2) {
                 JOptionPane.showMessageDialog(null, "By the number of stars, Toad wins!!!");
-            }else{
+                winner = castToPlayer(PlayerList.getPos(2));
+                ganadorf = true;
+                return;
+            }
+            if(player1 == player2 || player1 == player3 || player2 == player3  && ganadorf == false){
                 ganadoresMonedas();
             }
 
@@ -341,16 +361,29 @@ public class Jmain extends JFrame implements ActionListener {
         if(PlayerList.getLength() == 4){
             if (player1 > player2 && player1 > player3 && player1 > player4) {
                 JOptionPane.showMessageDialog(null, "By the number of stars, Mario wins!!!");
+                winner = castToPlayer(PlayerList.getPos(0));
+                ganadorf = true;
+                return;
             }
             if (player2 > player1 && player2 > player3 && player2 > player4) {
                 JOptionPane.showMessageDialog(null, "By the number of stars, Luigi wins!!!");
+                winner = castToPlayer(PlayerList.getPos(1));
+                ganadorf = true;
+                return;
             }
             if (player3 > player1 && player3 > player2 && player3 > player4) {
                 JOptionPane.showMessageDialog(null, "By the number of stars, Toad wins!!!");
+                winner = castToPlayer(PlayerList.getPos(2));
+                ganadorf = true;
+                return;
             }
             if (player4 > player1 && player4 > player2 && player4 > player3){
                 JOptionPane.showMessageDialog(null, "By the number of stars, Yoshi wins!!!");
-            }else{
+                winner = castToPlayer(PlayerList.getPos(3));
+                ganadorf = true;
+                return;
+            }
+            if(player1 == player2 || player1 == player3 || player1 == player4 || player2 == player3 || player2 == player4 ||player3 == player4 && ganadorf == false){
                 ganadoresMonedas();
             }
         }
@@ -363,34 +396,43 @@ public class Jmain extends JFrame implements ActionListener {
         if(PlayerList.getLength() == 2){
             if (player1 > player2) {
                 JOptionPane.showMessageDialog(null, "By the number of coins, Mario wins!!!");
+                winner = castToPlayer(PlayerList.getPos(0));
             } else{
                 JOptionPane.showMessageDialog(null, "By the number of coins, Luigi wins!!!");
+                winner = castToPlayer(PlayerList.getPos(1));
             }
         }
         if(PlayerList.getLength() == 3){
             if (player1 > player2 && player1 > player3) {
-                JOptionPane.showMessageDialog(null, "By the number of stars, Mario wins!!!");
+                JOptionPane.showMessageDialog(null, "By the number of coins, Mario wins!!!");
+                winner = castToPlayer(PlayerList.getPos(0));
             }
 
             if (player2 > player1 && player2 > player3) {
-                JOptionPane.showMessageDialog(null, "By the number of stars, Luigi wins!!!");
+                JOptionPane.showMessageDialog(null, "By the number of coins, Luigi wins!!!");
+                winner = castToPlayer(PlayerList.getPos(1));
             }
             if (player3 > player1 && player3 > player2) {
-                JOptionPane.showMessageDialog(null, "By the number of stars, Toad wins!!!");
+                JOptionPane.showMessageDialog(null, "By the number of coins, Toad wins!!!");
+                winner = castToPlayer(PlayerList.getPos(2));
             }
         }
         if(PlayerList.getLength() == 4){
             if (player1 > player2 && player1 > player3 && player1 > player4) {
-                JOptionPane.showMessageDialog(null, "By the number of stars, Mario wins!!!");
+                JOptionPane.showMessageDialog(null, "By the number of coins, Mario wins!!!");
+                winner = castToPlayer(PlayerList.getPos(0));
             }
             if (player2 > player1 && player2 > player3 && player2 > player4) {
-                JOptionPane.showMessageDialog(null, "By the number of stars, Luigi wins!!!");
+                JOptionPane.showMessageDialog(null, "By the number of coins, Luigi wins!!!");
+                winner = castToPlayer(PlayerList.getPos(1));
             }
             if (player3 > player1 && player3 > player2 && player3 > player4) {
-                JOptionPane.showMessageDialog(null, "By the number of stars, Toad wins!!!");
+                JOptionPane.showMessageDialog(null, "By the number of coins, Toad wins!!!");
+                winner = castToPlayer(PlayerList.getPos(2));
             }
             if (player4 > player1 && player4 > player2 && player4 > player3){
-                JOptionPane.showMessageDialog(null, "By the number of stars, Yoshi wins!!!");
+                JOptionPane.showMessageDialog(null, "By the number of coins, Yoshi wins!!!");
+                winner = castToPlayer(PlayerList.getPos(3));
             }
         }
     }
@@ -406,7 +448,7 @@ public class Jmain extends JFrame implements ActionListener {
                     castToPlayer(PlayerList.getPos(i)).jugado = true;
                     lanzarDado();
 
-                    if(PlayerList.getLength() == 2) {
+                    if (PlayerList.getLength() == 2) {
 
                         if (playing == PlayerList.getPos(0)) {
                             ImageIcon bgurl57 = new ImageIcon(getClass().getResource("/Juego/P1.png"));
@@ -418,22 +460,22 @@ public class Jmain extends JFrame implements ActionListener {
 
                         }
                     }
-                    if(PlayerList.getLength() == 3) {
-                        if(playing == PlayerList.getPos(0)){
+                    if (PlayerList.getLength() == 3) {
+                        if (playing == PlayerList.getPos(0)) {
                             ImageIcon bgurl57 = new ImageIcon(getClass().getResource("/Juego/P1.png"));
                             preturno.setIcon(bgurl57);
                         }
-                        if(playing == PlayerList.getPos(1)){
+                        if (playing == PlayerList.getPos(1)) {
                             ImageIcon bgurl58 = new ImageIcon(getClass().getResource("/Juego/P2.png"));
                             preturno.setIcon(bgurl58);
                         }
-                        if(playing == PlayerList.getPos(2)){
+                        if (playing == PlayerList.getPos(2)) {
                             ImageIcon bgurl59 = new ImageIcon(getClass().getResource("/Juego/P3.png"));
                             preturno.setIcon(bgurl59);
                         }
                     }
 
-                    if(PlayerList.getLength() == 4) {
+                    if (PlayerList.getLength() == 4) {
                         if (playing == PlayerList.getPos(0)) {
                             ImageIcon bgurl57 = new ImageIcon(getClass().getResource("/Juego/P1.png"));
                             preturno.setIcon(bgurl57);
@@ -461,15 +503,20 @@ public class Jmain extends JFrame implements ActionListener {
                 castToPlayer(PlayerList.getPos(i)).jugado = false;
             }
             rounds++;
-            MGS minijuego = new MGS();
-            actualizarLabels();
-        }
-        if (rounds == 5) {
-            ganadoresEstrellas();
-            frm2.setVisible(false);
-            frm2.dispose();
+            if (rounds == 25) {
 
+                ganadoresEstrellas();
+                celebracion();
+                frm2.setVisible(false);
+                frm2.dispose();
+                System.exit(0);
+
+            } else {
+                MGS minijuego = new MGS();
+                actualizarLabels();
+            }
         }
+
     }
     public void crearMario(){
         playing = castToPlayer(PlayerList.getPos(0));
@@ -480,6 +527,58 @@ public class Jmain extends JFrame implements ActionListener {
     public void lanzarDado(){
         corriendoJuego = true;
         dado.tm.start();
+    }
+
+    public void celebracion(){
+        frmgcongra = new JFrame();
+        frmgcongra.setBounds(740, 130, 450, 305);
+        frmgcongra.setUndecorated(true);
+        frmgcongra.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+
+        JPanel panel100 = new JPanel();
+        panel100.setLayout(null);
+        panel100.setSize(600, 410);
+        frmgcongra.add(panel100);
+
+        bg31 = new JLabel();
+        bg31.setBounds(0, 0, 450, 310);
+        panel100.add(bg31);
+
+
+
+        if( winner == PlayerList.getPos(0)) {
+            ImageIcon bgurl200 = new ImageIcon(getClass().getResource("/Juego/mariowin.png"));
+             bg31.setIcon(bgurl200);
+
+        }
+        if( winner == PlayerList.getPos(1)) {
+            ImageIcon bgurl201 = new ImageIcon(getClass().getResource("/Juego/luigiwin.png"));
+            bg31.setIcon(bgurl201);
+        }
+        if( winner == PlayerList.getPos(2)) {
+            ImageIcon bgurl202 = new ImageIcon(getClass().getResource("/Juego/toadwin.png"));
+            bg31.setIcon(bgurl202);
+        }
+        if( winner == PlayerList.getPos(3)) {
+            ImageIcon bgurl203 = new ImageIcon(getClass().getResource("/Juego/yoshiwin.png"));
+            bg31.setIcon(bgurl203);
+        }
+
+
+
+        frmgcongra.setVisible(true);
+
+        JOptionPane.showMessageDialog(null , "Juego Terminado \n GRACIAS POR JUGAR A DATOS PARTY 1 \n DEVELOPERS: \n Mauricio Calderón \n Naheem Johnson \n Jose Antonio Espinoza");
+
+        frmgcongra.setVisible(false);
+
+
+
+
+        Jmain.getInstance().corriendoJuego = false;
+
+
     }
 
     ///////////////////////////////////////////////////////METODOS DE ACTUALIZACIÓN DE OBJETOS////////////////////////////////////

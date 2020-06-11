@@ -63,11 +63,11 @@ public class EventStack {
         stack.push(new LoseStars());
         stack.push(new LoseStars());
 
-        /**stack.push(new PlaceSwap());
         stack.push(new PlaceSwap());
         stack.push(new PlaceSwap());
         stack.push(new PlaceSwap());
-        stack.push(new PlaceSwap());*/
+        stack.push(new PlaceSwap());
+        stack.push(new PlaceSwap());
 
         stack.push(new Duel());
         stack.push(new Duel());

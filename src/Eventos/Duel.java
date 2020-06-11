@@ -1,6 +1,5 @@
 package Eventos;
 
-import Juego.DuelStack;
 import Juego.Jmain;
 import Juego.Player;
 import Minijuegos.Clicker.ClickerDL;
@@ -9,7 +8,6 @@ import Minijuegos.Runner.RunnerDL;
 
 import javax.swing.*;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.TimeUnit;
 
 public class Duel extends Evento {
 

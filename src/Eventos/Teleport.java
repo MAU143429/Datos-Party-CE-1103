@@ -18,6 +18,7 @@ public class Teleport extends Evento{
         player.absPos = casilla.getPosList();
         player.posX = casilla.getPosX();
         player.posY = casilla.getPosY();
+        player.estaenReversa = false;
         player.movimientosTotales = player.absPos;
         if(Jmain.getInstance().playing.referencia == 1){
             Jmain.getInstance().mario.setLocation((player.posX-22),(player.posY-28));
