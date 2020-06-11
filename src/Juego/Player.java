@@ -486,7 +486,7 @@ public class Player {
         }
         else if(posX == 298 && posY == 791 && salirD){
             if(estaenReversa){
-                movimientosTotales -= 2;
+                movimientosTotales -= 10;
             }else{
                 movimientosTotales -= 2;
             }
@@ -557,7 +557,7 @@ public class Player {
         else{casillaActual = Map.getInstance().getCasilla(absPos, "p");}
 
     }
-    protected void verifyList(){
+    public void verifyList(){
         SimpleList playerList = Jmain.getInstance().getPlayerList();
         if (estaena){ casillaActual = Map.getInstance().getCasilla(absPos,"a");}
         else if(estaenb){casillaActual = Map.getInstance().getCasilla(absPos,"b");}
