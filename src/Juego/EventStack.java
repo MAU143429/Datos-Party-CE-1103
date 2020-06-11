@@ -13,7 +13,6 @@ public class EventStack {
 
         stack = new Stack(42);
 
-        /**stack.push(new Teleport());
         stack.push(new Teleport());
         stack.push(new Teleport());
         stack.push(new Teleport());
@@ -22,7 +21,8 @@ public class EventStack {
         stack.push(new Teleport());
         stack.push(new Teleport());
         stack.push(new Teleport());
-        stack.push(new Teleport());*/
+        stack.push(new Teleport());
+        stack.push(new Teleport());
 
         stack.push(new StealCoins());
         stack.push(new StealCoins());

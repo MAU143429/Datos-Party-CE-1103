@@ -145,16 +145,16 @@ public class Map {
         List lista;
         rand = new Random().nextInt(106);
 
-        if(rand >= 0 && rand <= 25 ){
+        if(rand >= 0 && rand <= 14 ){
             lista = Map.getInstance().getFase("a");
         }
-        else if(rand >= 26 && rand <= 50){
+        else if(rand >= 15 && rand <= 29){
             lista = Map.getInstance().getFase("b");
         }
-        else if(rand >= 51 && rand <= 75){
+        else if(rand >= 30 && rand <= 49){
             lista = Map.getInstance().getFase("c");
         }
-        else if(rand >= 76 && rand <= 100){
+        else if(rand >= 50 && rand <= 100){
             lista = Map.getInstance().getFase("p");
         }
         else{
