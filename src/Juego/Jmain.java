@@ -309,8 +309,15 @@ public class Jmain extends JFrame implements ActionListener {
         }
     }
 
-    public void ganadores() {
-        System.out.println("ganador!");
+    public void ganadoresEstrellas() {
+        int player1 = castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).estrellas;
+        int player2 = castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).estrellas;
+        int player3 = castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).estrellas;
+        int player4 = castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).estrellas;
+
+
+    }
+    public void ganadoresMonedas(){
 
     }
 
@@ -384,7 +391,7 @@ public class Jmain extends JFrame implements ActionListener {
             actualizarLabels();
         }
         if (rounds == 20) {
-            ganadores();
+            ganadoresEstrellas();
             frm2.setVisible(false);
             frm2.dispose();
 
