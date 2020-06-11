@@ -83,11 +83,11 @@ public class ClickerDL extends JFrame implements ActionListener {
             @Override
             public void run() {
                 secondsPassed++;
-                if(playerTimes == 1){
-                    timerGame.setText("Player 1: " + secondsPassed + " seconds");
+                if (playerTimes == 1) {
+                    timerGame.setText(r1+ ": "+ secondsPassed + " seconds");
                 }
-                if(playerTimes == 2){
-                    timerGame.setText("Player 2: " + secondsPassed + " seconds");
+                if (playerTimes == 2) {
+                    timerGame.setText(r2+ ": " + secondsPassed + " seconds");
                 }
                 if (secondsPassed > 15) {
                     if (playerTimes == 2) {
@@ -129,44 +129,97 @@ public class ClickerDL extends JFrame implements ActionListener {
         retador1 = Jmain.getInstance().getRandomPlayer();
         retador2 = Jmain.getInstance().getRandomPlayer();
 
-        while(retador1 == retador2){
+        while (retador1 == retador2) {
             retador2 = Jmain.getInstance().getRandomPlayer();
         }
-        if (retador1 == Jmain.getInstance().getPlayerList().getPos(0)){
-            r1 = "Mario";
-            clickercounter1.setText(r1 + player1);
+
+        if (Jmain.getInstance().getPlayerList().getLength() == 4) {
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(0)) {
+                r1 = "Mario";
+                clickercounter1.setText(r1 + "  "+player1);
+            }
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(1)) {
+                r1 = "Luigi";
+                clickercounter1.setText(r1 + "  "+ player1);
+            }
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(2)){
+                r1 = "Toad";
+                clickercounter1.setText(r1+ "  " + player1);
+            }
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(3)){
+                r1 = "Yoshi";
+                clickercounter1.setText(r1+ "  " + player1);
+            }
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(0)){
+                r2 = "Mario";
+                clickerCounter2.setText(r2+ "  " + player2);
+            }
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(1)){
+                r2 = "Luigi";
+                clickerCounter2.setText(r2 + "  "+ player2);
+            }
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(2)){
+                r2 = "Toad";
+                clickerCounter2.setText(r2+ "  " + player2);
+            }
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(3)){
+                r2 = "Yoshi";
+                clickerCounter2.setText(r2+ "  " + player2);
+            }
         }
-        if (retador1 == Jmain.getInstance().getPlayerList().getPos(1)){
-            r1 = "Luigi";
-            clickercounter1.setText(r1 + player1);
+        if(Jmain.getInstance().getPlayerList().getLength() == 3) {
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(0)) {
+                r1 = "Mario";
+                clickercounter1.setText(r1 + "  " + player1);
+            }
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(1)) {
+                r1 = "Luigi";
+                clickercounter1.setText(r1 + "  " + player1);
+
+            }
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(2)) {
+                r1 = "Toad";
+                clickercounter1.setText(r1 + "  " + player1);
+            }
+
+
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(0)) {
+                r2 = "Mario";
+                clickercounter1.setText(r2 + "  " + player2);
+            }
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(1)) {
+                r2 = "Luigi";
+                clickerCounter2.setText(r2 + "  " + player2);
+            }
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(2)) {
+                r2 = "Toad";
+                clickerCounter2.setText(r2 + "  " + player2);
+            }
         }
-        if (retador1 == Jmain.getInstance().getPlayerList().getPos(2)){
-            r1 = "Toad";
-            clickercounter1.setText(r1 + player1);
-        }
-        if (retador1 == Jmain.getInstance().getPlayerList().getPos(3)){
-            r1 = "yoshi";
-            clickercounter1.setText(r1 + player1);
-        }
-        if (retador2 == Jmain.getInstance().getPlayerList().getPos(0)){
-            r2 = "Mario";
-            clickerCounter2.setText(r2 + player2);
-        }
-        if (retador2 == Jmain.getInstance().getPlayerList().getPos(1)){
-            r2 = "Luigi";
-            clickerCounter2.setText(r2 + player2);
-        }
-        if (retador2 == Jmain.getInstance().getPlayerList().getPos(2)){
-            r2 = "Toad";
-            clickerCounter2.setText(r2 + player2);
-        }
-        if (retador2 == Jmain.getInstance().getPlayerList().getPos(3)){
-            r2 = "Yoshi";
-            clickerCounter2.setText(r2 + player2);
+
+        if(Jmain.getInstance().getPlayerList().getLength() == 2){
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(0)) {
+                r1 = "Mario";
+                clickercounter1.setText(r1+ "  " + player1);
+            }
+            if (retador1 == Jmain.getInstance().getPlayerList().getPos(1)) {
+                r1 = "Luigi";
+                clickercounter1.setText(r1+ "  " + player1);
+            }
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(0)){
+                r2 = "Mario";
+                clickerCounter2.setText(r2+ "  " + player2);
+            }
+            if (retador2 == Jmain.getInstance().getPlayerList().getPos(1)){
+                r2 = "Luigi";
+                clickerCounter2.setText(r2 + "  "+ player2);
+            }
         }
 
 
-        JOptionPane.showMessageDialog(null, "Lets play Clicker! \n When you press the OK button you will see a big coin, that you have to click in order to win, the player who gets the most amount of clicks wins! \n Each player will have 5 seconds between each turn to get ready, once its passed 5 seconds, start clicking!  \n GOOD LUCK! ");
+
+
+        JOptionPane.showMessageDialog(null, "Lets play Clicker! \n RANDOM DUEL\n When you press the OK button you will see a big coin, that you have to click in order to win, the player who gets the most amount of clicks wins! \n Each player will have 5 seconds between each turn to get ready, once its passed 5 seconds, start clicking!  \n GOOD LUCK! ");
 
     }
 
@@ -180,6 +233,7 @@ public class ClickerDL extends JFrame implements ActionListener {
                 retador2.monedas -= 50;
             }
             Jmain.getInstance().actualizarLabels();
+            JOptionPane.showMessageDialog(null,"EL GANADOR ES" + " " + r1);
             this.setVisible(false);
             this.dispose();
         }if (player2 > player1) {
@@ -191,6 +245,7 @@ public class ClickerDL extends JFrame implements ActionListener {
                 retador1.monedas -= 50;
             }
             Jmain.getInstance().actualizarLabels();
+            JOptionPane.showMessageDialog(null,"EL GANADOR ES" + " "+ r2);
             this.setVisible(false);
             this.dispose();
         }
