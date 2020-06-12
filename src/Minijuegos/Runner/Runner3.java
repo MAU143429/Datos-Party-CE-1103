@@ -215,7 +215,7 @@ public class Runner3 extends JFrame {
                     }
                 }
                 if (p3 > p1) {
-                    if (p3 > p1) {
+                    if (p3 > p2) {
                         Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 50;
                         Jmain.getInstance().actualizarLabels();
                         if (p2 > p1) {
