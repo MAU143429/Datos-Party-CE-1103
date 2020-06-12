@@ -303,8 +303,8 @@ public class tresjugadores extends JFrame{
                         else{
                             Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(1)).monedas += 10;
                             Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(2)).monedas += 30;
-                            second = "Luigi";
-                            third = "Toad";
+                            second = "Toad";
+                            third = "Luigi";
                         }
                         Jmain.getInstance().actualizarLabels();
                     }
@@ -349,6 +349,7 @@ public class tresjugadores extends JFrame{
                         Jmain.getInstance().actualizarLabels();
                     }
                 }
+
 
                 JOptionPane.showMessageDialog(null,"SCORES: "+ "\nMario: " +  suma1 + "\nLuigi: " + suma2 + "\nToad: "+suma3+"\n\nSTANDINGS: " + "\n 1° PLACE: " + winner + "\n 2° PLACE: " + second + "\n 3° PLACE: "+third);
                 setVisible(false);

@@ -452,11 +452,11 @@ public class cuatrojugadores extends JFrame{
                             Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 20;
                             Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
                             third = "Mario";
-                            fourth = "Toad";
+                            fourth = "Yoshi";
                         }else{
                             Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
                             Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
-                            third = "Toad";
+                            third = "Yoshi";
                             fourth = "Mario";
                         }
                         Jmain.getInstance().actualizarLabels();
@@ -508,11 +508,11 @@ public class cuatrojugadores extends JFrame{
                             Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 20;
                             Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 10;
                             third = "Mario";
-                            fourth = "Toad";
+                            fourth = "Yoshi";
                         }else{
                             Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(3)).monedas += 20;
                             Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 10;
-                            third = "Toad";
+                            third = "Yoshi";
                             fourth = "Mario";
                         }
                         Jmain.getInstance().actualizarLabels();
