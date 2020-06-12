@@ -213,14 +213,29 @@ public class RunnerCAS extends JFrame {
                 System.out.println(p1);
 
                 if (p1 == 20) {
-
+                    JOptionPane.showMessageDialog(null, "PLAYER 1 WINS THE BATTLE!!");
                     player21.absPos--;
                     player21.movimientosTotales = player21.absPos;
+                    player21.casillaActual = Map.getInstance().getCasilla(player21.absPos,Map.getInstance().getFase2(player21.casillaActual));
                     player21.verifyTeleport();
+                    player21.posX = player21.casillaActual.getPosX();
+                    player21.posY = player21.casillaActual.getPosY();
+                    if(Jmain.getInstance().playing.referencia == 1){
+                        Jmain.getInstance().mario.setLocation((player21.posX-22),(player21.posY-28));
+                    }
+                    if(Jmain.getInstance().playing.referencia == 2){
+                        Jmain.getInstance().luigi.setLocation((player21.posX-22),(player21.posY-28));
+                    }
+                    if(Jmain.getInstance().playing.referencia == 3){
+                        Jmain.getInstance().toad.setLocation((player21.posX-22),(player21.posY-28));
+                    }
+                    if(Jmain.getInstance().playing.referencia == 4){
+                        Jmain.getInstance().yoshi.setLocation((player21.posX-22),(player21.posY-28));
+                    }
 
 
 
-                    JOptionPane.showMessageDialog(null, "PLAYER 1 WINS THE BATTLE!!");
+
                     frm3.setVisible(false);
 
 
@@ -239,16 +254,25 @@ public class RunnerCAS extends JFrame {
 
                     player20.absPos--;
                     player20.movimientosTotales = player20.absPos;
+                    player20.casillaActual = Map.getInstance().getCasilla(player20.absPos,Map.getInstance().getFase2(player20.casillaActual));
                     player20.verifyTeleport();
+                    player20.posX = player20.casillaActual.getPosX();
+                    player20.posY = player20.casillaActual.getPosY();
+                    if(Jmain.getInstance().playing.referencia == 1){
+                        Jmain.getInstance().mario.setLocation((player20.posX-22),(player20.posY-28));
+                    }
+                    if(Jmain.getInstance().playing.referencia == 2){
+                        Jmain.getInstance().luigi.setLocation((player20.posX-22),(player20.posY-28));
+                    }
+                    if(Jmain.getInstance().playing.referencia == 3){
+                        Jmain.getInstance().toad.setLocation((player20.posX-22),(player20.posY-28));
+                    }
+                    if(Jmain.getInstance().playing.referencia == 4){
+                        Jmain.getInstance().yoshi.setLocation((player20.posX-22),(player20.posY-28));
+                    }
 
                     JOptionPane.showMessageDialog(null, "PLAYER 2 WINS THE BATTLE!!");
                     frm3.setVisible(false);
-
-                }
-            }
-
-            if (p1 == 20 || p2 == 20) {
-                if (p1 > p2) {
 
                 }
             }

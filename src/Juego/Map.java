@@ -107,7 +107,7 @@ public class Map {
         }
         return instance;
     }
-    protected Casilla getCasilla (int pos,String lista) {
+    public Casilla getCasilla (int pos,String lista) {
         switch (lista) {
             case "p":
                 return (Casilla) caminoprincipal.getPos(pos);
@@ -165,4 +165,29 @@ public class Map {
         return (Casilla) lista.getPos(pos);
 
     }
+
+    public String getFase2(Casilla casilla) {
+
+        if (casilla.getReferencia() >= 1 && casilla.getReferencia() <= 46) {
+            return "p";
+        }
+        if (casilla.getReferencia() >= 47 && casilla.getReferencia() <= 49) {
+            return "a";
+        }
+        if (casilla.getReferencia() >= 50 && casilla.getReferencia() <= 52) {
+            return "b";
+        }
+        if (casilla.getReferencia() >= 53 && casilla.getReferencia() <= 55) {
+            return "c";
+        }
+        if (casilla.getReferencia() >= 56 && casilla.getReferencia() <= 65) {
+            return "d";
+        }
+        else{
+            return "no se donde esta";
+        }
+
+
+    }
+
 }

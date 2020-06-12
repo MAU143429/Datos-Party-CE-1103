@@ -583,12 +583,7 @@ public class Jmain extends JFrame implements ActionListener {
 
     ///////////////////////////////////////////////////////METODOS DE ACTUALIZACIÓN DE OBJETOS////////////////////////////////////
 
-    public void actualizarlistasMS(){
-        for(int i = 0; i < PlayerList.getLength(); i++){
-            CoinList.add(Integer.toString(castToPlayer(PlayerList.getPos(i)).monedas));
-            StarList.add(Integer.toString(castToPlayer(PlayerList.getPos(i)).estrellas));
-        }
-    }
+
     public void actualizarLabels(){
         if(PlayerList.getLength()==2){
             cnp1.setText(Integer.toString(castToPlayer(PlayerList.getPos(0)).monedas));
@@ -620,11 +615,7 @@ public class Jmain extends JFrame implements ActionListener {
         round.setText(Integer.toString(rounds));
     }
 
-    ////////////////////////////////////////////////////////////COLOCA EL LABEL EN LAS POSICIONES DE LA CLASE ESTRELLA///////////////////////
-
-    public void colocarEstrella(){
-        estrella.setLocation(star.posX,star.posY);
-    }
+   
 
     ///////////////////////////////////////////////////////////RETORNA LA LISTA DE LOS JUGADORES////////////////////////////////////////////
 
