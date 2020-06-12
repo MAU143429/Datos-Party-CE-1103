@@ -566,7 +566,7 @@ public class Player {
         else{casillaActual = Map.getInstance().getCasilla(absPos,"p");}
         Jmain.getInstance().actualizarLabels();
 
-
+/**
         for (int i = 0; i < duelist.getLength(); i++){
             Player player = (Player) duelist.getPos(i);
             if (player != this && player.casillaActual == this.casillaActual){
@@ -583,7 +583,7 @@ public class Player {
             }
             new DuelCasilla().ventanaEvento(duelist);
             return;
-        }
+        }*/
 
         this.timerEvento.start();
         Jmain.getInstance().actualizarLabels();
