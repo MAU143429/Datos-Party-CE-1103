@@ -23,10 +23,15 @@ public class Player {
 
     /**
      * @param jugadorNum el numero de jugador que será.
+     * @author JoseA
+     * Constructor de la clase player
      */
     public Player(int jugadorNum) {
         this.self = this;
         referencia = jugadorNum;
+        /**
+         * Timer para revisar si se puede comprar la estrella del tablero
+         */
         this.timerEStrellas = new Timer(20, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent i) {
@@ -53,7 +58,10 @@ public class Player {
             }
 
         });
-
+        /**
+         * Timer que revisa booleanos para mandar el método de movimiento que le toca al jugador
+         * @author JoseA
+         */
         this.timerMovimiento = new Timer(20, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent o) {
@@ -88,7 +96,10 @@ public class Player {
 
             }
         });
-
+        /**
+         * Timer que activa el evento de cada casilla
+         * @autho Jose A.
+         */
         this.timerEvento = new Timer(20, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent u) {
@@ -124,6 +135,12 @@ public class Player {
             Jmain.getInstance().yoshi.setLocation(posX,posY);
         }
     }
+
+    /**
+     * Mueve al jugador a la siguiente casilla
+     * @param fase es la fase en la que se encuentra el jugador
+     * @author Jose A.
+     */
     public void moverSigCasilla(String fase){
 
 
@@ -160,6 +177,11 @@ public class Player {
         System.out.println("ABSPOS: " + absPos);
         System.out.println("MOVIMIENTOS TOTALES: " + movimientosTotales);
     }
+    /**
+     * Mueve al jugador a la casilla anterior
+     * @param fase es la fase en la que se encuentra el jugador
+     * @author Jose A.
+     */
     public void moverAntCasilla(String fase){
         if(casillaActual == Map.getInstance().getCasilla(0,"c")){
             absPos--;
@@ -186,6 +208,11 @@ public class Player {
         System.out.println("ABSPOS: " + absPos);
         System.out.println("MOVIMIENTOS TOTALES: " + movimientosTotales);
     }
+    /**
+     * Llama lo necesario para que el jugador se mueva la cantidad de casillas que entrar en el parametro
+     * @param moves es la cantidad de movimientos que debería hacer el jugador
+     * @author Jose A.
+     */
     public void movePlayer(int moves) {
         System.out.println(moves);
         if (!moviendose) {
@@ -196,6 +223,10 @@ public class Player {
             timerMovimiento.start();
         }
     }
+    /**
+     * Mueve al jugador a lo largo de la fase principal
+     * @author Jose A.
+     */
     public  void moveMainPath(){
         System.out.println("ESTOY EN CAMINO PRINCIPAL");
         if (absPos == movimientosTotales) {
@@ -225,6 +256,10 @@ public class Player {
             e.printStackTrace();
         }
     }
+    /**
+     * Mueve al jugador a lo largo de la fase A
+     * @author Jose A.
+     */
     protected void moveA(){
         System.out.println(casillaActual.getMSG());
         if(absPos == 3){
@@ -265,6 +300,10 @@ public class Player {
             e.printStackTrace();
         }
     }
+    /**
+     * Mueve al jugador a lo largo de la fase B
+     * @author Jose A.
+     */
     protected void moveB(){
         System.out.println(casillaActual.getMSG());
         if(absPos == 3){
@@ -305,6 +344,10 @@ public class Player {
         }
 
     }
+    /**
+     * Mueve al jugador a lo largo de la fase C
+     * @author Jose A.
+     */
     protected void moveC(){
         if(absPos == 3){
             absPos = 35;
@@ -343,6 +386,10 @@ public class Player {
             e.printStackTrace();
         }
     }
+    /**
+     * Mueve al jugador a lo largo de la fase D.
+     * @author Jose A.
+     */
     protected void moveD(){
         salirD = true;
         if(absPos == movimientosTotales){
@@ -368,6 +415,10 @@ public class Player {
             e.printStackTrace();
         }
     }
+    /**
+     * Mueve al jugador a lo largo de la fase C estando en reversa
+     * @author Jose A.
+     */
     protected void moveBackwardsC(){
         System.out.println("ABSPOS ACTUAL: "+absPos);
         System.out.println("MOVIMIENTOS: "+movimientosTotales);
@@ -409,6 +460,10 @@ public class Player {
             e.printStackTrace();
         }
     }
+    /**
+     * Mueve al jugador a lo largo de la fase D estando en reversa
+     * @author Jose A.
+     */
     protected void moveBackwardsD(){
         System.out.println("CASILLA ACTUAL: "+ absPos + " COLOR DE LA CASILLA: "+casillaActual.getMSG() + " MOVIMIENTOS: " + movimientosTotales);
         salirD = true;
@@ -449,6 +504,11 @@ public class Player {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Verifica la posición o coordenadas del jugador para cambiar sus booleanos y que se pued cambiar de método de movimiento en caso de un cambio de fase
+     * @author Jose A.
+     */
     public void verifyPath(){
         if(posX == 280 && posY == 528){
             estaenb = true;
@@ -545,6 +605,11 @@ public class Player {
         absPos = -1;
         movimientosTotales = -1;
     }
+
+    /**
+     * Revisa las coordenadas de la casilla donde fue teletransportado el jugador para cambiar sus booleanos
+     * @author Jose A.
+     */
     public void verifyTeleport(){
         if(posX == 434 && posY == 490 || posX == 502 && posY == 510 || posX == 501 && posY == 298){estaena = true; estaenb = false; estaenc = false; estaend = false; salirD = false; estaenReversa = false; }
         else if(posX == 275 && posY == 462 || posX == 275 && posY == 382 || posX == 275 && posY == 301){estaena = false; estaenb = true; estaenc = false; estaend = false; salirD = false; estaenReversa = false;}
@@ -559,6 +624,11 @@ public class Player {
         else{casillaActual = Map.getInstance().getCasilla(absPos, "p");}
 
     }
+
+    /**
+     * Cambia la casilla actual del jugador por la nueva casilla y revisa si dos jugadores estan en la misma casilla para lanzar un duelo
+     * @author Jose A.
+     */
     public void verifyList(){
         SimpleList duelist = Jmain.getInstance().getPlayerList();
         if (estaena){ casillaActual = Map.getInstance().getCasilla(absPos,"a");}
