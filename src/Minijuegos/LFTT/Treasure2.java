@@ -24,15 +24,17 @@ public class Treasure2 extends JFrame implements ActionListener {
     private int player, num;
     private String path1, path2;
     public Player jugandoahora;
+    public boolean turno;
+
 
     /**
      * Treasure2
-     *Este constructor crea un frame, un panel y aloja objetos en ellos
-     *@author Mauricio C.
-
+     * Este constructor crea un frame, un panel y aloja objetos en ellos
+     *
+     * @author Mauricio C.
      */
     public Treasure2() {
-
+        turno = false;
         num = (int) (Math.random() * 2) + 1;
         System.out.println(num);
 
@@ -106,31 +108,46 @@ public class Treasure2 extends JFrame implements ActionListener {
 
 
         frm4.setVisible(true);
-        turnos();
+
 
         JOptionPane.showMessageDialog(null, "Lets play Looking for the Treasure!! \n Find a Magic Treasure to Win!!\n Dig to find Treasures!!  \n 3, 2, 1 Dig!! \n Enjoy!");
         player += 1;
         JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
+        turnos();
     }
-
+/**
+        * turnos
+     * Este metodo permite crear un sistema de turns dentro del minijuego
+     *
+             * @author Mauricio C.
+            */
     public void turnos(){
         for (int i = 0; i < Jmain.getInstance().getPlayerList().getLength(); i++) {
 
-            if (Jmain.getInstance().getPlayerList().getPos(i) == Jmain.getInstance().getPlayerList().getPos(0)){
-                jugandoahora = (Player) Jmain.getInstance().getPlayerList().getPos(0);
+            while (turno == false) {
+                if (Jmain.getInstance().getPlayerList().getPos(i) == Jmain.getInstance().getPlayerList().getPos(0)) {
+                    jugandoahora = (Player) Jmain.getInstance().getPlayerList().getPos(0);
+                }else{
+                    return;
+                }
             }
-            if (Jmain.getInstance().getPlayerList().getPos(i) == Jmain.getInstance().getPlayerList().getPos(1)){
-                jugandoahora = (Player) Jmain.getInstance().getPlayerList().getPos(1);
+            while (turno == true) {
+                if (Jmain.getInstance().getPlayerList().getPos(i) == Jmain.getInstance().getPlayerList().getPos(1)) {
+                    jugandoahora = (Player) Jmain.getInstance().getPlayerList().getPos(1);
+                }else{
+                    return;
+                }
             }
+
         }
     }
 
 
     /**
      * actionPerformed
-     *Este metodo abstracto del actionlistener permite darle las funcionalidades a los botones
-     *@author Mauricio C.
-
+     * Este metodo abstracto del actionlistener permite darle las funcionalidades a los botones
+     *
+     * @author Mauricio C.
      */
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -153,8 +170,15 @@ public class Treasure2 extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Ganan");
                 } else {
 
-                    JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player );
-                    jugandoahora.monedas += 50;
+                    JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
+                    if (turno == false) {
+                        jugandoahora.monedas += 50;
+                        turno = true;
+                    } else {
+                        jugandoahora.monedas += 50;
+                        turno = false;
+                    }
+
 
                 }
             }
@@ -172,7 +196,13 @@ public class Treasure2 extends JFrame implements ActionListener {
                 } else {
 
                     JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
-                    jugandoahora.monedas += 30;
+                    if (turno == false) {
+                        jugandoahora.monedas += 30;
+                        turno = true;
+                    } else {
+                        jugandoahora.monedas += 30;
+                        turno = false;
+                    }
                 }
 
             }
@@ -194,33 +224,43 @@ public class Treasure2 extends JFrame implements ActionListener {
                 } else {
 
                     JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
-                    jugandoahora.monedas += 50;
+                    if (turno == false) {
+                        jugandoahora.monedas += 30;
+                        turno = true;
+                    } else {
+                        jugandoahora.monedas += 30;
+                        turno = false;
+                    }
+
                 }
 
-            }
+                if (e.getSource() == btn2dig) {
+                    System.out.println("Estoy escavando un tesoro");
+                    System.out.println("Tesoro 2 Encontrado");
+                    w2.setVisible(true);
+                    player += 1;
+                    ImageIcon bgurl33 = new ImageIcon(getClass().getResource(path1));
+                    w2.setIcon(bgurl33);
 
-            if (e.getSource() == btn2dig) {
-                System.out.println("Estoy escavando un tesoro");
-                System.out.println("Tesoro 2 Encontrado");
-                w2.setVisible(true);
-                player += 1;
-                ImageIcon bgurl33 = new ImageIcon(getClass().getResource(path1));
-                w2.setIcon(bgurl33);
+                    if (player == 3) {
 
-                if (player == 3) {
+                        JOptionPane.showMessageDialog(null, "Ganan");
+                    } else {
 
-                    JOptionPane.showMessageDialog(null, "Ganan");
-                } else {
+                        JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
+                        if (turno == false) {
+                            jugandoahora.monedas += 50;
+                            turno = true;
+                        } else {
+                            jugandoahora.monedas += 50;
+                            turno = false;
+                        }
 
-                    JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
-                    jugandoahora.monedas += 30;
+                    }
                 }
-
             }
+
+
         }
     }
-
-
 }
-
-

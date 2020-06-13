@@ -125,6 +125,8 @@ public class Player {
         }
     }
     public void moverSigCasilla(String fase){
+
+
         if(casillaActual == Map.getInstance().getCasilla(2,"a")){
             absPos++;
             return;
@@ -566,24 +568,25 @@ public class Player {
         else{casillaActual = Map.getInstance().getCasilla(absPos,"p");}
         Jmain.getInstance().actualizarLabels();
 
-/**
-        for (int i = 0; i < duelist.getLength(); i++){
-            Player player = (Player) duelist.getPos(i);
-            if (player != this && player.casillaActual == this.casillaActual){
-                duelist.add(player);
-                break;
+        if(Jmain.getInstance().rounds > 1) {
+            for (int i = 0; i < duelist.getLength(); i++) {
+                Player player = (Player) duelist.getPos(i);
+                if (player != this && player.casillaActual == this.casillaActual) {
+                    duelist.add(player);
+                    break;
+                }
+            }
+
+            if (duelist.getLength() > 1) {
+                try {
+                    TimeUnit.MILLISECONDS.sleep(300);
+                } catch (InterruptedException interruptedException) {
+                    interruptedException.printStackTrace();
+                }
+                new DuelCasilla().ventanaEvento(duelist);
+                return;
             }
         }
-
-        if (duelist.getLength() > 1){
-            try {
-                TimeUnit.MILLISECONDS.sleep(300);
-            } catch (InterruptedException interruptedException) {
-                interruptedException.printStackTrace();
-            }
-            new DuelCasilla().ventanaEvento(duelist);
-            return;
-        }*/
 
         this.timerEvento.start();
         Jmain.getInstance().actualizarLabels();
