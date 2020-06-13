@@ -13,7 +13,6 @@ import java.util.TimerTask;
  * Clicker3
  *Esta clase ejecuta el minijuego clicker para tres jugadores
  *@author Naheem J.
-
  */
 public class Clicker3 extends JFrame implements ActionListener {
     public JLabel bgLabel, clickerTitle, timerGame, clickerCounter1, clickerCounter2, clickerCounter3, clickerImage, clickerImage1, clickerImage2;
@@ -24,7 +23,12 @@ public class Clicker3 extends JFrame implements ActionListener {
     public TimerTask task;
     public boolean temp = false;
 
-
+    /**
+     * Clicker3
+     * Este constructor de la clase clicker3 lo que se encarga es de crear un frame, un container y aloja los objetos
+     * en ellos
+     * @author Naheem J
+     */
     public Clicker3() {
         playerTimes = 1;
         this.setTitle("Clicker Minigame");
@@ -148,7 +152,11 @@ public class Clicker3 extends JFrame implements ActionListener {
         this.setVisible(true);
         JOptionPane.showMessageDialog(null, "Lets play Clicker! \n When you press the OK button you will see a big coin, that you have to click in order to win, the player who gets the most amount of clicks wins! \n Each player will have 5 seconds between each turn to get ready, once its passed 5 seconds, start clicking!  \n GOOD LUCK! ");
     }
-
+    /**
+     * setWinner
+     * Este método se encarga de elegir un primer, segundo, y tercer lugar, y darle las monedas correspondientes a los jugadores.
+     * @author Naheem J
+     */
     public void setWinner() {
         if (player1 > player2 && player1 > player3) {
             Jmain.getInstance().castToPlayer(Jmain.getInstance().getPlayerList().getPos(0)).monedas += 50;
@@ -196,6 +204,13 @@ public class Clicker3 extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * actionPerformed
+     * @param e
+     * Este método abstracto se encarga de realizar una suma de 1 cada vez que se realice un clic, si la variable
+     * seconds passed no es mayor que 5, el boton no se podrá ejecutar
+     * @author Naheem J
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (!temp) {

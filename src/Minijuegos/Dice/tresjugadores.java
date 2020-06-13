@@ -5,7 +5,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+/**
+ * tresjugadores
+ *Esta clase ejecuta el minijuego Dice para tres jugadores
+ * @Jose A.
+ */
 public class tresjugadores extends JFrame{
     JLabel dado1,dado12,dado2,dado22,dado3,dado32,titulo1,titulo2,fondo,jug1,jug2,jug3,foto1,foto2,foto3;
     JButton tirar1,tirar2,tirar3;
@@ -16,7 +20,11 @@ public class tresjugadores extends JFrame{
     int suma3 = 0;
     String winner,second,third = "";
 
-
+    /**
+     * tresjugadores
+     * Este constructor se encarga de crear el frame, el container y se alojan todos los objetos de la interfaz
+     * @author Jose A.
+     */
     public tresjugadores(){
         this.setBounds(100, 100, 900, 900);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -139,7 +147,12 @@ public class tresjugadores extends JFrame{
         container.add(foto2);
         container.add(foto3);
         container.add(fondo);
-
+        /**
+         * actionPerformed
+         * @param e
+         * Este método abstracto se encarga de las acciones del botón de tirar los dados
+         * @author Jose A.
+         */
         tirar1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -191,6 +204,12 @@ public class tresjugadores extends JFrame{
                 }
             }
         });
+        /**
+         * actionPerformed
+         * @param e
+         * Este método abstracto se encarga de las acciones del botón de tirar los dados
+         * @author Jose A.
+         */
         tirar2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -242,6 +261,12 @@ public class tresjugadores extends JFrame{
                 }
             }
         });
+        /**
+         * actionPerformed
+         * @param e
+         * Este método abstracto se encarga de las acciones del botón de tirar los dados
+         * @author Jose A.
+         */
         tirar3.addActionListener(e -> {
             String command = e.getActionCommand();
             if(command.equals("TIRAR3")){

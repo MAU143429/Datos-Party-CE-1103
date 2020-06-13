@@ -2,11 +2,19 @@
 
 
     import Juego.Jmain;
-
+    /**
+     * SG2
+     *Esta clase se encarga de ejecutar el minijuego Dice dependiendo de la cantidad de jugadores
+     *@author Jose A..
+     */
     public class SG2 {
-
-
-
+        /**
+         * SG2
+         *
+         *Este constructor utiliza la cantidad de jugadores para definir el minijuego que sera ejecutado
+         *@author Jose A.
+         *
+         */
     public SG2() {
 
 

@@ -7,7 +7,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Timer;
 import java.util.TimerTask;
-
+/**
+ * Clicker4
+ *Esta clase ejecuta el minijuego clicker para tres jugadores
+ *@author Naheem J.
+ */
 public class ClickerDL extends JFrame implements ActionListener {
     public JLabel bgLabel, clickerTitle, timerGame, clickercounter1, clickerCounter2, clickerImage, clickerImage1;
     public ImageIcon ButtonImage, coinLabel, bgClicker, minigameTitle;
@@ -19,7 +23,12 @@ public class ClickerDL extends JFrame implements ActionListener {
     public Player retador1, retador2;
     public String r1, r2 = "";
 
-
+    /**
+     * ClickerDL
+     * Este constructor de la clase clicker4 lo que se encarga es de crear un frame, un container y aloja los objetos
+     * en ellos
+     * @author Naheem J
+     */
     public ClickerDL() {
         playerTimes = 1;
         this.setTitle("Clicker Minigame");
@@ -222,7 +231,11 @@ public class ClickerDL extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(null, "Lets play Clicker! \n RANDOM DUEL\n When you press the OK button you will see a big coin, that you have to click in order to win, the player who gets the most amount of clicks wins! \n Each player will have 5 seconds between each turn to get ready, once its passed 5 seconds, start clicking!  \n GOOD LUCK! ");
 
     }
-
+    /**
+     * setWinner
+     * Este método se encarga de elegir un primer, segundo, tercer y cuarto lugar, y darle las monedas correspondientes a los jugadores.
+     * @author Naheem J
+     */
     public void setWinner() {
         if (player1 > player2) {
             retador1.monedas += 50;
@@ -250,8 +263,13 @@ public class ClickerDL extends JFrame implements ActionListener {
             this.dispose();
         }
     }
-
-
+    /**
+     * actionPerformed
+     * @param e
+     * Este método abstracto se encarga de realizar una suma de 1 cada vez que se realice un clic, si la variable
+     * seconds passed no es mayor que 5, el boton no se podrá ejecutar
+     * @author Naheem J
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (!temp) {

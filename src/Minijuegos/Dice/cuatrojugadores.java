@@ -174,7 +174,12 @@ public class cuatrojugadores extends JFrame{
         container.add(foto3);
         container.add(foto4);
         container.add(fondo);
-
+        /**
+         * actionPerformed
+         * @param e
+         * Este método abstracto se encarga de las acciones del botón de tirar los dados
+         * @author Jose A.
+         */
         tirar1.addActionListener(e -> {
             String command = e.getActionCommand();
             if(command.equals("TIRAR1")){
@@ -223,6 +228,12 @@ public class cuatrojugadores extends JFrame{
                 System.out.println(suma1);
             }
         });
+        /**
+         * actionPerformed
+         * @param e
+         * Este método abstracto se encarga de las acciones del botón de tirar los dados
+         * @author Jose A.
+         */
         tirar2.addActionListener(e -> {
             String command = e.getActionCommand();
             if(command.equals("TIRAR2")){
@@ -271,6 +282,12 @@ public class cuatrojugadores extends JFrame{
                 System.out.println(suma2);
             }
         });
+        /**
+         * actionPerformed
+         * @param e
+         * Este método abstracto se encarga de las acciones del botón de tirar los dados
+         * @author Jose A.
+         */
         tirar3.addActionListener(e -> {
             String command = e.getActionCommand();
             if(command.equals("TIRAR3")){
@@ -320,6 +337,12 @@ public class cuatrojugadores extends JFrame{
 
             }
         });
+        /**
+         * actionPerformed
+         * @param e
+         * Este método abstracto se encarga de las acciones del botón de tirar los dados
+         * @author Jose A.
+         */
         tirar4.addActionListener(e -> {
             String command = e.getActionCommand();
             if(command.equals("TIRAR4")){
