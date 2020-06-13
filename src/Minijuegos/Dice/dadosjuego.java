@@ -3,6 +3,7 @@ package Minijuegos.Dice;
 import javax.swing.*;
 import java.awt.*;
 
+
 public class dadosjuego extends JFrame {
     JButton boton2,boton3,boton4;
     JLabel start1;
@@ -37,12 +38,6 @@ public class dadosjuego extends JFrame {
         this.setVisible(true);
 
     }
-
-
-
-
-
-
 
 
     public static void main(String[] args) {

@@ -19,7 +19,6 @@ public class SG3 {
      */
     public SG3() {
 
-
         if (Jmain.getInstance().PlayerList.getLength()  == 2) {
             Treasure2 player2 = new Treasure2();
 

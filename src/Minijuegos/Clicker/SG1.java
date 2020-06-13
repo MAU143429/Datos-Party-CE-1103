@@ -3,7 +3,7 @@ package Minijuegos.Clicker;
 
 import Juego.Jmain;
 /**
- * SG5
+ * SG1
  *Esta clase se encarga de ejecutar el minijuego clicker dependiendo de la cantidad de jugadores
  *@author Naheem J.
 

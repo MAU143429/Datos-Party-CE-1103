@@ -6,6 +6,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * dosjugadores
+ *Esta clase ejecuta el minijuego Dice para dos jugadores
+ * @author Jose A.
+ */
 public class dosjugadores extends JFrame {
     JLabel dado1, dado12, dado2, dado22, titulo1, titulo2, fondo, jug1, jug2, foto1, foto2;
     JButton tirar1, tirar2;
@@ -15,7 +20,11 @@ public class dosjugadores extends JFrame {
     int suma2 = 0;
     String winner, second = "";
 
-
+    /**
+     * dosjugadores
+     * Este constructor se encarga de crear el frame, el container y se alojan todos los objetos de la interfaz
+     * @author Jose A.
+     */
     public dosjugadores() {
         this.setBounds(100, 100, 900, 900);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -111,7 +120,12 @@ public class dosjugadores extends JFrame {
         container.add(foto1);
         container.add(foto2);
         container.add(fondo);
-
+        /**
+         * actionPerformed
+         * @param e
+         * Este método abstracto se encarga de las acciones del botón de tirar los dados
+         * @author Jose A.
+         */
         tirar1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -163,6 +177,12 @@ public class dosjugadores extends JFrame {
                 }
             }
         });
+        /**
+         * actionPerformed
+         * @param e
+         * Este método abstracto se encarga de las acciones del botón de tirar los dados
+         * @author Jose A.
+         */
         tirar2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

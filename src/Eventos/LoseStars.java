@@ -60,8 +60,12 @@ public class LoseStars extends Evento {
 
         evento(player);
         Jmain.getInstance().actualizarLabels();
-        JOptionPane.showMessageDialog(null , "HAS PERDIDO UNA ESTRELLA");
-
+        if (player.estrellas == 0){
+            JOptionPane.showMessageDialog(null , "No tienes la cantidad de estrellas necesarias");
+        }
+        else{
+            JOptionPane.showMessageDialog(null , "HAS PERDIDO UNA ESTRELLA");
+        }
         frmrobar3.dispose();
 
 
