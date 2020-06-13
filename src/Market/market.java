@@ -8,12 +8,23 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
 
+
+/**
+ * Clase Market
+ * Crea el marketplace dentro del juego y lo aloja en una ventana
+
+ * @author Naheem J.
+ */
 public class market extends JFrame implements ActionListener {
 
     public JLabel bgMarket;
     public JButton buyX1, buyX2, buyX3;
 
-
+    /**
+     * Constructor de la market
+     * Genera toda la interfaz del marketplace y las funcionalidades del mismo
+     * @author Naheem J.
+     */
     public market() {
 
         this.setBounds(100, 100, 1295, 947);
@@ -59,7 +70,13 @@ public class market extends JFrame implements ActionListener {
 
         this.setVisible(true);
     }
-
+    /**
+     * Metodo abstracto actionPerformed
+     * Da funcionalidades a los botones
+     *
+     * @param e
+     * @author Naheem J.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == buyX1) {

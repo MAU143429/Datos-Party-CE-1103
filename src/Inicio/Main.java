@@ -76,6 +76,12 @@ public class Main extends JFrame implements ActionListener {
         frm1.setVisible(true);
         JOptionPane.showMessageDialog(null, "Welcome to Datos Party 1!! \n Select number of players!  \n Enjoy!");
     }
+
+    /**
+     * Metodo main principal.
+     * @param args
+     * @author Mauricio C.
+     */
     public static void main(String args[]) {
         String filepath = "maintheme.wav";
         musicstuff musicObject = new musicstuff();
@@ -125,12 +131,25 @@ public class Main extends JFrame implements ActionListener {
             frm1.setVisible(false);
         }
     }
+    /**
+     * Metodo del singleton
+     * Crea el singleton en el main
+     *
+     * @author Mauricio C.
+     */
     public static Main getInstance() {
         if (instance == null) {
             instance = new Main();
         }
         return instance;
     }
+
+    /**
+     * Metodo getPlayers
+     * Pemrite obtener la cantidad de jugadores
+     * @return players
+     * @author Mauricio C.
+     */
     public int getPlayers() {
         return players;
     }

@@ -3,7 +3,12 @@ package Juego;
 import Casillas.*;
 import EstructurasDatos.*;
 import java.util.Random;
-
+/**
+ * Clase Map
+ * Crea la clase mapa en donde se alojan todas las lista y las casillas
+ *
+ * @author Jose A.
+ */
 public class Map {
     private static CircularList caminoprincipal;
     private static SimpleList faseA;
@@ -12,10 +17,16 @@ public class Map {
     private static  DoubleLinkedCircularList faseD;
 
     /**
-     * Singleton class for the map
+     * Intancia mapa
+     *Singleton al mapa
+     * @author Jose A.
      */
     private static Map instance = null;
-
+    /**
+     * Constructor mapa
+     *En el se crean todos las fases y caminos del mapa
+     * @author Jose A.
+     */
     private Map(){
 
         faseA = new SimpleList();
@@ -100,13 +111,25 @@ public class Map {
         caminoprincipal.add(new CasillaVerde(648,664,44,45));//44//QQ
         caminoprincipal.add(new CasillaRoja(648,766,45,46));//45//RR
     }
-
+    /**
+     * Metodo de Instancia
+     * @return instance
+     * @author Jose A.
+     */
     public static Map getInstance(){
         if(instance == null){
             instance = new Map();
         }
         return instance;
     }
+    /**
+     * Metodo get Casilla
+     * devuelve la fase en la que esta
+     * @param pos
+     * @param lista
+     * @return null, fase
+     * @author Jose A.
+     */
     public Casilla getCasilla (int pos,String lista) {
         switch (lista) {
             case "p":
@@ -122,6 +145,12 @@ public class Map {
         }
         return null;
     }
+    /**
+     * Metodo get Fase
+     * devuelve la fase en la que esta
+     * @param fase
+     * @return SimpleList
+     */
     public List getFase (String fase) {
         switch (fase) {
             case "a":
@@ -137,9 +166,12 @@ public class Map {
         }
         return new SimpleList();
     }
-    private Casilla castToTile(Object object){
-        return (Casilla)object;
-    }
+    /**
+     * Metodo get RANDOMTILE
+     * devuelve un casilla aleatorio
+     * @return casilla
+     * @author Jose A.
+     */
     public Casilla getRandomTile(){
         int rand,pos;
         List lista;
@@ -165,7 +197,12 @@ public class Map {
         return (Casilla) lista.getPos(pos);
 
     }
-
+    /**
+     * Metodo getfase2
+     * devuelve un string con la fase
+     * @return fase
+     * @author Jose A.
+     */
     public String getFase2(Casilla casilla) {
 
         if (casilla.getReferencia() >= 1 && casilla.getReferencia() <= 46) {

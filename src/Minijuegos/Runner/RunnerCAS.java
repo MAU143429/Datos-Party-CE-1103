@@ -1,6 +1,5 @@
 package Minijuegos.Runner;
 
-import Casillas.Casilla;
 import EstructurasDatos.SimpleList;
 import Juego.Jmain;
 import Juego.Map;
@@ -214,9 +213,9 @@ public class RunnerCAS extends JFrame {
 
                 if (p1 == 20) {
                     JOptionPane.showMessageDialog(null, "PLAYER 1 WINS THE BATTLE!!");
-                    player21.absPos--;
-                    player21.movimientosTotales = player21.absPos;
-                    player21.casillaActual = Map.getInstance().getCasilla(player21.absPos,Map.getInstance().getFase2(player21.casillaActual));
+                    player21.posJug--;
+                    player21.movTotal = player21.posJug;
+                    player21.casillaActual = Map.getInstance().getCasilla(player21.posJug,Map.getInstance().getFase2(player21.casillaActual));
                     player21.verifyTeleport();
                     player21.posX = player21.casillaActual.getPosX();
                     player21.posY = player21.casillaActual.getPosY();
@@ -252,9 +251,9 @@ public class RunnerCAS extends JFrame {
 
                 if (p2 == 20) {
 
-                    player20.absPos--;
-                    player20.movimientosTotales = player20.absPos;
-                    player20.casillaActual = Map.getInstance().getCasilla(player20.absPos,Map.getInstance().getFase2(player20.casillaActual));
+                    player20.posJug--;
+                    player20.movTotal = player20.posJug;
+                    player20.casillaActual = Map.getInstance().getCasilla(player20.posJug,Map.getInstance().getFase2(player20.casillaActual));
                     player20.verifyTeleport();
                     player20.posX = player20.casillaActual.getPosX();
                     player20.posY = player20.casillaActual.getPosY();
