@@ -115,7 +115,12 @@ public class Treasure2 extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
         turnos();
     }
-
+/**
+        * turnos
+     * Este metodo permite crear un sistema de turns dentro del minijuego
+     *
+             * @author Mauricio C.
+            */
     public void turnos(){
         for (int i = 0; i < Jmain.getInstance().getPlayerList().getLength(); i++) {
 

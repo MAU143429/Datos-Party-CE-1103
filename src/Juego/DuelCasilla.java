@@ -2,12 +2,9 @@ package Juego;
 
 import EstructurasDatos.SimpleList;
 import Eventos.Evento;
-import Minijuegos.Clicker.ClickerDL;
 import Minijuegos.Dice.DiceCAS;
-import Minijuegos.RPS.rpsdl;
 import Minijuegos.Runner.RunnerCAS;
-import Minijuegos.Runner.RunnerDL;
-import Minijuegos.TTT.TicTacToe;
+
 
 import java.util.concurrent.ThreadLocalRandom;
 
