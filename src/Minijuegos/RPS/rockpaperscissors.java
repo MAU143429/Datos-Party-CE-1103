@@ -8,6 +8,11 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.lang.reflect.Field;
 
+/**
+ * rockpaperscissors
+ * Esta clase crea el minijuego de dos personas rockpaperscissors
+ * @author Jose A.
+ */
 public class rockpaperscissors extends JFrame {
     JLabel background,title,player1,player2,versus,scissors1,scissors2,paper1,paper2,rock1,rock2,bind1,bind2,bind3,binda,bindb,bindc;
     JButton boton;
@@ -16,6 +21,11 @@ public class rockpaperscissors extends JFrame {
     String pl1,pl2;
     JTextField campotexto1,campotexto2;
 
+    /**
+     * rockpaperscissors
+     * Constructor de la clase rockpaperscissors en donde se colocan todos los elementos gráficos
+     * @author Jose A.
+     */
     public rockpaperscissors(){
         this.setBounds(100,100,1000,533);
         this.setLocationRelativeTo(null);
@@ -186,6 +196,12 @@ public class rockpaperscissors extends JFrame {
 
 
     }
+
+    /**
+     * JugadorEscoje
+     * Clase que implemente keylistener y funciona para la funcionalidad de los botones
+     * @author Jose A.
+     */
         class JugadorEscoje implements KeyListener{
             @Override
             public void keyTyped(KeyEvent e) {

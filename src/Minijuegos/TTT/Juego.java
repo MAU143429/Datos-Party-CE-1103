@@ -2,6 +2,12 @@ package Minijuegos.TTT;
 
 import javax.swing.*;
 
+/**
+ * Juego
+ * Clase que se encarga de manejar la parte lógica del minijuego TicTacToe
+ * @author Naheem J.
+ */
+
 public class Juego {
     int Jugador = 1;
     int[][] Tablero = new int[3][3];
@@ -22,14 +28,33 @@ public class Juego {
 
     int Ganador = 0;
     int Linea_terminar = -1;
+
+    /**
+     * Juego
+     * Constructor de la clase Juego que recibe el método LimpiarTablero
+     * @author Naheem J.
+     */
     public Juego(){
         LimpiarTablero();
     }
+
+    /**
+     * reiniciarJuego
+     * Método que se encarga de reiniciar el tablero
+     * @author Naheem J.
+     */
     void reiniciarJuego() {
         LimpiarTablero();
         Ganador = 0;
         Linea_terminar = TERMINAR_NA;
     }
+
+    /**
+     * registrarJugada
+     * @param c
+     * Método registarJugada se encarga de registrar la jugada del jugador cambian la variable int de un 1 a un 2
+     * @author Naheem J.
+     */
     void registrarJugada(int c, int f){
         if (Ganador != 0) {
             return;
@@ -46,6 +71,12 @@ public class Juego {
         terminarJuego();
 
     }
+
+    /**
+     * terminarJuego
+     * Método terminarJuego se encarga de hacer un switch-case buscando los casos en donde se haya registrado una victoria
+     * @author Naheem J
+     */
     void terminarJuego() {
         Linea_terminar = BuscarFin();
         if (Linea_terminar != TERMINAR_NA) {
@@ -90,6 +121,13 @@ public class Juego {
             }
         }
     }
+
+    /**
+     * BucarFin
+     * Método que se encarga de buscar un fin en las filas, columnas o diagonales de la matriz
+     * @return TERMINAR_NA
+     * @author Naheem J.
+     */
     int BuscarFin() {
         int col = BuscarFinColumnas();
         if (col != -1) {
@@ -107,6 +145,13 @@ public class Juego {
         }
         return TERMINAR_NA;
     }
+
+    /**
+     * BuscarFinDiagonalPrincipal
+     * @return false
+     * Método que se encarga de buscar si hay un ganador en la diagonal principal}
+     * @author Naheem J
+     */
     boolean BuscarFinDiagonalPrincipal() {
         int piv = 1;
         for (int i = 0; i < 3; i++) {
@@ -122,6 +167,12 @@ public class Juego {
         }
         return true;
     }
+    /**
+     * BuscarFinDiagonalPrincipal
+     * @return false
+     * Método que se encarga de buscar si hay un ganador en la diagonal secundaria
+     * @author Naheem J
+     */
     boolean BuscarFinDiagonalSecundaria() {
         int piv = 1;
         for (int i = 0; i < 3; i++) {
@@ -137,6 +188,12 @@ public class Juego {
         }
         return true;
     }
+    /**
+     * BuscarFinFilas
+     * @return -1
+     * Método que se encarga de buscar si hay un ganador en las filas
+     * @author Naheem J
+     */
     int BuscarFinFilas() {
         int piv = 1;
         for (int f = 0; f < 3; f++) {
@@ -157,6 +214,12 @@ public class Juego {
         }
         return -1;
     }
+    /**
+     * BuscarFinColumnas
+     * @return c
+     * Método que se encarga de buscar si hay un ganador en las columnas
+     * @author Naheem J
+     */
     int BuscarFinColumnas() {
         int piv = 1;
         for (int c = 0; c < 3; c++) {
@@ -177,6 +240,12 @@ public class Juego {
         }
         return -1;
     }
+
+    /**
+     * LimpiarTablero
+     * Método que se encarga de limpiar el tablero sobreescribiendo con un ciclo for, ceros por la matriz
+     * @author Naheem J
+     */
     void LimpiarTablero(){
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){

@@ -5,6 +5,12 @@ import Juego.Player;
 
 import javax.swing.*;
 
+/**
+ * LoseStars
+ * Clase del evento perder estrellas
+ * @author Mauricio C.
+ * @author Naheem J.
+ */
 public class LoseStars extends Evento {
 
     public Player regalar;
@@ -33,7 +39,11 @@ public class LoseStars extends Evento {
         }
 
     }
-
+    /**
+     * ventanaEvento
+     * @param player
+     * Este método se encarga de crear la ventana de aviso en caso de que se de un evento
+     */
     @Override
     public void ventanaEvento(Player player) {
         frmrobar3 = new JFrame();

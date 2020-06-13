@@ -3,12 +3,24 @@ package Juego;
 import EstructurasDatos.Stack;
 import Eventos.*;
 
+/**
+ * EventStack
+ * Clase que utiliza el stack para cargar los diferentes eventos
+ * @author Mauricio C.
+ * @author Jose A.
+ */
 public class EventStack {
 
     public static EventStack instance = null;
 
     protected Stack stack;
 
+    /**
+     * EventStack
+     * Constructor de la clase EventStack
+     * @author Mauricio C.
+     * @author Jose A.
+     */
     private EventStack(){
 
         stack = new Stack(42);
@@ -85,6 +97,13 @@ public class EventStack {
 
     }
 
+    /**
+     * getInstance
+     * @return instance
+     * Método singleton para realizar un get de la instancia
+     * @author Mauricio C.
+     * @author Jose A.
+     */
     public static EventStack getInstance(){
         if(instance == null){
             instance = new EventStack();
@@ -92,6 +111,13 @@ public class EventStack {
         return instance;
     }
 
+    /**
+     * getStack
+     * @return stack
+     * Método que realiza un return de la variable stack
+     * @author Mauricio C.
+     * @author Jose A.
+     */
     public Stack getStack(){
         return stack;
     }

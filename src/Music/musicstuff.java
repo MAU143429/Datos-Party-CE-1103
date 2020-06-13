@@ -8,12 +8,23 @@ import javax.sound.sampled.FloatControl;
 import java.io.File;
 import java.util.Objects;
 
-
+/**
+ * musicstuff
+ * Clase para implementar la música en el juego
+ * @author Mauricio C.
+ * @author Naheem J.
+ */
 public class musicstuff {
 
     Clip clip;
 
-
+    /**
+     * playMusic
+     * @param musicLocation
+     * Método en donde se especifica el lugar del archivo .wav
+     * @author Mauricio C.
+     * @author Naheem J.
+     */
     public void playMusic(String musicLocation){
 
         try{

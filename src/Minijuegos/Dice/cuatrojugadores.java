@@ -4,7 +4,11 @@ import Juego.Jmain;
 
 import javax.swing.*;
 import java.awt.*;
-
+/**
+ * cuatrojugadores
+ *Esta clase ejecuta el minijuego Dice para cuatro jugadores
+ * @author Jose A.
+ */
 public class cuatrojugadores extends JFrame{
     JLabel dado1,dado12,dado2,dado22,dado3,dado32,dado4,dado42,titulo1,titulo2,fondo,jug1,jug2,jug3,jug4,foto1,foto2,foto3,foto4;
     JButton tirar1,tirar2,tirar3,tirar4;
@@ -16,7 +20,11 @@ public class cuatrojugadores extends JFrame{
     int suma4 = 0;
     String winner,second,third,fourth = "";
 
-
+    /**
+     * tresjugadores
+     * Este constructor se encarga de crear el frame, el container y se alojan todos los objetos de la interfaz
+     * @author Jose A.
+     */
     public cuatrojugadores(){
         this.setBounds(10, 10, 1400, 550);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -174,13 +182,8 @@ public class cuatrojugadores extends JFrame{
         container.add(foto3);
         container.add(foto4);
         container.add(fondo);
-        /**
-         * actionPerformed
-         * @param e
-         * Este método abstracto se encarga de las acciones del botón de tirar los dados
-         * @author Jose A.
-         */
         tirar1.addActionListener(e -> {
+
             String command = e.getActionCommand();
             if(command.equals("TIRAR1")){
                 tiro1 = (int)(Math.random()*6)+1;
@@ -228,12 +231,6 @@ public class cuatrojugadores extends JFrame{
                 System.out.println(suma1);
             }
         });
-        /**
-         * actionPerformed
-         * @param e
-         * Este método abstracto se encarga de las acciones del botón de tirar los dados
-         * @author Jose A.
-         */
         tirar2.addActionListener(e -> {
             String command = e.getActionCommand();
             if(command.equals("TIRAR2")){
@@ -282,12 +279,6 @@ public class cuatrojugadores extends JFrame{
                 System.out.println(suma2);
             }
         });
-        /**
-         * actionPerformed
-         * @param e
-         * Este método abstracto se encarga de las acciones del botón de tirar los dados
-         * @author Jose A.
-         */
         tirar3.addActionListener(e -> {
             String command = e.getActionCommand();
             if(command.equals("TIRAR3")){
@@ -337,12 +328,7 @@ public class cuatrojugadores extends JFrame{
 
             }
         });
-        /**
-         * actionPerformed
-         * @param e
-         * Este método abstracto se encarga de las acciones del botón de tirar los dados
-         * @author Jose A.
-         */
+
         tirar4.addActionListener(e -> {
             String command = e.getActionCommand();
             if(command.equals("TIRAR4")){

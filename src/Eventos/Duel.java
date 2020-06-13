@@ -9,11 +9,24 @@ import Minijuegos.Runner.RunnerDL;
 import javax.swing.*;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * Duel
+ * Clase que implementa los duelos por casillas
+ * @author Mauricio C.
+ * @author Naheem J.
+ */
 public class Duel extends Evento {
 
     public JFrame frmduel;
     public JLabel bg15;
 
+    /**
+     * evento
+     * @param player
+     * Método public void que ejecuta un número random del 1 al 3 y dependiendo del número ejecuta las instancias del evento
+     * @author Mauricio C.
+     * @author Naheem J.
+     */
     @Override
     public void evento(Player player) {
         int randomInt = ThreadLocalRandom.current().nextInt(1, 3);
@@ -30,6 +43,11 @@ public class Duel extends Evento {
 
     }
 
+    /**
+     * ventanaEvento
+     * @param player
+     * Este método se encarga de crear la ventana de aviso en caso de que se de un evento
+     */
     @Override
     public void ventanaEvento(Player player) {
 

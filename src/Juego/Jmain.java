@@ -259,6 +259,12 @@ public class Jmain extends JFrame implements ActionListener {
 
     ///////////////////////////////////////////CREAR JUGADORES//////////////////////////////////////////////////////////
 
+    /**
+     * createPlayers
+     * @param jugadores
+     * Método que crea los jugadores
+     * @author Jose A.
+     */
     public void createPlayers(int jugadores) {
         switch (jugadores) {
             case 1:
@@ -311,6 +317,11 @@ public class Jmain extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * ganadoresEstrellas
+     * Metodo que define los ganadores del juego por medio de estrellas
+     * @author Naheem J.
+     */
     public void ganadoresEstrellas() {
         int player1 = castToPlayer(PlayerList.getPos(0)).estrellas;
         int player2 = castToPlayer(PlayerList.getPos(1)).estrellas;
@@ -388,6 +399,12 @@ public class Jmain extends JFrame implements ActionListener {
             }
         }
     }
+
+    /**
+     * ganadoresMonedas
+     * Metodo que define los ganadores del juego por medio de monedas
+     * @author Naheem J.
+     */
     public void ganadoresMonedas(){
         int player1 = castToPlayer(PlayerList.getPos(0)).monedas;
         int player2 = castToPlayer(PlayerList.getPos(1)).monedas;
@@ -439,6 +456,12 @@ public class Jmain extends JFrame implements ActionListener {
 
     ////////////////////////////////////////////////////MANEJO DE TURNOS////////////////////////////////////////////////////////////////////
 
+    /**
+     * turns
+     * Método para los turnos de los jugadores del juego
+     * @author Jose A.
+     * @author Mauricio C.
+     */
     public void turns() {
         if (!corriendoJuego) {
             for (int i = 0; i < PlayerList.getLength(); i++) {
@@ -518,17 +541,33 @@ public class Jmain extends JFrame implements ActionListener {
         }
 
     }
+
+    /**
+     * crearMario
+     * Método que crea al jugador Mario
+     * @author Jose A.
+     */
     public void crearMario(){
         playing = castToPlayer(PlayerList.getPos(0));
     }
 
     ////////////////////////////////////////////////////////LANZA DADO////////////////////////////////////////////////////////////////
 
+    /**
+     * lanzarDado
+     * Método para empezar el timer dado
+     * @author Naheem J.
+     */
     public void lanzarDado(){
         corriendoJuego = true;
         dado.tm.start();
     }
 
+    /**
+     * celebracion
+     * Método que crea la celebración dependiendo del jugdor que gane
+     * @author Mauricio C.
+     */
     public void celebracion(){
         frmgcongra = new JFrame();
         frmgcongra.setBounds(740, 130, 450, 305);
@@ -583,7 +622,11 @@ public class Jmain extends JFrame implements ActionListener {
 
     ///////////////////////////////////////////////////////METODOS DE ACTUALIZACIÓN DE OBJETOS////////////////////////////////////
 
-
+    /**
+     * actualizarLabels
+     * Método para actualizar los labels que se encuentra en la GUI
+     * @author Jose A.
+     */
     public void actualizarLabels(){
         if(PlayerList.getLength()==2){
             cnp1.setText(Integer.toString(castToPlayer(PlayerList.getPos(0)).monedas));
@@ -619,18 +662,37 @@ public class Jmain extends JFrame implements ActionListener {
 
     ///////////////////////////////////////////////////////////RETORNA LA LISTA DE LOS JUGADORES////////////////////////////////////////////
 
+    /**
+     * getPlayerList
+     * @return PlayerList
+     * Método Singleton
+     * @author Jose A.
+     */
     public SimpleList getPlayerList(){
         return PlayerList;
     }
 
     //////////////////////////////////////////////////////////RETORNA UN JUGADOR ALEATORIO DE LA LISTA/////////////////////////////////////
 
+    /**
+     * getRandomPlayer
+     * @return
+     * Método que recibe un jugador random
+     * @author Naheem J.
+     */
     public Player getRandomPlayer(){
         int pos = new Random().nextInt(PlayerList.getLength());
         return (Player)PlayerList.getPos(pos);
     }
     //////////////////////////////////////SINGLETON DE JMAIN//////////////////////////////////////////////////////////////////////////////
 
+    /**
+     * getInstance
+     * @return instance
+     * Método singleton del Jmain
+     * @author Jose A.
+     *
+     */
     public static Jmain getInstance(){
         if(instance == null){
             instance = new Jmain();
@@ -644,11 +706,27 @@ public class Jmain extends JFrame implements ActionListener {
 
      */
     /////////////////////////////////////////////////////////////////////////CONVIERTE A PLAYER UN OBJETO//////////////////////////////////////
+
+    /**
+     * castToPlayer
+     * @param object
+     * Recibe como parametro un objeto
+     * @return (Player) object
+     * Hace un return del objeto a player
+     *@author Jose A.
+     * @author Mauricio C.
+     */
     public Player castToPlayer (Object object) {
         return (Player) object;
     }
 
     ////////////////////////////////////////////////////////////////////////MANEJA BOTONES////////////////////////////////////////////////////
+
+    /**
+     *actionPerformed
+     * Método relacionado con los botones
+     * @author Jose A.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 

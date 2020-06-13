@@ -120,13 +120,12 @@ public class dosjugadores extends JFrame {
         container.add(foto1);
         container.add(foto2);
         container.add(fondo);
-        /**
-         * actionPerformed
-         * @param e
-         * Este método abstracto se encarga de las acciones del botón de tirar los dados
-         * @author Jose A.
-         */
         tirar1.addActionListener(new ActionListener() {
+            /**
+             * actionPerformed
+             * Este método abstracto se encarga de las acciones del botón de tirar los dados
+             * @author Jose A.
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 String command = e.getActionCommand();
@@ -177,13 +176,13 @@ public class dosjugadores extends JFrame {
                 }
             }
         });
-        /**
-         * actionPerformed
-         * @param e
-         * Este método abstracto se encarga de las acciones del botón de tirar los dados
-         * @author Jose A.
-         */
+
         tirar2.addActionListener(new ActionListener() {
+            /**
+             * actionPerformed
+             * Este método abstracto se encarga de las acciones del botón de tirar los dados
+             * @author Jose A.
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 String command = e.getActionCommand();

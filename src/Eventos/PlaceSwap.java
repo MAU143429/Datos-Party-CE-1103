@@ -8,6 +8,12 @@ import Juego.Player;
 import javax.swing.*;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * PlaceSwap
+ * Clase del evento de cambiar lugar
+ * @author Naheem J.
+ * @author Mauricio C.
+ */
 public class PlaceSwap extends Evento{
 
     public Player cambio;
@@ -16,6 +22,13 @@ public class PlaceSwap extends Evento{
     public JFrame frmcam;
     public JLabel bg377;
 
+    /**
+     * evento
+     * @param player
+     * Método heredado de la clase padre en la que se crea la lógica del evento cambiar lugar
+     * @author Mauricio C.
+     * @author Naheem J.
+     */
     @Override
     public void evento(Player player) {
 
@@ -244,7 +257,11 @@ public class PlaceSwap extends Evento{
 
 
     }
-
+    /**
+     * ventanaEvento
+     * @param player
+     * Este método se encarga de crear la ventana de aviso en caso de que se de un evento
+     */
     @Override
     public void ventanaEvento(Player player) {
 

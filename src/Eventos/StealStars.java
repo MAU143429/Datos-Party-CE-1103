@@ -5,11 +5,24 @@ import Juego.Player;
 
 import javax.swing.*;
 
-
+/**
+ * StealStars
+ * Clase del evento de robar monedas
+ * @author Mauricio C.
+ * @author Naheem J.
+ */
 public class StealStars extends Evento{
     Player res;
     public JFrame frmrobar2;
     public JLabel bg11;
+
+    /**
+     * evento
+     * @param player
+     * Método evento heredado de la clase padre
+     * @author Naheem J
+     * @author Mauricio C.
+     */
     @Override
     public void evento(Player player) {
 
@@ -31,7 +44,11 @@ public class StealStars extends Evento{
 
 
     }
-
+    /**
+     * ventanaEvento
+     * @param player
+     * Este método se encarga de crear la ventana de aviso en caso de que se de un evento
+     */
     @Override
     public void ventanaEvento(Player player) {
         Jmain.getInstance().corriendoJuego = true;

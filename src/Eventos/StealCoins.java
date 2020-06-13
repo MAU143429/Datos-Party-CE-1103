@@ -12,7 +12,12 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-
+/**
+ * StealCoins
+ * Clase del método de robar monedas
+ * @author Mauricio C.
+ * @author Naheem J.
+ */
 public class StealCoins extends Evento implements ActionListener {
 
     public JFrame frmrobar;
@@ -22,13 +27,23 @@ public class StealCoins extends Evento implements ActionListener {
     int botin = ThreadLocalRandom.current().nextInt(10, 30);
 
 
-
+    /**
+     * evento
+     * @param player
+     * Método heredado de la clase padre
+     * @author Mauricio C.
+     * @author Naheem J.
+     */
     @Override
     public void evento(Player player ) {
 
 
     }
-
+    /**
+     * ventanaEvento
+     * @param player
+     * Este método se encarga de crear la ventana de aviso en caso de que se de un evento
+     */
     @Override
     public void ventanaEvento(Player player) {
         System.out.println("VOY A ROBARLE" + botin);
@@ -194,7 +209,12 @@ public class StealCoins extends Evento implements ActionListener {
         }
     }
 
-
+    /**
+     * actionPerformed
+     * Método que da la funcionalidad a los botones dependiendo del nombre de la variable
+     * @author Mauricio C.
+     * @author Naheem J.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -228,7 +248,18 @@ public class StealCoins extends Evento implements ActionListener {
     }
 
 
-
+    /**
+     * evento
+     * @param player
+     * Parámetro player heredado de la clase padre, que hace referencia al jugador
+     * @param robado
+     * Parámetro robado que hace referencia al jugador al que le robaron monedas
+     * @param monedasrobadas
+     * Parámetro monedasrobas que es un int referente al número de monedas robadas
+     * Este método que se encarga de tener la lógica en caso de que le roben monedas a un jugador
+     * @author Mauricio C.
+     * @author Naheem J.
+     */
     public void evento(Player player, Player robado, int monedasrobadas) {
         if (robado.monedas < monedasrobadas) {
             player.monedas += robado.monedas;

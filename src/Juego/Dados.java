@@ -4,6 +4,11 @@ import java.awt.event.ActionListener;
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 
+/**
+ * Dados
+ * Clase que contiene la lógica de los dados del juego
+ * @author Jose A.
+ */
 public class Dados {
     Timer tm, xm,sm;
     int x = 0;
@@ -22,6 +27,11 @@ public class Dados {
     };
     int num = 0;
 
+    /**
+     * Dados
+     * constructor que contiene las ubicaciones de las imagenes de los dados
+     * @author Jose A.
+     */
     public Dados() {
         dadoimg1 = new ImageIcon(getClass().getResource("/Juego/dado1.png"));
         dadoimg2 = new ImageIcon(getClass().getResource("/Juego/dado2.png"));
@@ -32,6 +42,11 @@ public class Dados {
         dadoroll = new ImageIcon(getClass().getResource("/Juego/dadoroll1.png"));
 
         xm = new Timer(2000, new ActionListener() {
+            /**
+             *actionPerformed
+             * Método asociado al timer xm que se encarga de cargar las imagenes de los dados
+             * @author Jose A.
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 Jmain.getInstance().dado1.setIcon(dadoroll);
@@ -40,6 +55,11 @@ public class Dados {
             }
         });
         tm = new Timer(100, new ActionListener() {
+            /**
+             *actionPerformed
+             * Método en donde contiene la lógica del timer tm en donde se va a realizar la suma de los datos del dado
+             * @author Jose A.
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 SetImageSize(x);
@@ -59,6 +79,11 @@ public class Dados {
             }
         });
         sm = new Timer(100, new ActionListener() {
+            /**
+             *actionPerformed
+             * Método relacionado con el timer sm que realiza un TimeUnit.Sleep
+             * @author Jose A.
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 PutFinal1((Jmain.getInstance().dado.dado1)-1);
@@ -77,6 +102,13 @@ public class Dados {
 
 
     }
+
+    /**
+     * SetImageSize
+     * @param i
+     * Le entra un parámetro i al método el cual lo usa para cambiar el icono del dado
+     * @author Jose A.
+     */
     public void SetImageSize(int i) {
         ImageIcon icon1 = new ImageIcon(getClass().getResource(list[i]));
         ImageIcon icon2 = new ImageIcon(getClass().getResource(list[i]));
@@ -84,16 +116,35 @@ public class Dados {
         Jmain.getInstance().dado2.setIcon(icon2);
 
     }
+
+    /**
+     * PutFinal1
+     * @param i
+     * Método que carga imagen del parametro i
+     * @author Jose A.
+     */
     public void PutFinal1(int i){
         ImageIcon icon1 = new ImageIcon(getClass().getResource(list[i]));
         Jmain.getInstance().dado1.setIcon(icon1);
     }
+
+    /**
+     * PutFinal2
+     * @param i
+     * Método que carga una imagen del parametro i
+     * @author Jose A.
+     */
     public void PutFinal2(int i){
         ImageIcon icon2 = new ImageIcon(getClass().getResource(list[i]));
         Jmain.getInstance().dado2.setIcon(icon2);
     }
 
-
+    /**
+     * getInstance
+     * @return instance
+     * Método singleton para generar la instancia del dado
+     * @author Jose A.
+     */
     public static Dados getInstance() {
         if (instance == null) {
             instance = new Dados();
@@ -101,6 +152,12 @@ public class Dados {
         return instance;
     }
 
+    /**
+     * tirarDado
+     * @return SumaDados
+     * Método que realiza un return de SumaDados
+     * @author Jose A.
+     */
     public int tirarDado() {
         return SumaDados;
     }

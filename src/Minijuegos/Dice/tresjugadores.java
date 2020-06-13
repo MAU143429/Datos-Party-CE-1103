@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 /**
  * tresjugadores
  *Esta clase ejecuta el minijuego Dice para tres jugadores
- * @Jose A.
+ * @author Jose A.
  */
 public class tresjugadores extends JFrame{
     JLabel dado1,dado12,dado2,dado22,dado3,dado32,titulo1,titulo2,fondo,jug1,jug2,jug3,foto1,foto2,foto3;
@@ -147,12 +147,7 @@ public class tresjugadores extends JFrame{
         container.add(foto2);
         container.add(foto3);
         container.add(fondo);
-        /**
-         * actionPerformed
-         * @param e
-         * Este método abstracto se encarga de las acciones del botón de tirar los dados
-         * @author Jose A.
-         */
+
         tirar1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -204,12 +199,7 @@ public class tresjugadores extends JFrame{
                 }
             }
         });
-        /**
-         * actionPerformed
-         * @param e
-         * Este método abstracto se encarga de las acciones del botón de tirar los dados
-         * @author Jose A.
-         */
+
         tirar2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -261,12 +251,7 @@ public class tresjugadores extends JFrame{
                 }
             }
         });
-        /**
-         * actionPerformed
-         * @param e
-         * Este método abstracto se encarga de las acciones del botón de tirar los dados
-         * @author Jose A.
-         */
+
         tirar3.addActionListener(e -> {
             String command = e.getActionCommand();
             if(command.equals("TIRAR3")){

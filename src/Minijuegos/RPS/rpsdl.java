@@ -11,6 +11,12 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.lang.reflect.Field;
 
+/**
+ * rpsdl
+ * Clase de rockpaperscissors pero en su version de duelo
+ * @author Jose A.
+ */
+
 public class rpsdl extends JFrame {
     JLabel background, title, player1, player2, versus, scissors1, scissors2, paper1, paper2, rock1, rock2, bind1, bind2, bind3, binda, bindb, bindc;
     JButton boton;
@@ -20,6 +26,11 @@ public class rpsdl extends JFrame {
     JTextField campotexto1, campotexto2;
     public Player retador1, retador2;
 
+    /**
+     * rpsdl
+     * Constructor de la clase rpsdl en donde se implementan los elementos de la GUI
+     * @author Jose A.
+     */
     public rpsdl() {
         this.setBounds(100, 100, 1000, 533);
         this.setLocationRelativeTo(null);

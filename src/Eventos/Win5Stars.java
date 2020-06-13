@@ -4,18 +4,33 @@ import Juego.Jmain;
 import Juego.Player;
 
 import javax.swing.*;
-
+/**
+ * Win2Stars
+ * Clase del evento de ganar 5 estrellas
+ * @author Mauricio C.
+ * @author Naheem J.
+ */
 public class Win5Stars extends Evento {
     public JLabel bg13;
     public JFrame frmwin5;
-
+    /**
+     * evento
+     * @param player
+     * Método heredado de la clase padre que contiene la lógica de sumarle cinco estrellas al jugador
+     * @author Mauricio C.
+     * @author Naheem J.
+     */
     @Override
     public void evento(Player player) {
         int strganadas = 5;
         player.estrellas += strganadas;
         System.out.println("ganaste 5 estrellas");
     }
-
+    /**
+     * ventanaEvento
+     * @param player
+     * Este método se encarga de crear la ventana de aviso en caso de que se de un evento
+     */
     @Override
     public void ventanaEvento(Player player) {
 

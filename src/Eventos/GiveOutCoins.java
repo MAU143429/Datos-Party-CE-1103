@@ -7,14 +7,26 @@ import javax.swing.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ * GiveOutCoins
+ * Clase del evento de dar monedas
+ * @author Mauricio C.
+ * @author Naheem J.
+ */
 public class GiveOutCoins extends Evento{
 
     public JLabel bg10;
     public JFrame frmdar;
     int randomInt;
 
-
+    /**
+     * evento
+     * @param player
+     * Método heredado de la clase padre evento que se encarga de quitarle las monedas a un jugador mientras entre
+     * los 3 jugadores restantes el resto de monedas
+     * @author Naheem J.
+     * @author Mauricio C.
+     */
     @Override
     public void evento(Player player) {
 
@@ -48,6 +60,12 @@ public class GiveOutCoins extends Evento{
         }
 
     }
+
+    /**
+     * ventanaEvento
+     * @param player
+     * Este método se encarga de crear la ventana de aviso en caso de que se de un evento
+     */
 
     @Override
     public void ventanaEvento(Player player) {

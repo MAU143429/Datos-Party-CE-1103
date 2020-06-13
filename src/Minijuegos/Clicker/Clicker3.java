@@ -97,6 +97,11 @@ public class Clicker3 extends JFrame implements ActionListener {
             timer.scheduleAtFixedRate(task, 1000, 1000);
 
         });
+        /**
+         * TimerTask
+         * Thread TimerTask que lo que hace es ejecutar un timer que contiene el conteo de los 15 segundos por jugador
+         * @author Naheem J.
+         */
         task = new TimerTask() {
             @Override
             public void run() {
@@ -206,7 +211,6 @@ public class Clicker3 extends JFrame implements ActionListener {
 
     /**
      * actionPerformed
-     * @param e
      * Este método abstracto se encarga de realizar una suma de 1 cada vez que se realice un clic, si la variable
      * seconds passed no es mayor que 5, el boton no se podrá ejecutar
      * @author Naheem J

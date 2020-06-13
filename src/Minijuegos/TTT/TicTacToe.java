@@ -5,6 +5,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * TicTacToe
+ * Esta clase hereda frame y se encanrga de la parte gráfica del minijuego Tic tac toe
+ * @author Naheem J.
+ */
+
 public class TicTacToe extends JFrame {
     public ImageIcon logoImage, bgImage, tttBase;
     public JPanel buttonContainer;
@@ -12,6 +18,12 @@ public class TicTacToe extends JFrame {
     boolean temp = false;
     JButton[][] TableroGrafico = new JButton[3][3];
     Juego juego = new Juego();
+
+    /**
+     * TicTacToe
+     * Contructor de la clase TicTacToe en donde se colocan todos los aspectos gráficos de la GUI
+     * @author Naheem J.
+     */
     public TicTacToe(){
         this.setTitle("Tic-Tac-Toe");
         this.setBounds(250,30,900,720);
@@ -101,6 +113,10 @@ public class TicTacToe extends JFrame {
         btn10.setText("Cerrar");
         btn10.setBackground(new Color(83, 148, 252));
         btn10.addActionListener(new ActionListener() {
+            /**
+             *actionPerformed
+             * Método asociado al botón cerrar
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 cerrar();
@@ -144,6 +160,13 @@ public class TicTacToe extends JFrame {
 
 
     }
+
+    /**
+     * GenerarTableroGrafico
+     * Método que genera el genera el tablero gráfico, asocia la parte lógica del juego con la parte gráfica, generando una matriz de botones
+     * a los cuales les agrega un actionlistener conforme se recorre en el for la matriz de botones
+     * @author Naheem J.
+     */
     void GenerarTableroGrafico(){
         int c = 0;
         int f = 0;
@@ -163,6 +186,12 @@ public class TicTacToe extends JFrame {
         }
 
     }
+
+    /**
+     * SincronizarTablero
+     * Este método se encarga de sincronizar el tablero de manera que va escribiendo una ¨X¨ o ¨Y¨ dependiendo de la casilla
+     * @author Naheem J.
+     */
     void SincronizarTablero() {
         for (int c = 0; c < 3; c++) {
             for (int f = 0; f < 3; f++) {
@@ -183,11 +212,23 @@ public class TicTacToe extends JFrame {
         }
 
     }
+
+    /**
+     * cerrar
+     * Método void que se encarga de cerrar la interfaz
+     * @author Naheem J
+     */
     void cerrar(){
         this.setVisible(false);
         this.dispose();
     }
 
+    /**
+     * main
+     * @param Args
+     * Método main de la clase TicTacToe
+     * @author Naheem J.
+     */
     public static void main(String[] Args){
         new TicTacToe();
 
