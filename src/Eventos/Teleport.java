@@ -6,7 +6,6 @@ import Juego.Map;
 import Juego.Player;
 
 import javax.swing.*;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Teleport
@@ -29,11 +28,11 @@ public class Teleport extends Evento{
     @Override
     public void evento(Player player) {
         Casilla casilla = Map.getInstance().getRandomTile();
-        player.absPos = casilla.getPosList();
+        player.posJug = casilla.getPosList();
         player.posX = casilla.getPosX();
         player.posY = casilla.getPosY();
         player.estaenReversa = false;
-        player.movimientosTotales = player.absPos;
+        player.movTotal = player.posJug;
         if(Jmain.getInstance().playing.referencia == 1){
             Jmain.getInstance().mario.setLocation((player.posX-22),(player.posY-28));
         }
