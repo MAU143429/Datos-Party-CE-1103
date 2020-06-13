@@ -25,7 +25,7 @@ public class MGS extends JFrame implements ActionListener {
     private JLabel bg5;
 
     /**
-     * MGS
+     * Constructor MGS
      *Este constructor crea un frame, un panel y aloja objetos en ellos
      *@author Mauricio C.
      *

@@ -1,9 +1,21 @@
 package EstructurasDatos;
 
+/**
+ * Clase SimpleList
+ * Estructura de Datos lIneal
+ * Esta clase se encarga de crear una SimpleList y todos los metodos de ella.
+ *
+ * @author Jose A. , Mauricio C.
+ */
 public class SimpleList extends List {
     private int length;
     private  SimpleNode head;
-
+    /**
+     * Metodo add
+     * Permite agregar un nuevo nodo a la lista
+     * @param valor
+     * @author Jose A., Mauricio C.
+     */
     @Override
     public void add(Object valor) {
         if(this.head == null){
@@ -20,6 +32,13 @@ public class SimpleList extends List {
     }
 
     @Override
+    /**
+     * Metodo getPos
+     * Permite obtener la posicion del nodo
+     * @param pos
+     * @return tmp.getValor
+     * @author Jose A. Mauricio C.
+     */
     public Object getPos(int pos) {
         SimpleNode tmp = this.head;
         if(pos == 0){
@@ -32,12 +51,22 @@ public class SimpleList extends List {
         }
         return tmp.next.getValor();
     }
-
+    /**
+     * Metodo getLength
+     * Permite obtener el largo de la lista
+     * @return length
+     * @author Jose A. Mauricio C.
+     */
     @Override
     public int getLength() {
         return this.length;
     }
-
+    /**
+     * Metodo delete
+     * Permite agregar un nuevo nodo a la lista
+     * @param pos
+     * @author Jose A., Mauricio C.
+     */
     public void delete (int pos){
         SimpleNode temp = this.head;
         boolean cambiado = false;
@@ -73,7 +102,12 @@ public class SimpleList extends List {
         }
 
     }
-
+    /**
+     * Metodo mezclar
+     * Permite mezclar una lista
+     * @return  aux
+     * @author Jose A., Mauricio C.
+     */
     public SimpleList mezclar() {
         SimpleList aux = new SimpleList();
         if (this.getLength() == 0){

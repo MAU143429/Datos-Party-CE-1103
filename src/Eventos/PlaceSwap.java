@@ -1,12 +1,10 @@
 package Eventos;
 
 import Casillas.Casilla;
-import EstructurasDatos.SimpleList;
 import Juego.Jmain;
 import Juego.Player;
 
 import javax.swing.*;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class PlaceSwap extends Evento{
 
@@ -28,8 +26,8 @@ public class PlaceSwap extends Evento{
 
         if (cambio == Jmain.getInstance().getPlayerList().getPos(0)){
 
-            newabspos = cambio.absPos;
-            newabspos2 = player.absPos;
+            newabspos = cambio.posJug;
+            newabspos2 = player.posJug;
 
             newX = cambio.posX;
             newY = cambio.posY;
@@ -42,12 +40,12 @@ public class PlaceSwap extends Evento{
             player.estaenReversa = false;
             cambio.estaenReversa = false;
 
-            player.absPos = newabspos;
-            cambio.absPos = newabspos2;
+            player.posJug = newabspos;
+            cambio.posJug = newabspos2;
 
 
-            player.movimientosTotales = player.absPos;
-            cambio.movimientosTotales = cambio.absPos;
+            player.movTotal = player.posJug;
+            cambio.movTotal = cambio.posJug;
 
 
             player.casillaActual = cas2;
@@ -85,8 +83,8 @@ public class PlaceSwap extends Evento{
         }
         if (cambio == Jmain.getInstance().getPlayerList().getPos(1)){
 
-            newabspos = cambio.absPos;
-            newabspos2 = player.absPos;
+            newabspos = cambio.posJug;
+            newabspos2 = player.posJug;
 
             newX = cambio.posX;
             newY = cambio.posY;
@@ -99,12 +97,12 @@ public class PlaceSwap extends Evento{
             player.estaenReversa = false;
             cambio.estaenReversa = false;
 
-            player.absPos = newabspos;
-            cambio.absPos = newabspos2;
+            player.posJug = newabspos;
+            cambio.posJug = newabspos2;
 
 
-            player.movimientosTotales = player.absPos;
-            cambio.movimientosTotales = cambio.absPos;
+            player.movTotal = player.posJug;
+            cambio.movTotal = cambio.posJug;
 
 
             player.casillaActual = cas2;
@@ -138,8 +136,8 @@ public class PlaceSwap extends Evento{
             Jmain.getInstance().panel4.repaint();
         }
         if (cambio == Jmain.getInstance().getPlayerList().getPos(2)){
-            newabspos = cambio.absPos;
-            newabspos2 = player.absPos;
+            newabspos = cambio.posJug;
+            newabspos2 = player.posJug;
 
             newX = cambio.posX;
             newY = cambio.posY;
@@ -152,12 +150,12 @@ public class PlaceSwap extends Evento{
             player.estaenReversa = false;
             cambio.estaenReversa = false;
 
-            player.absPos = newabspos;
-            cambio.absPos = newabspos2;
+            player.posJug = newabspos;
+            cambio.posJug = newabspos2;
 
 
-            player.movimientosTotales = player.absPos;
-            cambio.movimientosTotales = cambio.absPos;
+            player.movTotal = player.posJug;
+            cambio.movTotal = cambio.posJug;
 
 
             player.casillaActual = cas2;
@@ -190,8 +188,8 @@ public class PlaceSwap extends Evento{
             Jmain.getInstance().panel4.repaint();
         }
         if (cambio == Jmain.getInstance().getPlayerList().getPos(3)){
-            newabspos = cambio.absPos;
-            newabspos2 = player.absPos;
+            newabspos = cambio.posJug;
+            newabspos2 = player.posJug;
 
             newX = cambio.posX;
             newY = cambio.posY;
@@ -204,12 +202,12 @@ public class PlaceSwap extends Evento{
             player.estaenReversa = false;
             cambio.estaenReversa = false;
 
-            player.absPos = newabspos;
-            cambio.absPos = newabspos2;
+            player.posJug = newabspos;
+            cambio.posJug = newabspos2;
 
 
-            player.movimientosTotales = player.absPos;
-            cambio.movimientosTotales = cambio.absPos;
+            player.movTotal = player.posJug;
+            cambio.movTotal = cambio.posJug;
 
 
             player.casillaActual = cas2;

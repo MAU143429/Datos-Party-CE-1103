@@ -1,15 +1,31 @@
 package EstructurasDatos;
-
+/**
+ * Clase Stack
+ * Estructura de Datos lIneal
+ * Esta clase se encarga de crear un Stack y todos los metodos de ella.
+ *
+ * @author Jose A. , Mauricio C.
+ */
 public class Stack {
     private final int maxSize;
     private SimpleNode top;
     private SimpleNode bottom;
-
+    /**
+     * Constructor de la Stack
+     * Asigna valores al maxSize top y bottom
+     * @param  size
+     * @author Jose A., Mauricio C.
+     */
     public Stack (int size){
         this.maxSize = size;
         this.top = null;
         this.bottom = null;
     }
+    /**
+     * Metodo push
+     * Permite agregar elementos a la pila
+     * @author Jose A., Mauricio C.
+     */
     public void push (Object valor){
         if (isEmpty()){
             this.top = new SimpleNode (valor);
@@ -22,6 +38,12 @@ public class Stack {
             this.top.pos = tmp.getPos() + 1;
         }
     }
+    /**
+     * Metodo pop
+     * Permite sacar elementos a la pila
+     * @return valor
+     * @author Jose A., Mauricio C.
+     */
     public Object pop (){
         if (isEmpty ()){
             throw new IllegalStateException ("Stack is empty");
@@ -41,13 +63,12 @@ public class Stack {
             return valor;
         }
     }
-    public Object lastobj (){
-        if (isEmpty ()){
-            throw new IllegalStateException ("Stack is empty");
-        }else{
-            return this.top.getValor();
-        }
-    }
+    /**
+     * Metodo mezclar
+     * Permite mezclar elementos dentro de una pila
+     * @return aux
+     * @author Jose A., Mauricio C.
+     */
     public Stack mezclar (){
         if (this.isEmpty()){
             throw new IllegalStateException ("Stack is empty");
@@ -63,6 +84,18 @@ public class Stack {
         }
         return aux;
     }
+    /**
+     * Metodo mezclar
+     * Booleano que dice si la pila esta vacia
+     * @return top
+     * @author Jose A., Mauricio C.
+     */
     public boolean isEmpty (){return this.top == null;}
+    /**
+     * Metodo mezclar
+     * Obtener el tamaño de la pila
+     * @return maxSize
+     * @author Jose A., Mauricio C.
+     */
     public int getMaxSize(){return this.maxSize;}
 }
