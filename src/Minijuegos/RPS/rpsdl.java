@@ -285,7 +285,7 @@ public class rpsdl extends JFrame {
         this.pack();
         this.setVisible(true);
 
-        JOptionPane.showMessageDialog(null, "Lets play Rock, Paper, Scissors! \n When you press OK you will see the key bindings for each player! \n Choose wisely!! \n NO peeking allowed! \n WARNING: DO NOT PRESS RESULT BEFORE BOTH PLAYERS HAVE MADE THEIR PICKS!");
+        JOptionPane.showMessageDialog(null, "Lets play Rock, Paper, Scissors! \n RANDOM DUEL!!! \n When you press OK you will see the key bindings for each player! \n Choose wisely!! \n NO peeking allowed! \n WARNING: DO NOT PRESS RESULT BEFORE BOTH PLAYERS HAVE MADE THEIR PICKS!");
 
 
     }

@@ -187,7 +187,7 @@ public class RunnerDL extends JFrame {
                 jugador2.setIcon(bgurlp2);
             }
         }
-        JOptionPane.showMessageDialog(null, "Lets play Runners!! \n When you press OK you will see the key bindings for each player! \n 3, 2, 1 RUN!! \n Enjoy!");
+        JOptionPane.showMessageDialog(null, "Lets play Runners!! \n RANDOM DUEL!!! \n When you press OK you will see the key bindings for each player! \n 3, 2, 1 RUN!! \n Enjoy!");
 
 
     }

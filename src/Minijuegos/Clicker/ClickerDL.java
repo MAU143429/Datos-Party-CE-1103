@@ -233,7 +233,7 @@ public class ClickerDL extends JFrame implements ActionListener {
 
 
 
-        JOptionPane.showMessageDialog(null, "Lets play Clicker! \n RANDOM DUEL\n When you press the OK button you will see a big coin, that you have to click in order to win, the player who gets the most amount of clicks wins! \n Each player will have 5 seconds between each turn to get ready, once its passed 5 seconds, start clicking!  \n GOOD LUCK! ");
+        JOptionPane.showMessageDialog(null, "Lets play Clicker! \n RANDOM DUEL!!! \n When you press the OK button you will see a big coin, that you have to click in order to win, the player who gets the most amount of clicks wins! \n Each player will have 5 seconds between each turn to get ready, once its passed 5 seconds, start clicking!  \n GOOD LUCK! ");
 
     }
     /**
