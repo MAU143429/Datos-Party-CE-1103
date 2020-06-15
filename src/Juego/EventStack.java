@@ -23,7 +23,7 @@ public class EventStack {
      */
     private EventStack(){
 
-        stack = new Stack(42);
+        stack = new Stack(57);
 
         stack.push(new Teleport());
         stack.push(new Teleport());
