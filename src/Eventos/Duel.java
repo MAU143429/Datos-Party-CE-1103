@@ -30,6 +30,7 @@ public class Duel extends Evento {
     @Override
     public void evento(Player player) {
         int randomInt = ThreadLocalRandom.current().nextInt(1, 3);
+
         if(randomInt == 1){
             RunnerDL rpueba = new RunnerDL();
         }

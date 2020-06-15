@@ -32,9 +32,8 @@ public class TicTacToe extends JFrame {
         this.setBounds(250,30,900,720);
         this.setPreferredSize(new Dimension(900,720));
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        //this.setUndecorated(true);
         this.setLocationRelativeTo(null);
-        //this.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+
 
         Container container = this.getContentPane();
         container.setLayout(null);
@@ -233,12 +232,5 @@ public class TicTacToe extends JFrame {
      * @param Args
      * Método main de la clase TicTacToe
      * @author Naheem J.
-     */
-    /*
-    public static void main(String[] Args){
-        new TicTacToe();
-
-    }
-
      */
 }

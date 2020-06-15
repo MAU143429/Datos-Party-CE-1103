@@ -43,17 +43,6 @@ public class Juego {
     }
 
     /**
-     * reiniciarJuego
-     * Método que se encarga de reiniciar el tablero
-     * @author Naheem J.
-     */
-    void reiniciarJuego() {
-        LimpiarTablero();
-        Ganador = 0;
-        Linea_terminar = TERMINAR_NA;
-    }
-
-    /**
      * registrarJugada
      * @param c
      * Método registarJugada se encarga de registrar la jugada del jugador cambian la variable int de un 1 a un 2
@@ -90,7 +79,6 @@ public class Juego {
                 case TERMINAR_COL3:
                     Ganador = Tablero[Linea_terminar][0];
                     if (Ganador == 1) {
-                        System.out.println("TERMINAR COL3");
                         JOptionPane.showMessageDialog(null, "PLAYER 1 WINS THE BATTLE!!");
                         player2.posJug--;
                         player2.movTotal = player2.posJug;
@@ -111,9 +99,7 @@ public class Juego {
                             Jmain.getInstance().yoshi.setLocation((player2.posX-22),(player2.posY-28));
                         }
                         JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
-                        System.out.println("El perdedor sera atrasado una casilla ");
                     } else {
-                        System.out.println("TERMINAR COL3");
                         JOptionPane.showMessageDialog(null, "PLAYER 2 WINS THE BATTLE!!");
                         player1.posJug--;
                         player1.movTotal = player1.posJug;
@@ -134,7 +120,6 @@ public class Juego {
                             Jmain.getInstance().yoshi.setLocation((player1.posX-22),(player1.posY-28));
                         }
                         JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
-                        System.out.println("El perdedor sera atrasado una casilla ");
                     }
 
                     break;
@@ -143,7 +128,6 @@ public class Juego {
                 case TERMINAR_FIL3:
                     Ganador = Tablero[0][Linea_terminar - 3];
                     if (Ganador == 1) {
-                        System.out.println("TERMINAR FIL3");
                         JOptionPane.showMessageDialog(null, "PLAYER 1 WINS THE BATTLE!!");
                         player2.posJug--;
                         player2.movTotal = player2.posJug;
@@ -166,7 +150,6 @@ public class Juego {
                         JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
 
                     } else {
-                        System.out.println("TERMINAR FIL3");
                         JOptionPane.showMessageDialog(null, "PLAYER 2 WINS THE BATTLE!!");
                         player1.posJug--;
                         player1.movTotal = player1.posJug;
@@ -187,14 +170,13 @@ public class Juego {
                             Jmain.getInstance().yoshi.setLocation((player1.posX-22),(player1.posY-28));
                         }
                         JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
-                        System.out.println("El perdedor sera atrasado una casilla ");
+
                     }
 
                     break;
                 case TERMINAR_DIAG1:
                     Ganador = Tablero[0][0];
                     if (Ganador == 1) {
-                        System.out.println("TERMINAR DIAG 1");
                         JOptionPane.showMessageDialog(null, "PLAYER 1 WINS THE BATTLE!!");
                         player2.posJug--;
                         player2.movTotal = player2.posJug;
@@ -216,7 +198,6 @@ public class Juego {
                         }
                         JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
                     } else {
-                        System.out.println("TERMINAR DIAG 1");
                         JOptionPane.showMessageDialog(null, "PLAYER 2 WINS THE BATTLE!!");
                         player1.posJug--;
                         player1.movTotal = player1.posJug;
@@ -237,14 +218,13 @@ public class Juego {
                             Jmain.getInstance().yoshi.setLocation((player1.posX-22),(player1.posY-28));
                         }
                         JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
-                        System.out.println("El perdedor sera atrasado una casilla ");
                     }
 
                     break;
                 case TERMINAR_DIAG2:
                     Ganador = Tablero[0][2];
                     if (Ganador == 1) {
-                        System.out.println("TERMINAR DIAG 2");
+
                         JOptionPane.showMessageDialog(null, "PLAYER 1 WINS THE BATTLE!!");
                         player2.posJug--;
                         player2.movTotal = player2.posJug;
@@ -266,7 +246,7 @@ public class Juego {
                         }
                         JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
                     } else {
-                        System.out.println("TERMINAR DIAG 2");
+
                         JOptionPane.showMessageDialog(null, "PLAYER 2 WINS THE BATTLE!!");
                         player1.posJug--;
                         player1.movTotal = player1.posJug;
@@ -413,16 +393,4 @@ public class Juego {
         return -1;
     }
 
-    /**
-     * LimpiarTablero
-     * Método que se encarga de limpiar el tablero sobreescribiendo con un ciclo for, ceros por la matriz
-     * @author Naheem J
-     */
-    void LimpiarTablero(){
-        for(int i = 0; i < 3; i++){
-            for(int j = 0; j < 3; j++){
-                Tablero[i][j] = 0;
-            }
-        }
-    }
 }

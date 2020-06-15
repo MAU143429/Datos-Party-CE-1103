@@ -43,8 +43,8 @@ public class DuelCasilla extends Evento {
      */
     public void ventanaEvento(SimpleList duelist) {
 
-        //int suerte = ThreadLocalRandom.current().nextInt(1, 3);
-        int suerte = 3;
+        int suerte = ThreadLocalRandom.current().nextInt(1, 3);
+
 
         if(suerte == 1){
             RunnerCAS prueba = new RunnerCAS(duelist);
@@ -54,7 +54,7 @@ public class DuelCasilla extends Evento {
         }
         if(suerte == 3){
             TicTacToe prueba = new TicTacToe(duelist);
-            System.out.println("Ya sirvo xd");
+
         }
 
     }
