@@ -39,7 +39,7 @@ public class Jmain extends JFrame implements ActionListener {
      * Jmain
      * Este constructor crea un frame, un panel y aloja objetos en ellos
      *
-     * @authors Mauricio C. , Naheem Johnson , Jose Espinoza
+     * @authors Mauricio C. , Naheem Johnson , Jose Antonio Espinoza
      */
     public Jmain() {
         ganadorf = false;
