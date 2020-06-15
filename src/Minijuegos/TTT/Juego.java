@@ -2,6 +2,8 @@ package Minijuegos.TTT;
 
 import javax.swing.*;
 
+import EstructurasDatos.SimpleList;
+import Juego.*;
 /**
  * Juego
  * Clase que se encarga de manejar la parte lógica del minijuego TicTacToe
@@ -12,6 +14,7 @@ public class Juego {
     int Jugador = 1;
     int[][] Tablero = new int[3][3];
 
+    public Player player1, player2;
 
     public static final int TERMINAR_NA = -1;
 
@@ -34,8 +37,9 @@ public class Juego {
      * Constructor de la clase Juego que recibe el método LimpiarTablero
      * @author Naheem J.
      */
-    public Juego(){
-        LimpiarTablero();
+    public Juego(SimpleList duelist){
+        player1 = (Player)duelist.getPos(0);
+        player2 = (Player)duelist.getPos(1);
     }
 
     /**
@@ -86,37 +90,205 @@ public class Juego {
                 case TERMINAR_COL3:
                     Ganador = Tablero[Linea_terminar][0];
                     if (Ganador == 1) {
-                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 1");
+                        System.out.println("TERMINAR COL3");
+                        JOptionPane.showMessageDialog(null, "PLAYER 1 WINS THE BATTLE!!");
+                        player2.posJug--;
+                        player2.movTotal = player2.posJug;
+                        player2.casillaActual = Map.getInstance().getCasilla(player2.posJug, Map.getInstance().getFase2(player2.casillaActual));
+                        player2.verifyTeleport();
+                        player2.posX = player2.casillaActual.getPosX();
+                        player2.posY = player2.casillaActual.getPosY();
+                        if(player2.referencia == 1){
+                            Jmain.getInstance().mario.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        if(player2.referencia  == 2){
+                            Jmain.getInstance().luigi.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        if(player2.referencia  == 3){
+                            Jmain.getInstance().toad.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        if(player2.referencia  == 4){
+                            Jmain.getInstance().yoshi.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
+                        System.out.println("El perdedor sera atrasado una casilla ");
                     } else {
-                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 2");
+                        System.out.println("TERMINAR COL3");
+                        JOptionPane.showMessageDialog(null, "PLAYER 2 WINS THE BATTLE!!");
+                        player1.posJug--;
+                        player1.movTotal = player1.posJug;
+                        player1.casillaActual = Map.getInstance().getCasilla(player1.posJug,Map.getInstance().getFase2(player1.casillaActual));
+                        player1.verifyTeleport();
+                        player1.posX = player1.casillaActual.getPosX();
+                        player1.posY = player1.casillaActual.getPosY();
+                        if(player1.referencia  == 1){
+                            Jmain.getInstance().mario.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        if(player1.referencia  == 2){
+                            Jmain.getInstance().luigi.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        if(player1.referencia == 3){
+                            Jmain.getInstance().toad.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        if(player1.referencia  == 4){
+                            Jmain.getInstance().yoshi.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
+                        System.out.println("El perdedor sera atrasado una casilla ");
                     }
+
                     break;
                 case TERMINAR_FIL1:
                 case TERMINAR_FIL2:
                 case TERMINAR_FIL3:
                     Ganador = Tablero[0][Linea_terminar - 3];
                     if (Ganador == 1) {
-                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 1");
+                        System.out.println("TERMINAR FIL3");
+                        JOptionPane.showMessageDialog(null, "PLAYER 1 WINS THE BATTLE!!");
+                        player2.posJug--;
+                        player2.movTotal = player2.posJug;
+                        player2.casillaActual = Map.getInstance().getCasilla(player2.posJug, Map.getInstance().getFase2(player2.casillaActual));
+                        player2.verifyTeleport();
+                        player2.posX = player2.casillaActual.getPosX();
+                        player2.posY = player2.casillaActual.getPosY();
+                        if(player2.referencia == 1){
+                            Jmain.getInstance().mario.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        if(player2.referencia  == 2){
+                            Jmain.getInstance().luigi.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        if(player2.referencia  == 3){
+                            Jmain.getInstance().toad.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        if(player2.referencia  == 4){
+                            Jmain.getInstance().yoshi.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
+
                     } else {
-                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 2");
+                        System.out.println("TERMINAR FIL3");
+                        JOptionPane.showMessageDialog(null, "PLAYER 2 WINS THE BATTLE!!");
+                        player1.posJug--;
+                        player1.movTotal = player1.posJug;
+                        player1.casillaActual = Map.getInstance().getCasilla(player1.posJug,Map.getInstance().getFase2(player1.casillaActual));
+                        player1.verifyTeleport();
+                        player1.posX = player1.casillaActual.getPosX();
+                        player1.posY = player1.casillaActual.getPosY();
+                        if(player1.referencia  == 1){
+                            Jmain.getInstance().mario.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        if(player1.referencia  == 2){
+                            Jmain.getInstance().luigi.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        if(player1.referencia == 3){
+                            Jmain.getInstance().toad.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        if(player1.referencia  == 4){
+                            Jmain.getInstance().yoshi.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
+                        System.out.println("El perdedor sera atrasado una casilla ");
                     }
 
                     break;
                 case TERMINAR_DIAG1:
                     Ganador = Tablero[0][0];
                     if (Ganador == 1) {
-                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 1");
+                        System.out.println("TERMINAR DIAG 1");
+                        JOptionPane.showMessageDialog(null, "PLAYER 1 WINS THE BATTLE!!");
+                        player2.posJug--;
+                        player2.movTotal = player2.posJug;
+                        player2.casillaActual = Map.getInstance().getCasilla(player2.posJug, Map.getInstance().getFase2(player2.casillaActual));
+                        player2.verifyTeleport();
+                        player2.posX = player2.casillaActual.getPosX();
+                        player2.posY = player2.casillaActual.getPosY();
+                        if(player2.referencia == 1){
+                            Jmain.getInstance().mario.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        if(player2.referencia  == 2){
+                            Jmain.getInstance().luigi.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        if(player2.referencia  == 3){
+                            Jmain.getInstance().toad.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        if(player2.referencia  == 4){
+                            Jmain.getInstance().yoshi.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
                     } else {
-                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 2");
+                        System.out.println("TERMINAR DIAG 1");
+                        JOptionPane.showMessageDialog(null, "PLAYER 2 WINS THE BATTLE!!");
+                        player1.posJug--;
+                        player1.movTotal = player1.posJug;
+                        player1.casillaActual = Map.getInstance().getCasilla(player1.posJug,Map.getInstance().getFase2(player1.casillaActual));
+                        player1.verifyTeleport();
+                        player1.posX = player1.casillaActual.getPosX();
+                        player1.posY = player1.casillaActual.getPosY();
+                        if(player1.referencia  == 1){
+                            Jmain.getInstance().mario.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        if(player1.referencia  == 2){
+                            Jmain.getInstance().luigi.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        if(player1.referencia == 3){
+                            Jmain.getInstance().toad.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        if(player1.referencia  == 4){
+                            Jmain.getInstance().yoshi.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
+                        System.out.println("El perdedor sera atrasado una casilla ");
                     }
+
                     break;
                 case TERMINAR_DIAG2:
                     Ganador = Tablero[0][2];
                     if (Ganador == 1) {
-                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 1");
+                        System.out.println("TERMINAR DIAG 2");
+                        JOptionPane.showMessageDialog(null, "PLAYER 1 WINS THE BATTLE!!");
+                        player2.posJug--;
+                        player2.movTotal = player2.posJug;
+                        player2.casillaActual = Map.getInstance().getCasilla(player2.posJug, Map.getInstance().getFase2(player2.casillaActual));
+                        player2.verifyTeleport();
+                        player2.posX = player2.casillaActual.getPosX();
+                        player2.posY = player2.casillaActual.getPosY();
+                        if(player2.referencia == 1){
+                            Jmain.getInstance().mario.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        if(player2.referencia  == 2){
+                            Jmain.getInstance().luigi.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        if(player2.referencia  == 3){
+                            Jmain.getInstance().toad.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        if(player2.referencia  == 4){
+                            Jmain.getInstance().yoshi.setLocation((player2.posX-22),(player2.posY-28));
+                        }
+                        JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
                     } else {
-                        JOptionPane.showMessageDialog(null, "El ganador es el jugador 2");
+                        System.out.println("TERMINAR DIAG 2");
+                        JOptionPane.showMessageDialog(null, "PLAYER 2 WINS THE BATTLE!!");
+                        player1.posJug--;
+                        player1.movTotal = player1.posJug;
+                        player1.casillaActual = Map.getInstance().getCasilla(player1.posJug,Map.getInstance().getFase2(player1.casillaActual));
+                        player1.verifyTeleport();
+                        player1.posX = player1.casillaActual.getPosX();
+                        player1.posY = player1.casillaActual.getPosY();
+                        if(player1.referencia  == 1){
+                            Jmain.getInstance().mario.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        if(player1.referencia  == 2){
+                            Jmain.getInstance().luigi.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        if(player1.referencia == 3){
+                            Jmain.getInstance().toad.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        if(player1.referencia  == 4){
+                            Jmain.getInstance().yoshi.setLocation((player1.posX-22),(player1.posY-28));
+                        }
+                        JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
                     }
+
                     break;
             }
         }

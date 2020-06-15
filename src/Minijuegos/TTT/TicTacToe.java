@@ -1,10 +1,12 @@
 package Minijuegos.TTT;
 
+import EstructurasDatos.SimpleList;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import Juego.Player;
 /**
  * TicTacToe
  * Esta clase hereda frame y se encanrga de la parte gráfica del minijuego Tic tac toe
@@ -17,19 +19,21 @@ public class TicTacToe extends JFrame {
     public JLabel bgLabel, backgroundGame, gameLogo;
     boolean temp = false;
     JButton[][] TableroGrafico = new JButton[3][3];
-    Juego juego = new Juego();
+    public Juego juego;
 
     /**
      * TicTacToe
      * Contructor de la clase TicTacToe en donde se colocan todos los aspectos gráficos de la GUI
      * @author Naheem J.
      */
-    public TicTacToe(){
+    public TicTacToe(SimpleList duelist){
+        juego = new Juego(duelist);
         this.setTitle("Tic-Tac-Toe");
         this.setBounds(250,30,900,720);
         this.setPreferredSize(new Dimension(900,720));
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.setUndecorated(true);
+        //this.setUndecorated(true);
+        this.setLocationRelativeTo(null);
         //this.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
 
         Container container = this.getContentPane();
@@ -155,8 +159,9 @@ public class TicTacToe extends JFrame {
         container.add(gameLabel);
         container.add(bgLabel);
         GenerarTableroGrafico();
-        JOptionPane.showMessageDialog(null, "Tic tac toe, el primer jugador va a tener asociado una ´X´ y el segundo jugador va a tener asociado un ´O´ \n Una vez finalizado el juego, darle al botón de cerrar!  ");
         this.setVisible(true);
+        JOptionPane.showMessageDialog(null, "Tic tac toe, el primer jugador va a tener asociado una ´X´ y el segundo jugador va a tener asociado un ´O´ \n Una vez finalizado el juego, darle al botón de cerrar!  ");
+
 
 
     }
@@ -218,7 +223,7 @@ public class TicTacToe extends JFrame {
      * Método void que se encarga de cerrar la interfaz
      * @author Naheem J
      */
-    void cerrar(){
+    public void cerrar(){
         this.setVisible(false);
         this.dispose();
     }
@@ -229,8 +234,11 @@ public class TicTacToe extends JFrame {
      * Método main de la clase TicTacToe
      * @author Naheem J.
      */
+    /*
     public static void main(String[] Args){
         new TicTacToe();
 
     }
+
+     */
 }
