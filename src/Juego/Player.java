@@ -460,12 +460,10 @@ public class Player {
      * @author Jose A.
      */
     protected void moveBackwardsD(){
-        System.out.println("CASILLA ACTUAL: "+ posJug + " COLOR DE LA CASILLA: "+casillaActual.getMSG() + " MOVIMIENTOS: " + movTotal);
         salirD = true;
         if(posJug == 0){
             n++;
             posJug = 10;
-            //movimientosTotales += 0;
             casillaActual = Map.getInstance().getCasilla(9,"d");
             posX = 80;
             posY = 873;
@@ -515,7 +513,6 @@ public class Player {
             estaenc = true;
         }
         else if(posX == 149 && posY == 252  && !estaenc){
-            System.out.println("ANTES DE CAMBIAR EL POS ERA: "+ posJug);
             posJug = 2;
             movTotal = -1;
             estaenc = true;
@@ -636,21 +633,17 @@ public class Player {
 
         if(Jmain.getInstance().rounds > 0) {
             for (int i = 0; i < Jmain.getInstance().getPlayerList().getLength();i++){
-                System.out.println("ENTRE A CARGAR LOS DUELOS");
 
                 Player player = (Player) Jmain.getInstance().getPlayerList().getPos(i);
                 if (player != this && player.casillaActual.getReferencia()  == this.casillaActual.getReferencia()) {
-                    System.out.println("ENTRE AL CARGAR JUGADRES");
                     duelist.add(player);
-                    System.out.println("me estoy preparando" + player.referencia);
+
 
                     break;
                 }
             }
 
             if (duelist.getLength() > 1) {
-                System.out.println("estoy listo para un duelo");
-                System.out.println("LARGO DE LA LISTA" + duelist.getLength());
                 try {
                     TimeUnit.MILLISECONDS.sleep(300);
                 } catch (InterruptedException interruptedException) {
@@ -665,7 +658,6 @@ public class Player {
                 while(duelist.getLength() != 0 ){
                     duelist.delete(0);
                 }
-                System.out.println("LARGO DE LA LISTA" + duelist.getLength());
                 return;
             }
         }

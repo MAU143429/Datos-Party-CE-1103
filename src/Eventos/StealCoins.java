@@ -220,7 +220,6 @@ public class StealCoins extends Evento implements ActionListener {
 
         if (e.getSource() == robado1) {
             pos1 = (Player) Jmain.getInstance().getPlayerList().getPos(0);
-            System.out.println("VOY A ROBAR");
             evento(ladron,pos1,botin);
             frmrobar.setVisible(false);
             frmrobar.dispose();

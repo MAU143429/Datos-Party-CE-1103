@@ -21,10 +21,9 @@ public class Treasure2 extends JFrame implements ActionListener {
     private JButton btn1dig, btn2dig;
     private JLabel lf, tt, w1, w2;
     private JPanel panel4;
-    private int player, num;
+    private int player, num, cont;
     private String path1, path2;
     public Player jugandoahora;
-    public boolean turno;
 
 
     /**
@@ -34,7 +33,6 @@ public class Treasure2 extends JFrame implements ActionListener {
      * @author Mauricio C.
      */
     public Treasure2() {
-        turno = false;
         num = (int) (Math.random() * 2) + 1;
         System.out.println(num);
 
@@ -105,6 +103,7 @@ public class Treasure2 extends JFrame implements ActionListener {
         validate();
 
         panel4.add(bg3);
+        cont = 0;
 
 
         frm4.setVisible(true);
@@ -113,28 +112,29 @@ public class Treasure2 extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(null, "Lets play Looking for the Treasure!! \n Find a Magic Treasure to Win!!\n Dig to find Treasures!!  \n 3, 2, 1 Dig!! \n Enjoy!");
         player += 1;
         JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
-        turnos();
+        turnos(0);
     }
-/**
-        * turnos
+
+    /**
+     * turnos
      * Este metodo permite crear un sistema de turns dentro del minijuego
      *
-             * @author Mauricio C.
-            */
-    public void turnos() {
-        for (int i = 0; i < Jmain.getInstance().getPlayerList().getLength(); i++) {
+     * @author Mauricio C.
+     */
+    public void turnos(int cont) {
 
 
-            if (Jmain.getInstance().getPlayerList().getPos(i) == Jmain.getInstance().getPlayerList().getPos(0)) {
-                jugandoahora = (Player) Jmain.getInstance().getPlayerList().getPos(0);
-                return;
-            }
+        if (Jmain.getInstance().getPlayerList().getPos(cont) == Jmain.getInstance().getPlayerList().getPos(0)) {
+            jugandoahora = (Player) Jmain.getInstance().getPlayerList().getPos(0);
 
 
-            if (Jmain.getInstance().getPlayerList().getPos(i) == Jmain.getInstance().getPlayerList().getPos(1)) {
-                jugandoahora = (Player) Jmain.getInstance().getPlayerList().getPos(1);
-                return;
-            }
+        }
+
+
+        if (Jmain.getInstance().getPlayerList().getPos(cont) == Jmain.getInstance().getPlayerList().getPos(1)) {
+            jugandoahora = (Player) Jmain.getInstance().getPlayerList().getPos(1);
+
+
         }
     }
 
@@ -154,117 +154,116 @@ public class Treasure2 extends JFrame implements ActionListener {
 
         if (num == 1) {
             if (e.getSource() == btn1dig) {
-                System.out.println("Estoy escavando un tesoro");
-                System.out.println("Tesoro 1 Encontrado");
                 w1.setVisible(true);
                 player += 1;
                 ImageIcon bgurl30 = new ImageIcon(getClass().getResource(path1));
                 w1.setIcon(bgurl30);
 
                 if (player == 3) {
-
-                    JOptionPane.showMessageDialog(null, "Ganan");
-                } else {
-
                     JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
-                    if (turno == false) {
-                        jugandoahora.monedas += 50;
-                        turno = true;
-                        turnos();
-                    } else {
-                        jugandoahora.monedas += 50;
-                        turno = false;
-                        turnos();
-                    }
+                    jugandoahora.monedas += 50;
+                    Jmain.getInstance().actualizarLabels();
+                    JOptionPane.showMessageDialog(null, "El juego ha terminado");
+                    frm4.setVisible(false);
+                    frm4.dispose();
+                }
+                if (player < 3) {
+                    JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
+                    jugandoahora.monedas += 50;
+                    Jmain.getInstance().actualizarLabels();
+                    cont++;
+                    turnos(1);
 
 
                 }
             }
+
             if (e.getSource() == btn2dig) {
-                System.out.println("Estoy escavando un tesoro");
-                System.out.println("Tesoro 2 Encontrado");
                 w2.setVisible(true);
                 player += 1;
-                ImageIcon bgurl31 = new ImageIcon(getClass().getResource(path2));
-                w2.setIcon(bgurl31);
+                ImageIcon bgurl30 = new ImageIcon(getClass().getResource(path2));
+                w2.setIcon(bgurl30);
 
                 if (player == 3) {
-
-                    JOptionPane.showMessageDialog(null, "Ganan");
-                } else {
-
                     JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
-                    if (turno == false) {
-                        jugandoahora.monedas += 30;
-                        turno = true;
-                        turnos();
-                    } else {
-                        jugandoahora.monedas += 30;
-                        turno = false;
-                        turnos();
-                    }
+                    jugandoahora.monedas += 30;
+                    Jmain.getInstance().actualizarLabels();
+                    JOptionPane.showMessageDialog(null, "El juego ha terminado");
+                    frm4.setVisible(false);
+                    frm4.dispose();
                 }
+                if (player < 3) {
+                    JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
+                    jugandoahora.monedas += 30;
+                    Jmain.getInstance().actualizarLabels();
+                    cont++;
+                    turnos(1);
 
+
+                }
             }
-
         }
+
+
         if (num == 2) {
 
             if (e.getSource() == btn1dig) {
-                System.out.println("Estoy escavando un tesoro");
-                System.out.println("Tesoro 1 Encontrado");
                 w1.setVisible(true);
                 player += 1;
-                ImageIcon bgurl32 = new ImageIcon(getClass().getResource(path2));
-                w1.setIcon(bgurl32);
+                ImageIcon bgurl30 = new ImageIcon(getClass().getResource(path2));
+                w1.setIcon(bgurl30);
 
                 if (player == 3) {
-
-                    JOptionPane.showMessageDialog(null, "Ganan");
-                } else {
-
                     JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
-                    if (turno == false) {
-                        jugandoahora.monedas += 30;
-                        turno = true;
-                        turnos();
-                    } else {
-                        jugandoahora.monedas += 30;
-                        turno = false;
-                        turnos();
-                    }
-
+                    jugandoahora.monedas += 30;
+                    Jmain.getInstance().actualizarLabels();
+                    JOptionPane.showMessageDialog(null, "El juego ha terminado");
+                    frm4.setVisible(false);
+                    frm4.dispose();
+                }
+                if (player < 3) {
+                    JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
+                    jugandoahora.monedas += 30;
+                    Jmain.getInstance().actualizarLabels();
+                    cont++;
+                    turnos(1);
                 }
 
-                if (e.getSource() == btn2dig) {
-                    System.out.println("Estoy escavando un tesoro");
-                    System.out.println("Tesoro 2 Encontrado");
-                    w2.setVisible(true);
-                    player += 1;
-                    ImageIcon bgurl33 = new ImageIcon(getClass().getResource(path1));
-                    w2.setIcon(bgurl33);
-
-                    if (player == 3) {
-
-                        JOptionPane.showMessageDialog(null, "Ganan");
-                    } else {
-
-                        JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
-                        if (turno == false) {
-                            jugandoahora.monedas += 50;
-                            turno = true;
-                            turnos();
-                        } else {
-                            jugandoahora.monedas += 50;
-                            turno = false;
-                            turnos();
-                        }
-
-                    }
-                }
             }
 
 
+            if (e.getSource() == btn2dig) {
+                w2.setVisible(true);
+                player += 1;
+                ImageIcon bgurl30 = new ImageIcon(getClass().getResource(path1));
+                w2.setIcon(bgurl30);
+
+                if (player == 3) {
+                    JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
+                    jugandoahora.monedas += 50;
+                    Jmain.getInstance().actualizarLabels();
+                    JOptionPane.showMessageDialog(null, "El juego ha terminado");
+                    frm4.setVisible(false);
+                    frm4.dispose();
+                }
+                if (player < 3) {
+                    JOptionPane.showMessageDialog(null, "Turno del Jugador" + " " + player);
+                    jugandoahora.monedas += 50;
+                    Jmain.getInstance().actualizarLabels();
+                    cont++;
+                    turnos(1);
+
+                }
+            }
         }
     }
 }
+
+
+
+
+
+
+
+
+

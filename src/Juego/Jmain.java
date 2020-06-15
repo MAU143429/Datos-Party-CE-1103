@@ -43,12 +43,8 @@ public class Jmain extends JFrame implements ActionListener {
      */
     public Jmain() {
         ganadorf = false;
-        //String filepath = "maintheme.wav";
-        //musicstuff musicObject = new musicstuff();
-        //musicObject.playMusic(filepath);
         this.casillaActual = null;
         Map mapa = Map.getInstance();
-        //EventStack pilaEv = EventStack.getInstance();
         this.PlayerList = new SimpleList() {
         };
         this.rounds = 0;
@@ -734,15 +730,10 @@ public class Jmain extends JFrame implements ActionListener {
             Jmain.getInstance().playing.movePlayer(Integer.parseInt(textmovimientos.getText()));
         }
         if (e.getSource() == btnmkt) {
-            System.out.println("Abriendo Market");
-            System.out.println("Market abierto");
             market prueba1 = new market();
         }
 
         if (e.getSource() == btndados) {
-
-            System.out.println("Se estan tirando los dados");
-            System.out.println("Dados tirados");
             turns();
         }
         }

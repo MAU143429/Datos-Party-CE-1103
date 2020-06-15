@@ -42,10 +42,15 @@ public class Star {
      */
     public void placeStar(){
         Casilla tile = Map.getInstance().getRandomTile();
-        posX = tile.getPosX();
-        posY = tile.getPosY();
-        Jmain.getInstance().estrella.setBounds((posX -22),(posY -28),50,50);
-        Jmain.getInstance().estrella.setVisible(true);
+        if(tile.getReferencia() == 1){
+            tile =  Map.getInstance().getRandomTile();
+        }else {
+            posX = tile.getPosX();
+            posY = tile.getPosY();
+            Jmain.getInstance().estrella.setBounds((posX - 22), (posY - 28), 50, 50);
+            Jmain.getInstance().estrella.setVisible(true);
+        }
 
     }
+
 }

@@ -4,6 +4,7 @@ import EstructurasDatos.SimpleList;
 import Eventos.Evento;
 import Minijuegos.Dice.DiceCAS;
 import Minijuegos.Runner.RunnerCAS;
+import Minijuegos.TTT.TicTacToe;
 
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -42,8 +43,8 @@ public class DuelCasilla extends Evento {
      */
     public void ventanaEvento(SimpleList duelist) {
 
-        //int suerte = ThreadLocalRandom.current().nextInt(1, 3);
-        int suerte = 1;
+        int suerte = ThreadLocalRandom.current().nextInt(1, 3);
+
 
         if(suerte == 1){
             RunnerCAS prueba = new RunnerCAS(duelist);
@@ -52,8 +53,8 @@ public class DuelCasilla extends Evento {
             DiceCAS prueba = new DiceCAS();
         }
         if(suerte == 3){
-            //TicTacToe prueba = new TicTacToe();
-            System.out.println("NO SIRVO AUN");
+            //TicTacToe prueba = new TicTacToe(duelist);
+
         }
 
     }

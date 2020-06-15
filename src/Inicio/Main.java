@@ -97,35 +97,27 @@ public class Main extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ModoPrueba) {
-            System.out.println("Jugaran 1 jugadores");
             players = 1;
-            System.out.println(players + " Jugadores Jugando ahora");
             Jmain para1 = Jmain.getInstance();
             para1.createPlayers(players);
             Jmain.getInstance().crearMario();
             frm1.setVisible(false);
         }
         if (e.getSource() == btn2p) {
-            System.out.println("Jugaran 2 jugadores");
             players = 2;
-            System.out.println(players + " Jugadores Jugando ahora");
             Jmain para2 = Jmain.getInstance();
             para2.createPlayers(players);
             parar = new musicstuff();
             frm1.setVisible(false);
         }
         if (e.getSource() == btn3p) {
-            System.out.println("Jugaran 3 jugadores");
             players = 3;
-            System.out.println(players + " Jugadores Jugando ahora");
             Jmain para3 = Jmain.getInstance();
             para3.createPlayers(players);
             frm1.setVisible(false);
         }
         if (e.getSource() == btn4p) {
-            System.out.println("Jugaran 4 jugadores");
             players = 4;
-            System.out.println(players + " Jugadores Jugando ahora");
             Jmain para4 = Jmain.getInstance();
             para4.createPlayers(players);
             frm1.setVisible(false);

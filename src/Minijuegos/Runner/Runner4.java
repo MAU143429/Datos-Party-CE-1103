@@ -146,12 +146,10 @@ public class Runner4 extends JFrame {
             @Override
             public void keyReleased(KeyEvent e) {
                 if (e.getKeyChar() == 'a') {
-                    System.out.println("Mario esta corriendo");
                     x = jugador1.getX();
                     y = jugador1.getY();
                     jugador1.setLocation(x + 50, y);
                     p1 += 1;
-                    System.out.println(p1);
 
                     if (p1 == 20) {
 
@@ -164,12 +162,10 @@ public class Runner4 extends JFrame {
 
                 }
                 if (e.getKeyChar() == 'c') {
-                    System.out.println("Luigi esta corriendo");
                     x = jugador2.getX();
                     y = jugador2.getY();
                     jugador2.setLocation(x + 50, y);
                     p2 += 1;
-                    System.out.println(p2);
 
                     if (p2 == 20) {
 
@@ -179,12 +175,10 @@ public class Runner4 extends JFrame {
                     }
                 }
                 if (e.getKeyChar() == 'n') {
-                    System.out.println("Toad esta corriendo");
                     x = jugador3.getX();
                     y = jugador3.getY();
                     jugador3.setLocation(x + 50, y);
                     p3 += 1;
-                    System.out.println(p3);
                     if (p3 == 20) {
 
                         JOptionPane.showMessageDialog(null, "TOAD WINS!!");
@@ -193,12 +187,10 @@ public class Runner4 extends JFrame {
                     }
                 }
                 if (e.getKeyChar() == 'k') {
-                    System.out.println("Yoshi esta corriendo");
                     x = jugador4.getX();
                     y = jugador4.getY();
                     jugador4.setLocation(x + 50, y);
                     p4 += 1;
-                    System.out.println(p4);
                     if (p4 == 20) {
                         JOptionPane.showMessageDialog(null, "YOSHI WINS!!");
                         frm3.setVisible(false);

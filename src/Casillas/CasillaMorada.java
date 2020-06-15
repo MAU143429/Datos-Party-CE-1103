@@ -35,6 +35,5 @@ public class CasillaMorada extends Casilla {
     @Override
     public void evento(Player player) {
 
-        System.out.println("SE TELETRANPORTÓ");
     }
 }

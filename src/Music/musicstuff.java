@@ -39,12 +39,6 @@ public class musicstuff {
                 clip.loop(Clip.LOOP_CONTINUOUSLY);
 
 
-
-            }else{
-
-                System.out.println("no encuentro la vara");
-
-
             }
         }
         catch(Exception ex)

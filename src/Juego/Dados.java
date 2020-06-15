@@ -10,12 +10,11 @@ import javax.swing.*;
  * @author Jose A.
  */
 public class Dados {
-    Timer tm, xm,sm;
+    Timer tm, xm, sm;
     int x = 0;
     ImageIcon dadoimg1, dadoimg2, dadoimg3, dadoimg4, dadoimg5, dadoimg6, dadoroll;
-    public int dado1, dado2, SumaDados, dadoani1, dadoani2;
+    public int dado1, dado2, SumaDados;
     public static Dados instance = null;
-    //Images Path In Array
     String[] list = {
             "/Juego/dado1.png",//0
             "/Juego/dado2.png",//1
@@ -30,6 +29,7 @@ public class Dados {
     /**
      * Dados
      * constructor que contiene las ubicaciones de las imagenes de los dados
+     *
      * @author Jose A.
      */
     public Dados() {
@@ -64,15 +64,11 @@ public class Dados {
             public void actionPerformed(ActionEvent e) {
                 SetImageSize(x);
                 x += 1;
-                System.out.println(x);
                 if (x >= list.length) {
                     x = 0;
                     dado1 = (int) (Math.random() * 6) + 1;
-                    System.out.println("DADO 1: " + Dados.getInstance().dado1);
                     dado2 = (int) (Math.random() * 6) + 1;
-                    System.out.println("DADO 2: " + Dados.getInstance().dado2);
                     SumaDados = dado1 + dado2;
-                    System.out.println("Suma de los Dados " + SumaDados);
                     tm.stop();
                     sm.start();
                 }
@@ -86,8 +82,8 @@ public class Dados {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                PutFinal1((Jmain.getInstance().dado.dado1)-1);
-                PutFinal2((Jmain.getInstance().dado.dado2)-1);
+                PutFinal1((Jmain.getInstance().dado.dado1) - 1);
+                PutFinal2((Jmain.getInstance().dado.dado2) - 1);
                 try {
                     TimeUnit.MILLISECONDS.sleep(100);
                 } catch (InterruptedException ex) {
@@ -105,8 +101,8 @@ public class Dados {
 
     /**
      * SetImageSize
-     * @param i
-     * Le entra un parámetro i al método el cual lo usa para cambiar el icono del dado
+     *
+     * @param i Le entra un parámetro i al método el cual lo usa para cambiar el icono del dado
      * @author Jose A.
      */
     public void SetImageSize(int i) {
@@ -119,28 +115,29 @@ public class Dados {
 
     /**
      * PutFinal1
-     * @param i
-     * Método que carga imagen del parametro i
+     *
+     * @param i Método que carga imagen del parametro i
      * @author Jose A.
      */
-    public void PutFinal1(int i){
+    public void PutFinal1(int i) {
         ImageIcon icon1 = new ImageIcon(getClass().getResource(list[i]));
         Jmain.getInstance().dado1.setIcon(icon1);
     }
 
     /**
      * PutFinal2
-     * @param i
-     * Método que carga una imagen del parametro i
+     *
+     * @param i Método que carga una imagen del parametro i
      * @author Jose A.
      */
-    public void PutFinal2(int i){
+    public void PutFinal2(int i) {
         ImageIcon icon2 = new ImageIcon(getClass().getResource(list[i]));
         Jmain.getInstance().dado2.setIcon(icon2);
     }
 
     /**
      * getInstance
+     *
      * @return instance
      * Método singleton para generar la instancia del dado
      * @author Jose A.
@@ -150,15 +147,5 @@ public class Dados {
             instance = new Dados();
         }
         return instance;
-    }
-
-    /**
-     * tirarDado
-     * @return SumaDados
-     * Método que realiza un return de SumaDados
-     * @author Jose A.
-     */
-    public int tirarDado() {
-        return SumaDados;
     }
 }

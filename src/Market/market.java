@@ -81,7 +81,6 @@ public class market extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == buyX1) {
             if(Jmain.getInstance().playing.monedas >= 50){
-                System.out.println("Compraste una estrella");
                 Jmain.getInstance().playing.monedas -= 50;
                 Jmain.getInstance().playing.estrellas += 1;
                 Jmain.getInstance().actualizarLabels();
@@ -92,7 +91,6 @@ public class market extends JFrame implements ActionListener {
         }
         if (e.getSource() == buyX2) {
             if(Jmain.getInstance().playing.monedas >= 90){
-                System.out.println("Compraste una estrella");
                 Jmain.getInstance().playing.monedas -= 90;
                 Jmain.getInstance().playing.estrellas += 2;
                 Jmain.getInstance().actualizarLabels();
@@ -103,7 +101,6 @@ public class market extends JFrame implements ActionListener {
         }
         if (e.getSource() == buyX3) {
             if(Jmain.getInstance().playing.monedas >= 135){
-                System.out.println("Compraste una estrella");
                 Jmain.getInstance().playing.monedas -= 135;
                 Jmain.getInstance().playing.estrellas += 3;
                 Jmain.getInstance().actualizarLabels();

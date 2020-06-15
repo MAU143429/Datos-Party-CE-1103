@@ -133,12 +133,10 @@ public class Runner3 extends JFrame {
             int[] numeros = {p1, p2, p3};
 
             if (e.getKeyChar() == 'a') {
-                System.out.println("Mario esta corriendo");
                 x = jugador1.getX();
                 y = jugador1.getY();
                 jugador1.setLocation(x + 50, y);
                 p1 += 1;
-                System.out.println(p1);
 
                 if (p1 == 20) {
                     Arrays.sort(numeros);
@@ -153,12 +151,10 @@ public class Runner3 extends JFrame {
 
             }
             if (e.getKeyChar() == 'c') {
-                System.out.println("Luigi esta corriendo");
                 x = jugador2.getX();
                 y = jugador2.getY();
                 jugador2.setLocation(x + 50, y);
                 p2 += 1;
-                System.out.println(p2);
 
                 if (p2 == 20) {
 
@@ -168,12 +164,10 @@ public class Runner3 extends JFrame {
                 }
             }
             if (e.getKeyChar() == 'n') {
-                System.out.println("Toad esta corriendo");
                 x = jugador3.getX();
                 y = jugador3.getY();
                 jugador3.setLocation(x + 50, y);
                 p3 += 1;
-                System.out.println(p3);
                 if (p3 == 20) {
 
                     JOptionPane.showMessageDialog(null, "TOAD WINS!!");

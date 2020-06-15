@@ -206,12 +206,11 @@ public class RunnerCAS extends JFrame {
 
 
             if (e.getKeyChar() == 'a') {
-                System.out.println("Player 1 esta corriendo");
                 x = jugador1.getX();
                 y = jugador1.getY();
                 jugador1.setLocation(x + 50, y);
                 p1 += 1;
-                System.out.println(p1);
+
 
                 if (p1 == 20) {
                     JOptionPane.showMessageDialog(null, "PLAYER 1 WINS THE BATTLE!!");
@@ -244,12 +243,11 @@ public class RunnerCAS extends JFrame {
 
             }
             if (e.getKeyChar() == 'c') {
-                System.out.println("Player 2 esta corriendo");
                 x = jugador2.getX();
                 y = jugador2.getY();
                 jugador2.setLocation(x + 50, y);
                 p2 += 1;
-                System.out.println(p2);
+
 
                 if (p2 == 20) {
 
