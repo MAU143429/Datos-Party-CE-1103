@@ -212,7 +212,6 @@ public class RunnerCAS extends JFrame {
                 jugador1.setLocation(x + 50, y);
                 p1 += 1;
                 System.out.println(p1);
-
                 if (p1 == 20) {
                     JOptionPane.showMessageDialog(null, "PLAYER 1 WINS THE BATTLE!!");
                     player21.posJug--;
@@ -233,13 +232,8 @@ public class RunnerCAS extends JFrame {
                     if(player21.referencia  == 4){
                         Jmain.getInstance().yoshi.setLocation((player21.posX-22),(player21.posY-28));
                     }
-
-
-
-
+                    JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
                     frm3.setVisible(false);
-
-
                 }
 
             }
@@ -250,9 +244,7 @@ public class RunnerCAS extends JFrame {
                 jugador2.setLocation(x + 50, y);
                 p2 += 1;
                 System.out.println(p2);
-
                 if (p2 == 20) {
-
                     player20.posJug--;
                     player20.movTotal = player20.posJug;
                     player20.casillaActual = Map.getInstance().getCasilla(player20.posJug,Map.getInstance().getFase2(player20.casillaActual));
@@ -271,8 +263,7 @@ public class RunnerCAS extends JFrame {
                     if(player20.referencia  == 4){
                         Jmain.getInstance().yoshi.setLocation((player20.posX-22),(player20.posY-28));
                     }
-
-                    JOptionPane.showMessageDialog(null, "PLAYER 2 WINS THE BATTLE!!");
+                    JOptionPane.showMessageDialog(null, "EL PERDEDOR SERÁ ATRASADO UNA CASILLA");
                     frm3.setVisible(false);
 
                 }

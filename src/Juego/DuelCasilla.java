@@ -49,7 +49,7 @@ public class DuelCasilla extends Evento {
             RunnerCAS prueba = new RunnerCAS(duelist);
         }
         if(suerte == 2){
-            DiceCAS prueba = new DiceCAS();
+            DiceCAS prueba = new DiceCAS(duelist);
         }
         if(suerte == 3){
             //TicTacToe prueba = new TicTacToe();
