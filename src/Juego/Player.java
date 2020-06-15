@@ -14,8 +14,6 @@ public class Player {
     public int posX, posY, posJug, movTotal, monedas, estrellas, referencia, sumadado,n;
     public boolean estaena, estaenb, estaenc, estaenReversa, estaend, salirD, moviendose, jugado;
     public Timer timerMovimiento, timerEStrellas, timerEvento;
-
-
     /**
      * @param jugadorNum el numero de jugador que será.
      * @author JoseA
@@ -27,7 +25,7 @@ public class Player {
         /**
          * Timer para revisar si se puede comprar la estrella del tablero
          */
-        this.timerEStrellas = new Timer(20, new ActionListener() {
+        this.timerEStrellas = new Timer(50, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent i) {
                 if (Jmain.getInstance().rounds > 0 && Jmain.getInstance().playing == self && posX == Star.getInstance().posX && posY == Star.getInstance().posY) {
@@ -42,16 +40,12 @@ public class Player {
                         monedas -= Star.getInstance().precio;
                         Jmain.getInstance().estrella.setVisible(false);
                         Star.getInstance().placeStar();
-
                     }
                     Jmain.getInstance().actualizarLabels();
                     timerMovimiento.start();
                     timerEStrellas.stop();
                 }
-
-
             }
-
         });
         /**
          * Timer que revisa booleanos para mandar el método de movimiento que le toca al jugador
@@ -87,8 +81,6 @@ public class Player {
                 if(Jmain.getInstance().playing.referencia == 4){
                     Jmain.getInstance().yoshi.setLocation((posX-22),(posY-28));
                 }
-
-
             }
         });
         /**
@@ -481,7 +473,7 @@ public class Player {
             }
             Jmain.getInstance().panel4.repaint();
         }
-        if(posJug == movTotal - 2*(movTotal - 6) || posJug == (movTotal - 2*(movTotal - 6))+10*n){
+        if(posJug == movTotal - 2*(movTotal - 6) || posJug == (movTotal - 2*(movTotal - 6))+(10*n)){
             moviendose = false;
             Jmain.getInstance().corriendoJuego = false;
             timerMovimiento.stop();
