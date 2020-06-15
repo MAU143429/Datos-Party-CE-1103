@@ -25,7 +25,7 @@ public class Win2Stars extends Evento {
     public void evento(Player player) {
         int strganadas = 2;
         player.estrellas += strganadas;
-        System.out.println("ganaste 2 estrellas");
+
     }
     /**
      * ventanaEvento

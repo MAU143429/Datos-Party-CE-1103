@@ -463,7 +463,6 @@ public class Jmain extends JFrame implements ActionListener {
             for (int i = 0; i < PlayerList.getLength(); i++) {
                 if (!castToPlayer(PlayerList.getPos(i)).jugado) {
                     this.playing = castToPlayer(PlayerList.getPos(i));
-                    System.out.println(Jmain.getInstance().playing.referencia);
                     castToPlayer(PlayerList.getPos(i)).jugado = true;
                     lanzarDado();
 

@@ -46,7 +46,7 @@ public class GiveOutCoins extends Evento{
         for (int i = 0; i < Jmain.getInstance().getPlayerList().getLength(); i++) {
 
             if(Jmain.getInstance().getPlayerList().getPos(i) == player){
-                if(player.monedas > randomInt){
+                if(player.monedas < randomInt){
                     player.monedas = 0;
                 }else {
                     player.monedas -= randomInt;
