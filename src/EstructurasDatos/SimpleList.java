@@ -63,7 +63,7 @@ public class SimpleList extends List {
     }
     /**
      * Metodo delete
-     * Permite agregar un nuevo nodo a la lista
+     * Permite eliminar un  nodo a la lista
      * @param pos
      * @author Jose A., Mauricio C.
      */

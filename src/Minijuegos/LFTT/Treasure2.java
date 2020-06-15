@@ -121,24 +121,20 @@ public class Treasure2 extends JFrame implements ActionListener {
      *
              * @author Mauricio C.
             */
-    public void turnos(){
+    public void turnos() {
         for (int i = 0; i < Jmain.getInstance().getPlayerList().getLength(); i++) {
 
-            while (turno == false) {
-                if (Jmain.getInstance().getPlayerList().getPos(i) == Jmain.getInstance().getPlayerList().getPos(0)) {
-                    jugandoahora = (Player) Jmain.getInstance().getPlayerList().getPos(0);
-                }else{
-                    return;
-                }
-            }
-            while (turno == true) {
-                if (Jmain.getInstance().getPlayerList().getPos(i) == Jmain.getInstance().getPlayerList().getPos(1)) {
-                    jugandoahora = (Player) Jmain.getInstance().getPlayerList().getPos(1);
-                }else{
-                    return;
-                }
+
+            if (Jmain.getInstance().getPlayerList().getPos(i) == Jmain.getInstance().getPlayerList().getPos(0)) {
+                jugandoahora = (Player) Jmain.getInstance().getPlayerList().getPos(0);
+                return;
             }
 
+
+            if (Jmain.getInstance().getPlayerList().getPos(i) == Jmain.getInstance().getPlayerList().getPos(1)) {
+                jugandoahora = (Player) Jmain.getInstance().getPlayerList().getPos(1);
+                return;
+            }
         }
     }
 
@@ -174,9 +170,11 @@ public class Treasure2 extends JFrame implements ActionListener {
                     if (turno == false) {
                         jugandoahora.monedas += 50;
                         turno = true;
+                        turnos();
                     } else {
                         jugandoahora.monedas += 50;
                         turno = false;
+                        turnos();
                     }
 
 
@@ -199,9 +197,11 @@ public class Treasure2 extends JFrame implements ActionListener {
                     if (turno == false) {
                         jugandoahora.monedas += 30;
                         turno = true;
+                        turnos();
                     } else {
                         jugandoahora.monedas += 30;
                         turno = false;
+                        turnos();
                     }
                 }
 
@@ -227,9 +227,11 @@ public class Treasure2 extends JFrame implements ActionListener {
                     if (turno == false) {
                         jugandoahora.monedas += 30;
                         turno = true;
+                        turnos();
                     } else {
                         jugandoahora.monedas += 30;
                         turno = false;
+                        turnos();
                     }
 
                 }
@@ -251,9 +253,11 @@ public class Treasure2 extends JFrame implements ActionListener {
                         if (turno == false) {
                             jugandoahora.monedas += 50;
                             turno = true;
+                            turnos();
                         } else {
                             jugandoahora.monedas += 50;
                             turno = false;
+                            turnos();
                         }
 
                     }

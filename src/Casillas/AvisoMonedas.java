@@ -17,7 +17,7 @@ public class AvisoMonedas {
     /**
      *
      * AvisoMonedas
-     *Esta constructor recibe dos parametros uno de monedas y otro la accion
+     *Este constructor recibe dos parametros uno de monedas y otro la accion
      * @param accion
      * @param monedas
      *@author Jose A.
