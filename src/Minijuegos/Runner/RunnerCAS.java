@@ -28,8 +28,10 @@ public class RunnerCAS extends JFrame {
 
     public RunnerCAS(SimpleList duelist) {
 
-        player20 = (Player) duelist.getPos(0);
-        player21 = (Player) duelist.getPos(1);
+        player20 = (Player) duelist.getPos(1);
+        player21 = (Player) duelist.getPos(0);
+
+
 
         frm3 = new JFrame("Runners");
         frm3.setBounds(0, 0, 1280, 900);
@@ -177,7 +179,7 @@ public class RunnerCAS extends JFrame {
                 jugador2.setIcon(bgurlp2);
             }
         }
-        JOptionPane.showMessageDialog(null, "Lets play Runners!! \n When you press OK you will see the key bindings for each player! \n 3, 2, 1 RUN!! \n Enjoy!");
+        JOptionPane.showMessageDialog(null, "DUEL \n Lets play Runners!! \n When you press OK you will see the key bindings for each player! \n 3, 2, 1 RUN!! \n Enjoy!");
 
 
     }
@@ -219,16 +221,16 @@ public class RunnerCAS extends JFrame {
                     player21.verifyTeleport();
                     player21.posX = player21.casillaActual.getPosX();
                     player21.posY = player21.casillaActual.getPosY();
-                    if(Jmain.getInstance().playing.referencia == 1){
+                    if(player21.referencia == 1){
                         Jmain.getInstance().mario.setLocation((player21.posX-22),(player21.posY-28));
                     }
-                    if(Jmain.getInstance().playing.referencia == 2){
+                    if(player21.referencia  == 2){
                         Jmain.getInstance().luigi.setLocation((player21.posX-22),(player21.posY-28));
                     }
-                    if(Jmain.getInstance().playing.referencia == 3){
+                    if(player21.referencia  == 3){
                         Jmain.getInstance().toad.setLocation((player21.posX-22),(player21.posY-28));
                     }
-                    if(Jmain.getInstance().playing.referencia == 4){
+                    if(player21.referencia  == 4){
                         Jmain.getInstance().yoshi.setLocation((player21.posX-22),(player21.posY-28));
                     }
 
@@ -257,16 +259,16 @@ public class RunnerCAS extends JFrame {
                     player20.verifyTeleport();
                     player20.posX = player20.casillaActual.getPosX();
                     player20.posY = player20.casillaActual.getPosY();
-                    if(Jmain.getInstance().playing.referencia == 1){
+                    if(player20.referencia  == 1){
                         Jmain.getInstance().mario.setLocation((player20.posX-22),(player20.posY-28));
                     }
-                    if(Jmain.getInstance().playing.referencia == 2){
+                    if(player20.referencia  == 2){
                         Jmain.getInstance().luigi.setLocation((player20.posX-22),(player20.posY-28));
                     }
-                    if(Jmain.getInstance().playing.referencia == 3){
+                    if(player20.referencia == 3){
                         Jmain.getInstance().toad.setLocation((player20.posX-22),(player20.posY-28));
                     }
-                    if(Jmain.getInstance().playing.referencia == 4){
+                    if(player20.referencia  == 4){
                         Jmain.getInstance().yoshi.setLocation((player20.posX-22),(player20.posY-28));
                     }
 
@@ -275,6 +277,7 @@ public class RunnerCAS extends JFrame {
 
                 }
             }
+            
 
         }
 

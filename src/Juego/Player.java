@@ -625,7 +625,8 @@ public class Player {
      * @author Jose A.
      */
     public void verifyList(){
-        SimpleList duelist = Jmain.getInstance().getPlayerList();
+        SimpleList duelist = new SimpleList();
+        duelist.add(self);
         if (estaena){ casillaActual = Map.getInstance().getCasilla(posJug,"a");}
         else if(estaenb){casillaActual = Map.getInstance().getCasilla(posJug,"b");}
         else if(estaenc){casillaActual = Map.getInstance().getCasilla(posJug,"c");}
@@ -633,22 +634,38 @@ public class Player {
         else{casillaActual = Map.getInstance().getCasilla(posJug,"p");}
         Jmain.getInstance().actualizarLabels();
 
-        if(Jmain.getInstance().rounds > 1) {
-            for (int i = 0; i < duelist.getLength(); i++) {
-                Player player = (Player) duelist.getPos(i);
-                if (player != this && player.casillaActual == this.casillaActual) {
+        if(Jmain.getInstance().rounds > 0) {
+            for (int i = 0; i < Jmain.getInstance().getPlayerList().getLength();i++){
+                System.out.println("ENTRE A CARGAR LOS DUELOS");
+
+                Player player = (Player) Jmain.getInstance().getPlayerList().getPos(i);
+                if (player != this && player.casillaActual.getReferencia()  == this.casillaActual.getReferencia()) {
+                    System.out.println("ENTRE AL CARGAR JUGADRES");
                     duelist.add(player);
+                    System.out.println("me estoy preparando" + player.referencia);
+
                     break;
                 }
             }
 
             if (duelist.getLength() > 1) {
+                System.out.println("estoy listo para un duelo");
+                System.out.println("LARGO DE LA LISTA" + duelist.getLength());
                 try {
                     TimeUnit.MILLISECONDS.sleep(300);
                 } catch (InterruptedException interruptedException) {
                     interruptedException.printStackTrace();
                 }
                 new DuelCasilla().ventanaEvento(duelist);
+                try {
+                    TimeUnit.MILLISECONDS.sleep(300);
+                } catch (InterruptedException interruptedException) {
+                    interruptedException.printStackTrace();
+                }
+                while(duelist.getLength() != 0 ){
+                    duelist.delete(0);
+                }
+                System.out.println("LARGO DE LA LISTA" + duelist.getLength());
                 return;
             }
         }
@@ -656,6 +673,5 @@ public class Player {
         this.timerEvento.start();
         Jmain.getInstance().actualizarLabels();
     }
-
 
 }
